@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from 'motion/react';
 import { GraduationCap } from 'lucide-react';
 
@@ -67,7 +69,7 @@ export function Alumni() {
                         >
                             <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-slate-800 group-hover:border-blue-500 transition-colors mb-4">
                                 <img
-                                    src={person.image}
+                                    src={(person.image as any)?.src || person.image}
                                     alt={person.name}
                                     loading="lazy"
                                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"

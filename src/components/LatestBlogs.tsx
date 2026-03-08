@@ -1,6 +1,8 @@
+"use client";
+
 import { motion } from 'motion/react';
 import { ArrowRight, Calendar, User, ArrowUpRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { blogPosts } from '../data/blog';
 
 export function LatestBlogs() {
@@ -29,7 +31,7 @@ export function LatestBlogs() {
                     </motion.div>
 
                     <Link
-                        to="/blog"
+                        href="/blog"
                         className="inline-flex items-center gap-2 px-6 py-3 bg-white text-slate-900 border border-slate-200 text-base font-semibold rounded-full hover:border-blue-600 hover:text-blue-600 transition-colors whitespace-nowrap"
                     >
                         Lihat Semua Artikel
@@ -49,7 +51,7 @@ export function LatestBlogs() {
                         >
                             <div className="relative aspect-[16/10] overflow-hidden bg-slate-200">
                                 <img
-                                    src={post.imageUrl}
+                                    src={(post.imageUrl as any)?.src || post.imageUrl}
                                     alt={post.title}
                                     loading="lazy"
                                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -73,7 +75,7 @@ export function LatestBlogs() {
                                     </div>
                                 </div>
                                 <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors line-clamp-2">
-                                    <Link to={`/blog/${post.id}`}>
+                                    <Link href={`/blog/${post.id}`}>
                                         {post.title}
                                     </Link>
                                 </h3>
@@ -81,7 +83,7 @@ export function LatestBlogs() {
                                     {post.excerpt}
                                 </p>
                                 <Link
-                                    to={`/blog/${post.id}`}
+                                    href={`/blog/${post.id}`}
                                     className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors mt-auto"
                                 >
                                     Baca Selengkapnya

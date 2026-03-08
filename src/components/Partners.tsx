@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from 'motion/react';
 import partner1 from '../assets/partner/1_20250822_215806_0000.png';
 import partner2 from '../assets/partner/2_20250822_215806_0001.png';
@@ -46,7 +48,7 @@ export function Partners() {
               className="flex justify-center"
             >
               <img
-                src={partner.logo}
+                src={(partner.logo as any)?.src || partner.logo}
                 alt={partner.name}
                 loading="lazy"
                 className="max-h-12 object-contain brightness-0 invert opacity-70 hover:opacity-100 hover:brightness-100 hover:invert-0 transition-all duration-300"

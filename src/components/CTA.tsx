@@ -1,6 +1,8 @@
+"use client";
+
 import { motion } from 'motion/react';
 import { ArrowRight, Mail } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 export function CTA() {
   return (
@@ -32,7 +34,7 @@ export function CTA() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
-              to="/contact"
+              href="/contact"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-blue-600 text-base font-bold rounded-full hover:bg-blue-50 transition-all hover:scale-105 shadow-xl"
             >
               Contact Us

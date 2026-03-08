@@ -1,7 +1,9 @@
+"use client";
+
 import { motion, useScroll, useTransform } from 'motion/react';
 import { ArrowRight, Code2, Smartphone, Globe } from 'lucide-react';
 import { useRef } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -48,7 +50,7 @@ export function Hero() {
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
-              <Link to="/services">
+              <Link href="/services">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -64,7 +66,7 @@ export function Hero() {
                   </motion.div>
                 </motion.div>
               </Link>
-              <Link to="/contact">
+              <Link href="/contact">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}

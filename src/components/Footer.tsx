@@ -1,5 +1,7 @@
+"use client";
+
 import { Facebook, Twitter, Instagram, Linkedin, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { siteConfig } from '../config/site';
 
 export function Footer() {
@@ -13,7 +15,7 @@ export function Footer() {
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
               <img
-                src={siteConfig.logo}
+                src={(siteConfig.logo as any)?.src || siteConfig.logo}
                 alt={`${siteConfig.name} Logo`}
                 className="h-12 sm:h-14 w-auto object-contain mix-blend-lighten"
               />
@@ -65,11 +67,11 @@ export function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-6">Quick Links</h4>
             <ul className="space-y-4">
-              <li><Link to="/" className="hover:text-blue-400 transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> Home</Link></li>
-              <li><Link to="/about" className="hover:text-blue-400 transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> About Us</Link></li>
-              <li><Link to="/services" className="hover:text-blue-400 transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> Services</Link></li>
-              <li><Link to="/portfolio" className="hover:text-blue-400 transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> Portofolio</Link></li>
-              <li><Link to="/blog" className="hover:text-blue-400 transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> News</Link></li>
+              <li><Link href="/" className="hover:text-blue-400 transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> Home</Link></li>
+              <li><Link href="/about" className="hover:text-blue-400 transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> About Us</Link></li>
+              <li><Link href="/services" className="hover:text-blue-400 transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> Services</Link></li>
+              <li><Link href="/portfolio" className="hover:text-blue-400 transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> Portofolio</Link></li>
+              <li><Link href="/blog" className="hover:text-blue-400 transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> News</Link></li>
             </ul>
           </div>
 
@@ -77,9 +79,9 @@ export function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-6">Legal</h4>
             <ul className="space-y-4">
-              <li><Link to="/privacy" className="hover:text-blue-400 transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> Privacy Policy</Link></li>
-              <li><Link to="/terms" className="hover:text-blue-400 transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> Terms and Conditions</Link></li>
-              <li><Link to="/contact" className="hover:text-blue-400 transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> Contact Us</Link></li>
+              <li><Link href="/privacy" className="hover:text-blue-400 transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> Privacy Policy</Link></li>
+              <li><Link href="/terms" className="hover:text-blue-400 transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> Terms and Conditions</Link></li>
+              <li><Link href="/contact" className="hover:text-blue-400 transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> Contact Us</Link></li>
             </ul>
           </div>
         </div>

@@ -1,6 +1,8 @@
+"use client";
+
 import { motion } from 'motion/react';
 import { ArrowRight, Layout, Globe, Briefcase, Code } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { servicesData } from '../data/services';
 
 const getCategoryIcon = (category: string) => {
@@ -68,7 +70,7 @@ export function Services() {
                 {getCategoryIcon(service.category)}
               </div>
               <h3 className="text-lg font-bold text-slate-900 mb-3 md:mb-4 group-hover:text-blue-600 transition-colors line-clamp-2">
-                <Link to={`/services/${service.id}`}>
+                <Link href={`/services/${service.id}`}>
                   {service.title}
                 </Link>
               </h3>
@@ -77,7 +79,7 @@ export function Services() {
               </p>
               <div className="mt-auto pt-5 md:pt-6 border-t border-slate-200/60">
                 <Link
-                  to={`/services/${service.id}`}
+                  href={`/services/${service.id}`}
                   className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors group/link text-sm md:text-base"
                 >
                   Detail Layanan
@@ -95,7 +97,7 @@ export function Services() {
           className="text-center"
         >
           <Link
-            to="/services"
+            href="/services"
             className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-slate-900 text-white text-base font-bold rounded-full hover:bg-blue-600 transition-colors shadow-lg"
           >
             Lihat Semua Layanan

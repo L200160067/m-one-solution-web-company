@@ -1,32 +1,23 @@
 {
-  "name": "react-example",
+  "name": "m-one-solution-web",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --port=3000 --host=0.0.0.0",
-    "build": "vite build",
-    "preview": "vite preview",
-    "clean": "rm -rf dist",
-    "lint": "tsc --noEmit",
-    "test": "vitest run"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "@google/genai": "^1.29.0",
-    "@tailwindcss/vite": "^4.1.14",
-    "@vitejs/plugin-react": "^5.0.4",
-    "better-sqlite3": "^12.4.1",
-    "dotenv": "^17.2.3",
-    "express": "^4.21.2",
     "lucide-react": "^0.546.0",
     "motion": "^12.23.24",
+    "next": "^16.1.6",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-helmet-async": "^3.0.0",
-    "react-router-dom": "^7.13.1",
-    "vite": "^6.2.0"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.2.1",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@types/express": "^4.17.21",
@@ -36,10 +27,10 @@
     "@types/react-dom": "^19.2.3",
     "autoprefixer": "^10.4.21",
     "jsdom": "^28.1.0",
+    "postcss": "^8.5.8",
     "tailwindcss": "^4.1.14",
     "tsx": "^4.21.0",
     "typescript": "~5.8.2",
-    "vite": "^6.2.0",
     "vitest": "^4.0.18"
   }
 }

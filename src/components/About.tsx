@@ -1,6 +1,8 @@
+"use client";
+
 import { motion } from 'motion/react';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import aboutImage from '../assets/about/about.png';
 
 export function About() {
@@ -25,7 +27,7 @@ export function About() {
           >
             <div className="aspect-[4/3] rounded-3xl overflow-hidden relative">
               <img
-                src={aboutImage}
+                src={(aboutImage as any)?.src || aboutImage}
                 alt="M-One Solution Team"
                 loading="lazy"
                 className="object-cover w-full h-full"
@@ -81,7 +83,7 @@ export function About() {
             </div>
 
             <Link
-              to="/about"
+              href="/about"
               className="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 text-white text-base font-semibold rounded-full hover:bg-blue-600 transition-colors shadow-lg shadow-slate-900/20"
             >
               Learn more

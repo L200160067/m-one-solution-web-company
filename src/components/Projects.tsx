@@ -1,6 +1,8 @@
+"use client";
+
 import { motion } from 'motion/react';
 import { ArrowUpRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 export function Projects() {
   const projects = [
@@ -46,7 +48,7 @@ export function Projects() {
           </motion.div>
 
           <Link
-            to="/portfolio"
+            href="/portfolio"
             className="inline-flex items-center gap-2 px-6 py-3 bg-white text-slate-900 border border-slate-200 text-base font-semibold rounded-full hover:border-blue-600 hover:text-blue-600 transition-colors whitespace-nowrap"
           >
             View All Projects
@@ -66,7 +68,7 @@ export function Projects() {
             >
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-6 bg-slate-200">
                 <img
-                  src={project.image}
+                  src={(project.image as any)?.src || project.image}
                   alt={project.title}
                   loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"

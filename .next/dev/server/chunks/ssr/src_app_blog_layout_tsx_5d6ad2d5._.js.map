@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///D:/GitHub/m-one-solution-web-company/src/app/blog/layout.tsx"],"sourcesContent":["export const metadata = {\r\n    title: 'Blog & Berita Terbaru | M-One Solution',\r\n    description: 'Dapatkan wawasan, tips, dan berita terbaru seputar dunia teknologi, pengembangan web, dan aplikasi mobile dari tim ahli kami.',\r\n    keywords: 'blog teknologi, berita IT, tips web development, tren aplikasi mobile, M-One Solution blog',\r\n};\r\n\r\nexport default function BlogLayout({ children }: { children: React.ReactNode }) {\r\n    return children;\r\n}\r\n"],"names":[],"mappings":";;;;;;AAAO,MAAM,WAAW;IACpB,OAAO;IACP,aAAa;IACb,UAAU;AACd;AAEe,SAAS,WAAW,EAAE,QAAQ,EAAiC;IAC1E,OAAO;AACX"}}]
+}

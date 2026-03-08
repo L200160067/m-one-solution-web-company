@@ -1,13 +1,16 @@
+"use client";
+
 import { useState, useEffect } from 'react';
 import { Menu, X, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Link, useLocation } from 'react-router-dom';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { siteConfig } from '../config/site';
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const location = useLocation();
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,7 +20,7 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const isHomePage = location.pathname === '/';
+  const isHomePage = pathname === '/';
 
   const navLinks = [
     { name: 'Home', href: '/' },
@@ -38,9 +41,9 @@ export function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex-shrink-0 flex items-center gap-3">
+          <Link href="/" className="flex-shrink-0 flex items-center gap-3">
             <img
-              src={siteConfig.logo}
+              src={(siteConfig.logo as any)?.src || siteConfig.logo}
               alt={`${siteConfig.name} Logo`}
               className="h-10 sm:h-12 w-auto object-contain mix-blend-lighten"
             />
@@ -59,14 +62,14 @@ export function Navbar() {
             {navLinks.map((link) => (
               <Link
                 key={link.name}
-                to={link.href}
+                href={link.href}
                 className="text-sm font-medium text-slate-300 hover:text-blue-400 transition-colors"
               >
                 {link.name}
               </Link>
             ))}
             <Link
-              to="/contact"
+              href="/contact"
               className="hidden lg:flex items-center gap-2 px-5 py-2.5 bg-blue-600 text-white text-sm font-medium rounded-full hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/20"
             >
               Contact Us
@@ -101,7 +104,7 @@ export function Navbar() {
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
-                  to={link.href}
+                  href={link.href}
                   className="block px-3 py-3 text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
@@ -110,7 +113,7 @@ export function Navbar() {
               ))}
               <div className="pt-4 px-3">
                 <Link
-                  to="/contact"
+                  href="/contact"
                   className="w-full flex items-center justify-center gap-2 px-5 py-3 bg-blue-600 text-white text-base font-medium rounded-xl hover:bg-blue-700 transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >

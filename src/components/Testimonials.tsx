@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from 'motion/react';
 import { Quote } from 'lucide-react';
 
@@ -65,7 +67,7 @@ export function Testimonials() {
               </p>
               <div className="flex items-center gap-4 mt-auto">
                 <img
-                  src={testimonial.image}
+                  src={(testimonial.image as any)?.src || testimonial.image}
                   alt={testimonial.author}
                   loading="lazy"
                   className="w-12 h-12 rounded-full object-cover"

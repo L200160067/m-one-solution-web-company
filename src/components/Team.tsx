@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from 'motion/react';
 import { Github, Linkedin, Twitter } from 'lucide-react';
 
@@ -61,7 +63,7 @@ export function Team() {
                         >
                             <div className="relative aspect-square rounded-3xl overflow-hidden mb-6 bg-slate-200">
                                 <img
-                                    src={member.image}
+                                    src={(member.image as any)?.src || member.image}
                                     alt={member.name}
                                     loading="lazy"
                                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"

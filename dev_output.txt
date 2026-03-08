@@ -1,0 +1,9 @@
+ΓÜá Port 3000 is in use by process 13724, using available port 3001 instead.
+Γû▓ Next.js 16.1.6 (Turbopack)
+- Local:         http://localhost:3001
+- Network:       http://192.168.1.5:3001
+
+Γ£ô Starting...
+Γ£ô Ready in 1129ms
+Γùï Compiling / ...
+ GET / 200 in 4.2s (compile: 3.9s, render: 345ms)

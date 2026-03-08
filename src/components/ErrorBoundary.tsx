@@ -1,6 +1,8 @@
+"use client";
+
 import React, { ErrorInfo, ReactNode } from 'react';
 import { ShieldAlert, RefreshCcw, Home } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 interface Props {
     children?: ReactNode;
@@ -46,7 +48,7 @@ export class ErrorBoundary extends React.Component<Props, State> {
                                 Muat Ulang Halaman
                             </button>
                             <Link
-                                to="/"
+                                href="/"
                                 onClick={() => this.setState({ hasError: false })}
                                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-slate-100 text-slate-700 font-medium rounded-xl hover:bg-slate-200 transition-colors"
                             >
