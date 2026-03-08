@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Menu, X, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Link, useLocation } from 'react-router-dom';
+import { siteConfig } from '../config/site';
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,18 +31,17 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled || !isHomePage
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled || !isHomePage
           ? 'bg-slate-950/90 backdrop-blur-md shadow-sm py-4 border-b border-white/5'
           : 'bg-transparent py-6'
-      }`}
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex-shrink-0 flex items-center gap-2">
-            <img 
-              src="https://storage.googleapis.com/a1aa/image/Vqg83s2E822lH6O9zR2n7T60b_q39R2R2n7T60b_q39R2R2n.jpg" 
-              alt="M-One Solution Logo" 
+            <img
+              src={siteConfig.logo}
+              alt={`${siteConfig.name} Logo`}
               className="h-12 w-auto object-contain mix-blend-lighten"
             />
           </Link>

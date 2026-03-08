@@ -25,7 +25,7 @@ export function Projects() {
   ];
 
   return (
-    <section className="py-24 bg-slate-50">
+    <section className="py-16 md:py-24 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
           <motion.div
@@ -37,14 +37,14 @@ export function Projects() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold mb-6">
               Portofolio
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
               Proyek Terkini
             </h2>
             <p className="text-lg text-slate-600 leading-relaxed">
               "Inilah jejak perjalanan kami dalam dunia digital. Dari website sekolah hingga aplikasi organisasi, setiap proyek yang kami kerjakan punya cerita dan tantangannya sendiri. Dan dari setiap tantangan itulah, kami belajar merancang solusi yang lebih baik dan lebih efektif."
             </p>
           </motion.div>
-          
+
           <Link
             to="/portfolio"
             className="inline-flex items-center gap-2 px-6 py-3 bg-white text-slate-900 border border-slate-200 text-base font-semibold rounded-full hover:border-blue-600 hover:text-blue-600 transition-colors whitespace-nowrap"

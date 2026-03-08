@@ -36,7 +36,7 @@ export function Hero() {
               Software House
             </div>
 
-            <h1 className="text-5xl lg:text-7xl font-bold text-white tracking-tight mb-6 leading-[1.1]">
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white tracking-tight mb-6 leading-[1.1]">
               Your True <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
                 Solution

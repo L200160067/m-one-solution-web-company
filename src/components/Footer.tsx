@@ -1,5 +1,6 @@
 import { Facebook, Twitter, Instagram, Linkedin, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { siteConfig } from '../config/site';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -11,9 +12,9 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2 mb-6">
-              <img 
-                src="https://storage.googleapis.com/a1aa/image/Vqg83s2E822lH6O9zR2n7T60b_q39R2R2n7T60b_q39R2R2n.jpg" 
-                alt="M-One Solution Logo" 
+              <img
+                src={siteConfig.logo}
+                alt={`${siteConfig.name} Logo`}
                 className="h-14 w-auto object-contain mix-blend-lighten"
               />
             </div>

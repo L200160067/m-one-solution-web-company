@@ -11,7 +11,7 @@ export function About() {
   ];
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Image Side */}
@@ -55,16 +55,16 @@ export function About() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-sm font-semibold mb-6">
               About Us
             </div>
-            
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
+
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
               M-One Solution <br />
               <span className="text-blue-600">Software house</span>
             </h2>
-            
+
             <p className="text-lg text-slate-600 mb-8 leading-relaxed">
               M-One Solution hadir untuk mengubah ide menjadi kenyataan. Kami adalah tim pengembang yang fokus menciptakan aplikasi dan website yang praktis, intuitif, dan efektif.
             </p>
-            
+
             <p className="text-lg text-slate-600 mb-8 leading-relaxed">
               Pengalaman kami menangani proyek di berbagai lingkungan telah membuktikan satu hal: solusi digital terbaik lahir dari pemahaman masalah yang nyata. Kami di sini bukan untuk sekadar membuat fitur, tapi untuk memberikan solusi nyata yang mendukung kesuksesan Anda.
             </p>

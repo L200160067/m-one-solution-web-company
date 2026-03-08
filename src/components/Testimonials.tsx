@@ -24,7 +24,7 @@ export function Testimonials() {
   ];
 
   return (
-    <section className="py-24 bg-slate-900 text-white relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-slate-900 text-white relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-blue-600/10 blur-[100px]" />
@@ -41,7 +41,7 @@ export function Testimonials() {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-semibold mb-6">
             Testimoni Klien
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
             Apa Kata Mereka?
           </h2>
           <p className="text-lg text-slate-400 max-w-2xl mx-auto">

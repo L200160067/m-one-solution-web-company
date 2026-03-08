@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export function CTA() {
   return (
-    <section className="py-24 bg-blue-600 relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-blue-600 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-[50%] -right-[20%] w-[100%] h-[150%] rounded-full bg-blue-500/50 blur-[100px]" />
@@ -16,20 +16,20 @@ export function CTA() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-[3rem] p-12 md:p-20 shadow-2xl"
+          className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-[3rem] p-8 md:p-16 lg:p-20 shadow-2xl"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 text-white text-sm font-semibold mb-8">
             Siap Memulai?
           </div>
-          
-          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+
+          <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight">
             Your True <br /> Solution!
           </h2>
-          
+
           <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
             Solusi digital terpercaya untuk bisnis anda. Mari diskusikan ide Anda dan wujudkan bersama tim ahli kami.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               to="/contact"
