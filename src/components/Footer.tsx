@@ -7,16 +7,24 @@ export function Footer() {
 
   return (
     <footer className="bg-slate-950 text-slate-300 py-16 border-t border-white/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-2 mb-6">
+            <div className="flex items-center gap-3 mb-6">
               <img
                 src={siteConfig.logo}
                 alt={`${siteConfig.name} Logo`}
-                className="h-14 w-auto object-contain mix-blend-lighten"
+                className="h-12 sm:h-14 w-auto object-contain mix-blend-lighten"
               />
+              <div className="flex flex-col">
+                <span className="text-xl sm:text-2xl font-bold text-white tracking-tight leading-none mb-1">
+                  M-One <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Solution</span>
+                </span>
+                <span className="text-[11px] sm:text-xs font-medium text-slate-400 tracking-[0.2em] uppercase leading-none">
+                  Software House
+                </span>
+              </div>
             </div>
             <p className="text-slate-400 max-w-sm mb-8 leading-relaxed">
               Software house yang fokus menciptakan aplikasi dan website yang praktis, intuitif, dan efektif untuk mendukung kesuksesan bisnis Anda.

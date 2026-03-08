@@ -23,7 +23,7 @@ export function Hero() {
         <motion.div style={{ opacity }} className="absolute inset-0 bg-[url('https://picsum.photos/seed/tech/1920/1080')] opacity-10 mix-blend-overlay bg-cover bg-center" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 z-10">
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -36,14 +36,14 @@ export function Hero() {
               Software House
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white tracking-tight mb-6 leading-[1.1]">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-6 leading-[1.1]">
               Your True <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
                 Solution
               </span>
             </h1>
 
-            <p className="text-xl text-slate-300 mb-10 leading-relaxed max-w-lg">
+            <p className="text-lg text-slate-300 mb-8 leading-relaxed max-w-lg">
               Solusi digital terpercaya untuk bisnis anda. Kami mengubah ide menjadi kenyataan dengan teknologi modern.
             </p>
 
@@ -52,7 +52,7 @@ export function Hero() {
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 text-white text-base font-semibold rounded-full hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/25 group"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white text-base font-semibold rounded-full hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/25 group"
                 >
                   Lihat Layanan
                   <motion.div
@@ -68,7 +68,7 @@ export function Hero() {
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-white/5 text-white text-base font-semibold rounded-full hover:bg-white/10 transition-colors border border-white/10 backdrop-blur-sm"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 text-white text-base font-semibold rounded-full hover:bg-white/10 transition-colors border border-white/10 backdrop-blur-sm"
                 >
                   Contact Us
                 </motion.div>

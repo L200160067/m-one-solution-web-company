@@ -32,18 +32,26 @@ export function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled || !isHomePage
-          ? 'bg-slate-950/90 backdrop-blur-md shadow-sm py-4 border-b border-white/5'
-          : 'bg-transparent py-6'
+        ? 'bg-slate-950/90 backdrop-blur-md shadow-sm py-4 border-b border-white/5'
+        : 'bg-transparent py-6'
         }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex-shrink-0 flex items-center gap-2">
+          <Link to="/" className="flex-shrink-0 flex items-center gap-3">
             <img
               src={siteConfig.logo}
               alt={`${siteConfig.name} Logo`}
-              className="h-12 w-auto object-contain mix-blend-lighten"
+              className="h-10 sm:h-12 w-auto object-contain mix-blend-lighten"
             />
+            <div className="flex flex-col">
+              <span className="text-lg sm:text-xl font-bold text-white tracking-tight leading-none mb-1">
+                M-One <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Solution</span>
+              </span>
+              <span className="text-[10px] sm:text-xs font-medium text-slate-400 tracking-[0.2em] uppercase leading-none">
+                Software House
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}

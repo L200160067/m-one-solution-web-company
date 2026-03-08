@@ -31,7 +31,7 @@ export function Testimonials() {
         <div className="absolute bottom-0 left-0 w-1/2 h-full bg-cyan-500/10 blur-[100px]" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -41,7 +41,7 @@ export function Testimonials() {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-semibold mb-6">
             Testimoni Klien
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold mb-4">
             Apa Kata Mereka?
           </h2>
           <p className="text-lg text-slate-400 max-w-2xl mx-auto">
@@ -57,10 +57,10 @@ export function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-sm hover:bg-white/10 transition-colors"
+              className="bg-white/5 border border-white/10 rounded-3xl p-6 backdrop-blur-sm hover:bg-white/10 transition-colors"
             >
               <Quote className="w-10 h-10 text-blue-400 mb-6 opacity-50" />
-              <p className="text-lg text-slate-300 mb-8 leading-relaxed">
+              <p className="text-base text-slate-300 mb-6 leading-relaxed">
                 "{testimonial.quote}"
               </p>
               <div className="flex items-center gap-4 mt-auto">

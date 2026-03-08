@@ -24,7 +24,7 @@ export function Services() {
 
   return (
     <section className="py-16 md:py-24 bg-white relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -39,7 +39,7 @@ export function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl md:text-5xl font-bold text-slate-900 mb-6"
+            className="text-3xl md:text-5xl lg:text-4xl font-bold text-slate-900 mb-6"
           >
             Solusi Digital untuk Bisnis Anda
           </motion.h2>
@@ -62,12 +62,12 @@ export function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-slate-50 rounded-3xl p-6 md:p-8 border border-slate-100 hover:shadow-xl transition-all duration-300 group flex flex-col h-full"
+              className="bg-slate-50 rounded-3xl p-6 border border-slate-100 hover:shadow-xl transition-all duration-300 group flex flex-col h-full"
             >
               <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-white text-blue-600 flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform duration-300">
                 {getCategoryIcon(service.category)}
               </div>
-              <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-3 md:mb-4 group-hover:text-blue-600 transition-colors line-clamp-2">
+              <h3 className="text-lg font-bold text-slate-900 mb-3 md:mb-4 group-hover:text-blue-600 transition-colors line-clamp-2">
                 <Link to={`/services/${service.id}`}>
                   {service.title}
                 </Link>

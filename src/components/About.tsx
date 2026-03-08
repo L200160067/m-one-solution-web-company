@@ -12,8 +12,8 @@ export function About() {
 
   return (
     <section className="py-16 md:py-24 bg-white relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Image Side */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -56,23 +56,23 @@ export function About() {
               About Us
             </div>
 
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold text-slate-900 mb-6 leading-tight">
               M-One Solution <br />
               <span className="text-blue-600">Software house</span>
             </h2>
 
-            <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+            <p className="text-base text-slate-600 mb-6 leading-relaxed">
               M-One Solution hadir untuk mengubah ide menjadi kenyataan. Kami adalah tim pengembang yang fokus menciptakan aplikasi dan website yang praktis, intuitif, dan efektif.
             </p>
 
-            <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+            <p className="text-base text-slate-600 mb-8 leading-relaxed">
               Pengalaman kami menangani proyek di berbagai lingkungan telah membuktikan satu hal: solusi digital terbaik lahir dari pemahaman masalah yang nyata. Kami di sini bukan untuk sekadar membuat fitur, tapi untuk memberikan solusi nyata yang mendukung kesuksesan Anda.
             </p>
 
-            <div className="grid sm:grid-cols-2 gap-4 mb-10">
+            <div className="grid sm:grid-cols-2 gap-4 mb-8">
               {features.map((feature, index) => (
-                <div key={index} className="flex items-center gap-3">
-                  <CheckCircle2 className="w-6 h-6 text-blue-600 flex-shrink-0" />
+                <div key={index} className="flex items-center gap-2">
+                  <CheckCircle2 className="w-5 h-5 text-blue-600 flex-shrink-0" />
                   <span className="font-medium text-slate-700">{feature}</span>
                 </div>
               ))}
@@ -80,7 +80,7 @@ export function About() {
 
             <Link
               to="/portfolio"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-slate-900 text-white text-base font-semibold rounded-full hover:bg-blue-600 transition-colors shadow-lg shadow-slate-900/20"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 text-white text-base font-semibold rounded-full hover:bg-blue-600 transition-colors shadow-lg shadow-slate-900/20"
             >
               Learn more
               <ArrowRight className="w-5 h-5" />
