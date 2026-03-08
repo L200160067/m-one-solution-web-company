@@ -10,7 +10,7 @@ const inter = Inter({
     variable: "--font-inter",
 });
 
-const BASE_URL = "https://www.monesolution.com";
+const BASE_URL = "https://www.m-one.mutudev.com";
 
 export const metadata = {
     metadataBase: new URL(BASE_URL),

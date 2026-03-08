@@ -155,7 +155,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ErrorBo
 ;
 ;
 ;
-const BASE_URL = "https://www.monesolution.com";
+const BASE_URL = "https://www.m-one.mutudev.com";
 const metadata = {
     metadataBase: new URL(BASE_URL),
     title: {

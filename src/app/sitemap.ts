@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { blogPosts } from '@/data/blog';
 import { servicesData } from '@/data/services';
 
-const BASE_URL = 'https://www.monesolution.com';
+const BASE_URL = 'https://www.m-one.mutudev.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     // Static pages
