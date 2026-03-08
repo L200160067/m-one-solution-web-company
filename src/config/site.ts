@@ -1,4 +1,4 @@
-import logoImage from '../assets/mone.webp';
+import logoImage from '../assets/logo/mone.webp';
 
 export const siteConfig = {
     name: "M-One Solution",

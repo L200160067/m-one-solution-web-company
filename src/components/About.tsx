@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import aboutImage from '../assets/FIX_MONE_11.png';
+import aboutImage from '../assets/about/about.png';
 
 export function About() {
   const features = [
