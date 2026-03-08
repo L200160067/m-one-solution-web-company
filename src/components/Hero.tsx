@@ -48,13 +48,13 @@ export function Hero() {
             </p>
             
             <div className="flex flex-wrap items-center gap-4">
-              <Link to="/contact">
+              <Link to="/services">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 text-white text-base font-semibold rounded-full hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/25 group"
                 >
-                  Order Now
+                  Lihat Layanan
                   <motion.div
                     initial={{ x: 0 }}
                     whileHover={{ x: 5 }}
@@ -64,7 +64,7 @@ export function Hero() {
                   </motion.div>
                 </motion.div>
               </Link>
-              <Link to="/about">
+              <Link to="/contact">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}

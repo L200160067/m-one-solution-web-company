@@ -21,19 +21,18 @@ export function Navbar() {
   const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
+    { name: 'Services', href: '/services' },
     { name: 'Portofolio', href: '/portfolio' },
     { name: 'Contact', href: '/contact' },
     { name: 'News', href: '/blog' },
     { name: 'Privacy Policy', href: '/#privacy' },
   ];
 
-  const isLightNav = isHomePage && !isScrolled;
-
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled || !isHomePage
-          ? 'bg-white/90 backdrop-blur-md shadow-sm py-4'
+          ? 'bg-slate-950/90 backdrop-blur-md shadow-sm py-4 border-b border-white/5'
           : 'bg-transparent py-6'
       }`}
     >
@@ -43,7 +42,7 @@ export function Navbar() {
             <img 
               src="https://storage.googleapis.com/a1aa/image/Vqg83s2E822lH6O9zR2n7T60b_q39R2R2n7T60b_q39R2R2n.jpg" 
               alt="M-One Solution Logo" 
-              className="h-10 w-auto object-contain"
+              className="h-12 w-auto object-contain mix-blend-lighten"
             />
           </Link>
 
@@ -53,9 +52,7 @@ export function Navbar() {
               <Link
                 key={link.name}
                 to={link.href}
-                className={`text-sm font-medium transition-colors hover:text-blue-500 ${
-                  !isLightNav ? 'text-slate-600' : 'text-slate-200'
-                }`}
+                className="text-sm font-medium text-slate-300 hover:text-blue-400 transition-colors"
               >
                 {link.name}
               </Link>
@@ -71,13 +68,13 @@ export function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2"
+            className="md:hidden p-2 text-slate-300 hover:text-white transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
-              <X className={`w-6 h-6 ${!isLightNav ? 'text-slate-900' : 'text-white'}`} />
+              <X className="w-6 h-6" />
             ) : (
-              <Menu className={`w-6 h-6 ${!isLightNav ? 'text-slate-900' : 'text-white'}`} />
+              <Menu className="w-6 h-6" />
             )}
           </button>
         </div>
@@ -90,14 +87,14 @@ export function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 right-0 bg-white shadow-xl border-t border-slate-100 md:hidden"
+            className="absolute top-full left-0 right-0 bg-slate-900 shadow-xl border-t border-white/10 md:hidden"
           >
             <div className="px-4 pt-2 pb-6 space-y-1">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   to={link.href}
-                  className="block px-3 py-3 text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-50 rounded-lg"
+                  className="block px-3 py-3 text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.name}
