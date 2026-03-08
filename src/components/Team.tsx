@@ -4,8 +4,8 @@ import { Github, Linkedin, Twitter } from 'lucide-react';
 export function Team() {
     const team = [
         {
-            name: "Budi Santoso",
-            role: "Founder & CEO",
+            name: "Alfarez Syahputra Kuri, S.Kom",
+            role: "Manajer",
             image: "https://picsum.photos/seed/founder/400/400.webp",
             social: { linkedin: "#", twitter: "#", github: "#" }
         },
