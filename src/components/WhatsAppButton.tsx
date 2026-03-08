@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import { siteConfig } from '../config/site';
 
 export function WhatsAppButton() {
   const [isVisible, setIsVisible] = useState(false);
@@ -13,8 +14,8 @@ export function WhatsAppButton() {
     return () => clearTimeout(timer);
   }, []);
 
-  const phoneNumber = "6281234567890"; // Ganti dengan nomor WhatsApp yang sebenarnya
-  const message = "Halo M-One Solution, saya ingin berkonsultasi mengenai layanan Anda.";
+  const phoneNumber = siteConfig.whatsapp.number;
+  const message = siteConfig.whatsapp.defaultMessage;
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   return (
