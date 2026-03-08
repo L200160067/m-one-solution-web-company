@@ -5,6 +5,7 @@ import { Services } from '../components/Services';
 import { Projects } from '../components/Projects';
 import { Partners } from '../components/Partners';
 import { Testimonials } from '../components/Testimonials';
+import { LatestBlogs } from '../components/LatestBlogs';
 import { CTA } from '../components/CTA';
 
 export function Home() {
@@ -20,6 +21,7 @@ export function Home() {
       <Projects />
       <Partners />
       <Testimonials />
+      <LatestBlogs />
       <CTA />
     </main>
   );
