@@ -14,7 +14,7 @@ export const siteConfig = {
         facebook: "#"
     },
     contact: {
-        email: "contact@m-onesolution.com",
-        address: "Jakarta, Indonesia"
+        email: "monesolutionsoftwarehouse@gmail.com",
+        address: "Sukoharjo, Indonesia"
     }
 };
