@@ -2,12 +2,12 @@ import { motion } from 'motion/react';
 
 export function Partners() {
   const partners = [
-    { name: "Partner 1", logo: "https://picsum.photos/seed/partner1/200/100" },
-    { name: "Partner 2", logo: "https://picsum.photos/seed/partner2/200/100" },
-    { name: "Partner 3", logo: "https://picsum.photos/seed/partner3/200/100" },
-    { name: "Partner 4", logo: "https://picsum.photos/seed/partner4/200/100" },
-    { name: "Partner 5", logo: "https://picsum.photos/seed/partner5/200/100" },
-    { name: "Partner 6", logo: "https://picsum.photos/seed/partner6/200/100" },
+    { name: "Partner 1", logo: "https://picsum.photos/seed/partner1/200/100.webp" },
+    { name: "Partner 2", logo: "https://picsum.photos/seed/partner2/200/100.webp" },
+    { name: "Partner 3", logo: "https://picsum.photos/seed/partner3/200/100.webp" },
+    { name: "Partner 4", logo: "https://picsum.photos/seed/partner4/200/100.webp" },
+    { name: "Partner 5", logo: "https://picsum.photos/seed/partner5/200/100.webp" },
+    { name: "Partner 6", logo: "https://picsum.photos/seed/partner6/200/100.webp" },
   ];
 
   return (
@@ -40,6 +40,7 @@ export function Partners() {
               <img
                 src={partner.logo}
                 alt={partner.name}
+                loading="lazy"
                 className="max-h-12 object-contain"
                 referrerPolicy="no-referrer"
               />

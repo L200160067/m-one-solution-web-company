@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import aboutImage from '../assets/FIX_MONE_11.png';
 
 export function About() {
   const features = [
@@ -24,8 +25,9 @@ export function About() {
           >
             <div className="aspect-[4/3] rounded-3xl overflow-hidden relative">
               <img
-                src="https://picsum.photos/seed/office/1200/900"
+                src={aboutImage}
                 alt="M-One Solution Team"
+                loading="lazy"
                 className="object-cover w-full h-full"
                 referrerPolicy="no-referrer"
               />
@@ -79,7 +81,7 @@ export function About() {
             </div>
 
             <Link
-              to="/portfolio"
+              to="/about"
               className="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 text-white text-base font-semibold rounded-full hover:bg-blue-600 transition-colors shadow-lg shadow-slate-900/20"
             >
               Learn more

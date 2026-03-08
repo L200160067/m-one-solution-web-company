@@ -21,13 +21,13 @@ export function BlogList() {
   const filteredPosts = useMemo(() => {
     const query = searchQuery.toLowerCase();
     return blogPosts.filter(post => {
-      const matchesSearch = 
-        post.title.toLowerCase().includes(query) || 
+      const matchesSearch =
+        post.title.toLowerCase().includes(query) ||
         post.content.toLowerCase().includes(query) ||
         post.excerpt.toLowerCase().includes(query);
-      
+
       const matchesCategory = activeCategory === 'Semua' || post.category === activeCategory;
-      
+
       return matchesSearch && matchesCategory;
     });
   }, [searchQuery, activeCategory]);
@@ -95,11 +95,10 @@ export function BlogList() {
                   setActiveCategory(category);
                   setCurrentPage(1);
                 }}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                  activeCategory === category
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${activeCategory === category
                     ? 'bg-blue-600 text-white shadow-md shadow-blue-600/20'
                     : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 hover:text-blue-600'
-                }`}
+                  }`}
               >
                 {category}
               </button>
@@ -116,7 +115,7 @@ export function BlogList() {
             <p className="text-slate-600">
               Maaf, kami tidak dapat menemukan artikel yang cocok dengan pencarian "{searchQuery}".
             </p>
-            <button 
+            <button
               onClick={() => {
                 setSearchQuery('');
                 setActiveCategory('Semua');
@@ -142,6 +141,7 @@ export function BlogList() {
                     <img
                       src={post.imageUrl}
                       alt={post.title}
+                      loading="lazy"
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       referrerPolicy="no-referrer"
                     />
@@ -193,16 +193,15 @@ export function BlogList() {
                 >
                   <ChevronLeft className="w-5 h-5" />
                 </button>
-                
+
                 {Array.from({ length: totalPages }, (_, i) => i + 1).map((number) => (
                   <button
                     key={number}
                     onClick={() => paginate(number)}
-                    className={`w-10 h-10 rounded-lg font-medium transition-colors ${
-                      currentPage === number
+                    className={`w-10 h-10 rounded-lg font-medium transition-colors ${currentPage === number
                         ? 'bg-blue-600 text-white border border-blue-600'
                         : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'
-                    }`}
+                      }`}
                   >
                     {number}
                   </button>

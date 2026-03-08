@@ -11,7 +11,7 @@ export function Home() {
   return (
     <main style={{ position: 'relative' }}>
       <Helmet>
-        <title>M-One Solution | Jasa Pembuatan Website & Aplikasi Khusus</title>
+        <title>M-One Solution Software House | Your True Solution</title>
         <meta name="description" content="Tingkatkan visibilitas dan konversi bisnis Anda dengan website profesional dan aplikasi dari M-One Solution. Kami membantu Anda tumbuh secara signifikan di era digital." />
       </Helmet>
       <Hero />

@@ -7,19 +7,19 @@ export function Testimonials() {
       quote: "M-One Solution memberikan pelayanan yang luar biasa. Website sekolah kami kini jauh lebih modern dan mudah digunakan oleh siswa maupun guru.",
       author: "Kepala Sekolah",
       role: "Institusi Pendidikan",
-      image: "https://picsum.photos/seed/user1/100/100"
+      image: "https://picsum.photos/seed/user1/100/100.webp"
     },
     {
       quote: "Aplikasi organisasi yang dibuat sangat membantu efisiensi kerja tim kami. Fiturnya lengkap dan sesuai dengan kebutuhan nyata di lapangan.",
       author: "Direktur Operasional",
       role: "Organisasi Nirlaba",
-      image: "https://picsum.photos/seed/user2/100/100"
+      image: "https://picsum.photos/seed/user2/100/100.webp"
     },
     {
       quote: "Tim yang profesional dan responsif. Mereka benar-benar memahami apa yang kami butuhkan dan memberikan solusi yang tepat sasaran.",
       author: "CEO",
       role: "Startup Tech",
-      image: "https://picsum.photos/seed/user3/100/100"
+      image: "https://picsum.photos/seed/user3/100/100.webp"
     }
   ];
 
@@ -67,6 +67,7 @@ export function Testimonials() {
                 <img
                   src={testimonial.image}
                   alt={testimonial.author}
+                  loading="lazy"
                   className="w-12 h-12 rounded-full object-cover"
                   referrerPolicy="no-referrer"
                 />

@@ -7,19 +7,19 @@ export function Projects() {
     {
       title: "Website Sekolah",
       category: "Web Development",
-      image: "https://picsum.photos/seed/school/800/600",
+      image: "https://picsum.photos/seed/school/800/600.webp",
       description: "Platform digital interaktif untuk institusi pendidikan."
     },
     {
       title: "Aplikasi Organisasi",
       category: "Mobile App",
-      image: "https://picsum.photos/seed/organization/800/600",
+      image: "https://picsum.photos/seed/organization/800/600.webp",
       description: "Sistem manajemen terpadu untuk efisiensi organisasi."
     },
     {
       title: "E-Commerce Platform",
       category: "Web App",
-      image: "https://picsum.photos/seed/ecommerce/800/600",
+      image: "https://picsum.photos/seed/ecommerce/800/600.webp",
       description: "Solusi toko online modern dengan fitur lengkap."
     }
   ];
@@ -68,6 +68,7 @@ export function Projects() {
                 <img
                   src={project.image}
                   alt={project.title}
+                  loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   referrerPolicy="no-referrer"
                 />
