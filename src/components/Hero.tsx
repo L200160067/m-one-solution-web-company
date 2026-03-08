@@ -15,7 +15,7 @@ export function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
-    <section ref={containerRef} className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-slate-900">
+    <section ref={containerRef} style={{ position: 'relative' }} className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-slate-900">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div style={{ y: y1 }} className="absolute -top-[20%] -right-[10%] w-[70%] h-[70%] rounded-full bg-blue-600/20 blur-[120px]" />
@@ -35,18 +35,18 @@ export function Hero() {
               <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
               Software House
             </div>
-            
+
             <h1 className="text-5xl lg:text-7xl font-bold text-white tracking-tight mb-6 leading-[1.1]">
               Your True <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
                 Solution
               </span>
             </h1>
-            
+
             <p className="text-xl text-slate-300 mb-10 leading-relaxed max-w-lg">
               Solusi digital terpercaya untuk bisnis anda. Kami mengubah ide menjadi kenyataan dengan teknologi modern.
             </p>
-            
+
             <div className="flex flex-wrap items-center gap-4">
               <Link to="/services">
                 <motion.div
