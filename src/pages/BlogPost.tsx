@@ -1,0 +1,184 @@
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { ArrowLeft, Calendar, User, Tag, Twitter, Linkedin, Facebook, Share2, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Link, useParams, Navigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
+import { blogPosts } from '../data/blog';
+
+export function BlogPost() {
+  const { id } = useParams<{ id: string }>();
+  const post = blogPosts.find(p => p.id === id);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  if (!post) {
+    return <Navigate to="/blog" replace />;
+  }
+
+  const hasMultipleImages = post.images && post.images.length > 0;
+  const allImages = hasMultipleImages ? [post.imageUrl, ...post.images!] : [post.imageUrl];
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % allImages.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + allImages.length) % allImages.length);
+  };
+
+  return (
+    <main className="pt-24 pb-16 min-h-screen bg-slate-50">
+      <Helmet>
+        <title>{post.title} | M-One Solution Blog</title>
+        <meta name="description" content={post.excerpt} />
+        <meta name="keywords" content={`${post.category.toLowerCase()}, m-one solution, blog teknologi, artikel IT`} />
+        
+        {/* Open Graph / Social Media Meta Tags */}
+        <meta property="og:title" content={post.title} />
+        <meta property="og:description" content={post.excerpt} />
+        <meta property="og:image" content={post.imageUrl} />
+        <meta property="og:type" content="article" />
+        
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={post.title} />
+        <meta name="twitter:description" content={post.excerpt} />
+        <meta name="twitter:image" content={post.imageUrl} />
+      </Helmet>
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+        <Link
+          to="/blog"
+          className="inline-flex items-center gap-2 text-slate-500 hover:text-blue-600 transition-colors mb-8 font-medium"
+        >
+          <ArrowLeft className="w-4 h-4" />
+          Back to Blog
+        </Link>
+
+        <motion.article
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100"
+        >
+          <div className="relative aspect-[21/9] bg-slate-200 overflow-hidden group">
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={currentImageIndex}
+                src={allImages[currentImageIndex]}
+                alt={`${post.title} - Image ${currentImageIndex + 1}`}
+                initial={{ opacity: 0, scale: 1.05 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="w-full h-full object-cover absolute inset-0"
+                referrerPolicy="no-referrer"
+              />
+            </AnimatePresence>
+
+            {hasMultipleImages && (
+              <>
+                <button
+                  onClick={prevImage}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/30 backdrop-blur-sm text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/50"
+                  aria-label="Previous image"
+                >
+                  <ChevronLeft className="w-6 h-6" />
+                </button>
+                <button
+                  onClick={nextImage}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/30 backdrop-blur-sm text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/50"
+                  aria-label="Next image"
+                >
+                  <ChevronRight className="w-6 h-6" />
+                </button>
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2">
+                  {allImages.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentImageIndex(index)}
+                      className={`w-2 h-2 rounded-full transition-all ${
+                        index === currentImageIndex ? 'bg-white w-4' : 'bg-white/50 hover:bg-white/80'
+                      }`}
+                      aria-label={`Go to image ${index + 1}`}
+                    />
+                  ))}
+                </div>
+              </>
+            )}
+          </div>
+          
+          <div className="p-8 md:p-12">
+            <div className="flex items-center gap-1.5 bg-slate-100 px-3 py-1 rounded-full text-slate-700 font-medium w-fit mb-6">
+              <Tag className="w-4 h-4 text-blue-600" />
+              {post.category}
+            </div>
+
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
+              {post.title}
+            </h1>
+
+            <div className="flex flex-wrap items-center gap-4 md:gap-6 text-sm text-slate-500 mb-10 pb-8 border-b border-slate-100">
+              <div className="flex items-center gap-2">
+                <div className="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                  {post.author.charAt(0)}
+                </div>
+                <div>
+                  <p className="font-medium text-slate-900">{post.author}</p>
+                  <p className="text-xs">Author</p>
+                </div>
+              </div>
+              <div className="w-px h-8 bg-slate-200 hidden sm:block"></div>
+              <div className="flex items-center gap-2">
+                <Calendar className="w-5 h-5 text-slate-400" />
+                <div>
+                  <p className="font-medium text-slate-900">{post.date}</p>
+                  <p className="text-xs">Published</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="prose prose-lg prose-slate max-w-none mb-12">
+              <p className="text-slate-600 leading-relaxed text-lg whitespace-pre-line">
+                {post.content}
+              </p>
+            </div>
+
+            <div className="pt-8 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="flex items-center gap-2 text-slate-700 font-medium">
+                <Share2 className="w-5 h-5" />
+                <span>Share this article:</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <a
+                  href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(post.title)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-[#1DA1F2] hover:text-white transition-colors"
+                  aria-label="Share on Twitter"
+                >
+                  <Twitter className="w-5 h-5" />
+                </a>
+                <a
+                  href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(window.location.href)}&title=${encodeURIComponent(post.title)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-[#0A66C2] hover:text-white transition-colors"
+                  aria-label="Share on LinkedIn"
+                >
+                  <Linkedin className="w-5 h-5" />
+                </a>
+                <a
+                  href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-[#1877F2] hover:text-white transition-colors"
+                  aria-label="Share on Facebook"
+                >
+                  <Facebook className="w-5 h-5" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </motion.article>
+      </div>
+    </main>
+  );
+}
