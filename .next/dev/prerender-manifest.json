@@ -1,11 +1,1 @@
-{
-  "version": 4,
-  "routes": {},
-  "dynamicRoutes": {},
-  "notFoundRoutes": [],
-  "preview": {
-    "previewModeId": "728891ab5f2518fad2f76730e4df50d2",
-    "previewModeSigningKey": "8c427ceea02a15ac22c97f8ec754f9404f42a1193829c74257a2fa83b5ee75c7",
-    "previewModeEncryptionKey": "63e6735eb1598776796740af86b82955f658884ce3c7827d216d9e96ab6e83b5"
-  }
-}
+{"version":4,"routes":{"/services/web-development":{},"/services/school-system":{},"/services/company-profile":{},"/services/web-application":{}},"dynamicRoutes":{"/services/[id]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/services/[id]","routeRegex":"^\\/services\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"fe9bdb7310f1c8020fc79ca1cf42c727","previewModeSigningKey":"014ed72593ce800e889aaca7ea29d931d056c06876272b0352e7bd9dd6d73e06","previewModeEncryptionKey":"8b80ba4dc283f9b293e6d9c6bf711cfb7a91c2e2ecc8ff5488e245d3d70f0878"}}

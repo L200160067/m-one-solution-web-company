@@ -2,33 +2,27 @@
 
 import { motion } from 'motion/react';
 import { GraduationCap } from 'lucide-react';
+import { siteConfig } from '@/config/site';
 
 export function Alumni() {
     const alumni = [
-        {
-            name: "Rizky Firmansyah",
-            school: "SMKN 1 Surakarta",
-            period: "Batch 2024",
-            image: "https://picsum.photos/seed/alumni1/300/300.webp"
-        },
-        {
-            name: "Nabila Putri",
-            school: "SMK Telkom Malang",
-            period: "Batch 2024",
-            image: "https://picsum.photos/seed/alumni2/300/300.webp"
-        },
-        {
-            name: "Fajar Nugroho",
-            school: "SMKN 2 Yogyakarta",
-            period: "Batch 2023",
-            image: "https://picsum.photos/seed/alumni3/300/300.webp"
-        },
-        {
-            name: "Putri Andini",
-            school: "SMK Budi Utomo",
-            period: "Batch 2023",
-            image: "https://picsum.photos/seed/alumni4/300/300.webp"
-        }
+        { name: "Bastian", school: "SMK Muhammadiyah 1 Sukoharjo", period: "Batch 2025", image: `${siteConfig.cdnUrl}/images/team/Bastian.webp` },
+        { name: "Boneta P", school: "SMK Muhammadiyah 1 Sukoharjo", period: "Batch 2025", image: `${siteConfig.cdnUrl}/images/team/Boneta-P.webp` },
+        { name: "Daffa F", school: "SMK Muhammadiyah 1 Sukoharjo", period: "Batch 2025", image: `${siteConfig.cdnUrl}/images/team/Daffa-F.webp` },
+        { name: "Denisa R", school: "SMK Muhammadiyah 1 Sukoharjo", period: "Batch 2025", image: `${siteConfig.cdnUrl}/images/team/Denisa-R.webp` },
+        { name: "Faza", school: "SMK Muhammadiyah 1 Sukoharjo", period: "Batch 2025", image: `${siteConfig.cdnUrl}/images/team/Faza.webp` },
+        { name: "Haikal", school: "SMK Muhammadiyah 1 Sukoharjo", period: "Batch 2025", image: `${siteConfig.cdnUrl}/images/team/Haikal.webp` },
+        { name: "Iyan", school: "SMK Muhammadiyah 1 Sukoharjo", period: "Batch 2025", image: `${siteConfig.cdnUrl}/images/team/Iyan.webp` },
+        { name: "Zaydan", school: "SMK Muhammadiyah 1 Sukoharjo", period: "Batch 2025", image: `${siteConfig.cdnUrl}/images/team/Zaydan.webp` },
+        { name: "Abby", school: "SMK Muhammadiyah 1 Sukoharjo", period: "Batch 2024", image: `${siteConfig.cdnUrl}/images/team/Abby.webp` },
+        { name: "Afif", school: "SMK Muhammadiyah 1 Sukoharjo", period: "Batch 2024", image: `${siteConfig.cdnUrl}/images/team/Afif.webp` },
+        { name: "Arkan", school: "SMK Muhammadiyah 1 Sukoharjo", period: "Batch 2024", image: `${siteConfig.cdnUrl}/images/team/Arkan.webp` },
+        { name: "Daffa D", school: "SMK Muhammadiyah 1 Sukoharjo", period: "Batch 2024", image: `${siteConfig.cdnUrl}/images/team/Daffa-D.webp` },
+        { name: "Dzakwan", school: "SMK Muhammadiyah 1 Sukoharjo", period: "Batch 2024", image: `${siteConfig.cdnUrl}/images/team/Dzakwan.webp` },
+        { name: "Habib", school: "SMK Muhammadiyah 1 Sukoharjo", period: "Batch 2024", image: `${siteConfig.cdnUrl}/images/team/Habib.webp` },
+        { name: "Hanif", school: "SMK Muhammadiyah 1 Sukoharjo", period: "Batch 2024", image: `${siteConfig.cdnUrl}/images/team/Hanif.webp` },
+        { name: "Shabri", school: "SMK Muhammadiyah 1 Sukoharjo", period: "Batch 2024", image: `${siteConfig.cdnUrl}/images/team/Shabri.webp` },
+        { name: "Yudha", school: "SMK Muhammadiyah 1 Sukoharjo", period: "Batch 2024", image: `${siteConfig.cdnUrl}/images/team/Yudha.webp` }
     ];
 
     return (

@@ -3,7 +3,7 @@
 import { motion, useInView, useMotionValue, useTransform, animate } from 'motion/react';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
-import aboutImage from '../assets/about/about.png';
+import { siteConfig } from '@/config/site';
 import { useEffect, useRef } from 'react';
 
 function AnimatedCounter({ to, suffix = '' }: { to: number; suffix?: string }) {
@@ -48,7 +48,7 @@ export function About() {
           >
             <div className="aspect-[4/3] rounded-3xl overflow-hidden relative">
               <img
-                src={(aboutImage as any)?.src || aboutImage}
+                src={`${siteConfig.cdnUrl}/images/branding/about.webp`}
                 alt="M-One Solution Team"
                 loading="lazy"
                 className="object-cover w-full h-full"

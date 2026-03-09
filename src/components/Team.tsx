@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from 'motion/react';
-import { Github, Linkedin } from 'lucide-react';
+import { Github, Linkedin, Instagram } from 'lucide-react';
 import { teamData } from '@/data/team';
 
 export function Team() {
@@ -64,6 +64,17 @@ export function Team() {
                                             aria-label={`GitHub ${member.name}`}
                                         >
                                             <Github className="w-5 h-5" />
+                                        </a>
+                                    )}
+                                    {member.social.instagram && member.social.instagram !== '#' && (
+                                        <a
+                                            href={member.social.instagram}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-pink-600 transition-colors transform translate-y-4 group-hover:translate-y-0 duration-300 delay-150"
+                                            aria-label={`Instagram ${member.name}`}
+                                        >
+                                            <Instagram className="w-5 h-5" />
                                         </a>
                                     )}
                                 </div>

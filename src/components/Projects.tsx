@@ -3,25 +3,26 @@
 import { motion } from 'motion/react';
 import { ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
+import { siteConfig } from '@/config/site';
 
 export function Projects() {
   const projects = [
     {
       title: "Website Sekolah",
       category: "Web Development",
-      image: "https://picsum.photos/seed/school/800/600.webp",
+      image: `${siteConfig.cdnUrl}/images/portfolio/project-school.webp`,
       description: "Platform digital interaktif untuk institusi pendidikan."
     },
     {
       title: "Aplikasi Organisasi",
       category: "Mobile App",
-      image: "https://picsum.photos/seed/organization/800/600.webp",
+      image: `${siteConfig.cdnUrl}/images/portfolio/project-organization.webp`,
       description: "Sistem manajemen terpadu untuk efisiensi organisasi."
     },
     {
       title: "E-Commerce Platform",
       category: "Web App",
-      image: "https://picsum.photos/seed/ecommerce/800/600.webp",
+      image: `${siteConfig.cdnUrl}/images/portfolio/project-ecommerce.webp`,
       description: "Solusi toko online modern dengan fitur lengkap."
     }
   ];

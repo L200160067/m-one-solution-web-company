@@ -1,0 +1,3 @@
+module.exports=[36975,a=>{"use strict";function b({children:a}){return a}a.s(["default",()=>b,"metadata",0,{title:"Blog & Berita Terbaru | M-One Solution",description:"Dapatkan wawasan, tips, dan berita terbaru seputar dunia teknologi, pengembangan web, dan aplikasi mobile dari tim ahli kami.",keywords:"blog teknologi, berita IT, tips web development, tren aplikasi mobile, M-One Solution blog"}])}];
+
+//# sourceMappingURL=src_app_blog_layout_tsx_5d6ad2d5._.js.map

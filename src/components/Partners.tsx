@@ -1,24 +1,13 @@
 "use client";
 
 import { motion } from 'motion/react';
-import partner1 from '../assets/partner/1_20250822_215806_0000.png';
-import partner2 from '../assets/partner/2_20250822_215806_0001.png';
-import partner3 from '../assets/partner/3_20250822_215806_0002.png';
-import partner4 from '../assets/partner/4_20250822_215807_0003.png';
-import partner5 from '../assets/partner/5_20250822_215807_0004.png';
-import partner6 from '../assets/partner/6_20250822_215807_0005.png';
-import partner7 from '../assets/partner/7_20250822_215807_0006.png';
+import { siteConfig } from '@/config/site';
 
 export function Partners() {
-  const partners = [
-    { name: "Partner 1", logo: partner1 },
-    { name: "Partner 2", logo: partner2 },
-    { name: "Partner 3", logo: partner3 },
-    { name: "Partner 4", logo: partner4 },
-    { name: "Partner 5", logo: partner5 },
-    { name: "Partner 6", logo: partner6 },
-    { name: "Partner 7", logo: partner7 },
-  ];
+  const partners = Array.from({ length: 7 }, (_, i) => ({
+    name: `Partner ${i + 1}`,
+    logo: `${siteConfig.cdnUrl}/images/partners/partner-${i + 1}.webp`
+  }));
 
   return (
     <section className="py-16 md:py-24 bg-slate-950 border-t border-white/5">
@@ -48,7 +37,7 @@ export function Partners() {
               className="flex justify-center"
             >
               <img
-                src={(partner.logo as any)?.src || partner.logo}
+                src={partner.logo}
                 alt={partner.name}
                 loading="lazy"
                 className="max-h-12 object-contain brightness-0 invert opacity-70 hover:opacity-100 hover:brightness-100 hover:invert-0 transition-all duration-300"

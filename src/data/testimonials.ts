@@ -1,35 +1,41 @@
+import { siteConfig } from '@/config/site';
+
 export interface Testimonial {
-    quote: string;
-    author: string;
+    id: string;
+    name: string;
     role: string;
     company: string;
+    content: string;
     image: string;
     rating: number;
 }
 
 export const testimonialsData: Testimonial[] = [
     {
-        quote: "M-One Solution memberikan pelayanan yang luar biasa. Website sekolah kami kini jauh lebih modern dan mudah digunakan oleh siswa maupun guru.",
-        author: "Budi Santoso, S.Pd.",
+        id: "1",
+        name: "Budi Santoso",
         role: "Kepala Sekolah",
-        company: "Institusi Pendidikan",
-        image: "https://picsum.photos/seed/user1/100/100.webp",
+        company: "SMA Negeri 1 Jaya",
+        content: "Sistem Informasi Akademik yang dibuat oleh M-One Solution sangat membantu dalam mendigitalisasi proses belajar mengajar di sekolah kami. Antarmukanya intuitif dan mudah digunakan oleh guru maupun siswa.",
+        image: `${siteConfig.cdnUrl}/images/testimonials/user1.webp`,
         rating: 5,
     },
     {
-        quote: "Aplikasi organisasi yang dibuat sangat membantu efisiensi kerja tim kami. Fiturnya lengkap dan sesuai dengan kebutuhan nyata di lapangan.",
-        author: "Dewi Rahayu",
-        role: "Direktur Operasional",
-        company: "Organisasi Nirlaba",
-        image: "https://picsum.photos/seed/user2/100/100.webp",
+        id: "2",
+        name: "Andi Wijaya",
+        role: "Direktur",
+        company: "PT Maju Terus",
+        content: "Pembuatan Company Profile berjalan sangat lancar. Desainnya modern dan sesuai dengan yang kami harapkan. Tim M-One juga responsif terhadap revisi.",
+        image: `${siteConfig.cdnUrl}/images/testimonials/user2.webp`,
         rating: 5,
     },
     {
-        quote: "Tim yang profesional dan responsif. Mereka benar-benar memahami apa yang kami butuhkan dan memberikan solusi yang tepat sasaran.",
-        author: "Ahmad Fauzi",
-        role: "CEO & Founder",
-        company: "Startup Tech",
-        image: "https://picsum.photos/seed/user3/100/100.webp",
+        id: "3",
+        name: "Siti Aminah",
+        role: "Pemilik",
+        company: "Batik Berkah",
+        content: "Aplikasi e-commerce custom yang dibangun sangat fungsional. Kami bisa mengelola stok dan pesanan dengan lebih efisien sekarang. Terima kasih M-One Solution!",
+        image: `${siteConfig.cdnUrl}/images/testimonials/user3.webp`,
         rating: 5,
     },
 ];

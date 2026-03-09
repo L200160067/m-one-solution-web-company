@@ -1,3 +1,4 @@
+import { siteConfig } from '@/config/site';
 export interface BlogPost {
   id: string;
   title: string;
@@ -19,11 +20,11 @@ export const blogPosts: BlogPost[] = [
     author: "Tim M-One",
     date: "12 Okt 2023",
     category: "Web Development",
-    imageUrl: "https://picsum.photos/seed/blog1/800/500",
+    imageUrl: `${siteConfig.cdnUrl}/images/blog/blog1.webp`,
     images: [
-      "https://picsum.photos/seed/blog1_1/800/500",
-      "https://picsum.photos/seed/blog1_2/800/500",
-      "https://picsum.photos/seed/blog1_3/800/500"
+      `${siteConfig.cdnUrl}/images/blog/blog1_1.webp`,
+      `${siteConfig.cdnUrl}/images/blog/blog1_2.webp`,
+      `${siteConfig.cdnUrl}/images/blog/blog1_3.webp`
     ]
   },
   {
@@ -34,7 +35,7 @@ export const blogPosts: BlogPost[] = [
     author: "Tim M-One",
     date: "05 Nov 2023",
     category: "Mobile App",
-    imageUrl: "https://picsum.photos/seed/blog2/800/500"
+    imageUrl: `${siteConfig.cdnUrl}/images/blog/blog2.webp`
   },
   {
     id: "tips-memilih-software-house",
@@ -44,7 +45,7 @@ export const blogPosts: BlogPost[] = [
     author: "Tim M-One",
     date: "20 Des 2023",
     category: "Tips & Trik",
-    imageUrl: "https://picsum.photos/seed/blog3/800/500"
+    imageUrl: `${siteConfig.cdnUrl}/images/blog/blog3.webp`
   },
   {
     id: "manfaat-seo-untuk-website",
@@ -54,7 +55,7 @@ export const blogPosts: BlogPost[] = [
     author: "Tim M-One",
     date: "15 Jan 2024",
     category: "Digital Marketing",
-    imageUrl: "https://picsum.photos/seed/blog4/800/500"
+    imageUrl: `${siteConfig.cdnUrl}/images/blog/blog4.webp`
   },
   {
     id: "mengenal-ui-ux-design",
@@ -64,7 +65,7 @@ export const blogPosts: BlogPost[] = [
     author: "Tim M-One",
     date: "02 Feb 2024",
     category: "Design",
-    imageUrl: "https://picsum.photos/seed/blog5/800/500"
+    imageUrl: `${siteConfig.cdnUrl}/images/blog/blog5.webp`
   },
   {
     id: "keamanan-siber-untuk-bisnis",
@@ -74,7 +75,7 @@ export const blogPosts: BlogPost[] = [
     author: "Tim M-One",
     date: "20 Feb 2024",
     category: "Security",
-    imageUrl: "https://picsum.photos/seed/blog6/800/500"
+    imageUrl: `${siteConfig.cdnUrl}/images/blog/blog6.webp`
   },
   {
     id: "cloud-computing-untuk-efisiensi",
@@ -84,7 +85,7 @@ export const blogPosts: BlogPost[] = [
     author: "Tim M-One",
     date: "10 Mar 2024",
     category: "Cloud",
-    imageUrl: "https://picsum.photos/seed/blog7/800/500"
+    imageUrl: `${siteConfig.cdnUrl}/images/blog/blog7.webp`
   },
   {
     id: "pentingnya-data-analytics",
@@ -94,7 +95,7 @@ export const blogPosts: BlogPost[] = [
     author: "Tim M-One",
     date: "25 Mar 2024",
     category: "Data",
-    imageUrl: "https://picsum.photos/seed/blog8/800/500"
+    imageUrl: `${siteConfig.cdnUrl}/images/blog/blog8.webp`
   },
   {
     id: "membangun-tim-developer-yang-solid",
@@ -104,7 +105,7 @@ export const blogPosts: BlogPost[] = [
     author: "Tim M-One",
     date: "05 Apr 2024",
     category: "Management",
-    imageUrl: "https://picsum.photos/seed/blog9/800/500"
+    imageUrl: `${siteConfig.cdnUrl}/images/blog/blog9.webp`
   },
   {
     id: "masa-depan-kecerdasan-buatan",
@@ -114,6 +115,7 @@ export const blogPosts: BlogPost[] = [
     author: "Tim M-One",
     date: "18 Apr 2024",
     category: "Technology",
-    imageUrl: "https://picsum.photos/seed/blog10/800/500"
+    imageUrl: `${siteConfig.cdnUrl}/images/blog/blog10.webp`
   }
 ];
+

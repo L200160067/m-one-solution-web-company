@@ -423,7 +423,7 @@ const teamData = [
         role: "Manajer & Founder",
         image: "https://picsum.photos/seed/founder/400/400.webp",
         social: {
-            linkedin: "",
+            linkedin: "https://www.linkedin.com/in/alfarez-syahputra-kuri-b53bab231?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Bu1y89E61QRCWarNrAyFxww%3D%3D",
             github: ""
         }
     },

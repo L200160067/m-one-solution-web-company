@@ -1576,10 +1576,6 @@
     background-image: linear-gradient(var(--tw-gradient-stops));
   }
 
-  .bg-\[url\(\'https\:\/\/picsum\.photos\/seed\/tech\/1920\/1080\.webp\'\)\] {
-    background-image: url("https://picsum.photos/seed/tech/1920/1080.webp");
-  }
-
   .from-blue-400 {
     --tw-gradient-from: var(--color-blue-400);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
@@ -1654,17 +1650,9 @@
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
 
-  .bg-cover {
-    background-size: cover;
-  }
-
   .bg-clip-text {
     -webkit-background-clip: text;
     background-clip: text;
-  }
-
-  .bg-center {
-    background-position: center;
   }
 
   .fill-yellow-400 {
@@ -2040,10 +2028,6 @@
     opacity: 0;
   }
 
-  .opacity-10 {
-    opacity: .1;
-  }
-
   .opacity-50 {
     opacity: .5;
   }
@@ -2058,10 +2042,6 @@
 
   .mix-blend-multiply {
     mix-blend-mode: multiply;
-  }
-
-  .mix-blend-overlay {
-    mix-blend-mode: overlay;
   }
 
   .shadow-2xl {
@@ -2372,12 +2352,6 @@
   @media (hover: hover) {
     .hover\:bg-blue-50:hover {
       background-color: var(--color-blue-50);
-    }
-  }
-
-  @media (hover: hover) {
-    .hover\:bg-blue-400:hover {
-      background-color: var(--color-blue-400);
     }
   }
 

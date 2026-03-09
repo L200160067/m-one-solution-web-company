@@ -53,18 +53,18 @@ export function Testimonials() {
 
               <Quote className="w-8 h-8 text-blue-400 mb-4 opacity-50" />
               <p className="text-base text-slate-300 mb-6 leading-relaxed flex-grow">
-                "{testimonial.quote}"
+                "{testimonial.content}"
               </p>
               <div className="flex items-center gap-4 mt-auto">
                 <img
                   src={(testimonial.image as any)?.src || testimonial.image}
-                  alt={testimonial.author}
+                  alt={testimonial.name}
                   loading="lazy"
                   className="w-12 h-12 rounded-full object-cover ring-2 ring-white/10"
                   referrerPolicy="no-referrer"
                 />
                 <div>
-                  <h4 className="font-bold text-white">{testimonial.author}</h4>
+                  <h4 className="font-bold text-white">{testimonial.name}</h4>
                   <p className="text-sm text-blue-400">{testimonial.role}</p>
                   <p className="text-xs text-slate-500">{testimonial.company}</p>
                 </div>
