@@ -3,6 +3,7 @@
 import { motion } from 'motion/react';
 import { ArrowRight, Mail } from 'lucide-react';
 import Link from 'next/link';
+import { siteConfig } from '@/config/site';
 
 export function CTA() {
   return (
@@ -41,7 +42,7 @@ export function CTA() {
               <ArrowRight className="w-5 h-5" />
             </Link>
             <a
-              href="mailto:info@monesoft.xyz"
+              href={`mailto:${siteConfig.contact.email}`}
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-blue-700/50 text-white border border-white/20 text-base font-semibold rounded-full hover:bg-blue-700/80 transition-all"
             >
               <Mail className="w-5 h-5" />

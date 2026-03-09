@@ -3,6 +3,8 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Inter } from "next/font/google";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { BackToTop } from "@/components/BackToTop";
 
 const inter = Inter({
     subsets: ["latin"],
@@ -66,6 +68,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     <main>{children}</main>
                 </ErrorBoundary>
                 <Footer />
+                <WhatsAppButton />
+                <BackToTop />
             </body>
         </html>
     );

@@ -1,30 +1,10 @@
 "use client";
 
 import { motion } from 'motion/react';
-import { Quote } from 'lucide-react';
+import { Quote, Star } from 'lucide-react';
+import { testimonialsData } from '@/data/testimonials';
 
 export function Testimonials() {
-  const testimonials = [
-    {
-      quote: "M-One Solution memberikan pelayanan yang luar biasa. Website sekolah kami kini jauh lebih modern dan mudah digunakan oleh siswa maupun guru.",
-      author: "Kepala Sekolah",
-      role: "Institusi Pendidikan",
-      image: "https://picsum.photos/seed/user1/100/100.webp"
-    },
-    {
-      quote: "Aplikasi organisasi yang dibuat sangat membantu efisiensi kerja tim kami. Fiturnya lengkap dan sesuai dengan kebutuhan nyata di lapangan.",
-      author: "Direktur Operasional",
-      role: "Organisasi Nirlaba",
-      image: "https://picsum.photos/seed/user2/100/100.webp"
-    },
-    {
-      quote: "Tim yang profesional dan responsif. Mereka benar-benar memahami apa yang kami butuhkan dan memberikan solusi yang tepat sasaran.",
-      author: "CEO",
-      role: "Startup Tech",
-      image: "https://picsum.photos/seed/user3/100/100.webp"
-    }
-  ];
-
   return (
     <section className="py-16 md:py-24 bg-slate-900 text-white relative overflow-hidden">
       {/* Background Elements */}
@@ -43,7 +23,7 @@ export function Testimonials() {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-semibold mb-6">
             Testimoni Klien
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Apa Kata Mereka?
           </h2>
           <p className="text-lg text-slate-400 max-w-2xl mx-auto">
@@ -52,17 +32,27 @@ export function Testimonials() {
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
+          {testimonialsData.map((testimonial, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white/5 border border-white/10 rounded-3xl p-6 backdrop-blur-sm hover:bg-white/10 transition-colors"
+              className="bg-white/5 border border-white/10 rounded-3xl p-6 backdrop-blur-sm hover:bg-white/10 transition-colors flex flex-col"
             >
-              <Quote className="w-10 h-10 text-blue-400 mb-6 opacity-50" />
-              <p className="text-base text-slate-300 mb-6 leading-relaxed">
+              {/* Rating Stars */}
+              <div className="flex items-center gap-1 mb-4">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star
+                    key={i}
+                    className={`w-4 h-4 ${i < testimonial.rating ? 'text-yellow-400 fill-yellow-400' : 'text-slate-600'}`}
+                  />
+                ))}
+              </div>
+
+              <Quote className="w-8 h-8 text-blue-400 mb-4 opacity-50" />
+              <p className="text-base text-slate-300 mb-6 leading-relaxed flex-grow">
                 "{testimonial.quote}"
               </p>
               <div className="flex items-center gap-4 mt-auto">
@@ -70,12 +60,13 @@ export function Testimonials() {
                   src={(testimonial.image as any)?.src || testimonial.image}
                   alt={testimonial.author}
                   loading="lazy"
-                  className="w-12 h-12 rounded-full object-cover"
+                  className="w-12 h-12 rounded-full object-cover ring-2 ring-white/10"
                   referrerPolicy="no-referrer"
                 />
                 <div>
                   <h4 className="font-bold text-white">{testimonial.author}</h4>
                   <p className="text-sm text-blue-400">{testimonial.role}</p>
+                  <p className="text-xs text-slate-500">{testimonial.company}</p>
                 </div>
               </div>
             </motion.div>

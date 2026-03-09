@@ -1,9 +1,30 @@
 "use client";
 
-import { motion } from 'motion/react';
+import { motion, useInView, useMotionValue, useTransform, animate } from 'motion/react';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
 import aboutImage from '../assets/about/about.png';
+import { useEffect, useRef } from 'react';
+
+function AnimatedCounter({ to, suffix = '' }: { to: number; suffix?: string }) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: true });
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (v) => Math.round(v));
+
+  useEffect(() => {
+    if (inView) {
+      const controls = animate(count, to, { duration: 1.8, ease: 'easeOut' });
+      return controls.stop;
+    }
+  }, [inView, count, to]);
+
+  return (
+    <span ref={ref}>
+      <motion.span>{rounded}</motion.span>{suffix}
+    </span>
+  );
+}
 
 export function About() {
   const features = [
@@ -70,7 +91,7 @@ export function About() {
             </p>
 
             <p className="text-base text-slate-600 mb-8 leading-relaxed">
-              Pengalaman kami menangani proyek di berbagai lingkungan telah membuktikan satu hal: solusi digital terbaik lahir dari pemahaman masalah yang nyata. Kami di sini bukan untuk sekadar membuat fitur, tapi untuk memberikan solusi nyata yang mendukung kesuksesan Anda.
+              Pengalaman kami menangani proyek di berbagai lingkungan telah membuktikan satu hal: solusi digital terbaik lahir dari pemahaman masalah yang nyata.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-4 mb-8">
@@ -78,6 +99,22 @@ export function About() {
                 <div key={index} className="flex items-center gap-2">
                   <CheckCircle2 className="w-5 h-5 text-blue-600 flex-shrink-0" />
                   <span className="font-medium text-slate-700">{feature}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-4 mb-8 py-6 border-t border-b border-slate-100">
+              {[
+                { value: 50, suffix: '+', label: 'Proyek Selesai' },
+                { value: 30, suffix: '+', label: 'Klien Puas' },
+                { value: 3, suffix: '+', label: 'Tahun Pengalaman' },
+              ].map((stat, i) => (
+                <div key={i} className="text-center">
+                  <div className="text-2xl md:text-3xl font-bold text-blue-600 mb-1">
+                    <AnimatedCounter to={stat.value} suffix={stat.suffix} />
+                  </div>
+                  <p className="text-xs text-slate-500 font-medium leading-tight">{stat.label}</p>
                 </div>
               ))}
             </div>

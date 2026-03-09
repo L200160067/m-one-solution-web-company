@@ -22,7 +22,7 @@ export function Hero() {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div style={{ y: y1 }} className="absolute -top-[20%] -right-[10%] w-[70%] h-[70%] rounded-full bg-blue-600/20 blur-[120px]" />
         <motion.div style={{ y: y2 }} className="absolute top-[40%] -left-[10%] w-[50%] h-[50%] rounded-full bg-cyan-500/20 blur-[120px]" />
-        <motion.div style={{ opacity }} className="absolute inset-0 bg-[url('https://picsum.photos/seed/tech/1920/1080.webp')] opacity-10 mix-blend-overlay bg-cover bg-center" />
+        <motion.div style={{ opacity }} className="absolute inset-0 bg-gradient-to-br from-blue-900/5 to-transparent" />
       </div>
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 z-10">
@@ -78,7 +78,7 @@ export function Hero() {
             </div>
           </motion.div>
 
-          {/* Decorative Right Side - Abstract UI representation */}
+          {/* Decorative Right Side */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
