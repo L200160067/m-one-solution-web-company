@@ -19,7 +19,7 @@ const BASE_URL = "https://www.m-one.mutudev.com";
 export const metadata = {
     metadataBase: new URL(BASE_URL),
     title: {
-        default: "M-One Solution Software House | Your True Solution",
+        default: "M-One Solution Software House | Your Trusted Digital Solution",
         template: "%s | M-One Solution",
     },
     description: "Tingkatkan visibilitas dan konversi bisnis Anda dengan website profesional dan aplikasi dari M-One Solution. Software house terpercaya di Sukoharjo, Indonesia.",
@@ -31,7 +31,7 @@ export const metadata = {
         locale: "id_ID",
         url: BASE_URL,
         siteName: "M-One Solution",
-        title: "M-One Solution Software House | Your True Solution",
+        title: "M-One Solution Software House | Your Trusted Digital Solution",
         description: "Tingkatkan visibilitas dan konversi bisnis Anda dengan website profesional dan aplikasi dari M-One Solution.",
         images: [
             {
@@ -44,7 +44,7 @@ export const metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "M-One Solution Software House | Your True Solution",
+        title: "M-One Solution Software House | Your Trusted Digital Solution",
         description: "Tingkatkan visibilitas dan konversi bisnis Anda dengan website profesional dan aplikasi dari M-One Solution.",
         images: ["/og-image.jpg"],
     },

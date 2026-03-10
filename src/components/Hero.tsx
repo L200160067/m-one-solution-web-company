@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from 'motion/react';
 import { ArrowRight, Code2, Smartphone, Globe } from 'lucide-react';
 import { useRef } from 'react';
 import Link from 'next/link';
+import { siteConfig } from '../config/site';
 
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -39,14 +40,14 @@ export function Hero() {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-6 leading-[1.1]">
-              Your True <br />
+              Your Trusted <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
-                Solution
+                Digital Solution
               </span>
             </h1>
 
             <p className="text-lg text-slate-300 mb-8 leading-relaxed max-w-lg">
-              Solusi digital terpercaya untuk bisnis anda. Kami mengubah ide menjadi kenyataan dengan teknologi modern.
+              Kami merancang dan mengembangkan website, aplikasi, dan sistem digital yang membantu bisnis Anda berkembang di era digital.
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
@@ -86,13 +87,27 @@ export function Hero() {
             className="relative hidden lg:block"
           >
             <div className="relative w-full aspect-square max-w-lg mx-auto">
+              {/* Talent Image */}
+              <motion.div
+                animate={{ y: [-8, 8, -8] }}
+                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                className="absolute inset-8 rounded-3xl overflow-hidden border border-white/10 shadow-2xl z-0"
+              >
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent z-10 pointer-events-none" />
+                <img
+                  src={`${siteConfig.cdnUrl}/images/branding/hero.webp`}
+                  alt="M-One Solution Talent"
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+
               {/* Floating Cards */}
               <motion.div
                 animate={{ y: [-10, 10, -10] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-10 right-10 p-6 bg-white/10 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl w-64"
+                className="absolute -top-10 -right-10 p-5 bg-white/10 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl w-56 z-20"
               >
-                <Code2 className="w-10 h-10 text-blue-400 mb-4" />
+                <Code2 className="w-8 h-8 text-blue-400 mb-3" />
                 <h3 className="text-white font-semibold mb-2">Web Development</h3>
                 <div className="w-full h-2 bg-white/10 rounded-full overflow-hidden">
                   <div className="w-3/4 h-full bg-blue-500" />
@@ -102,9 +117,9 @@ export function Hero() {
               <motion.div
                 animate={{ y: [10, -10, 10] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute bottom-20 left-0 p-6 bg-white/10 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl w-64"
+                className="absolute bottom-16 -left-12 p-5 bg-white/10 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl w-56 z-20"
               >
-                <Smartphone className="w-10 h-10 text-cyan-400 mb-4" />
+                <Smartphone className="w-8 h-8 text-cyan-400 mb-3" />
                 <h3 className="text-white font-semibold mb-2">Mobile Apps</h3>
                 <div className="w-full h-2 bg-white/10 rounded-full overflow-hidden">
                   <div className="w-5/6 h-full bg-cyan-500" />
@@ -114,9 +129,9 @@ export function Hero() {
               <motion.div
                 animate={{ y: [-5, 5, -5] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-                className="absolute -bottom-10 right-20 p-6 bg-white/10 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl w-48"
+                className="absolute -bottom-12 right-0 p-5 bg-white/10 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl w-48 z-20"
               >
-                <Globe className="w-10 h-10 text-indigo-400 mb-4" />
+                <Globe className="w-8 h-8 text-indigo-400 mb-3" />
                 <h3 className="text-white font-semibold mb-2">Digital Solutions</h3>
               </motion.div>
             </div>

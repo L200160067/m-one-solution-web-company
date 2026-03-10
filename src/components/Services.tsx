@@ -38,7 +38,7 @@ export function Services({ services }: ServicesProps) {
             viewport={{ once: true }}
             className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-sm font-semibold mb-6"
           >
-            Layanan Kami
+            Our Digital Services
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -47,7 +47,7 @@ export function Services({ services }: ServicesProps) {
             transition={{ delay: 0.1 }}
             className="text-3xl md:text-5xl lg:text-4xl font-bold text-slate-900 mb-6"
           >
-            Solusi Digital untuk Bisnis Anda
+            Digital Solutions for Your Business
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -56,7 +56,7 @@ export function Services({ services }: ServicesProps) {
             transition={{ delay: 0.2 }}
             className="text-lg text-slate-600 max-w-2xl mx-auto"
           >
-            Kami menyediakan berbagai layanan pengembangan perangkat lunak yang dirancang khusus untuk memenuhi kebutuhan dan tujuan bisnis Anda.
+            Kami menyediakan layanan pengembangan website, aplikasi, dan sistem digital yang dirancang untuk membantu bisnis Anda bekerja lebih efisien, berkembang lebih cepat, dan siap menghadapi era digital.
           </motion.p>
         </div>
 

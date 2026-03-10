@@ -134,7 +134,7 @@ export function Footer({ settings }: FooterProps) {
             © {currentYear} M-One Solution Software house. All Rights Reserved.
           </p>
           <p className="text-slate-500 text-sm font-medium">
-            Your True Solution
+            Your Trusted Digital Solution
           </p>
         </div>
       </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import { Menu, X, ChevronRight } from 'lucide-react';
+import { Menu, X, ChevronRight, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -10,6 +10,7 @@ import { siteConfig } from '../config/site';
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isEventDropdownOpen, setIsEventDropdownOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -29,7 +30,7 @@ export function Navbar() {
     { name: 'Portofolio', href: '/portfolio' },
     { name: 'Contact', href: '/contact' },
     { name: 'News', href: '/blog' },
-    { name: 'Privacy Policy', href: '/#privacy' },
+    //{ name: 'Privacy Policy', href: '/privacy' },
   ];
 
   return (
@@ -58,7 +59,7 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-8 relative">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -68,6 +69,43 @@ export function Navbar() {
                 {link.name}
               </Link>
             ))}
+            
+            {/* Event Dropdown Desktop */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setIsEventDropdownOpen(true)}
+              onMouseLeave={() => setIsEventDropdownOpen(false)}
+            >
+              <button 
+                className="flex items-center gap-1 text-sm font-medium text-slate-300 hover:text-blue-400 transition-colors py-2"
+                onClick={() => setIsEventDropdownOpen(!isEventDropdownOpen)}
+              >
+                Event
+                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isEventDropdownOpen ? 'rotate-180' : ''}`} />
+              </button>
+              
+              <AnimatePresence>
+                {isEventDropdownOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute top-full left-0 mt-1 w-48 bg-slate-900 border border-white/10 rounded-xl shadow-xl overflow-hidden"
+                  >
+                    <a 
+                      href="https://bootcamp.mutudev.com" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="block px-4 py-3 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors"
+                      onClick={() => setIsEventDropdownOpen(false)}
+                    >
+                      Bootcamp
+                    </a>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
             <Link
               href="/contact"
               className="hidden lg:flex items-center gap-2 px-5 py-2.5 bg-blue-600 text-white text-sm font-medium rounded-full hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/20"
@@ -111,6 +149,39 @@ export function Navbar() {
                   {link.name}
                 </Link>
               ))}
+              
+              {/* Event Dropdown Mobile */}
+              <div>
+                <button 
+                  className="w-full flex items-center justify-between px-3 py-3 text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+                  onClick={() => setIsEventDropdownOpen(!isEventDropdownOpen)}
+                >
+                  Event
+                  <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${isEventDropdownOpen ? 'rotate-180' : ''}`} />
+                </button>
+                <AnimatePresence>
+                  {isEventDropdownOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="pl-6 pr-3 py-1 space-y-1">
+                        <a 
+                          href="https://bootcamp.mutudev.com" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="block px-3 py-2 text-sm font-medium text-slate-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          Bootcamp
+                        </a>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
               <div className="pt-4 px-3">
                 <Link
                   href="/contact"

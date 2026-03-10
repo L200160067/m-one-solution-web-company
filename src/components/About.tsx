@@ -28,10 +28,10 @@ function AnimatedCounter({ to, suffix = '' }: { to: number; suffix?: string }) {
 
 export function About() {
   const features = [
-    "Praktis & Intuitif",
-    "Solusi Nyata",
-    "Pemahaman Masalah",
-    "Mendukung Kesuksesan"
+    "Practical & Intuitive Systems",
+    "Real Business Solutions",
+    "Deep Problem Understanding",
+    "Supporting Your Growth"
   ];
 
   return (
@@ -82,16 +82,16 @@ export function About() {
             </div>
 
             <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold text-slate-900 mb-6 leading-tight">
-              M-One Solution <br />
-              <span className="text-blue-600">Software house</span>
+              Transforming Ideas into<br />
+              <span className="text-blue-600">Digital Products</span>
             </h2>
 
             <p className="text-base text-slate-600 mb-6 leading-relaxed">
-              M-One Solution hadir untuk mengubah ide menjadi kenyataan. Kami adalah tim pengembang yang fokus menciptakan aplikasi dan website yang praktis, intuitif, dan efektif.
+              M-One Solution membantu bisnis dan organisasi mengubah ide menjadi website, aplikasi, dan sistem digital yang praktis, intuitif, dan scalable.
             </p>
 
             <p className="text-base text-slate-600 mb-8 leading-relaxed">
-              Pengalaman kami menangani proyek di berbagai lingkungan telah membuktikan satu hal: solusi digital terbaik lahir dari pemahaman masalah yang nyata.
+              Kami percaya bahwa solusi digital terbaik lahir dari pemahaman masalah yang nyata dan pendekatan teknologi yang tepat.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-4 mb-8">
@@ -102,6 +102,10 @@ export function About() {
                 </div>
               ))}
             </div>
+
+            <p className="text-base text-slate-600 mb-6 font-medium italic">
+              Helping businesses build reliable digital solutions.
+            </p>
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-4 mb-8 py-6 border-t border-b border-slate-100">

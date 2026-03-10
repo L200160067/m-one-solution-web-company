@@ -331,7 +331,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$api$2e$ts__$5b
 ;
 ;
 const metadata = {
-    title: 'M-One Solution Software House | Your True Solution',
+    title: 'M-One Solution Software House | Your Trusted Digital Solution',
     description: 'Tingkatkan visibilitas dan konversi bisnis Anda dengan website profesional dan aplikasi dari M-One Solution. Kami membantu Anda tumbuh secara signifikan di era digital.'
 };
 async function fetchSafe(endpoint, fallback, tags) {
