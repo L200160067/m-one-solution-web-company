@@ -214,7 +214,7 @@ __turbopack_context__.s([
     "apiFetch",
     ()=>apiFetch
 ]);
-const API_URL = ("TURBOPACK compile-time value", "http://m-one-solution-api.test/api");
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 async function apiFetch(endpoint, options) {
     const { revalidate = 3600, ...fetchOptions } = options ?? {};
     const res = await fetch(`${API_URL}${endpoint}`, {
