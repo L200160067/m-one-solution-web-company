@@ -14,9 +14,9 @@ export const metadata = {
     description: 'Tingkatkan visibilitas dan konversi bisnis Anda dengan website profesional dan aplikasi dari M-One Solution. Kami membantu Anda tumbuh secara signifikan di era digital.',
 };
 
-async function fetchSafe<T>(endpoint: string, fallback: T): Promise<T> {
+async function fetchSafe<T>(endpoint: string, fallback: T, tags?: string[]): Promise<T> {
     try {
-        const res = await apiFetch<ApiResponse<T>>(endpoint);
+        const res = await apiFetch<ApiResponse<T>>(endpoint, { tags });
         return res.data;
     } catch {
         return fallback;
@@ -26,11 +26,11 @@ async function fetchSafe<T>(endpoint: string, fallback: T): Promise<T> {
 export default async function Home() {
     // Fetch all homepage data in parallel
     const [posts, featuredProjects, testimonials, partners, services] = await Promise.all([
-        fetchSafe<Post[]>('/posts?limit=10', []),
-        fetchSafe<Project[]>('/projects?featured=true', []),
-        fetchSafe<Testimonial[]>('/testimonials', []),
-        fetchSafe<Partner[]>('/partners', []),
-        fetchSafe<Service[]>('/services', []),
+        fetchSafe<Post[]>('/posts?limit=10', [], ['posts']),
+        fetchSafe<Project[]>('/projects?featured=true', [], ['projects']),
+        fetchSafe<Testimonial[]>('/testimonials', [], ['testimonials']),
+        fetchSafe<Partner[]>('/partners', [], ['partners']),
+        fetchSafe<Service[]>('/services', [], ['services']),
     ]);
 
     return (

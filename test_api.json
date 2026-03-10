@@ -1,0 +1,189 @@
+{
+  "data": [
+    {
+      "id": 10,
+      "title": "Masa Depan Kecerdasan Buatan (AI) di Berbagai Industri",
+      "slug": "masa-depan-kecerdasan-buatan",
+      "excerpt": "Kecerdasan buatan (AI) sedang mengubah cara kita hidup dan bekerja.",
+      "category": {
+        "id": 10,
+        "name": "Technology",
+        "slug": "technology"
+      },
+      "cover_url": "http://m-one-solution-api.test/storage/4/01KKADZY5SRF61G385ZAZJ18ZD.jpg",
+      "cover_thumb": "http://m-one-solution-api.test/storage/4/01KKADZY5SRF61G385ZAZJ18ZD.jpg",
+      "published_at": "2024-04-18T10:00:00.000000Z",
+      "created_at": "2026-03-09T22:15:12.000000Z"
+    },
+    {
+      "id": 9,
+      "title": "Tips Membangun Tim Developer yang Solid dan Produktif",
+      "slug": "membangun-tim-developer-yang-solid",
+      "excerpt": "Tim developer yang solid adalah kunci kesuksesan proyek perangkat lunak.",
+      "category": {
+        "id": 9,
+        "name": "Management",
+        "slug": "management"
+      },
+      "cover_url": "",
+      "cover_thumb": "",
+      "published_at": "2024-04-05T08:00:00.000000Z",
+      "created_at": "2026-03-09T22:15:12.000000Z"
+    },
+    {
+      "id": 8,
+      "title": "Mengapa Data Analytics Penting untuk Pengambilan Keputusan",
+      "slug": "pentingnya-data-analytics",
+      "excerpt": "Data analytics dapat memberikan wawasan berharga yang membantu Anda membuat keputusan bisnis yang lebih baik.",
+      "category": {
+        "id": 8,
+        "name": "Data",
+        "slug": "data"
+      },
+      "cover_url": "",
+      "cover_thumb": "",
+      "published_at": "2024-03-25T09:30:00.000000Z",
+      "created_at": "2026-03-09T22:15:12.000000Z"
+    },
+    {
+      "id": 7,
+      "title": "Meningkatkan Efisiensi Bisnis dengan Cloud Computing",
+      "slug": "cloud-computing-untuk-efisiensi",
+      "excerpt": "Cloud computing menawarkan banyak manfaat bagi bisnis, termasuk fleksibilitas, skalabilitas, dan efisiensi biaya.",
+      "category": {
+        "id": 7,
+        "name": "Cloud",
+        "slug": "cloud"
+      },
+      "cover_url": "",
+      "cover_thumb": "",
+      "published_at": "2024-03-10T08:00:00.000000Z",
+      "created_at": "2026-03-09T22:15:12.000000Z"
+    },
+    {
+      "id": 6,
+      "title": "Pentingnya Keamanan Siber untuk Melindungi Bisnis Anda",
+      "slug": "keamanan-siber-untuk-bisnis",
+      "excerpt": "Ancaman keamanan siber semakin meningkat. Pelajari cara melindungi data dan sistem bisnis Anda dari serangan siber.",
+      "category": {
+        "id": 6,
+        "name": "Security",
+        "slug": "security"
+      },
+      "cover_url": "",
+      "cover_thumb": "",
+      "published_at": "2024-02-20T09:00:00.000000Z",
+      "created_at": "2026-03-09T22:15:12.000000Z"
+    },
+    {
+      "id": 5,
+      "title": "Mengenal Perbedaan UI dan UX Design",
+      "slug": "mengenal-ui-ux-design",
+      "excerpt": "UI dan UX seringkali dianggap sama, padahal keduanya memiliki peran yang berbeda dalam pengembangan produk digital.",
+      "category": {
+        "id": 5,
+        "name": "Design",
+        "slug": "design"
+      },
+      "cover_url": "",
+      "cover_thumb": "",
+      "published_at": "2024-02-02T08:30:00.000000Z",
+      "created_at": "2026-03-09T22:15:12.000000Z"
+    },
+    {
+      "id": 4,
+      "title": "Manfaat SEO untuk Meningkatkan Trafik Website Anda",
+      "slug": "manfaat-seo-untuk-website",
+      "excerpt": "SEO adalah strategi penting untuk memastikan website Anda mudah ditemukan di mesin pencari seperti Google.",
+      "category": {
+        "id": 4,
+        "name": "Digital Marketing",
+        "slug": "digital-marketing"
+      },
+      "cover_url": "",
+      "cover_thumb": "",
+      "published_at": "2024-01-15T07:00:00.000000Z",
+      "created_at": "2026-03-09T22:15:12.000000Z"
+    },
+    {
+      "id": 3,
+      "title": "Tips Memilih Software House yang Tepat untuk Proyek Anda",
+      "slug": "tips-memilih-software-house",
+      "excerpt": "Memilih partner teknologi yang tepat adalah kunci kesuksesan proyek digital Anda.",
+      "category": {
+        "id": 3,
+        "name": "Tips & Trik",
+        "slug": "tips-trik"
+      },
+      "cover_url": "",
+      "cover_thumb": "",
+      "published_at": "2023-12-20T10:00:00.000000Z",
+      "created_at": "2026-03-09T22:15:12.000000Z"
+    },
+    {
+      "id": 2,
+      "title": "Tren Pengembangan Aplikasi Mobile di Tahun 2024",
+      "slug": "tren-aplikasi-mobile-2024",
+      "excerpt": "Dunia pengembangan aplikasi mobile terus berkembang pesat. Mari kita lihat tren apa saja yang akan mendominasi di tahun 2024.",
+      "category": {
+        "id": 2,
+        "name": "Mobile App",
+        "slug": "mobile-app"
+      },
+      "cover_url": "http://m-one-solution-api.test/storage/8/01KKAGBQ0CXERMEDPC8H49VS3R.jpg",
+      "cover_thumb": "http://m-one-solution-api.test/storage/8/01KKAGBQ0CXERMEDPC8H49VS3R.jpg",
+      "published_at": "2023-11-05T09:00:00.000000Z",
+      "created_at": "2026-03-09T22:15:12.000000Z"
+    },
+    {
+      "id": 1,
+      "title": "Pentingnya Website Profesional untuk Bisnis di Era Digital",
+      "slug": "pentingnya-website-untuk-bisnis",
+      "excerpt": "Di era digital ini, memiliki website bukan lagi pilihan, melainkan keharusan bagi setiap bisnis yang ingin berkembang.",
+      "category": {
+        "id": 1,
+        "name": "Web Development",
+        "slug": "web-development"
+      },
+      "cover_url": "http://m-one-solution-api.test/storage/7/01KKAGB2ANGQRDHVRNEZCQF5FE.jpg",
+      "cover_thumb": "http://m-one-solution-api.test/storage/7/01KKAGB2ANGQRDHVRNEZCQF5FE.jpg",
+      "published_at": "2023-10-12T08:00:00.000000Z",
+      "created_at": "2026-03-09T22:15:12.000000Z"
+    }
+  ],
+  "links": {
+    "first": "http://m-one-solution-api.test/api/posts?page=1",
+    "last": "http://m-one-solution-api.test/api/posts?page=1",
+    "prev": null,
+    "next": null
+  },
+  "meta": {
+    "current_page": 1,
+    "from": 1,
+    "last_page": 1,
+    "links": [
+      {
+        "url": null,
+        "label": "&laquo; Previous",
+        "page": null,
+        "active": false
+      },
+      {
+        "url": "http://m-one-solution-api.test/api/posts?page=1",
+        "label": "1",
+        "page": 1,
+        "active": true
+      },
+      {
+        "url": null,
+        "label": "Next &raquo;",
+        "page": null,
+        "active": false
+      }
+    ],
+    "path": "http://m-one-solution-api.test/api/posts",
+    "per_page": 12,
+    "to": 10,
+    "total": 10
+  }
+}

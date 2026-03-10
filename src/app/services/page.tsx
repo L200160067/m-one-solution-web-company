@@ -8,7 +8,7 @@ export default async function ServicesPage() {
     let categories: string[] = ['Semua'];
 
     try {
-        const res = await apiFetch<ApiResponse<Service[]>>('/services');
+        const res = await apiFetch<ApiResponse<Service[]>>('/services', { tags: ['services'] });
         services = res.data;
         categories = ['Semua', ...new Set(services.map(s => s.category))];
     } catch {

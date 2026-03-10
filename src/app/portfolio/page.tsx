@@ -21,7 +21,7 @@ export const metadata = {
 export default async function PortfolioPage() {
     let projects: Project[] = [];
     try {
-        const res = await apiFetch<ApiResponse<Project[]>>('/projects');
+        const res = await apiFetch<ApiResponse<Project[]>>('/projects', { tags: ['projects'] });
         projects = res.data;
     } catch {
         // API unavailable — render empty state

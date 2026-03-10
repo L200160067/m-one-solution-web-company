@@ -8,7 +8,7 @@ export default async function BlogPage() {
     let categories: string[] = ['Semua'];
 
     try {
-        const res = await apiFetch<ApiResponse<Post[]>>('/posts');
+        const res = await apiFetch<ApiResponse<Post[]>>('/posts', { tags: ['posts'] });
         posts = res.data;
         categories = ['Semua', ...new Set(posts.map(post => post.category.name))];
     } catch (error) {

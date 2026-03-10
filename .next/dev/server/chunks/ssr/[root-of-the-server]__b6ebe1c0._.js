@@ -146,7 +146,7 @@ const metadata = {
     openGraph: {
         title: 'About Us | M-One Solution Software House',
         description: 'M-One Solution hadir untuk mengubah ide menjadi kenyataan. Kami adalah tim pengembang yang fokus menciptakan aplikasi dan website yang praktis, intuitif, dan efektif.',
-        url: 'https://www.monesolution.com/about',
+        url: 'https://www.mone.mutudev.com/about',
         type: 'website'
     },
     twitter: {
@@ -160,8 +160,16 @@ async function AboutPage() {
     let groups = [];
     try {
         const [teamRes, alumniRes] = await Promise.all([
-            (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$api$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["apiFetch"])('/team'),
-            (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$api$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["apiFetch"])('/alumni')
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$api$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["apiFetch"])('/team', {
+                tags: [
+                    'team'
+                ]
+            }),
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$api$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["apiFetch"])('/alumni', {
+                tags: [
+                    'alumni'
+                ]
+            })
         ]);
         team = teamRes.data;
         groups = alumniRes.data;

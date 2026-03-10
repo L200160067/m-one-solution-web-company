@@ -7,14 +7,19 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL!;
  */
 export async function apiFetch<T>(
     endpoint: string,
-    options?: RequestInit & { revalidate?: number | false }
+    options?: RequestInit & { revalidate?: number | false, tags?: string[] }
 ): Promise<T> {
-    const { revalidate = 3600, ...fetchOptions } = options ?? {};
+    const { revalidate = 3600, tags = [], ...fetchOptions } = options ?? {};
 
     const res = await fetch(`${API_URL}${endpoint}`, {
-        next: { revalidate },
+        next: { 
+           revalidate, 
+           tags: [...tags] // Ensure it's a new array reference
+        },
         ...fetchOptions,
     });
+    
+    console.log(`[Fetch] ${endpoint} | Cache Status: ${res.headers.get('x-nextjs-cache') || 'MISS'} | Tags: ${tags.join(',')}`);
 
     if (!res.ok) {
         throw new Error(`API Error ${res.status}: ${API_URL}${endpoint}`);

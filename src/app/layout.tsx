@@ -65,7 +65,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     // Fetch global settings once for Footer and WhatsAppButton
     let settings: Settings | undefined;
     try {
-        const res = await apiFetch<ApiResponse<Settings>>('/settings');
+        const res = await apiFetch<ApiResponse<Settings>>('/settings', { tags: ['settings'] });
         settings = res.data;
     } catch {
         // Fall back to siteConfig defaults if API unavailable

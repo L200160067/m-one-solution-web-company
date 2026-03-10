@@ -214,15 +214,19 @@ __turbopack_context__.s([
     "apiFetch",
     ()=>apiFetch
 ]);
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
+const API_URL = ("TURBOPACK compile-time value", "http://m-one-solution-api.test/api");
 async function apiFetch(endpoint, options) {
-    const { revalidate = 3600, ...fetchOptions } = options ?? {};
+    const { revalidate = 3600, tags = [], ...fetchOptions } = options ?? {};
     const res = await fetch(`${API_URL}${endpoint}`, {
         next: {
-            revalidate
+            revalidate,
+            tags: [
+                ...tags
+            ] // Ensure it's a new array reference
         },
         ...fetchOptions
     });
+    console.log(`[Fetch] ${endpoint} | Cache Status: ${res.headers.get('x-nextjs-cache') || 'MISS'} | Tags: ${tags.join(',')}`);
     if (!res.ok) {
         throw new Error(`API Error ${res.status}: ${API_URL}${endpoint}`);
     }
@@ -310,7 +314,11 @@ async function RootLayout({ children }) {
     // Fetch global settings once for Footer and WhatsAppButton
     let settings;
     try {
-        const res = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$api$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["apiFetch"])('/settings');
+        const res = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$api$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["apiFetch"])('/settings', {
+            tags: [
+                'settings'
+            ]
+        });
         settings = res.data;
     } catch  {
     // Fall back to siteConfig defaults if API unavailable

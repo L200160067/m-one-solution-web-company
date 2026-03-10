@@ -1,44 +1,45 @@
+import { NextRequest, NextResponse } from 'next/server';
 import { revalidatePath, revalidateTag } from 'next/cache';
-import { NextRequest } from 'next/server';
 
-/**
- * POST /api/revalidate?secret=<REVALIDATE_SECRET>
- * Or with JSON body: { "secret": "...", "tags": ["posts"] }
- *
- * Call this endpoint from Laravel (Filament observer / event) after saving
- * any content, so Next.js ISR pages are refreshed immediately.
- */
-export async function POST(req: NextRequest) {
+export async function POST(request: NextRequest) {
+  try {
+    let body;
     try {
-        let secret = req.nextUrl.searchParams.get('secret');
-        let tags: string[] = [];
-
-        // Try parsing JSON body if it exists
-        try {
-            const body = await req.json();
-            if (body.secret) secret = body.secret;
-            if (body.tags && Array.isArray(body.tags)) tags = body.tags;
-        } catch (e) {
-            // Ignore error if body is not JSON or empty
-        }
-
-        if (secret !== process.env.REVALIDATE_SECRET) {
-            return Response.json({ error: 'Unauthorized' }, { status: 401 });
-        }
-
-        if (tags.length > 0) {
-            // New approach: Revalidate by tags (Cache Versioning Payload)
-            tags.forEach((tag) => revalidateTag(tag));
-            return Response.json({ revalidated: true, method: 'tags', tags, timestamp: new Date().toISOString() });
-        } else {
-            // Legacy approach: Revalidate critical paths
-            revalidatePath('/');
-            revalidatePath('/blog');
-            revalidatePath('/services');
-            revalidatePath('/portfolio');
-            return Response.json({ revalidated: true, method: 'paths', timestamp: new Date().toISOString() });
-        }
-    } catch (e: any) {
-        return Response.json({ error: 'Server error', message: e.message }, { status: 500 });
+        body = await request.json();
+    } catch (e) {
+        return NextResponse.json({ message: 'Invalid JSON payload' }, { status: 400 });
     }
+
+    const { secret, type, payload } = body;
+
+    // Pastikan secret key cocok (Opsional namun disarankan untuk prod)
+    if (secret !== process.env.REVALIDATION_SECRET && process.env.NODE_ENV !== 'development') {
+      return NextResponse.json({ message: 'Invalid secret' }, { status: 401 });
+    }
+
+    // `type` bisa 'tag' (contoh: 'posts') atau 'path' (contoh: '/blog')
+    // `payload` adalah nilai tag/path-nya
+    
+    if (type === 'tag' && payload) {
+      // Use standard fallback for older or bugged Next.js 16 Turbopack instances
+      revalidateTag(payload);
+      
+      // Auto-fallback: If tag is 'posts', also clear the /blog path 
+      // just in case tag caching is buggy in Dev Mode.
+      if (payload === 'posts') {
+        revalidatePath('/blog');
+        revalidatePath('/');
+      } else if (payload === 'projects' || payload === 'services' || payload === 'partners' || payload === 'team' || payload === 'alumni') {
+        revalidatePath('/');
+      }
+    } else if (type === 'path' && payload) {
+      revalidatePath(payload);
+    } else {
+       return NextResponse.json({ message: 'Missing type or payload' }, { status: 400 });
+    }
+
+    return NextResponse.json({ revalidated: true, now: Date.now() });
+  } catch (err) {
+    return NextResponse.json({ message: 'Error revalidating', error: err }, { status: 500 });
+  }
 }

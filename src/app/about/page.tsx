@@ -10,7 +10,7 @@ export const metadata = {
     openGraph: {
         title: 'About Us | M-One Solution Software House',
         description: 'M-One Solution hadir untuk mengubah ide menjadi kenyataan. Kami adalah tim pengembang yang fokus menciptakan aplikasi dan website yang praktis, intuitif, dan efektif.',
-        url: 'https://www.monesolution.com/about',
+        url: 'https://www.mone.mutudev.com/about',
         type: 'website',
     },
     twitter: {
@@ -26,8 +26,8 @@ export default async function AboutPage() {
 
     try {
         const [teamRes, alumniRes] = await Promise.all([
-            apiFetch<ApiResponse<TeamMember[]>>('/team'),
-            apiFetch<ApiResponse<AlumniGroup[]>>('/alumni')
+            apiFetch<ApiResponse<TeamMember[]>>('/team', { tags: ['team'] }),
+            apiFetch<ApiResponse<AlumniGroup[]>>('/alumni', { tags: ['alumni'] })
         ]);
         team = teamRes.data;
         groups = alumniRes.data;

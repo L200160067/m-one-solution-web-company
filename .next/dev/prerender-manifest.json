@@ -1,11 +1,1 @@
-{
-  "version": 4,
-  "routes": {},
-  "dynamicRoutes": {},
-  "notFoundRoutes": [],
-  "preview": {
-    "previewModeId": "f092060983748adf907b50aa20269f02",
-    "previewModeSigningKey": "86c7664da002b7fcad31d0d1325ab592bd1c1ea5b5ebb0569cc314f77c78f02c",
-    "previewModeEncryptionKey": "a5f64195212c3ae9ec189b2ec55a51fd7d379e23f7b787899eb2574fa5cd2296"
-  }
-}
+{"version":4,"routes":{"/services/web-development":{},"/services/sistem-informasi-sekolah":{},"/services/company-profile-website":{},"/services/custom-web-application":{}},"dynamicRoutes":{"/services/[id]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/services/[id]","routeRegex":"^\\/services\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"a120d0bf3d0a632ac4915635b724887d","previewModeSigningKey":"d239542515977d86015c5e17b30a54f4ce63c06e7acfb6a084c065bcb7b122e0","previewModeEncryptionKey":"48783ac5d7468d8ebf149ea85a8c02bb24147b9495d89f7ad9398cf72315255a"}}
