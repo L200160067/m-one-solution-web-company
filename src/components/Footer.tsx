@@ -3,26 +3,31 @@
 import { Facebook, Instagram, Linkedin, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { siteConfig } from '../config/site';
+import type { Settings } from '@/types/api';
 
-export function Footer() {
+interface FooterProps {
+  settings?: Settings;
+}
+
+export function Footer({ settings }: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
     {
       label: 'Facebook',
-      href: siteConfig.social.facebook,
+      href: settings?.facebook_url || siteConfig.social.facebook,
       icon: Facebook,
       hoverColor: 'hover:bg-blue-600',
     },
     {
       label: 'Instagram',
-      href: siteConfig.social.instagram,
+      href: settings?.instagram_url || siteConfig.social.instagram,
       icon: Instagram,
       hoverColor: 'hover:bg-pink-600',
     },
     {
       label: 'LinkedIn',
-      href: siteConfig.social.linkedin,
+      href: settings?.linkedin_url || siteConfig.social.linkedin,
       icon: Linkedin,
       hoverColor: 'hover:bg-blue-700',
     },
@@ -115,11 +120,11 @@ export function Footer() {
             <div className="mt-8">
               <h4 className="text-white font-semibold mb-4">Kontak</h4>
               <p className="text-slate-400 text-sm mb-2">
-                <a href={`mailto:${siteConfig.contact.email}`} className="hover:text-blue-400 transition-colors break-all">
-                  {siteConfig.contact.email}
+                <a href={`mailto:${settings?.contact_email || siteConfig.contact.email}`} className="hover:text-blue-400 transition-colors break-all">
+                  {settings?.contact_email || siteConfig.contact.email}
                 </a>
               </p>
-              <p className="text-slate-400 text-sm">{siteConfig.contact.address}</p>
+              <p className="text-slate-400 text-sm">{settings?.company_address || siteConfig.contact.address}</p>
             </div>
           </div>
         </div>

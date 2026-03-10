@@ -1,32 +1,15 @@
 "use client";
 
 import { motion } from 'motion/react';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Image as ImageIcon } from 'lucide-react';
 import Link from 'next/link';
-import { siteConfig } from '@/config/site';
+import type { Project } from '@/types/api';
 
-export function Projects() {
-  const projects = [
-    {
-      title: "Website Sekolah",
-      category: "Web Development",
-      image: `${siteConfig.cdnUrl}/images/portfolio/project-school.webp`,
-      description: "Platform digital interaktif untuk institusi pendidikan."
-    },
-    {
-      title: "Aplikasi Organisasi",
-      category: "Mobile App",
-      image: `${siteConfig.cdnUrl}/images/portfolio/project-organization.webp`,
-      description: "Sistem manajemen terpadu untuk efisiensi organisasi."
-    },
-    {
-      title: "E-Commerce Platform",
-      category: "Web App",
-      image: `${siteConfig.cdnUrl}/images/portfolio/project-ecommerce.webp`,
-      description: "Solusi toko online modern dengan fitur lengkap."
-    }
-  ];
+interface ProjectsProps {
+  projects: Project[];
+}
 
+export function Projects({ projects }: ProjectsProps) {
   return (
     <section className="py-16 md:py-24 bg-slate-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -60,21 +43,27 @@ export function Projects() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <motion.div
-              key={index}
+              key={project.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               className="group cursor-pointer"
             >
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-6 bg-slate-200">
-                <img
-                  src={(project.image as any)?.src || project.image}
-                  alt={project.title}
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  referrerPolicy="no-referrer"
-                />
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-6 bg-slate-100">
+                {project.image_url ? (
+                  <img
+                    src={project.image_url}
+                    alt={project.title}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    referrerPolicy="no-referrer"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 text-slate-400">
+                    <ImageIcon className="w-12 h-12 opacity-50" />
+                  </div>
+                )}
                 <div className="absolute inset-0 bg-slate-900/20 group-hover:bg-transparent transition-colors duration-500" />
                 <div className="absolute top-4 left-4">
                   <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-bold uppercase tracking-wider rounded-full">

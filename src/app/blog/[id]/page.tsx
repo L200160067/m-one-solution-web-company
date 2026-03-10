@@ -1,40 +1,53 @@
-import { blogPosts } from '@/data/blog';
+import { apiFetch } from '@/lib/api';
+import type { ApiResponse, Post } from '@/types/api';
 import { notFound } from 'next/navigation';
 import BlogPostClient from './client';
 
+async function getPost(slug: string): Promise<Post | null> {
+    try {
+        const res = await apiFetch<ApiResponse<Post>>(`/posts/${slug}`);
+        return res.data;
+    } catch {
+        return null;
+    }
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
-    const { id } = await params;
-    const post = blogPosts.find((p) => p.id === id);
+    const { id: slug } = await params;
+    const post = await getPost(slug);
     if (!post) return { title: 'Post Not Found' };
 
     return {
         title: `${post.title} | M-One Solution Blog`,
         description: post.excerpt,
-        keywords: `${post.category.toLowerCase()}, m-one solution, blog teknologi, artikel IT`,
+        keywords: `${post.category.name.toLowerCase()}, m-one solution, blog teknologi, artikel IT`,
         openGraph: {
             type: 'article',
             title: post.title,
             description: post.excerpt,
-            images: [post.imageUrl],
+            images: [post.cover_url],
         },
         twitter: {
             card: 'summary_large_image',
             title: post.title,
             description: post.excerpt,
-            images: [post.imageUrl],
+            images: [post.cover_url],
         },
     };
 }
 
 export async function generateStaticParams() {
-    return blogPosts.map((post) => ({
-        id: post.id,
-    }));
+    try {
+        const res = await apiFetch<ApiResponse<Post[]>>('/posts');
+        return res.data.map((post) => ({ id: post.slug }));
+    } catch {
+        return [];
+    }
 }
 
 export default async function BlogPostPage({ params }: { params: Promise<{ id: string }> }) {
-    const { id } = await params;
-    const post = blogPosts.find(p => p.id === id);
+    const { id: slug } = await params;
+    const post = await getPost(slug);
 
     if (!post) {
         notFound();
@@ -42,3 +55,4 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
 
     return <BlogPostClient post={post} />;
 }
+

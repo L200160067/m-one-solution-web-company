@@ -32,12 +32,9 @@ var _s = __turbopack_context__.k.signature();
 function BlogPostClient({ post }) {
     _s();
     const [currentImageIndex, setCurrentImageIndex] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
-    const hasMultipleImages = post.images && post.images.length > 0;
-    const allImages = hasMultipleImages ? [
-        post.imageUrl,
-        ...post.images
-    ] : [
-        post.imageUrl
+    const hasMultipleImages = false; // API currently returns single cover image
+    const allImages = [
+        post.cover_url
     ];
     const nextImage = ()=>{
         setCurrentImageIndex((prev)=>(prev + 1) % allImages.length);
@@ -199,7 +196,7 @@ function BlogPostClient({ post }) {
                                             lineNumber: 99,
                                             columnNumber: 29
                                         }, this),
-                                        post.category
+                                        post.category.name
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/blog/[id]/client.tsx",
@@ -222,7 +219,7 @@ function BlogPostClient({ post }) {
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold",
-                                                    children: post.author.charAt(0)
+                                                    children: post.author ? post.author.charAt(0) : 'M'
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/blog/[id]/client.tsx",
                                                     lineNumber: 109,
@@ -232,7 +229,7 @@ function BlogPostClient({ post }) {
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                             className: "font-medium text-slate-900",
-                                                            children: post.author
+                                                            children: post.author ?? 'Tim M-One'
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/blog/[id]/client.tsx",
                                                             lineNumber: 113,
@@ -279,7 +276,11 @@ function BlogPostClient({ post }) {
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                             className: "font-medium text-slate-900",
-                                                            children: post.date
+                                                            children: new Date(post.published_at).toLocaleDateString('id-ID', {
+                                                                day: 'numeric',
+                                                                month: 'long',
+                                                                year: 'numeric'
+                                                            })
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/blog/[id]/client.tsx",
                                                             lineNumber: 121,
@@ -290,7 +291,7 @@ function BlogPostClient({ post }) {
                                                             children: "Published"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/blog/[id]/client.tsx",
-                                                            lineNumber: 122,
+                                                            lineNumber: 124,
                                                             columnNumber: 37
                                                         }, this)
                                                     ]
@@ -318,12 +319,12 @@ function BlogPostClient({ post }) {
                                         children: post.content
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/blog/[id]/client.tsx",
-                                        lineNumber: 128,
+                                        lineNumber: 130,
                                         columnNumber: 29
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/blog/[id]/client.tsx",
-                                    lineNumber: 127,
+                                    lineNumber: 129,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -336,20 +337,20 @@ function BlogPostClient({ post }) {
                                                     className: "w-5 h-5"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/blog/[id]/client.tsx",
-                                                    lineNumber: 135,
+                                                    lineNumber: 137,
                                                     columnNumber: 33
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: "Share this article:"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/blog/[id]/client.tsx",
-                                                    lineNumber: 136,
+                                                    lineNumber: 138,
                                                     columnNumber: 33
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/blog/[id]/client.tsx",
-                                            lineNumber: 134,
+                                            lineNumber: 136,
                                             columnNumber: 29
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -365,12 +366,12 @@ function BlogPostClient({ post }) {
                                                         className: "w-5 h-5"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/blog/[id]/client.tsx",
-                                                        lineNumber: 146,
+                                                        lineNumber: 148,
                                                         columnNumber: 37
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/blog/[id]/client.tsx",
-                                                    lineNumber: 139,
+                                                    lineNumber: 141,
                                                     columnNumber: 33
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -383,12 +384,12 @@ function BlogPostClient({ post }) {
                                                         className: "w-5 h-5"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/blog/[id]/client.tsx",
-                                                        lineNumber: 155,
+                                                        lineNumber: 157,
                                                         columnNumber: 37
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/blog/[id]/client.tsx",
-                                                    lineNumber: 148,
+                                                    lineNumber: 150,
                                                     columnNumber: 33
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -401,24 +402,24 @@ function BlogPostClient({ post }) {
                                                         className: "w-5 h-5"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/blog/[id]/client.tsx",
-                                                        lineNumber: 164,
+                                                        lineNumber: 166,
                                                         columnNumber: 37
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/blog/[id]/client.tsx",
-                                                    lineNumber: 157,
+                                                    lineNumber: 159,
                                                     columnNumber: 33
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/blog/[id]/client.tsx",
-                                            lineNumber: 138,
+                                            lineNumber: 140,
                                             columnNumber: 29
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/blog/[id]/client.tsx",
-                                    lineNumber: 133,
+                                    lineNumber: 135,
                                     columnNumber: 25
                                 }, this)
                             ]

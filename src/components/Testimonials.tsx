@@ -2,9 +2,13 @@
 
 import { motion } from 'motion/react';
 import { Quote, Star } from 'lucide-react';
-import { testimonialsData } from '@/data/testimonials';
+import type { Testimonial } from '@/types/api';
 
-export function Testimonials() {
+interface TestimonialsProps {
+  testimonials: Testimonial[];
+}
+
+export function Testimonials({ testimonials }: TestimonialsProps) {
   return (
     <section className="py-16 md:py-24 bg-slate-900 text-white relative overflow-hidden">
       {/* Background Elements */}
@@ -32,9 +36,9 @@ export function Testimonials() {
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {testimonialsData.map((testimonial, index) => (
+          {testimonials.map((testimonial, index) => (
             <motion.div
-              key={index}
+              key={testimonial.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -57,7 +61,7 @@ export function Testimonials() {
               </p>
               <div className="flex items-center gap-4 mt-auto">
                 <img
-                  src={(testimonial.image as any)?.src || testimonial.image}
+                  src={testimonial.avatar_url || '/images/placeholder-avatar.webp'}
                   alt={testimonial.name}
                   loading="lazy"
                   className="w-12 h-12 rounded-full object-cover ring-2 ring-white/10"
@@ -76,3 +80,4 @@ export function Testimonials() {
     </section>
   );
 }
+

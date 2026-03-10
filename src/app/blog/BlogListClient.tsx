@@ -2,13 +2,13 @@
 
 import React, { useState, useMemo } from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight, Calendar, User, ChevronLeft, ChevronRight, Search } from 'lucide-react';
+import { ArrowRight, Calendar, User, ChevronLeft, ChevronRight, Search, Image as ImageIcon } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
-import type { BlogPost } from '@/data/blog';
+import type { Post } from '@/types/api';
 
 interface BlogListClientProps {
-    posts: BlogPost[];
+    posts: Post[];
     categories: string[];
 }
 
@@ -23,9 +23,9 @@ export default function BlogListClient({ posts, categories }: BlogListClientProp
         return posts.filter(post => {
             const matchesSearch =
                 post.title.toLowerCase().includes(query) ||
-                post.content.toLowerCase().includes(query) ||
+                (post.content ?? '').toLowerCase().includes(query) ||
                 post.excerpt.toLowerCase().includes(query);
-            const matchesCategory = activeCategory === 'Semua' || post.category === activeCategory;
+            const matchesCategory = activeCategory === 'Semua' || post.category.name === activeCategory;
             return matchesSearch && matchesCategory;
         });
     }, [posts, searchQuery, activeCategory]);
@@ -96,7 +96,17 @@ export default function BlogListClient({ posts, categories }: BlogListClientProp
                 </div>
             </motion.div>
 
-            {filteredPosts.length === 0 ? (
+            {posts.length === 0 ? (
+                <div className="text-center py-20 max-w-2xl mx-auto bg-white rounded-3xl border border-slate-100 shadow-sm">
+                    <div className="w-20 h-20 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <Calendar className="w-10 h-10 text-slate-400" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-2">Belum ada artikel</h3>
+                    <p className="text-slate-600 mb-6">
+                        Saat ini belum ada artikel yang dipublikasikan. Silakan cek kembali nanti.
+                    </p>
+                </div>
+            ) : filteredPosts.length === 0 ? (
                 <div className="text-center py-20">
                     <div className="w-20 h-20 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-6">
                         <Search className="w-10 h-10 text-slate-400" />
@@ -127,17 +137,23 @@ export default function BlogListClient({ posts, categories }: BlogListClientProp
                                 transition={{ delay: index * 0.1 }}
                                 className="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300 group flex flex-col"
                             >
-                                <div className="relative aspect-[16/10] overflow-hidden bg-slate-200">
-                                    <Image
-                                        src={post.imageUrl}
-                                        alt={post.title}
-                                        fill
-                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                        className="object-cover transition-transform duration-500 group-hover:scale-105"
-                                    />
+                                <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
+                                    {post.cover_url ? (
+                                        <Image
+                                            src={post.cover_url}
+                                            alt={post.title}
+                                            fill
+                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                            className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                        />
+                                    ) : (
+                                        <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 text-slate-400 p-8 text-center">
+                                            <ImageIcon className="w-12 h-12 mb-4 opacity-50" />
+                                        </div>
+                                    )}
                                     <div className="absolute top-4 left-4">
                                         <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-blue-600 text-xs font-bold uppercase tracking-wider rounded-full shadow-sm">
-                                            {post.category}
+                                            {post.category.name}
                                         </span>
                                     </div>
                                 </div>
@@ -145,15 +161,17 @@ export default function BlogListClient({ posts, categories }: BlogListClientProp
                                     <div className="flex items-center gap-4 text-sm text-slate-500 mb-4">
                                         <div className="flex items-center gap-1.5">
                                             <Calendar className="w-4 h-4" />
-                                            {post.date}
+                                            {new Date(post.published_at).toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' })}
                                         </div>
-                                        <div className="flex items-center gap-1.5">
-                                            <User className="w-4 h-4" />
-                                            {post.author}
-                                        </div>
+                                        {post.author && (
+                                            <div className="flex items-center gap-1.5">
+                                                <User className="w-4 h-4" />
+                                                {post.author}
+                                            </div>
+                                        )}
                                     </div>
                                     <h2 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors line-clamp-2">
-                                        <Link href={`/blog/${post.id}`}>
+                                        <Link href={`/blog/${post.slug}`}>
                                             {post.title}
                                         </Link>
                                     </h2>
@@ -161,7 +179,7 @@ export default function BlogListClient({ posts, categories }: BlogListClientProp
                                         {post.excerpt}
                                     </p>
                                     <Link
-                                        href={`/blog/${post.id}`}
+                                        href={`/blog/${post.slug}`}
                                         className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors mt-auto"
                                     >
                                         Read More

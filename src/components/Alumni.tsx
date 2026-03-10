@@ -1,30 +1,14 @@
 "use client";
 
 import { motion } from 'motion/react';
-import { GraduationCap } from 'lucide-react';
-import { siteConfig } from '@/config/site';
+import { GraduationCap, User as UserIcon } from 'lucide-react';
+import type { AlumniGroup } from '@/types/api';
 
-export function Alumni() {
-    const alumni = [
-        { name: "Bastian", school: "SMK Muhammadiyah 1 Sukoharjo", period: "Batch 2025", image: `${siteConfig.cdnUrl}/images/team/Bastian.webp` },
-        { name: "Boneta P", school: "SMK Muhammadiyah 1 Sukoharjo", period: "Batch 2025", image: `${siteConfig.cdnUrl}/images/team/Boneta-P.webp` },
-        { name: "Daffa F", school: "SMK Muhammadiyah 1 Sukoharjo", period: "Batch 2025", image: `${siteConfig.cdnUrl}/images/team/Daffa-F.webp` },
-        { name: "Denisa R", school: "SMK Muhammadiyah 1 Sukoharjo", period: "Batch 2025", image: `${siteConfig.cdnUrl}/images/team/Denisa-R.webp` },
-        { name: "Faza", school: "SMK Muhammadiyah 1 Sukoharjo", period: "Batch 2025", image: `${siteConfig.cdnUrl}/images/team/Faza.webp` },
-        { name: "Haikal", school: "SMK Muhammadiyah 1 Sukoharjo", period: "Batch 2025", image: `${siteConfig.cdnUrl}/images/team/Haikal.webp` },
-        { name: "Iyan", school: "SMK Muhammadiyah 1 Sukoharjo", period: "Batch 2025", image: `${siteConfig.cdnUrl}/images/team/Iyan.webp` },
-        { name: "Zaydan", school: "SMK Muhammadiyah 1 Sukoharjo", period: "Batch 2025", image: `${siteConfig.cdnUrl}/images/team/Zaydan.webp` },
-        { name: "Abby", school: "SMK Muhammadiyah 1 Sukoharjo", period: "Batch 2024", image: `${siteConfig.cdnUrl}/images/team/Abby.webp` },
-        { name: "Afif", school: "SMK Muhammadiyah 1 Sukoharjo", period: "Batch 2024", image: `${siteConfig.cdnUrl}/images/team/Afif.webp` },
-        { name: "Arkan", school: "SMK Muhammadiyah 1 Sukoharjo", period: "Batch 2024", image: `${siteConfig.cdnUrl}/images/team/Arkan.webp` },
-        { name: "Daffa D", school: "SMK Muhammadiyah 1 Sukoharjo", period: "Batch 2024", image: `${siteConfig.cdnUrl}/images/team/Daffa-D.webp` },
-        { name: "Dzakwan", school: "SMK Muhammadiyah 1 Sukoharjo", period: "Batch 2024", image: `${siteConfig.cdnUrl}/images/team/Dzakwan.webp` },
-        { name: "Habib", school: "SMK Muhammadiyah 1 Sukoharjo", period: "Batch 2024", image: `${siteConfig.cdnUrl}/images/team/Habib.webp` },
-        { name: "Hanif", school: "SMK Muhammadiyah 1 Sukoharjo", period: "Batch 2024", image: `${siteConfig.cdnUrl}/images/team/Hanif.webp` },
-        { name: "Shabri", school: "SMK Muhammadiyah 1 Sukoharjo", period: "Batch 2024", image: `${siteConfig.cdnUrl}/images/team/Shabri.webp` },
-        { name: "Yudha", school: "SMK Muhammadiyah 1 Sukoharjo", period: "Batch 2024", image: `${siteConfig.cdnUrl}/images/team/Yudha.webp` }
-    ];
+interface AlumniProps {
+    groups: AlumniGroup[];
+}
 
+export function Alumni({ groups }: AlumniProps) {
     return (
         <section className="py-16 md:py-24 bg-slate-900 text-white relative overflow-hidden">
             {/* Background Elements */}
@@ -51,33 +35,52 @@ export function Alumni() {
                     </p>
                 </motion.div>
 
-                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {alumni.map((person, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                {groups.map((group) => (
+                    <div key={group.batch_period} className="mb-12 last:mb-0">
+                        <motion.h3
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            className="bg-white/5 border border-white/10 p-6 rounded-3xl backdrop-blur-sm hover:bg-white/10 transition-colors flex flex-col items-center text-center group"
+                            className="text-xl font-bold text-blue-400 mb-6 flex items-center gap-3"
                         >
-                            <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-slate-800 group-hover:border-blue-500 transition-colors mb-4">
-                                <img
-                                    src={(person.image as any)?.src || person.image}
-                                    alt={person.name}
-                                    loading="lazy"
-                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                                    referrerPolicy="no-referrer"
-                                />
-                            </div>
-                            <h3 className="text-xl font-bold text-white mb-2">{person.name}</h3>
-                            <p className="text-blue-400 font-medium text-sm mb-1">{person.school}</p>
-                            <span className="px-3 py-1 bg-white/10 rounded-full text-xs text-slate-300 mt-2">
-                                {person.period}
-                            </span>
-                        </motion.div>
-                    ))}
-                </div>
+                            <span className="w-8 h-px bg-blue-400/50" />
+                            {group.batch_period}
+                        </motion.h3>
+                        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                            {group.members.map((person, index) => (
+                                <motion.div
+                                    key={person.id}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: index * 0.1 }}
+                                    className="bg-white/5 border border-white/10 p-6 rounded-3xl backdrop-blur-sm hover:bg-white/10 transition-colors flex flex-col items-center text-center group"
+                                >
+                                    <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-slate-800 group-hover:border-blue-500 transition-colors mb-4 bg-slate-800">
+                                        {person.photo_url ? (
+                                            <img
+                                                src={person.photo_url}
+                                                alt={person.name}
+                                                loading="lazy"
+                                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                                referrerPolicy="no-referrer"
+                                            />
+                                        ) : (
+                                            <div className="w-full h-full flex items-center justify-center bg-slate-700 text-slate-500">
+                                                <UserIcon className="w-10 h-10 opacity-50" />
+                                            </div>
+                                        )}
+                                    </div>
+                                    <h3 className="text-xl font-bold text-white mb-2">{person.name}</h3>
+                                    <p className="text-blue-400 font-medium text-sm mb-1">{person.school}</p>
+                                    <span className="px-3 py-1 bg-white/10 rounded-full text-xs text-slate-300 mt-2">
+                                        {person.batch_period}
+                                    </span>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </div>
+                ))}
             </div>
         </section>
     );

@@ -5,6 +5,8 @@ import { Inter } from "next/font/google";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { BackToTop } from "@/components/BackToTop";
+import { apiFetch } from "@/lib/api";
+import type { ApiResponse, Settings } from "@/types/api";
 
 const inter = Inter({
     subsets: ["latin"],
@@ -59,7 +61,16 @@ export const metadata = {
     },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+    // Fetch global settings once for Footer and WhatsAppButton
+    let settings: Settings | undefined;
+    try {
+        const res = await apiFetch<ApiResponse<Settings>>('/settings');
+        settings = res.data;
+    } catch {
+        // Fall back to siteConfig defaults if API unavailable
+    }
+
     return (
         <html lang="id" className={inter.variable}>
             <body className="font-sans antialiased">
@@ -67,8 +78,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <ErrorBoundary>
                     <main>{children}</main>
                 </ErrorBoundary>
-                <Footer />
-                <WhatsAppButton />
+                <Footer settings={settings} />
+                <WhatsAppButton whatsappNumber={settings?.whatsapp_number} />
                 <BackToTop />
             </body>
         </html>

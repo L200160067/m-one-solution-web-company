@@ -118,7 +118,7 @@ function ServicesListClient({ services, categories }) {
     const [activeCategory, setActiveCategory] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('Semua');
     const filteredServices = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(()=>{
         return services.filter((service)=>{
-            const matchesSearch = service.title.toLowerCase().includes(searchQuery.toLowerCase()) || service.shortDescription.toLowerCase().includes(searchQuery.toLowerCase());
+            const matchesSearch = service.title.toLowerCase().includes(searchQuery.toLowerCase()) || service.short_description.toLowerCase().includes(searchQuery.toLowerCase());
             const matchesCategory = activeCategory === 'Semua' || service.category === activeCategory;
             return matchesSearch && matchesCategory;
         });
@@ -223,12 +223,12 @@ function ServicesListClient({ services, categories }) {
                 lineNumber: 51,
                 columnNumber: 13
             }, this),
-            filteredServices.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "text-center py-20",
+            services.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "text-center py-20 max-w-2xl mx-auto bg-white rounded-3xl border border-slate-100 shadow-sm",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "w-20 h-20 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-6",
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$search$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Search$3e$__["Search"], {
+                        className: "w-20 h-20 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-6",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$layers$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Layers$3e$__["Layers"], {
                             className: "w-10 h-10 text-slate-400"
                         }, void 0, false, {
                             fileName: "[project]/src/app/services/ServicesListClient.tsx",
@@ -242,10 +242,48 @@ function ServicesListClient({ services, categories }) {
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                         className: "text-2xl font-bold text-slate-900 mb-2",
-                        children: "Layanan tidak ditemukan"
+                        children: "Belum ada data layanan"
                     }, void 0, false, {
                         fileName: "[project]/src/app/services/ServicesListClient.tsx",
                         lineNumber: 103,
+                        columnNumber: 21
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                        className: "text-slate-600 mb-6",
+                        children: "Saat ini belum ada layanan yang ditambahkan. Silakan cek kembali nanti."
+                    }, void 0, false, {
+                        fileName: "[project]/src/app/services/ServicesListClient.tsx",
+                        lineNumber: 104,
+                        columnNumber: 21
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/src/app/services/ServicesListClient.tsx",
+                lineNumber: 99,
+                columnNumber: 17
+            }, this) : filteredServices.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "text-center py-20",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "w-20 h-20 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-6",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$search$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Search$3e$__["Search"], {
+                            className: "w-10 h-10 text-slate-400"
+                        }, void 0, false, {
+                            fileName: "[project]/src/app/services/ServicesListClient.tsx",
+                            lineNumber: 111,
+                            columnNumber: 25
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/src/app/services/ServicesListClient.tsx",
+                        lineNumber: 110,
+                        columnNumber: 21
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                        className: "text-2xl font-bold text-slate-900 mb-2",
+                        children: "Layanan tidak ditemukan"
+                    }, void 0, false, {
+                        fileName: "[project]/src/app/services/ServicesListClient.tsx",
+                        lineNumber: 113,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -257,7 +295,7 @@ function ServicesListClient({ services, categories }) {
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/services/ServicesListClient.tsx",
-                        lineNumber: 104,
+                        lineNumber: 114,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -269,13 +307,13 @@ function ServicesListClient({ services, categories }) {
                         children: "Hapus Pencarian"
                     }, void 0, false, {
                         fileName: "[project]/src/app/services/ServicesListClient.tsx",
-                        lineNumber: 107,
+                        lineNumber: 117,
                         columnNumber: 21
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/services/ServicesListClient.tsx",
-                lineNumber: 99,
+                lineNumber: 109,
                 columnNumber: 17
             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "grid md:grid-cols-2 gap-6 lg:gap-8",
@@ -301,7 +339,7 @@ function ServicesListClient({ services, categories }) {
                                         children: getCategoryIcon(service.category)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/services/ServicesListClient.tsx",
-                                        lineNumber: 128,
+                                        lineNumber: 138,
                                         columnNumber: 33
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -311,7 +349,7 @@ function ServicesListClient({ services, categories }) {
                                                 children: service.category
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/services/ServicesListClient.tsx",
-                                                lineNumber: 132,
+                                                lineNumber: 142,
                                                 columnNumber: 37
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -321,38 +359,38 @@ function ServicesListClient({ services, categories }) {
                                                     children: service.title
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/services/ServicesListClient.tsx",
-                                                    lineNumber: 136,
+                                                    lineNumber: 146,
                                                     columnNumber: 41
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/services/ServicesListClient.tsx",
-                                                lineNumber: 135,
+                                                lineNumber: 145,
                                                 columnNumber: 37
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/services/ServicesListClient.tsx",
-                                        lineNumber: 131,
+                                        lineNumber: 141,
                                         columnNumber: 33
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/services/ServicesListClient.tsx",
-                                lineNumber: 127,
+                                lineNumber: 137,
                                 columnNumber: 29
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "text-slate-600 mb-6 sm:mb-8 leading-relaxed flex-grow text-sm sm:text-base",
-                                children: service.shortDescription
+                                children: service.short_description
                             }, void 0, false, {
                                 fileName: "[project]/src/app/services/ServicesListClient.tsx",
-                                lineNumber: 143,
+                                lineNumber: 153,
                                 columnNumber: 29
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "mt-auto pt-5 sm:pt-6 border-t border-slate-100",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                    href: `/services/${service.id}`,
+                                    href: `/services/${service.slug}`,
                                     className: "inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors group/link text-sm sm:text-base",
                                     children: [
                                         "Pelajari Lebih Lanjut",
@@ -360,29 +398,29 @@ function ServicesListClient({ services, categories }) {
                                             className: "w-4 h-4 group-hover/link:translate-x-1 transition-transform"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/services/ServicesListClient.tsx",
-                                            lineNumber: 153,
+                                            lineNumber: 163,
                                             columnNumber: 37
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/services/ServicesListClient.tsx",
-                                    lineNumber: 148,
+                                    lineNumber: 158,
                                     columnNumber: 33
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/services/ServicesListClient.tsx",
-                                lineNumber: 147,
+                                lineNumber: 157,
                                 columnNumber: 29
                             }, this)
                         ]
                     }, service.id, true, {
                         fileName: "[project]/src/app/services/ServicesListClient.tsx",
-                        lineNumber: 120,
+                        lineNumber: 130,
                         columnNumber: 25
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/src/app/services/ServicesListClient.tsx",
-                lineNumber: 118,
+                lineNumber: 128,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -408,18 +446,18 @@ function ServicesListClient({ services, categories }) {
                             className: "w-5 h-5"
                         }, void 0, false, {
                             fileName: "[project]/src/app/services/ServicesListClient.tsx",
-                            lineNumber: 173,
+                            lineNumber: 183,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/services/ServicesListClient.tsx",
-                    lineNumber: 168,
+                    lineNumber: 178,
                     columnNumber: 17
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/services/ServicesListClient.tsx",
-                lineNumber: 162,
+                lineNumber: 172,
                 columnNumber: 13
             }, this)
         ]

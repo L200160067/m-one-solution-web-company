@@ -4,7 +4,7 @@ import { useState, useMemo } from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, Search, Layout, Globe, Briefcase, Code, Layers } from 'lucide-react';
 import Link from 'next/link';
-import type { Service } from '@/data/services';
+import type { Service } from '@/types/api';
 
 const getCategoryIcon = (category: string) => {
     switch (category) {
@@ -40,7 +40,7 @@ export default function ServicesListClient({ services, categories }: ServicesLis
         return services.filter((service) => {
             const matchesSearch =
                 service.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                service.shortDescription.toLowerCase().includes(searchQuery.toLowerCase());
+                service.short_description.toLowerCase().includes(searchQuery.toLowerCase());
             const matchesCategory = activeCategory === 'Semua' || service.category === activeCategory;
             return matchesSearch && matchesCategory;
         });
@@ -95,7 +95,17 @@ export default function ServicesListClient({ services, categories }: ServicesLis
                 </div>
             </motion.div>
 
-            {filteredServices.length === 0 ? (
+            {services.length === 0 ? (
+                <div className="text-center py-20 max-w-2xl mx-auto bg-white rounded-3xl border border-slate-100 shadow-sm">
+                    <div className="w-20 h-20 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <Layers className="w-10 h-10 text-slate-400" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-2">Belum ada data layanan</h3>
+                    <p className="text-slate-600 mb-6">
+                        Saat ini belum ada layanan yang ditambahkan. Silakan cek kembali nanti.
+                    </p>
+                </div>
+            ) : filteredServices.length === 0 ? (
                 <div className="text-center py-20">
                     <div className="w-20 h-20 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-6">
                         <Search className="w-10 h-10 text-slate-400" />
@@ -141,12 +151,12 @@ export default function ServicesListClient({ services, categories }: ServicesLis
                             </div>
 
                             <p className="text-slate-600 mb-6 sm:mb-8 leading-relaxed flex-grow text-sm sm:text-base">
-                                {service.shortDescription}
+                                {service.short_description}
                             </p>
 
                             <div className="mt-auto pt-5 sm:pt-6 border-t border-slate-100">
                                 <Link
-                                    href={`/services/${service.id}`}
+                                    href={`/services/${service.slug}`}
                                     className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors group/link text-sm sm:text-base"
                                 >
                                     Pelajari Lebih Lanjut

@@ -1,14 +1,13 @@
 "use client";
 
 import { motion } from 'motion/react';
-import { siteConfig } from '@/config/site';
+import type { Partner } from '@/types/api';
 
-export function Partners() {
-  const partners = Array.from({ length: 7 }, (_, i) => ({
-    name: `Partner ${i + 1}`,
-    logo: `${siteConfig.cdnUrl}/images/partners/partner-${i + 1}.webp`
-  }));
+interface PartnersProps {
+  partners: Partner[];
+}
 
+export function Partners({ partners }: PartnersProps) {
   return (
     <section className="py-16 md:py-24 bg-slate-950 border-t border-white/5">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -26,26 +25,36 @@ export function Partners() {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
-          {partners.map((partner, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="flex justify-center"
-            >
-              <img
-                src={partner.logo}
-                alt={partner.name}
-                loading="lazy"
-                className="max-h-12 object-contain brightness-0 invert opacity-70 hover:opacity-100 hover:brightness-100 hover:invert-0 transition-all duration-300"
-                referrerPolicy="no-referrer"
-              />
-            </motion.div>
-          ))}
-        </div>
+        {partners.length > 0 ? (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+            {partners.map((partner, index) => (
+              <motion.div
+                key={partner.id}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="flex justify-center"
+              >
+                {partner.logo_url ? (
+                  <img
+                    src={partner.logo_url}
+                    alt={partner.name}
+                    loading="lazy"
+                    className="max-h-12 object-contain brightness-0 invert opacity-70 hover:opacity-100 hover:brightness-100 hover:invert-0 transition-all duration-300"
+                    referrerPolicy="no-referrer"
+                  />
+                ) : (
+                  <span className="text-white font-bold opacity-70 hover:opacity-100 transition-opacity whitespace-nowrap overflow-hidden text-ellipsis px-2">
+                    {partner.name}
+                  </span>
+                )}
+              </motion.div>
+            ))}
+          </div>
+        ) : (
+          <p className="text-slate-500 text-sm">Segera hadir</p>
+        )}
       </div>
     </section>
   );

@@ -4,7 +4,11 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { siteConfig } from '../config/site';
 
-export function WhatsAppButton() {
+interface WhatsAppButtonProps {
+  whatsappNumber?: string;
+}
+
+export function WhatsAppButton({ whatsappNumber }: WhatsAppButtonProps) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -16,7 +20,7 @@ export function WhatsAppButton() {
     return () => clearTimeout(timer);
   }, []);
 
-  const phoneNumber = siteConfig.whatsapp.number;
+  const phoneNumber = whatsappNumber || siteConfig.whatsapp.number;
   const message = siteConfig.whatsapp.defaultMessage;
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 

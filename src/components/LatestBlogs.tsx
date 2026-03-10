@@ -1,14 +1,15 @@
 "use client";
 
 import { motion } from 'motion/react';
-import { ArrowRight, Calendar, User, ArrowUpRight } from 'lucide-react';
+import { ArrowRight, Calendar, User, ArrowUpRight, Image as ImageIcon } from 'lucide-react';
 import Link from 'next/link';
-import { blogPosts } from '../data/blog';
+import type { Post } from '@/types/api';
 
-export function LatestBlogs() {
-    // Get only the 3 most recent posts
-    const recentPosts = blogPosts.slice(0, 3);
+interface LatestBlogsProps {
+    posts: Post[];
+}
 
+export function LatestBlogs({ posts }: LatestBlogsProps) {
     return (
         <section className="py-16 md:py-24 bg-slate-50 border-t border-slate-100">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -39,60 +40,74 @@ export function LatestBlogs() {
                     </Link>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {recentPosts.map((post, index) => (
-                        <motion.div
-                            key={post.id}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            className="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300 group flex flex-col"
-                        >
-                            <div className="relative aspect-[16/10] overflow-hidden bg-slate-200">
-                                <img
-                                    src={(post.imageUrl as any)?.src || post.imageUrl}
-                                    alt={post.title}
-                                    loading="lazy"
-                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                    referrerPolicy="no-referrer"
-                                />
-                                <div className="absolute top-4 left-4">
-                                    <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-blue-600 text-xs font-bold uppercase tracking-wider rounded-full shadow-sm">
-                                        {post.category}
-                                    </span>
-                                </div>
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <div className="flex items-center gap-4 text-sm text-slate-500 mb-4">
-                                    <div className="flex items-center gap-1.5">
-                                        <Calendar className="w-4 h-4" />
-                                        {post.date}
+                {posts.length === 0 ? (
+                    <div className="text-center py-12 bg-white rounded-2xl border border-slate-100 shadow-sm">
+                        <p className="text-slate-600 text-lg">Belum ada artikel terbaru saat ini.</p>
+                    </div>
+                ) : (
+                    <div className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                        {posts.map((post, index) => (
+                            <motion.div
+                                key={post.id}
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 }}
+                                className="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300 group flex flex-col flex-shrink-0 w-[85vw] sm:w-[350px] snap-center"
+                            >
+                                <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
+                                    {post.cover_url ? (
+                                        <img
+                                            src={post.cover_url}
+                                            alt={post.title}
+                                            loading="lazy"
+                                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                            referrerPolicy="no-referrer"
+                                        />
+                                    ) : (
+                                        <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 text-slate-400">
+                                            <ImageIcon className="w-12 h-12 mb-2 opacity-50" />
+                                        </div>
+                                    )}
+                                    <div className="absolute top-4 left-4">
+                                        <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-blue-600 text-xs font-bold uppercase tracking-wider rounded-full shadow-sm">
+                                            {post.category.name}
+                                        </span>
                                     </div>
-                                    <div className="flex items-center gap-1.5">
-                                        <User className="w-4 h-4" />
-                                        {post.author}
-                                    </div>
                                 </div>
-                                <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors line-clamp-2">
-                                    <Link href={`/blog/${post.id}`}>
-                                        {post.title}
+                                <div className="p-6 flex flex-col flex-grow">
+                                    <div className="flex items-center gap-4 text-sm text-slate-500 mb-4">
+                                        <div className="flex items-center gap-1.5">
+                                            <Calendar className="w-4 h-4" />
+                                            {new Date(post.published_at).toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' })}
+                                        </div>
+                                        {post.author && (
+                                            <div className="flex items-center gap-1.5">
+                                                <User className="w-4 h-4" />
+                                                {post.author}
+                                            </div>
+                                        )}
+                                    </div>
+                                    <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors line-clamp-2">
+                                        <Link href={`/blog/${post.slug}`}>
+                                            {post.title}
+                                        </Link>
+                                    </h3>
+                                    <p className="text-slate-600 mb-6 line-clamp-3 flex-grow">
+                                        {post.excerpt}
+                                    </p>
+                                    <Link
+                                        href={`/blog/${post.slug}`}
+                                        className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors mt-auto"
+                                    >
+                                        Baca Selengkapnya
+                                        <ArrowRight className="w-4 h-4" />
                                     </Link>
-                                </h3>
-                                <p className="text-slate-600 mb-6 line-clamp-3 flex-grow">
-                                    {post.excerpt}
-                                </p>
-                                <Link
-                                    href={`/blog/${post.id}`}
-                                    className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors mt-auto"
-                                >
-                                    Baca Selengkapnya
-                                    <ArrowRight className="w-4 h-4" />
-                                </Link>
-                            </div>
-                        </motion.div>
-                    ))}
-                </div>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                )}
             </div>
         </section>
     );

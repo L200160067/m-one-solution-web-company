@@ -1,6 +1,8 @@
 import { About } from '@/components/About';
 import { Team } from '@/components/Team';
 import { Alumni } from '@/components/Alumni';
+import { apiFetch } from '@/lib/api';
+import type { ApiResponse, TeamMember, AlumniGroup } from '@/types/api';
 
 export const metadata = {
     title: 'About Us | M-One Solution Software House',
@@ -18,12 +20,27 @@ export const metadata = {
     },
 };
 
-export default function AboutPage() {
+export default async function AboutPage() {
+    let team: TeamMember[] = [];
+    let groups: AlumniGroup[] = [];
+
+    try {
+        const [teamRes, alumniRes] = await Promise.all([
+            apiFetch<ApiResponse<TeamMember[]>>('/team'),
+            apiFetch<ApiResponse<AlumniGroup[]>>('/alumni')
+        ]);
+        team = teamRes.data;
+        groups = alumniRes.data;
+    } catch {
+        // Handle error gracefully
+    }
+
     return (
         <main className="pt-20 min-h-screen bg-white">
             <About />
-            <Team />
-            <Alumni />
+            <Team team={team} />
+            <Alumni groups={groups} />
         </main>
     );
 }
+

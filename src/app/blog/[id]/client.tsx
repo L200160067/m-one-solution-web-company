@@ -9,8 +9,8 @@ import Image from 'next/image';
 export default function BlogPostClient({ post }: { post: any }) {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-    const hasMultipleImages = post.images && post.images.length > 0;
-    const allImages = hasMultipleImages ? [post.imageUrl, ...post.images!] : [post.imageUrl];
+    const hasMultipleImages = false; // API currently returns single cover image
+    const allImages = [post.cover_url];
 
     const nextImage = () => {
         setCurrentImageIndex((prev) => (prev + 1) % allImages.length);
@@ -97,7 +97,7 @@ export default function BlogPostClient({ post }: { post: any }) {
                     <div className="p-8 md:p-12">
                         <div className="flex items-center gap-1.5 bg-slate-100 px-3 py-1 rounded-full text-slate-700 font-medium w-fit mb-6">
                             <Tag className="w-4 h-4 text-blue-600" />
-                            {post.category}
+                            {post.category.name}
                         </div>
 
                         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
@@ -107,10 +107,10 @@ export default function BlogPostClient({ post }: { post: any }) {
                         <div className="flex flex-wrap items-center gap-4 md:gap-6 text-sm text-slate-500 mb-10 pb-8 border-b border-slate-100">
                             <div className="flex items-center gap-2">
                                 <div className="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
-                                    {post.author.charAt(0)}
+                                    {post.author ? post.author.charAt(0) : 'M'}
                                 </div>
                                 <div>
-                                    <p className="font-medium text-slate-900">{post.author}</p>
+                                    <p className="font-medium text-slate-900">{post.author ?? 'Tim M-One'}</p>
                                     <p className="text-xs">Author</p>
                                 </div>
                             </div>
@@ -118,7 +118,9 @@ export default function BlogPostClient({ post }: { post: any }) {
                             <div className="flex items-center gap-2">
                                 <Calendar className="w-5 h-5 text-slate-400" />
                                 <div>
-                                    <p className="font-medium text-slate-900">{post.date}</p>
+                                    <p className="font-medium text-slate-900">
+                                        {new Date(post.published_at).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}
+                                    </p>
                                     <p className="text-xs">Published</p>
                                 </div>
                             </div>

@@ -1,4 +1,6 @@
 import { Projects } from '@/components/Projects';
+import { apiFetch } from '@/lib/api';
+import type { ApiResponse, Project } from '@/types/api';
 
 export const metadata = {
     title: 'Portofolio | M-One Solution Software House',
@@ -16,10 +18,19 @@ export const metadata = {
     },
 };
 
-export default function PortfolioPage() {
+export default async function PortfolioPage() {
+    let projects: Project[] = [];
+    try {
+        const res = await apiFetch<ApiResponse<Project[]>>('/projects');
+        projects = res.data;
+    } catch {
+        // API unavailable — render empty state
+    }
+
     return (
         <main className="pt-20 min-h-screen bg-slate-50">
-            <Projects />
+            <Projects projects={projects} />
         </main>
     );
 }
+

@@ -1,40 +1,53 @@
-import { servicesData } from '@/data/services';
+import { apiFetch } from '@/lib/api';
+import type { ApiResponse, Service } from '@/types/api';
 import { notFound } from 'next/navigation';
 import ServiceDetailClient from './client';
 
+async function getService(slug: string): Promise<Service | null> {
+    try {
+        const res = await apiFetch<ApiResponse<Service>>(`/services/${slug}`);
+        return res.data;
+    } catch {
+        return null;
+    }
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
-    const { id } = await params;
-    const service = servicesData.find((s) => s.id === id);
+    const { id: slug } = await params;
+    const service = await getService(slug);
     if (!service) return { title: 'Service Not Found' };
 
     return {
         title: `${service.title} | Layanan M-One Solution`,
-        description: service.shortDescription,
+        description: service.short_description,
         keywords: service.keywords.join(', '),
         openGraph: {
             type: 'article',
             title: `${service.title} | M-One Solution`,
-            description: service.shortDescription,
-            images: [service.imageUrl],
+            description: service.short_description,
+            images: [service.image_url],
         },
         twitter: {
             card: 'summary_large_image',
             title: `${service.title} | M-One Solution`,
-            description: service.shortDescription,
-            images: [service.imageUrl],
+            description: service.short_description,
+            images: [service.image_url],
         },
     };
 }
 
 export async function generateStaticParams() {
-    return servicesData.map((service) => ({
-        id: service.id,
-    }));
+    try {
+        const res = await apiFetch<ApiResponse<Service[]>>('/services');
+        return res.data.map((service) => ({ id: service.slug }));
+    } catch {
+        return [];
+    }
 }
 
 export default async function ServiceDetailPage({ params }: { params: Promise<{ id: string }> }) {
-    const { id } = await params;
-    const service = servicesData.find((s) => s.id === id);
+    const { id: slug } = await params;
+    const service = await getService(slug);
 
     if (!service) {
         notFound();
@@ -42,3 +55,4 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
 
     return <ServiceDetailClient service={service} />;
 }
+

@@ -19,6 +19,16 @@ const nextConfig: NextConfig = {
                 protocol: 'https',
                 hostname: 'img.youtube.com',
             },
+            // Laravel API — development (Laravel Herd)
+            {
+                protocol: 'http',
+                hostname: 'm-one-solution-api.test',
+            },
+            // Laravel API — production
+            {
+                protocol: 'https',
+                hostname: 'api.m-one-solution.com',
+            },
         ],
     },
     async headers() {

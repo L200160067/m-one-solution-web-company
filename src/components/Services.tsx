@@ -3,7 +3,11 @@
 import { motion } from 'motion/react';
 import { ArrowRight, Layout, Globe, Briefcase, Code } from 'lucide-react';
 import Link from 'next/link';
-import { servicesData } from '../data/services';
+import type { Service } from '@/types/api';
+
+interface ServicesProps {
+  services: Service[];
+}
 
 const getCategoryIcon = (category: string) => {
   switch (category) {
@@ -20,9 +24,9 @@ const getCategoryIcon = (category: string) => {
   }
 };
 
-export function Services() {
+export function Services({ services }: ServicesProps) {
   // Only show the first 4 services on the home page
-  const featuredServices = servicesData.slice(0, 4);
+  const featuredServices = services.slice(0, 4);
 
   return (
     <section className="py-16 md:py-24 bg-white relative overflow-hidden">
@@ -56,39 +60,45 @@ export function Services() {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12">
-          {featuredServices.map((service, index) => (
-            <motion.div
-              key={service.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="bg-slate-50 rounded-3xl p-6 border border-slate-100 hover:shadow-xl transition-all duration-300 group flex flex-col h-full"
-            >
-              <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-white text-blue-600 flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform duration-300">
-                {getCategoryIcon(service.category)}
-              </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-3 md:mb-4 group-hover:text-blue-600 transition-colors line-clamp-2">
-                <Link href={`/services/${service.id}`}>
-                  {service.title}
-                </Link>
-              </h3>
-              <p className="text-slate-600 mb-6 md:mb-8 leading-relaxed flex-grow text-sm md:text-base line-clamp-3 md:line-clamp-4">
-                {service.shortDescription}
-              </p>
-              <div className="mt-auto pt-5 md:pt-6 border-t border-slate-200/60">
-                <Link
-                  href={`/services/${service.id}`}
-                  className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors group/link text-sm md:text-base"
-                >
-                  Detail Layanan
-                  <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
-                </Link>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+        {featuredServices.length === 0 ? (
+          <div className="text-center py-12 bg-slate-50 rounded-3xl border border-slate-100 mb-12">
+            <p className="text-slate-600">Belum ada data layanan saat ini.</p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12">
+            {featuredServices.map((service, index) => (
+              <motion.div
+                key={service.slug}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-slate-50 rounded-3xl p-6 border border-slate-100 hover:shadow-xl transition-all duration-300 group flex flex-col h-full"
+              >
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-white text-blue-600 flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform duration-300">
+                  {getCategoryIcon(service.category)}
+                </div>
+                <h3 className="text-lg font-bold text-slate-900 mb-3 md:mb-4 group-hover:text-blue-600 transition-colors line-clamp-2">
+                  <Link href={`/services/${service.slug}`}>
+                    {service.title}
+                  </Link>
+                </h3>
+                <p className="text-slate-600 mb-6 md:mb-8 leading-relaxed flex-grow text-sm md:text-base line-clamp-3 md:line-clamp-4">
+                  {service.short_description}
+                </p>
+                <div className="mt-auto pt-5 md:pt-6 border-t border-slate-200/60">
+                  <Link
+                    href={`/services/${service.slug}`}
+                    className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors group/link text-sm md:text-base"
+                  >
+                    Detail Layanan
+                    <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        )}
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

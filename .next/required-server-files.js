@@ -79,6 +79,14 @@ self.__SERVER_FILES_MANIFEST={
         {
           "protocol": "https",
           "hostname": "img.youtube.com"
+        },
+        {
+          "protocol": "http",
+          "hostname": "m-one-solution-api.test"
+        },
+        {
+          "protocol": "https",
+          "hostname": "api.m-one-solution.com"
         }
       ],
       "qualities": [

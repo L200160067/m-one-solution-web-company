@@ -32,19 +32,25 @@ export default function ServiceDetailClient({ service }: { service: any }) {
                     </h1>
 
                     <p className="text-xl text-slate-600 leading-relaxed mb-12 max-w-3xl">
-                        {service.shortDescription}
+                        {service.short_description}
                     </p>
 
                     <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
                         {/* Image Side */}
                         <div className="lg:sticky lg:top-32">
                             <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
-                                <img
-                                    src={service.imageUrl}
-                                    alt={service.title}
-                                    className="w-full h-full object-cover"
-                                    referrerPolicy="no-referrer"
-                                />
+                                {service.image_url ? (
+                                    <img
+                                        src={service.image_url}
+                                        alt={service.title}
+                                        className="w-full h-full object-cover"
+                                        referrerPolicy="no-referrer"
+                                    />
+                                ) : (
+                                    <div className="w-full h-full flex items-center justify-center bg-slate-100 text-slate-400">
+                                        No Image Available
+                                    </div>
+                                )}
                             </div>
                         </div>
 
@@ -52,7 +58,7 @@ export default function ServiceDetailClient({ service }: { service: any }) {
                         <div className="prose prose-lg prose-slate max-w-none">
                             <h2 className="text-3xl font-bold text-slate-900 mb-6 mt-0">Tentang Layanan Ini</h2>
                             <p className="text-slate-600 leading-relaxed mb-12 text-lg">
-                                {service.fullDescription}
+                                {service.full_description}
                             </p>
 
                             <div className="space-y-12 mb-16">

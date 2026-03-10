@@ -76,7 +76,7 @@ function ServiceDetailClient({ service }) {
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                         className: "text-xl text-slate-600 leading-relaxed mb-12 max-w-3xl",
-                        children: service.shortDescription
+                        children: service.short_description
                     }, void 0, false, {
                         fileName: "[project]/src/app/services/[id]/client.tsx",
                         lineNumber: 34,
@@ -89,15 +89,22 @@ function ServiceDetailClient({ service }) {
                                 className: "lg:sticky lg:top-32",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl",
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                        src: service.imageUrl,
+                                    children: service.image_url ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                        src: service.image_url,
                                         alt: service.title,
                                         className: "w-full h-full object-cover",
                                         referrerPolicy: "no-referrer"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/services/[id]/client.tsx",
-                                        lineNumber: 42,
-                                        columnNumber: 33
+                                        lineNumber: 43,
+                                        columnNumber: 37
+                                    }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "w-full h-full flex items-center justify-center bg-slate-100 text-slate-400",
+                                        children: "No Image Available"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/app/services/[id]/client.tsx",
+                                        lineNumber: 50,
+                                        columnNumber: 37
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/services/[id]/client.tsx",
@@ -117,15 +124,15 @@ function ServiceDetailClient({ service }) {
                                         children: "Tentang Layanan Ini"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/services/[id]/client.tsx",
-                                        lineNumber: 53,
+                                        lineNumber: 59,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: "text-slate-600 leading-relaxed mb-12 text-lg",
-                                        children: service.fullDescription
+                                        children: service.full_description
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/services/[id]/client.tsx",
-                                        lineNumber: 54,
+                                        lineNumber: 60,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -139,7 +146,7 @@ function ServiceDetailClient({ service }) {
                                                         children: "Fitur Utama"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/services/[id]/client.tsx",
-                                                        lineNumber: 61,
+                                                        lineNumber: 67,
                                                         columnNumber: 37
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -151,7 +158,7 @@ function ServiceDetailClient({ service }) {
                                                                         className: "w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/services/[id]/client.tsx",
-                                                                        lineNumber: 65,
+                                                                        lineNumber: 71,
                                                                         columnNumber: 49
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -159,24 +166,24 @@ function ServiceDetailClient({ service }) {
                                                                         children: feature
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/services/[id]/client.tsx",
-                                                                        lineNumber: 66,
+                                                                        lineNumber: 72,
                                                                         columnNumber: 49
                                                                     }, this)
                                                                 ]
                                                             }, index, true, {
                                                                 fileName: "[project]/src/app/services/[id]/client.tsx",
-                                                                lineNumber: 64,
+                                                                lineNumber: 70,
                                                                 columnNumber: 45
                                                             }, this))
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/services/[id]/client.tsx",
-                                                        lineNumber: 62,
+                                                        lineNumber: 68,
                                                         columnNumber: 37
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/services/[id]/client.tsx",
-                                                lineNumber: 60,
+                                                lineNumber: 66,
                                                 columnNumber: 33
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -187,7 +194,7 @@ function ServiceDetailClient({ service }) {
                                                         children: "Manfaat untuk Bisnis Anda"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/services/[id]/client.tsx",
-                                                        lineNumber: 74,
+                                                        lineNumber: 80,
                                                         columnNumber: 37
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -199,7 +206,7 @@ function ServiceDetailClient({ service }) {
                                                                         className: "w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/services/[id]/client.tsx",
-                                                                        lineNumber: 78,
+                                                                        lineNumber: 84,
                                                                         columnNumber: 49
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -207,36 +214,36 @@ function ServiceDetailClient({ service }) {
                                                                         children: benefit
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/services/[id]/client.tsx",
-                                                                        lineNumber: 79,
+                                                                        lineNumber: 85,
                                                                         columnNumber: 49
                                                                     }, this)
                                                                 ]
                                                             }, index, true, {
                                                                 fileName: "[project]/src/app/services/[id]/client.tsx",
-                                                                lineNumber: 77,
+                                                                lineNumber: 83,
                                                                 columnNumber: 45
                                                             }, this))
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/services/[id]/client.tsx",
-                                                        lineNumber: 75,
+                                                        lineNumber: 81,
                                                         columnNumber: 37
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/services/[id]/client.tsx",
-                                                lineNumber: 73,
+                                                lineNumber: 79,
                                                 columnNumber: 33
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/services/[id]/client.tsx",
-                                        lineNumber: 58,
+                                        lineNumber: 64,
                                         columnNumber: 29
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/services/[id]/client.tsx",
-                                lineNumber: 52,
+                                lineNumber: 58,
                                 columnNumber: 25
                             }, this)
                         ]
@@ -254,12 +261,12 @@ function ServiceDetailClient({ service }) {
                                     className: "absolute -top-[50%] -right-[20%] w-[100%] h-[150%] rounded-full bg-blue-500/20 blur-[100px]"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/services/[id]/client.tsx",
-                                    lineNumber: 91,
+                                    lineNumber: 97,
                                     columnNumber: 29
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/services/[id]/client.tsx",
-                                lineNumber: 90,
+                                lineNumber: 96,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -270,7 +277,7 @@ function ServiceDetailClient({ service }) {
                                         children: "Tertarik dengan Layanan Ini?"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/services/[id]/client.tsx",
-                                        lineNumber: 94,
+                                        lineNumber: 100,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -282,7 +289,7 @@ function ServiceDetailClient({ service }) {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/services/[id]/client.tsx",
-                                        lineNumber: 97,
+                                        lineNumber: 103,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -294,25 +301,25 @@ function ServiceDetailClient({ service }) {
                                                 className: "w-5 h-5"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/services/[id]/client.tsx",
-                                                lineNumber: 105,
+                                                lineNumber: 111,
                                                 columnNumber: 33
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/services/[id]/client.tsx",
-                                        lineNumber: 100,
+                                        lineNumber: 106,
                                         columnNumber: 29
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/services/[id]/client.tsx",
-                                lineNumber: 93,
+                                lineNumber: 99,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/services/[id]/client.tsx",
-                        lineNumber: 89,
+                        lineNumber: 95,
                         columnNumber: 21
                     }, this)
                 ]
