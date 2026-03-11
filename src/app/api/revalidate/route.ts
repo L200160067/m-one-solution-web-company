@@ -13,7 +13,7 @@ export async function POST(request: NextRequest) {
     const { secret, type, payload } = body;
 
     // Pastikan secret key cocok (Opsional namun disarankan untuk prod)
-    if (secret !== process.env.REVALIDATION_SECRET && process.env.NODE_ENV !== 'development') {
+    if (secret !== process.env.REVALIDATE_SECRET && process.env.NODE_ENV !== 'development') {
       return NextResponse.json({ message: 'Invalid secret' }, { status: 401 });
     }
 
@@ -22,7 +22,7 @@ export async function POST(request: NextRequest) {
     
     if (type === 'tag' && payload) {
       // Use standard fallback for older or bugged Next.js 16 Turbopack instances
-      revalidateTag(payload);
+      revalidateTag(payload, 'default');
       
       // Auto-fallback: If tag is 'posts', also clear the /blog path 
       // just in case tag caching is buggy in Dev Mode.

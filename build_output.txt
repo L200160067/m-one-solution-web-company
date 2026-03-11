@@ -1,0 +1,23 @@
+
+> m-one-solution-web@0.0.0 build
+> next build
+
+Γû▓ Next.js 16.1.6 (Turbopack)
+- Environments: .env.local
+
+  Creating an optimized production build ...
+Γ£ô Compiled successfully in 14.2s
+  Running TypeScript ...
+Failed to compile.
+
+./src/app/api/revalidate/route.ts:25:7
+Type error: Expected 2 arguments, but got 1.
+
+  23 |     if (type === 'tag' && payload) {
+  24 |       // Use standard fallback for older or bugged Next.js 16 Turbopack instances
+> 25 |       revalidateTag(payload);
+     |       ^
+  26 |       
+  27 |       // Auto-fallback: If tag is 'posts', also clear the /blog path 
+  28 |       // just in case tag caching is buggy in Dev Mode.
+Next.js build worker exited with code: 1 and signal: null
