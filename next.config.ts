@@ -30,6 +30,11 @@ const nextConfig: NextConfig = {
                 protocol: 'https',
                 hostname: 'api.m-one-solution.com',
             },
+            // Laravel API — Koyeb
+            {
+                protocol: 'https',
+                hostname: 'miniature-vilhelmina-m-one-solution-7234bbee.koyeb.app',
+            },
         ],
     },
     async headers() {

@@ -18,7 +18,9 @@ async function fetchSafe<T>(endpoint: string, fallback: T, tags?: string[]): Pro
     try {
         const res = await apiFetch<ApiResponse<T>>(endpoint, { tags });
         return res.data;
-    } catch {
+    } catch (err) {
+        // Log in server so you can see in Netlify deploy logs which endpoint failed
+        console.warn(`[Home] API fetch failed for ${endpoint}:`, err instanceof Error ? err.message : err);
         return fallback;
     }
 }
