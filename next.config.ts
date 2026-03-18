@@ -35,6 +35,11 @@ const nextConfig: NextConfig = {
                 protocol: 'https',
                 hostname: 'miniature-vilhelmina-m-one-solution-7234bbee.koyeb.app',
             },
+            // Placeholder images for static/mock data
+            {
+                protocol: 'https',
+                hostname: 'placehold.co',
+            },
         ],
     },
     async headers() {
