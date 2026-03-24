@@ -96,7 +96,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         },
         "areaServed": ["Sukoharjo", "Solo", "Surakarta", "Jawa Tengah"],
         "sameAs": [
-            "https://www.instagram.com/m.one_solution/"
+            "https://www.instagram.com/m.one_solution/",
+            "// TODO: Tambahkan URL Google Business Profile (Maps) Anda di sini"
         ],
         "openingHoursSpecification": {
             "@type": "OpeningHoursSpecification",

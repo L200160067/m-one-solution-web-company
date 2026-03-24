@@ -1,6 +1,7 @@
 import { CTA } from '@/components/CTA';
 import type { Metadata } from 'next';
 import { BookOpen, Users, LayoutDashboard, MonitorSmartphone } from 'lucide-react';
+import { Breadcrumb } from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
     title: 'Jasa Pembuatan Website Sekolah & Sistem PPDB | M-One Solution',
@@ -14,6 +15,11 @@ export const metadata: Metadata = {
 export default function WebsiteSekolahPage() {
     return (
         <main className="pt-20 min-h-screen bg-slate-50">
+            <div className="bg-white border-b border-slate-100">
+                <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+                    <Breadcrumb items={[{ label: 'Layanan', href: '/services' }, { label: 'Jasa Website Sekolah' }]} className="!bg-transparent !p-0 !border-none !shadow-none" />
+                </div>
+            </div>
             {/* Hero Section */}
             <section className="py-20 bg-slate-900 text-white relative overflow-hidden">
                 <div className="absolute inset-0 overflow-hidden pointer-events-none">

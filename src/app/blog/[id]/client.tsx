@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { ArrowLeft, Calendar, User, Tag, Twitter, Linkedin, Facebook, Share2, ChevronLeft, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Breadcrumb } from '@/components/Breadcrumb';
 
 export default function BlogPostClient({ post }: { post: any }) {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -29,9 +30,18 @@ export default function BlogPostClient({ post }: { post: any }) {
     return (
         <main className="pt-24 pb-16 min-h-screen bg-slate-50">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+                <div className="mb-8">
+                    <Breadcrumb 
+                        items={[
+                            { label: 'Blog', href: '/blog' },
+                            { label: post.title }
+                        ]} 
+                    />
+                </div>
+
                 <Link
                     href="/blog"
-                    className="inline-flex items-center gap-2 text-slate-500 hover:text-blue-600 transition-colors mb-8 font-medium"
+                    className="inline-flex items-center gap-2 text-slate-500 hover:text-blue-600 transition-colors mb-6 font-medium"
                 >
                     <ArrowLeft className="w-4 h-4" />
                     Back to Blog
@@ -126,11 +136,10 @@ export default function BlogPostClient({ post }: { post: any }) {
                             </div>
                         </div>
 
-                        <div className="prose prose-lg prose-slate max-w-none mb-12">
-                            <p className="text-slate-600 leading-relaxed text-lg whitespace-pre-line">
-                                {post.content}
-                            </p>
-                        </div>
+                        <div 
+                             className="prose prose-lg prose-blue max-w-none mb-12 text-slate-600 leading-relaxed"
+                             dangerouslySetInnerHTML={{ __html: post.content }}
+                        />
 
                         <div className="pt-8 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
                             <div className="flex items-center gap-2 text-slate-700 font-medium">
