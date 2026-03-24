@@ -83,10 +83,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         "email": "monesolutionsoftwarehouse@gmail.com",
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "Sukoharjo",
+            "streetAddress": "Jl. Wandyo Pranoto No.Rt. 03, RT.03/RW.02, Denokan, Jetis",
             "addressLocality": "Sukoharjo",
             "addressRegion": "Jawa Tengah",
-            "postalCode": "57500",
+            "postalCode": "57511",
             "addressCountry": "ID"
         },
         "geo": {
