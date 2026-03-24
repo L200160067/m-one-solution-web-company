@@ -15,7 +15,7 @@ export const siteConfig = {
     },
     contact: {
         email: "monesolutionsoftwarehouse@gmail.com",
-        address: "Sukoharjo, Jawa Tengah, Indonesia",
+        address: "Jl. Wandyo Pranoto No.Rt. 03, RT.03/RW.02, Denokan, Jetis, Kec. Sukoharjo, Kabupaten Sukoharjo, Jawa Tengah 57511",
         city: "Sukoharjo",
         region: "Jawa Tengah",
         country: "ID"
