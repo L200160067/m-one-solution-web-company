@@ -47,7 +47,7 @@ export const metadata = {
         card: "summary_large_image",
         title: "Software House Sukoharjo | M-One Solution",
         description: "Jasa pembuatan website & aplikasi profesional di Sukoharjo & Solo. Konsultasi GRATIS — hubungi M-One Solution sekarang!",
-        images: ["/og-image.jpg"],
+        images: ["/og-image.png"]
     },
     robots: {
         index: true,
