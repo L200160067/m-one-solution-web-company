@@ -5,14 +5,6 @@ const CDN_BASE_URL_ALUMNI = 'https://raw.githubusercontent.com/L200160067/mone-a
 
 export const mockTeamMembers: TeamMember[] = [
   {
-    id: 2,
-    name: 'Afif',
-    role: 'Team Member',
-    social_linkedin: 'https://linkedin.com',
-    social_github: 'https://github.com',
-    avatar_url: `${CDN_BASE_URL_ALUMNI}/2024/Afif.webp`,
-  },
-  {
     id: 1,
     name: 'Alfarez Syahputra Kuri',
     role: 'Manajer',
@@ -20,6 +12,14 @@ export const mockTeamMembers: TeamMember[] = [
     social_github: 'https://github.com',
     social_instagram: 'https://instagram.com',
     avatar_url: `${CDN_BASE_URL}/Alfarez.webp`,
+  },
+  {
+    id: 2,
+    name: 'Afif',
+    role: 'Team Member',
+    social_linkedin: 'https://linkedin.com',
+    social_github: 'https://github.com',
+    avatar_url: `${CDN_BASE_URL_ALUMNI}/2024/Afif.webp`,
   },
   {
     id: 4,
@@ -45,15 +45,6 @@ export const mockTeamMembers: TeamMember[] = [
     avatar_url: `${CDN_BASE_URL_ALUMNI}/2025/Boneta-P.webp`,
   },
   {
-    id: 7,
-    name: 'Daffa D',
-    role: 'Team Member',
-    social_linkedin: 'https://linkedin.com',
-    social_github: 'https://github.com',
-    social_instagram: 'https://instagram.com',
-    avatar_url: `${CDN_BASE_URL_ALUMNI}/2024/Daffa-D.webp`,
-  },
-  {
     id: 8,
     name: 'Daffa F',
     role: 'Team Member',
@@ -69,14 +60,6 @@ export const mockTeamMembers: TeamMember[] = [
     social_github: 'https://github.com',
     social_instagram: 'https://instagram.com',
     avatar_url: `${CDN_BASE_URL_ALUMNI}/2025/Denisa-R.webp`,
-  },
-  {
-    id: 10,
-    name: 'Dzakwan',
-    role: 'Team Member',
-    social_linkedin: 'https://linkedin.com',
-    social_instagram: 'https://instagram.com',
-    avatar_url: `${CDN_BASE_URL_ALUMNI}/2024/Dzakwan.webp`,
   },
   {
     id: 11,
@@ -103,14 +86,6 @@ export const mockTeamMembers: TeamMember[] = [
     avatar_url: `${CDN_BASE_URL_ALUMNI}/2025/Haikal.webp`,
   },
   {
-    id: 14,
-    name: 'Hanif',
-    role: 'Team Member',
-    social_linkedin: 'https://linkedin.com',
-    social_github: 'https://github.com',
-    avatar_url: `${CDN_BASE_URL_ALUMNI}/2024/Hanif.webp`,
-  },
-  {
     id: 15,
     name: 'Iyan',
     role: 'Team Member',
@@ -118,21 +93,6 @@ export const mockTeamMembers: TeamMember[] = [
     social_github: 'https://github.com',
     social_instagram: 'https://instagram.com',
     avatar_url: `${CDN_BASE_URL_ALUMNI}/2025/Iyan.webp`,
-  },
-  {
-    id: 16,
-    name: 'Shabri',
-    role: 'Team Member',
-    social_linkedin: 'https://linkedin.com',
-    social_instagram: 'https://instagram.com',
-    avatar_url: `${CDN_BASE_URL_ALUMNI}/2024/Shabri.webp`,
-  },
-  {
-    id: 17,
-    name: 'Yudha',
-    role: 'Team Member',
-    social_linkedin: 'https://linkedin.com',
-    avatar_url: `${CDN_BASE_URL_ALUMNI}/2024/Yudha.webp`,
   },
   {
     id: 18,
