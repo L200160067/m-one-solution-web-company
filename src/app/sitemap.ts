@@ -8,6 +8,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Static pages
     const staticPages: MetadataRoute.Sitemap = [
         { url: BASE_URL, lastModified: new Date(), changeFrequency: 'monthly', priority: 1 },
+        { url: `${BASE_URL}/layanan/software-house-solo`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
+        { url: `${BASE_URL}/layanan/jasa-pembuatan-website-sekolah`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
+        { url: `${BASE_URL}/layanan/jasa-erp-umkm`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
         { url: `${BASE_URL}/about`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
         { url: `${BASE_URL}/services`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
         { url: `${BASE_URL}/portfolio`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
