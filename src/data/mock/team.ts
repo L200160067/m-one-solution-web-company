@@ -7,7 +7,7 @@ export const mockTeamMembers: TeamMember[] = [
   {
     id: 1,
     name: 'Alfarez Syahputra Kuri',
-    role: 'Manajer',
+    role: 'Manager',
     social_linkedin: 'https://linkedin.com',
     social_github: 'https://github.com',
     social_instagram: 'https://instagram.com',
@@ -16,7 +16,7 @@ export const mockTeamMembers: TeamMember[] = [
   {
     id: 2,
     name: 'Afif',
-    role: 'Team Member',
+    role: 'Server Manager',
     social_linkedin: 'https://linkedin.com',
     social_github: 'https://github.com',
     avatar_url: `${CDN_BASE_URL_ALUMNI}/2024/Afif.webp`,
@@ -24,7 +24,7 @@ export const mockTeamMembers: TeamMember[] = [
   {
     id: 4,
     name: 'Arkan',
-    role: 'Team Member',
+    role: 'Lead Marketing',
     social_linkedin: 'https://linkedin.com',
     social_instagram: 'https://instagram.com',
     avatar_url: `${CDN_BASE_URL_ALUMNI}/2024/Arkan.webp`,
@@ -32,14 +32,14 @@ export const mockTeamMembers: TeamMember[] = [
   {
     id: 5,
     name: 'Bastian',
-    role: 'Team Member',
+    role: 'Lead UI/UX Design',
     social_linkedin: 'https://linkedin.com',
     avatar_url: `${CDN_BASE_URL_ALUMNI}/2025/Bastian.webp`,
   },
   {
     id: 6,
     name: 'Boneta P',
-    role: 'Team Member',
+    role: 'Backend Developer',
     social_linkedin: 'https://linkedin.com',
     social_github: 'https://github.com',
     avatar_url: `${CDN_BASE_URL_ALUMNI}/2025/Boneta-P.webp`,
@@ -47,7 +47,7 @@ export const mockTeamMembers: TeamMember[] = [
   {
     id: 8,
     name: 'Daffa F',
-    role: 'Team Member',
+    role: 'Frontend Developer',
     social_linkedin: 'https://linkedin.com',
     social_github: 'https://github.com',
     avatar_url: `${CDN_BASE_URL_ALUMNI}/2025/Daffa-F.webp`,
@@ -55,7 +55,7 @@ export const mockTeamMembers: TeamMember[] = [
   {
     id: 9,
     name: 'Denisa R',
-    role: 'Team Member',
+    role: 'Backend Developer',
     social_linkedin: 'https://linkedin.com',
     social_github: 'https://github.com',
     social_instagram: 'https://instagram.com',
@@ -64,14 +64,14 @@ export const mockTeamMembers: TeamMember[] = [
   {
     id: 11,
     name: 'Faza',
-    role: 'Team Member',
+    role: 'Backend Developer',
     social_linkedin: 'https://linkedin.com',
     avatar_url: `${CDN_BASE_URL_ALUMNI}/2025/Faza.webp`,
   },
   {
     id: 12,
     name: 'Habib',
-    role: 'Team Member',
+    role: 'Admin & Marketing',
     social_linkedin: 'https://linkedin.com',
     social_github: 'https://github.com',
     avatar_url: `${CDN_BASE_URL_ALUMNI}/2024/Habib.webp`,
@@ -79,7 +79,7 @@ export const mockTeamMembers: TeamMember[] = [
   {
     id: 13,
     name: 'Haikal',
-    role: 'Team Member',
+    role: 'Frontend Developer',
     social_linkedin: 'https://linkedin.com',
     social_github: 'https://github.com',
     social_instagram: 'https://instagram.com',
@@ -88,7 +88,7 @@ export const mockTeamMembers: TeamMember[] = [
   {
     id: 15,
     name: 'Iyan',
-    role: 'Team Member',
+    role: 'Frontend Developer',
     social_linkedin: 'https://linkedin.com',
     social_github: 'https://github.com',
     social_instagram: 'https://instagram.com',
@@ -97,7 +97,7 @@ export const mockTeamMembers: TeamMember[] = [
   {
     id: 18,
     name: 'Zaydan',
-    role: 'Team Member',
+    role: 'UI/UX Design',
     social_linkedin: 'https://linkedin.com',
     social_github: 'https://github.com',
     avatar_url: `${CDN_BASE_URL_ALUMNI}/2025/Zaydan.webp`,
