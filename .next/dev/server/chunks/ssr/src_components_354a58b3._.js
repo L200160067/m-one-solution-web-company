@@ -140,15 +140,15 @@ function Hero() {
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                                     className: "text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-6 leading-[1.1]",
                                     children: [
-                                        "Your Trusted ",
+                                        "Jasa Pembuatan Website ",
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                             fileName: "[project]/src/components/Hero.tsx",
                                             lineNumber: 43,
-                                            columnNumber: 28
+                                            columnNumber: 38
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                             className: "text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400",
-                                            children: "Digital Solution"
+                                            children: "& Aplikasi di Sukoharjo"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/Hero.tsx",
                                             lineNumber: 44,
@@ -162,7 +162,7 @@ function Hero() {
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "text-lg text-slate-300 mb-8 leading-relaxed max-w-lg",
-                                    children: "Kami merancang dan mengembangkan website, aplikasi, dan sistem digital yang membantu bisnis Anda berkembang di era digital."
+                                    children: "Software house terpercaya di Sukoharjo & Solo. Kami membantu bisnis dan organisasi tumbuh lewat website, aplikasi, dan sistem digital yang praktis."
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Hero.tsx",
                                     lineNumber: 49,
@@ -293,7 +293,7 @@ function Hero() {
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                                                 src: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$site$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["siteConfig"].cdnUrl}/images/branding/hero.webp`,
-                                                alt: "M-One Solution Talent",
+                                                alt: "Tim developer M-One Solution — Software House Sukoharjo, Jawa Tengah",
                                                 className: "w-full h-full object-cover"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/Hero.tsx",
@@ -573,7 +573,7 @@ function About() {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                                         src: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$site$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["siteConfig"].cdnUrl}/images/branding/about.webp`,
-                                        alt: "M-One Solution Team",
+                                        alt: "Tim M-One Solution — Software House Sukoharjo, Jawa Tengah",
                                         loading: "lazy",
                                         className: "object-cover w-full h-full",
                                         referrerPolicy: "no-referrer"
@@ -1404,46 +1404,55 @@ function Partners({ partners }) {
                     columnNumber: 9
                 }, this),
                 partners.length > 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center opacity-70 grayscale hover:grayscale-0 transition-all duration-500",
-                    children: partners.map((partner, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
-                            initial: {
-                                opacity: 0,
-                                scale: 0.8
-                            },
-                            whileInView: {
-                                opacity: 1,
-                                scale: 1
-                            },
-                            viewport: {
-                                once: true
-                            },
-                            transition: {
-                                delay: index * 0.1
-                            },
-                            className: "flex justify-center",
-                            children: partner.logo_url ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                src: partner.logo_url,
-                                alt: partner.name,
-                                loading: "lazy",
-                                className: "max-h-12 object-contain brightness-0 invert opacity-70 hover:opacity-100 hover:brightness-100 hover:invert-0 transition-all duration-300",
-                                referrerPolicy: "no-referrer"
-                            }, void 0, false, {
+                    className: "relative w-full overflow-hidden flex py-8 [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]",
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
+                        className: "flex w-max items-center hover:[animation-play-state:paused]",
+                        animate: {
+                            x: [
+                                "0%",
+                                "-50%"
+                            ]
+                        },
+                        transition: {
+                            repeat: Infinity,
+                            ease: "linear",
+                            duration: 35
+                        },
+                        children: [
+                            ...partners,
+                            ...partners,
+                            ...partners,
+                            ...partners
+                        ].map((partner, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex justify-center items-center px-10 md:px-16 flex-shrink-0",
+                                children: partner.logo_url ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                    src: partner.logo_url,
+                                    alt: partner.name,
+                                    loading: "lazy",
+                                    className: "max-h-12 md:max-h-14 w-auto object-contain brightness-0 invert opacity-50 grayscale hover:opacity-100 hover:brightness-100 hover:invert-0 hover:grayscale-0 transition-all duration-300",
+                                    referrerPolicy: "no-referrer"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/Partners.tsx",
+                                    lineNumber: 45,
+                                    columnNumber: 21
+                                }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: "text-slate-400 font-bold text-lg md:text-xl opacity-70 hover:opacity-100 hover:text-white transition-colors whitespace-nowrap px-4",
+                                    children: partner.name
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/Partners.tsx",
+                                    lineNumber: 53,
+                                    columnNumber: 21
+                                }, this)
+                            }, `${partner.id}-${index}`, false, {
                                 fileName: "[project]/src/components/Partners.tsx",
                                 lineNumber: 40,
-                                columnNumber: 19
-                            }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                className: "text-white font-bold opacity-70 hover:opacity-100 transition-opacity whitespace-nowrap overflow-hidden text-ellipsis px-2",
-                                children: partner.name
-                            }, void 0, false, {
-                                fileName: "[project]/src/components/Partners.tsx",
-                                lineNumber: 48,
-                                columnNumber: 19
-                            }, this)
-                        }, partner.id, false, {
-                            fileName: "[project]/src/components/Partners.tsx",
-                            lineNumber: 31,
-                            columnNumber: 15
-                        }, this))
+                                columnNumber: 17
+                            }, this))
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/Partners.tsx",
+                        lineNumber: 30,
+                        columnNumber: 13
+                    }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/Partners.tsx",
                     lineNumber: 29,
@@ -1453,7 +1462,7 @@ function Partners({ partners }) {
                     children: "Segera hadir"
                 }, void 0, false, {
                     fileName: "[project]/src/components/Partners.tsx",
-                    lineNumber: 56,
+                    lineNumber: 62,
                     columnNumber: 11
                 }, this)
             ]

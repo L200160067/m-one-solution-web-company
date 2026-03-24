@@ -83,6 +83,33 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../../src/app/layanan/jasa-erp-umkm/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/layanan/jasa-erp-umkm">> = Specific
+  const handler = {} as typeof import("../../../src/app/layanan/jasa-erp-umkm/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../src/app/layanan/jasa-pembuatan-website-sekolah/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/layanan/jasa-pembuatan-website-sekolah">> = Specific
+  const handler = {} as typeof import("../../../src/app/layanan/jasa-pembuatan-website-sekolah/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../src/app/layanan/software-house-solo/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/layanan/software-house-solo">> = Specific
+  const handler = {} as typeof import("../../../src/app/layanan/software-house-solo/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../../src/app/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/">> = Specific

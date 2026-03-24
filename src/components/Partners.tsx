@@ -26,31 +26,37 @@ export function Partners({ partners }: PartnersProps) {
         </motion.div>
 
         {partners.length > 0 ? (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
-            {partners.map((partner, index) => (
-              <motion.div
-                key={partner.id}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="flex justify-center"
-              >
-                {partner.logo_url ? (
-                  <img
-                    src={partner.logo_url}
-                    alt={partner.name}
-                    loading="lazy"
-                    className="max-h-12 object-contain brightness-0 invert opacity-70 hover:opacity-100 hover:brightness-100 hover:invert-0 transition-all duration-300"
-                    referrerPolicy="no-referrer"
-                  />
-                ) : (
-                  <span className="text-white font-bold opacity-70 hover:opacity-100 transition-opacity whitespace-nowrap overflow-hidden text-ellipsis px-2">
-                    {partner.name}
-                  </span>
-                )}
-              </motion.div>
-            ))}
+          <div className="relative w-full overflow-hidden flex py-8 [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
+            <motion.div
+              className="flex w-max items-center hover:[animation-play-state:paused]"
+              animate={{ x: ["0%", "-50%"] }}
+              transition={{
+                repeat: Infinity,
+                ease: "linear",
+                duration: 35,
+              }}
+            >
+              {[...partners, ...partners, ...partners, ...partners].map((partner, index) => (
+                <div
+                  key={`${partner.id}-${index}`}
+                  className="flex justify-center items-center px-10 md:px-16 flex-shrink-0"
+                >
+                  {partner.logo_url ? (
+                    <img
+                      src={partner.logo_url}
+                      alt={partner.name}
+                      loading="lazy"
+                      className="max-h-12 md:max-h-14 w-auto object-contain brightness-0 invert opacity-50 grayscale hover:opacity-100 hover:brightness-100 hover:invert-0 hover:grayscale-0 transition-all duration-300"
+                      referrerPolicy="no-referrer"
+                    />
+                  ) : (
+                    <span className="text-slate-400 font-bold text-lg md:text-xl opacity-70 hover:opacity-100 hover:text-white transition-colors whitespace-nowrap px-4">
+                      {partner.name}
+                    </span>
+                  )}
+                </div>
+              ))}
+            </motion.div>
           </div>
         ) : (
           <p className="text-slate-500 text-sm">Segera hadir</p>
