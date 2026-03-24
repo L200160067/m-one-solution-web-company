@@ -22,7 +22,7 @@ export const mockPosts: Post[] = [
 </ul>
 
 <h3>Kesimpulan</h3>
-<p>Jika Anda mencari jasa pembuatan website profesional atau pengembangan aplikasi custom di wilayah Surakarta dan sekitarnya, pastikan Anda menyeleksi mitra yang tepat. Tim M-One Solution selalu siap diajak berdiskusi gratis untuk membedah masalah digitalisasi Anda.</p>`,
+<p>Jika Anda mencari jasa pembuatan website profesional atau pengembangan aplikasi custom di wilayah Surakarta dan sekitarnya, pastikan Anda menyeleksi mitra yang tepat. Tim M-One Solution selalu siap diajak <a href="/contact" title="Konsultasi IT Gratis">berdiskusi gratis</a> untuk membedah masalah digitalisasi Anda.</p>`,
     category: { id: 1, name: 'Tips Digital', slug: 'tips-digital' },
     author: 'Tim M-One Solution',
     cover_url: PH(800, 450, 'Software+House+Solo'),
@@ -71,7 +71,7 @@ export const mockPosts: Post[] = [
   <li><strong>Kredibilitas & Profesionalisme:</strong> Pengalaman pendaftaran yang mulus akan memberikan kesan pertama yang sangat luar biasa bagi calon wali murid terhadap mutu tata kelola sekolah.</li>
 </ul>
 
-<p>Jika sekolah Anda berencana beralih ke era digital, M-One Solution menawarkan <strong>jasa pembuatan website sekolah dan PPDB</strong> terintegrasi yang mudah digunakan oleh guru, dan dijamin aman dari serangan siber.</p>`,
+<p>Jika sekolah Anda berencana beralih ke era digital, M-One Solution menawarkan <a href="/layanan/jasa-pembuatan-website-sekolah" title="Jasa Pembuatan Website Sekolah dan PPDB">jasa pembuatan website sekolah dan PPDB</a> terintegrasi yang mudah digunakan oleh guru, dan dijamin aman dari serangan siber.</p>`,
     category: { id: 3, name: 'Edukasi IT', slug: 'edukasi-it' },
     author: 'Tim M-One Solution',
     cover_url: PH(800, 450, 'Website+Sekolah'),
@@ -80,7 +80,7 @@ export const mockPosts: Post[] = [
   },
   {
     id: 4,
-    title: 'Aplikasi Mobile vs Web App: Mana yang Lebih Baik untuk Starup Anda?',
+    title: 'Aplikasi Mobile vs Web App: Mana yang Lebih Baik untuk Startup Anda?',
     slug: 'aplikasi-mobile-vs-web-app',
     excerpt: 'Dilema membuat aplikasi pertama untuk startup? Pahami perbedaan biaya, waktu rilis, dan kemudahan akses antara Web App dan Native Mobile App.',
     content: `<p>Ketika pertama kali membangun sebuah produk digital, pertanyaan klasik yang sering ditanyakan kepada kami sebagai agensi adalah: <em>"Sebaiknya kita bikin aplikasi Android di Play Store atau cukup Website saja dulu?"</em></p>
