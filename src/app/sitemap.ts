@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { apiFetch } from '@/lib/api';
 import type { ApiResponse, Post, Service } from '@/types/api';
 
-const BASE_URL = 'https://www.m-one.mutudev.com';
+const BASE_URL = 'https://mone.mutudev.com';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Static pages

@@ -3,18 +3,18 @@ import { apiFetch } from '@/lib/api';
 import type { ApiResponse, Project } from '@/types/api';
 
 export const metadata = {
-    title: 'Portofolio | M-One Solution Software House',
-    description: 'Inilah jejak perjalanan kami dalam dunia digital. Dari website sekolah hingga aplikasi organisasi, setiap proyek yang kami kerjakan punya cerita dan tantangannya sendiri.',
+    title: 'Portofolio Proyek | Software House Sukoharjo — M-One Solution',
+    description: 'Lihat proyek-proyek yang telah kami kerjakan — website sekolah, aplikasi organisasi, sistem informasi, dan lebih banyak. Software house Sukoharjo & Solo.',
     openGraph: {
-        title: 'Portofolio | M-One Solution',
-        description: 'Inilah jejak perjalanan kami dalam dunia digital. Dari website sekolah hingga aplikasi organisasi, setiap proyek yang kami kerjakan punya cerita dan tantangannya sendiri.',
-        url: 'https://www.monesolution.com/portfolio',
+        title: 'Portofolio | M-One Solution Software House Sukoharjo',
+        description: 'Proyek website, aplikasi, dan sistem digital yang telah dikerjakan M-One Solution untuk klien di Sukoharjo, Solo, dan sekitarnya.',
+        url: 'https://mone.mutudev.com/portfolio',
         type: 'website',
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Portofolio | M-One Solution',
-        description: 'Lihat jejak perjalanan kami dalam dunia digital — website sekolah, aplikasi organisasi, dan lebih banyak lagi.',
+        title: 'Portofolio | M-One Solution Software House',
+        description: 'Proyek website, aplikasi, dan sistem digital dari M-One Solution — software house di Sukoharjo, Jawa Tengah.',
     },
 };
 

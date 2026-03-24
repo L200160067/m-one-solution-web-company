@@ -8,7 +8,7 @@ export const metadata = {
     openGraph: {
         title: 'Contact Us | M-One Solution',
         description: 'Hubungi M-One Solution untuk mendiskusikan ide Anda dan wujudkan bersama tim ahli kami.',
-        url: 'https://www.m-one.mutudev.com/contact',
+        url: 'https://mone.mutudev.com/contact',
         type: 'website',
     },
     twitter: {
@@ -60,9 +60,9 @@ export default function ContactPage() {
                         Kontak Kami
                     </div>
                     <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
-                        Mari Wujudkan <br />
+                        Konsultasi Gratis dengan <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
-                            Ide Anda Bersama Kami
+                            Software House Sukoharjo
                         </span>
                     </h1>
                     <p className="text-lg text-slate-300 max-w-2xl mx-auto">

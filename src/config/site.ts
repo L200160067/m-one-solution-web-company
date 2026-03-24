@@ -1,5 +1,6 @@
 export const siteConfig = {
     name: "M-One Solution",
+    baseUrl: process.env.NEXT_PUBLIC_BASE_URL || 'https://mone.mutudev.com',
     cdnUrl: process.env.NEXT_PUBLIC_CDN_URL || 'https://l200160067.github.io/mone-assets',
     logo: `${process.env.NEXT_PUBLIC_CDN_URL || 'https://l200160067.github.io/mone-assets'}/images/branding/mone.webp`,
     whatsapp: {
@@ -14,6 +15,9 @@ export const siteConfig = {
     },
     contact: {
         email: "monesolutionsoftwarehouse@gmail.com",
-        address: "Sukoharjo, Indonesia"
+        address: "Sukoharjo, Jawa Tengah, Indonesia",
+        city: "Sukoharjo",
+        region: "Jawa Tengah",
+        country: "ID"
     }
 };

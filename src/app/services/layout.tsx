@@ -1,18 +1,19 @@
 export const metadata = {
-    title: 'Layanan & Produk | M-One Solution',
-    description: 'Temukan berbagai layanan dan produk unggulan dari M-One Solution, mulai dari Web Development, Sistem Informasi Sekolah, hingga Aplikasi Web Kustom.',
-    keywords: 'jasa pembuatan website, web development, sistem informasi sekolah, company profile, custom web application, software house, jasa IT, pembuatan aplikasi',
+    title: 'Layanan Jasa IT Sukoharjo | Web, Aplikasi & ERP — M-One Solution',
+    description: 'Jasa pembuatan website, aplikasi mobile, dan sistem ERP di Sukoharjo & Solo. Tim profesional M-One Solution siap bantu bisnis Anda. Konsultasi GRATIS!',
+    keywords: 'jasa pembuatan website sukoharjo, web development solo, sistem informasi sekolah, company profile sukoharjo, custom web application, software house sukoharjo, jasa IT solo, pembuatan aplikasi sukoharjo',
     openGraph: {
-        title: 'Layanan & Produk | M-One Solution',
-        description: 'Temukan berbagai layanan dan produk unggulan dari M-One Solution, mulai dari Web Development, Sistem Informasi Sekolah, hingga Aplikasi Web Kustom.',
-        images: ['https://storage.googleapis.com/a1aa/image/Vqg83s2E822lH6O9zR2n7T60b_q39R2R2n7T60b_q39R2R2n.jpg'],
+        title: 'Layanan Jasa IT Sukoharjo | M-One Solution',
+        description: 'Jasa pembuatan website, aplikasi mobile, dan sistem ERP di Sukoharjo & Solo. Konsultasi GRATIS — hubungi M-One Solution sekarang!',
+        images: ['/og-image.jpg'],
+        url: 'https://mone.mutudev.com/services',
         type: 'website',
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Layanan & Produk | M-One Solution',
-        description: 'Temukan berbagai layanan dan produk unggulan dari M-One Solution, mulai dari Web Development, Sistem Informasi Sekolah, hingga Aplikasi Web Kustom.',
-        images: ['https://storage.googleapis.com/a1aa/image/Vqg83s2E822lH6O9zR2n7T60b_q39R2R2n7T60b_q39R2R2n.jpg'],
+        title: 'Layanan Jasa IT Sukoharjo | M-One Solution',
+        description: 'Jasa pembuatan website, aplikasi mobile, dan sistem ERP di Sukoharjo & Solo. Konsultasi GRATIS — hubungi M-One Solution sekarang!',
+        images: ['/og-image.jpg'],
     }
 };
 

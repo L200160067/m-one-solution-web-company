@@ -7,6 +7,7 @@ import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { BackToTop } from "@/components/BackToTop";
 import { apiFetch } from "@/lib/api";
 import type { ApiResponse, Settings } from "@/types/api";
+import Script from "next/script";
 
 const inter = Inter({
     subsets: ["latin"],
@@ -14,16 +15,16 @@ const inter = Inter({
     variable: "--font-inter",
 });
 
-const BASE_URL = "https://www.m-one.mutudev.com";
+const BASE_URL = "https://mone.mutudev.com";
 
 export const metadata = {
     metadataBase: new URL(BASE_URL),
     title: {
-        default: "M-One Solution Software House | Your Trusted Digital Solution",
+        default: "Software House Sukoharjo | M-One Solution",
         template: "%s | M-One Solution",
     },
-    description: "Tingkatkan visibilitas dan konversi bisnis Anda dengan website profesional dan aplikasi dari M-One Solution. Software house terpercaya di Sukoharjo, Indonesia.",
-    keywords: "software house, jasa pembuatan website, web development, aplikasi web, sistem informasi, company profile website, sukoharjo",
+    description: "Jasa pembuatan website & aplikasi profesional di Sukoharjo & Solo. Konsultasi GRATIS — hubungi M-One Solution sekarang!",
+    keywords: "software house sukoharjo, jasa pembuatan website sukoharjo, web development solo, jasa IT sukoharjo, aplikasi web, sistem informasi, company profile sukoharjo",
     authors: [{ name: "M-One Solution" }],
     creator: "M-One Solution",
     openGraph: {
@@ -31,21 +32,21 @@ export const metadata = {
         locale: "id_ID",
         url: BASE_URL,
         siteName: "M-One Solution",
-        title: "M-One Solution Software House | Your Trusted Digital Solution",
-        description: "Tingkatkan visibilitas dan konversi bisnis Anda dengan website profesional dan aplikasi dari M-One Solution.",
+        title: "Software House Sukoharjo | M-One Solution",
+        description: "Jasa pembuatan website & aplikasi profesional di Sukoharjo & Solo. Konsultasi GRATIS — hubungi M-One Solution sekarang!",
         images: [
             {
                 url: "/og-image.jpg",
                 width: 1200,
                 height: 630,
-                alt: "M-One Solution Software House",
+                alt: "M-One Solution — Software House di Sukoharjo, Jawa Tengah",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "M-One Solution Software House | Your Trusted Digital Solution",
-        description: "Tingkatkan visibilitas dan konversi bisnis Anda dengan website profesional dan aplikasi dari M-One Solution.",
+        title: "Software House Sukoharjo | M-One Solution",
+        description: "Jasa pembuatan website & aplikasi profesional di Sukoharjo & Solo. Konsultasi GRATIS — hubungi M-One Solution sekarang!",
         images: ["/og-image.jpg"],
     },
     robots: {
@@ -71,8 +72,59 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         // Fall back to siteConfig defaults if API unavailable
     }
 
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "M-One Solution",
+        "alternateName": "M-One Solution Software House",
+        "description": "Software house di Sukoharjo, Jawa Tengah yang menyediakan jasa pembuatan website, aplikasi web, dan sistem informasi.",
+        "url": BASE_URL,
+        "telephone": "+6285168850712",
+        "email": "monesolutionsoftwarehouse@gmail.com",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Sukoharjo",
+            "addressLocality": "Sukoharjo",
+            "addressRegion": "Jawa Tengah",
+            "postalCode": "57500",
+            "addressCountry": "ID"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -7.6862,
+            "longitude": 110.8327
+        },
+        "areaServed": ["Sukoharjo", "Solo", "Surakarta", "Jawa Tengah"],
+        "sameAs": [
+            "https://www.instagram.com/m.one_solution/"
+        ],
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "08:00",
+            "closes": "17:00"
+        },
+        "priceRange": "$$",
+        "serviceArea": {
+            "@type": "GeoCircle",
+            "geoMidpoint": {
+                "@type": "GeoCoordinates",
+                "latitude": -7.6862,
+                "longitude": 110.8327
+            },
+            "geoRadius": "50000"
+        }
+    };
+
     return (
         <html lang="id" className={inter.variable}>
+            <head>
+                <Script
+                    id="schema-localbusiness"
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+                />
+            </head>
             <body className="font-sans antialiased">
                 <Navbar />
                 <ErrorBoundary>

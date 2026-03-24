@@ -10,8 +10,8 @@ import { apiFetch } from '@/lib/api';
 import type { ApiResponse, Post, Project, Testimonial, Partner, Service } from '@/types/api';
 
 export const metadata = {
-    title: 'M-One Solution Software House | Your Trusted Digital Solution',
-    description: 'Tingkatkan visibilitas dan konversi bisnis Anda dengan website profesional dan aplikasi dari M-One Solution. Kami membantu Anda tumbuh secara signifikan di era digital.',
+    title: 'Software House Sukoharjo | Jasa Website & Aplikasi — M-One Solution',
+    description: 'Jasa pembuatan website & aplikasi profesional di Sukoharjo, Solo, dan Jawa Tengah. Konsultasi GRATIS — hubungi M-One Solution sekarang dan wujudkan ide digitalmu!',
 };
 
 async function fetchSafe<T>(endpoint: string, fallback: T, tags?: string[]): Promise<T> {

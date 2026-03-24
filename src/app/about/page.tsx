@@ -5,18 +5,18 @@ import { apiFetch } from '@/lib/api';
 import type { ApiResponse, TeamMember, AlumniGroup } from '@/types/api';
 
 export const metadata = {
-    title: 'About Us | M-One Solution Software House',
-    description: 'M-One Solution hadir untuk mengubah ide menjadi kenyataan. Kami adalah tim pengembang yang fokus menciptakan aplikasi dan website yang praktis, intuitif, dan efektif.',
+    title: 'Tentang Kami | Software House Sukoharjo — M-One Solution',
+    description: 'M-One Solution adalah software house di Sukoharjo, Jawa Tengah. Tim profesional yang fokus membangun website, aplikasi, dan sistem digital yang praktis dan efektif.',
     openGraph: {
-        title: 'About Us | M-One Solution Software House',
-        description: 'M-One Solution hadir untuk mengubah ide menjadi kenyataan. Kami adalah tim pengembang yang fokus menciptakan aplikasi dan website yang praktis, intuitif, dan efektif.',
-        url: 'https://www.mone.mutudev.com/about',
+        title: 'Tentang Kami | M-One Solution Software House Sukoharjo',
+        description: 'Software house di Sukoharjo yang membantu bisnis tumbuh lewat website dan aplikasi digital yang tepat sasaran.',
+        url: 'https://mone.mutudev.com/about',
         type: 'website',
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'About Us | M-One Solution',
-        description: 'Tim pengembang yang fokus menciptakan aplikasi dan website yang praktis, intuitif, dan efektif.',
+        title: 'Tentang M-One Solution | Software House Sukoharjo',
+        description: 'Tim pengembang profesional di Sukoharjo yang fokus membuat website, aplikasi, dan sistem digital yang praktis.',
     },
 };
 

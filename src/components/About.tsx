@@ -49,7 +49,7 @@ export function About() {
             <div className="aspect-[4/3] rounded-3xl overflow-hidden relative">
               <img
                 src={`${siteConfig.cdnUrl}/images/branding/about.webp`}
-                alt="M-One Solution Team"
+                alt="Tim M-One Solution — Software House Sukoharjo, Jawa Tengah"
                 loading="lazy"
                 className="object-cover w-full h-full"
                 referrerPolicy="no-referrer"

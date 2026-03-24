@@ -40,14 +40,14 @@ export function Hero() {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-6 leading-[1.1]">
-              Your Trusted <br />
+              Jasa Pembuatan Website <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
-                Digital Solution
+                &amp; Aplikasi di Sukoharjo
               </span>
             </h1>
 
             <p className="text-lg text-slate-300 mb-8 leading-relaxed max-w-lg">
-              Kami merancang dan mengembangkan website, aplikasi, dan sistem digital yang membantu bisnis Anda berkembang di era digital.
+              Software house terpercaya di Sukoharjo &amp; Solo. Kami membantu bisnis dan organisasi tumbuh lewat website, aplikasi, dan sistem digital yang praktis.
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
@@ -96,7 +96,7 @@ export function Hero() {
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent z-10 pointer-events-none" />
                 <img
                   src={`${siteConfig.cdnUrl}/images/branding/hero.webp`}
-                  alt="M-One Solution Talent"
+                  alt="Tim developer M-One Solution — Software House Sukoharjo, Jawa Tengah"
                   className="w-full h-full object-cover"
                 />
               </motion.div>
