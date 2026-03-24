@@ -36,7 +36,7 @@ export const metadata = {
         description: "Jasa pembuatan website & aplikasi profesional di Sukoharjo & Solo. Konsultasi GRATIS — hubungi M-One Solution sekarang!",
         images: [
             {
-                url: "/og-image.jpg",
+                url: "/og-image.png",
                 width: 1200,
                 height: 630,
                 alt: "M-One Solution — Software House di Sukoharjo, Jawa Tengah",
