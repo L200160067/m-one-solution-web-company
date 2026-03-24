@@ -17,6 +17,8 @@ export interface Post {
     slug: string;
     excerpt: string;
     content?: string; // only present on detail endpoint
+    meta_title?: string;       // explicit SEO title — falls back to title
+    meta_description?: string; // explicit SEO description — falls back to excerpt
     category: PostCategory;
     author?: string;
     cover_url: string;
