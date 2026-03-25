@@ -2,6 +2,8 @@
 
 import { motion } from 'motion/react';
 import type { Partner } from '@/types/api';
+import { Container } from './ui/Container';
+import { Section } from './ui/Section';
 
 interface PartnersProps {
   partners: Partner[];
@@ -9,8 +11,8 @@ interface PartnersProps {
 
 export function Partners({ partners }: PartnersProps) {
   return (
-    <section className="py-16 md:py-24 bg-slate-950 border-t border-white/5">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <Section className="bg-slate-950 border-t border-white/5">
+      <Container className="text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -61,7 +63,7 @@ export function Partners({ partners }: PartnersProps) {
         ) : (
           <p className="text-slate-500 text-sm">Segera hadir</p>
         )}
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }

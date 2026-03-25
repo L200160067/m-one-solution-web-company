@@ -5,6 +5,8 @@ import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
 import { siteConfig } from '@/config/site';
 import { useEffect, useRef } from 'react';
+import { Container } from './ui/Container';
+import { Section } from './ui/Section';
 
 function AnimatedCounter({ to, suffix = '' }: { to: number; suffix?: string }) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -35,8 +37,8 @@ export function About() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-white relative overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <Section className="bg-white relative overflow-hidden">
+      <Container>
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Image Side */}
           <motion.div
@@ -132,7 +134,7 @@ export function About() {
             </Link>
           </motion.div>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }

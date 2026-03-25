@@ -4,10 +4,11 @@ import { motion } from 'motion/react';
 import { ArrowRight, Mail } from 'lucide-react';
 import Link from 'next/link';
 import { siteConfig } from '@/config/site';
+import { Section } from './ui/Section';
 
 export function CTA() {
   return (
-    <section className="py-16 md:py-24 bg-blue-600 relative overflow-hidden">
+    <Section className="bg-blue-600 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-[50%] -right-[20%] w-[100%] h-[150%] rounded-full bg-blue-500/50 blur-[100px]" />
@@ -51,6 +52,6 @@ export function CTA() {
           </div>
         </motion.div>
       </div>
-    </section>
+    </Section>
   );
 }

@@ -4,6 +4,8 @@ import { motion } from 'motion/react';
 import { ArrowRight, Layout, Globe, Briefcase, Code } from 'lucide-react';
 import Link from 'next/link';
 import type { Service } from '@/types/api';
+import { Container } from './ui/Container';
+import { Section } from './ui/Section';
 
 interface ServicesProps {
   services: Service[];
@@ -29,8 +31,8 @@ export function Services({ services }: ServicesProps) {
   const featuredServices = services.slice(0, 4);
 
   return (
-    <section className="py-16 md:py-24 bg-white relative overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <Section className="bg-white relative overflow-hidden">
+      <Container>
         <div className="text-center mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -114,7 +116,7 @@ export function Services({ services }: ServicesProps) {
             <ArrowRight className="w-5 h-5" />
           </Link>
         </motion.div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }

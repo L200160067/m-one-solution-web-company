@@ -5,6 +5,8 @@ import { motion } from 'motion/react';
 import { ArrowRight, Calendar, User, ArrowUpRight, Image as ImageIcon, ChevronLeft, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import type { Post } from '@/types/api';
+import { Container } from './ui/Container';
+import { Section } from './ui/Section';
 
 interface LatestBlogsProps {
     posts: Post[];
@@ -21,8 +23,8 @@ export function LatestBlogs({ posts }: LatestBlogsProps) {
     };
 
     return (
-        <section className="py-16 md:py-24 bg-slate-50 border-t border-slate-100">
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Section className="bg-slate-50 border-t border-slate-100">
+            <Container>
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -141,7 +143,7 @@ export function LatestBlogs({ posts }: LatestBlogsProps) {
                         </div>
                     </div>
                 )}
-            </div>
-        </section>
+            </Container>
+        </Section>
     );
 }

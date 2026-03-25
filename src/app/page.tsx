@@ -1,4 +1,5 @@
 import { Hero } from '@/components/Hero';
+import { FastPackages } from '@/components/FastPackages';
 import { About } from '@/components/About';
 import { Services } from '@/components/Services';
 import { Projects } from '@/components/Projects';
@@ -38,6 +39,7 @@ export default async function Home() {
     return (
         <main style={{ position: 'relative' }}>
             <Hero />
+            <FastPackages />
             <About />
             <Services services={services} />
             <Projects projects={featuredProjects} />

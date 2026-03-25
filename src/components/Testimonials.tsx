@@ -3,6 +3,8 @@
 import { motion } from 'motion/react';
 import { Quote, Star } from 'lucide-react';
 import type { Testimonial } from '@/types/api';
+import { Container } from './ui/Container';
+import { Section } from './ui/Section';
 
 interface TestimonialsProps {
   testimonials: Testimonial[];
@@ -10,14 +12,14 @@ interface TestimonialsProps {
 
 export function Testimonials({ testimonials }: TestimonialsProps) {
   return (
-    <section className="py-16 md:py-24 bg-slate-900 text-white relative overflow-hidden">
+    <Section className="bg-slate-900 text-white relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-blue-600/10 blur-[100px]" />
         <div className="absolute bottom-0 left-0 w-1/2 h-full bg-cyan-500/10 blur-[100px]" />
       </div>
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <Container className="relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -76,8 +78,8 @@ export function Testimonials({ testimonials }: TestimonialsProps) {
             </motion.div>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 

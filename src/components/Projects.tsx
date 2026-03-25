@@ -4,6 +4,8 @@ import { motion } from 'motion/react';
 import { ArrowUpRight, Image as ImageIcon } from 'lucide-react';
 import Link from 'next/link';
 import type { Project } from '@/types/api';
+import { Container } from './ui/Container';
+import { Section } from './ui/Section';
 
 interface ProjectsProps {
   projects: Project[];
@@ -11,8 +13,8 @@ interface ProjectsProps {
 
 export function Projects({ projects }: ProjectsProps) {
   return (
-    <section className="py-16 md:py-24 bg-slate-50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <Section className="bg-slate-50">
+      <Container>
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -80,7 +82,7 @@ export function Projects({ projects }: ProjectsProps) {
             </motion.div>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }

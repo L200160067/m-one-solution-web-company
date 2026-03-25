@@ -1,11 +1,1 @@
-{
-  "version": 4,
-  "routes": {},
-  "dynamicRoutes": {},
-  "notFoundRoutes": [],
-  "preview": {
-    "previewModeId": "4a0da4f28d02e094dcdbd8f2d975a096",
-    "previewModeSigningKey": "01e3d7cda11797ae0709e57f16d2325b170125e194cc25e36f29191e401105cb",
-    "previewModeEncryptionKey": "704891bc66b727fc46a9289f73a48aa920a5090746b6db5c5a6bf2900a2eb764"
-  }
-}
+{"version":4,"routes":{"/services/pengembangan-website-profesional":{},"/services/sistem-erp-manajemen-bisnis":{},"/services/aplikasi-mobile-android-ios":{},"/services/konsultasi-transformasi-digital":{},"/services/uiux-design-branding":{},"/services/keamanan-siber-audit-it":{}},"dynamicRoutes":{"/services/[id]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/services/[id]","routeRegex":"^\\/services\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"2ff7bab76ca260b66dfc1310c3e457ca","previewModeSigningKey":"169f675c79f62bc2f49cb4b566f0c92a4f567c079629fea49e1fc9353aab0ee6","previewModeEncryptionKey":"d4be0414b54f29984d4b3e1f5a581ed787ae4263b9f7acb9e472976cae928de2"}}

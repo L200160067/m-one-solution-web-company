@@ -1,6 +1,8 @@
 import { apiFetch } from '@/lib/api';
 import type { ApiResponse, Service } from '@/types/api';
 import ServicesListClient from './ServicesListClient';
+import { FastPackages } from '@/components/FastPackages';
+import { Container } from '@/components/ui/Container';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -35,10 +37,23 @@ export default async function ServicesPage() {
     }
 
     return (
-        <main className="pt-24 pb-16 min-h-screen bg-slate-50">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <main className="pt-20 pb-16 min-h-screen bg-slate-50">
+            {/* Paket M-One Lite */}
+            <FastPackages />
+
+            {/* Separator / M-One Pro */}
+            <Container className="mt-20 pt-10 border-t border-slate-200">
+                <div className="text-center max-w-3xl mx-auto mb-16">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 font-semibold mb-4 text-sm">
+                        🏢 M-One Pro (Enterprise)
+                    </div>
+                    <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6">Butuh Solusi IT Berskala Besar?</h2>
+                    <p className="text-lg text-slate-600">
+                        Selain paket ritel di atas, tim Software House kami siap membangun arsitektur sistem kustom tingkat lanjut, mulai dari Aplikasi Mobile hingga Enterprise Resource Planning (ERP).
+                    </p>
+                </div>
                 <ServicesListClient services={services} categories={categories} />
-            </div>
+            </Container>
         </main>
     );
 }

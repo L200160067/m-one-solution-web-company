@@ -11,6 +11,7 @@ export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isEventDropdownOpen, setIsEventDropdownOpen] = useState(false);
+  const [isPaketDropdownOpen, setIsPaketDropdownOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -69,6 +70,50 @@ export function Navbar() {
                 {link.name}
               </Link>
             ))}
+            
+            {/* Paket Web Dropdown Desktop */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setIsPaketDropdownOpen(true)}
+              onMouseLeave={() => setIsPaketDropdownOpen(false)}
+            >
+              <button 
+                className="flex items-center gap-1 text-sm font-medium text-emerald-400 hover:text-emerald-300 transition-colors py-2"
+                onClick={() => setIsPaketDropdownOpen(!isPaketDropdownOpen)}
+              >
+                Paket Cepat
+                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isPaketDropdownOpen ? 'rotate-180' : ''}`} />
+              </button>
+              
+              <AnimatePresence>
+                {isPaketDropdownOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute top-full left-0 mt-1 w-64 bg-slate-900 border border-white/10 rounded-xl shadow-xl overflow-hidden"
+                  >
+                    <Link 
+                      href="/layanan/jasa-pembuatan-website-sekolah" 
+                      className="block px-4 py-3 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors border-b border-white/5"
+                      onClick={() => setIsPaketDropdownOpen(false)}
+                    >
+                      <div className="font-bold text-emerald-400 mb-1">🎓 Paket Web Sekolah</div>
+                      <div className="text-xs text-slate-500">Website & Sistem PPDB Online</div>
+                    </Link>
+                    <Link 
+                      href="/layanan/jasa-erp-umkm" 
+                      className="block px-4 py-3 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors"
+                      onClick={() => setIsPaketDropdownOpen(false)}
+                    >
+                      <div className="font-bold text-blue-400 mb-1">🚀 Paket Web UMKM</div>
+                      <div className="text-xs text-slate-500">Toko Online & Sistem Kasir (POS)</div>
+                    </Link>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
             
             {/* Event Dropdown Desktop */}
             <div 
@@ -149,6 +194,44 @@ export function Navbar() {
                   {link.name}
                 </Link>
               ))}
+              
+              {/* Paket Web Dropdown Mobile */}
+              <div>
+                <button 
+                  className="w-full flex items-center justify-between px-3 py-3 text-base font-medium text-emerald-400 hover:text-emerald-300 rounded-lg transition-colors"
+                  onClick={() => setIsPaketDropdownOpen(!isPaketDropdownOpen)}
+                >
+                  Paket Cepat
+                  <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${isPaketDropdownOpen ? 'rotate-180' : ''}`} />
+                </button>
+                <AnimatePresence>
+                  {isPaketDropdownOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      className="overflow-hidden bg-white/5 rounded-lg mx-3"
+                    >
+                      <div className="py-2">
+                        <Link 
+                          href="/layanan/jasa-pembuatan-website-sekolah" 
+                          className="block px-4 py-3 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors border-b border-white/5"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          <div className="font-bold text-emerald-400">🎓 Paket Web Sekolah</div>
+                        </Link>
+                        <Link 
+                          href="/layanan/jasa-erp-umkm" 
+                          className="block px-4 py-3 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          <div className="font-bold text-blue-400">🚀 Paket Web UMKM</div>
+                        </Link>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
               
               {/* Event Dropdown Mobile */}
               <div>
