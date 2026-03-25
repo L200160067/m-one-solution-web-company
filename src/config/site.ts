@@ -8,7 +8,7 @@ export const siteConfig = {
         defaultMessage: "Halo M-One Solution, saya ingin berkonsultasi mengenai layanan Anda."
     },
     social: {
-        linkedin: "",
+        linkedin: "https://www.linkedin.com/company/m-one-solution",
         instagram: "https://www.instagram.com/m.one_solution/",
         twitter: "",
         facebook: ""

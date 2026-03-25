@@ -10,5 +10,5 @@ export const mockSettings: Settings = {
   instagram_url: 'https://www.instagram.com/m.one_solution/',
   tiktok_url: 'https://tiktok.com/@mone.solution',
   youtube_url: 'https://youtube.com/@mone.solution',
-  linkedin_url: 'https://linkedin.com/company/mone-solution',
+  linkedin_url: 'https://www.linkedin.com/company/m-one-solution',
 };
