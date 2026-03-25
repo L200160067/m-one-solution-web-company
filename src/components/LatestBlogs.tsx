@@ -1,7 +1,8 @@
 "use client";
 
+import { useRef } from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight, Calendar, User, ArrowUpRight, Image as ImageIcon } from 'lucide-react';
+import { ArrowRight, Calendar, User, ArrowUpRight, Image as ImageIcon, ChevronLeft, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import type { Post } from '@/types/api';
 
@@ -10,6 +11,15 @@ interface LatestBlogsProps {
 }
 
 export function LatestBlogs({ posts }: LatestBlogsProps) {
+    const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+    const scroll = (direction: 'left' | 'right') => {
+        if (scrollContainerRef.current) {
+            const scrollAmount = direction === 'left' ? -400 : 400; // menyesuaikan panjang kartu
+            scrollContainerRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+    };
+
     return (
         <section className="py-16 md:py-24 bg-slate-50 border-t border-slate-100">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -33,7 +43,7 @@ export function LatestBlogs({ posts }: LatestBlogsProps) {
 
                     <Link
                         href="/blog"
-                        className="inline-flex items-center gap-2 px-6 py-3 bg-white text-slate-900 border border-slate-200 text-base font-semibold rounded-full hover:border-blue-600 hover:text-blue-600 transition-colors whitespace-nowrap"
+                        className="inline-flex items-center gap-2 px-6 py-3 bg-white text-slate-900 border border-slate-200 text-base font-semibold rounded-full hover:border-blue-600 hover:text-blue-600 transition-colors whitespace-nowrap shadow-sm"
                     >
                         Lihat Semua Artikel
                         <ArrowUpRight className="w-5 h-5" />
@@ -45,8 +55,30 @@ export function LatestBlogs({ posts }: LatestBlogsProps) {
                         <p className="text-slate-600 text-lg">Belum ada artikel terbaru saat ini.</p>
                     </div>
                 ) : (
-                    <div className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-                        {posts.map((post, index) => (
+                    <div className="relative group">
+                        {/* Tombol Kiri */}
+                        <button 
+                            onClick={() => scroll('left')}
+                            className="hidden md:flex items-center justify-center absolute -left-5 top-[40%] -translate-y-1/2 z-10 p-3 rounded-full bg-white/95 backdrop-blur border border-slate-200 text-slate-600 shadow-xl hover:text-blue-600 hover:border-blue-600 hover:scale-110 transition-all duration-300 focus:outline-none opacity-0 group-hover:opacity-100"
+                            aria-label="Geser ke kiri"
+                        >
+                            <ChevronLeft className="w-6 h-6" />
+                        </button>
+                        
+                        {/* Tombol Kanan */}
+                        <button 
+                            onClick={() => scroll('right')}
+                            className="hidden md:flex items-center justify-center absolute -right-5 top-[40%] -translate-y-1/2 z-10 p-3 rounded-full bg-white/95 backdrop-blur border border-slate-200 text-slate-600 shadow-xl hover:text-blue-600 hover:border-blue-600 hover:scale-110 transition-all duration-300 focus:outline-none opacity-0 group-hover:opacity-100"
+                            aria-label="Geser ke kanan"
+                        >
+                            <ChevronRight className="w-6 h-6" />
+                        </button>
+
+                        <div 
+                            ref={scrollContainerRef}
+                            className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth"
+                        >
+                            {posts.map((post, index) => (
                             <motion.div
                                 key={post.id}
                                 initial={{ opacity: 0, y: 30 }}
@@ -106,6 +138,7 @@ export function LatestBlogs({ posts }: LatestBlogsProps) {
                                 </div>
                             </motion.div>
                         ))}
+                        </div>
                     </div>
                 )}
             </div>
