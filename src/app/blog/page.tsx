@@ -30,7 +30,7 @@ export default async function BlogPage() {
     try {
         const res = await apiFetch<ApiResponse<Post[]>>('/posts', { tags: ['posts'] });
         posts = res.data;
-        categories = ['Semua', ...new Set(posts.map(post => post.category.name))];
+        categories = ['Semua', ...new Set(posts.map(post => post.category?.name).filter(Boolean) as string[])];
     } catch (error) {
         console.error("Failed to fetch posts in BlogPage:", error);
         // API unavailable — render empty state gracefully

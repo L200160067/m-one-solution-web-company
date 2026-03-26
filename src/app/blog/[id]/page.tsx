@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     return {
         title,
         description,
-        keywords: `${post.category.name.toLowerCase()}, m-one solution, blog teknologi, artikel IT`,
+        keywords: `${post.category?.name?.toLowerCase() || 'berita'}, m-one solution, blog teknologi, artikel IT`,
         alternates: { canonical: url },
         openGraph: {
             type: 'article',

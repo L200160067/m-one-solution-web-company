@@ -25,7 +25,7 @@ export default function BlogListClient({ posts, categories }: BlogListClientProp
                 post.title.toLowerCase().includes(query) ||
                 (post.content ?? '').toLowerCase().includes(query) ||
                 post.excerpt.toLowerCase().includes(query);
-            const matchesCategory = activeCategory === 'Semua' || post.category.name === activeCategory;
+            const matchesCategory = activeCategory === 'Semua' || post.category?.name === activeCategory;
             return matchesSearch && matchesCategory;
         });
     }, [posts, searchQuery, activeCategory]);
@@ -153,7 +153,7 @@ export default function BlogListClient({ posts, categories }: BlogListClientProp
                                     )}
                                     <div className="absolute top-4 left-4">
                                         <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-blue-600 text-xs font-bold uppercase tracking-wider rounded-full shadow-sm">
-                                            {post.category.name}
+                                            {post.category?.name || 'Berita'}
                                         </span>
                                     </div>
                                 </div>

@@ -113,16 +113,46 @@ function resolveEndpoint(endpoint: string): unknown {
 }
 
 /**
- * Shared fetch utility – sekarang menggunakan data statis lokal.
- * Interface identik dengan versi API asli agar tidak perlu
- * mengubah semua komponen yang memanggil apiFetch.
+ * Shared fetch utility – mengutamakan API live untuk endpoint tertentu,
+ * dengan fallback ke data statis lokal jika API gagal.
  */
 export async function apiFetch<T>(
   endpoint: string,
-  // options tetap ada agar type-compatible dengan pemanggil lama
-  _options?: RequestInit & { revalidate?: number | false; tags?: string[] }
+  options?: RequestInit & { revalidate?: number | false; tags?: string[] }
 ): Promise<T> {
-  // Simulasi micro-delay agar SSR tetap konsisten (opsional, bisa dihapus)
-  // await new Promise((r) => setTimeout(r, 0));
+  const [path] = endpoint.replace(/^\//, '').split('?');
+  const resource = path.split('/')[0];
+
+  // Khusus untuk resource 'posts', coba panggil API asli
+  if (resource === 'posts') {
+    try {
+      const baseUrl = process.env.NEXT_PUBLIC_NEWS_API_URL || process.env.NEXT_PUBLIC_API_URL || 'http://berita-mone.test/api';
+      const cleanEndpoint = endpoint.startsWith('/') ? endpoint : `/${endpoint}`;
+      
+      const fetchOptions: RequestInit = {
+        ...options,
+      };
+
+      const res = await fetch(`${baseUrl}${cleanEndpoint}`, fetchOptions);
+
+      if (!res.ok) {
+        throw new Error(`API returned ${res.status} ${res.statusText}`);
+      }
+
+      const rawData = await res.json();
+      
+      // Response backend sudah dalam bentuk ApiResponse { success: true, data: ... }
+      if (rawData && rawData.success !== undefined && rawData.data !== undefined) {
+        return rawData as T;
+      }
+
+      return { success: true, data: rawData } as unknown as T;
+    } catch (error) {
+      console.warn(`[apiFetch] Gagal fetch dari API untuk endpoint ${endpoint}, fallback ke mock data lokal. Error:`, error instanceof Error ? error.message : error);
+      // Biarkan lanjut ke bawah untuk memanggil resolveEndpoint(endpoint)
+    }
+  }
+
+  // Fallback / Data statis lainnya
   return resolveEndpoint(endpoint) as T;
 }

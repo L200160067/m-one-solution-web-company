@@ -1,10 +1,5 @@
 {
-  "/about/page": "app/about/page.js",
+  "/blog/[id]/page": "app/blog/[id]/page.js",
   "/blog/page": "app/blog/page.js",
-  "/contact/page": "app/contact/page.js",
-  "/layanan/jasa-erp-umkm/page": "app/layanan/jasa-erp-umkm/page.js",
-  "/layanan/jasa-pembuatan-website-sekolah/page": "app/layanan/jasa-pembuatan-website-sekolah/page.js",
-  "/page": "app/page.js",
-  "/services/[id]/page": "app/services/[id]/page.js",
-  "/services/page": "app/services/page.js"
+  "/page": "app/page.js"
 }
