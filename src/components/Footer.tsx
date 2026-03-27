@@ -4,6 +4,7 @@ import { Facebook, Instagram, Linkedin, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { siteConfig } from '../config/site';
 import type { Settings } from '@/types/api';
+import { useCdnUrl } from '@/lib/useCdnUrl';
 
 interface FooterProps {
   settings?: Settings;
@@ -11,6 +12,8 @@ interface FooterProps {
 
 export function Footer({ settings }: FooterProps) {
   const currentYear = new Date().getFullYear();
+  const rawLogo = (siteConfig.logo as any)?.src || siteConfig.logo;
+  const logoUrl = useCdnUrl(rawLogo);
 
   const socialLinks = [
     {
@@ -41,7 +44,7 @@ export function Footer({ settings }: FooterProps) {
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
               <img
-                src={(siteConfig.logo as any)?.src || siteConfig.logo}
+                src={logoUrl || undefined}
                 alt={`${siteConfig.name} Logo`}
                 className="h-12 sm:h-14 w-auto object-contain mix-blend-lighten"
               />

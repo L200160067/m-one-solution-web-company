@@ -112,6 +112,30 @@ function resolveEndpoint(endpoint: string): unknown {
   }
 }
 
+import { convertGithubUrl } from './cdn';
+
+// Helper rekursif untuk mencari dan mengenkripsi URL GitHub
+async function encryptUrlsRecursively(data: any): Promise<any> {
+  if (!data) return data;
+  if (typeof data === 'string') {
+    if (data.includes('github.io') || data.includes('raw.githubusercontent.com')) {
+      return await convertGithubUrl(data);
+    }
+    return data;
+  }
+  if (Array.isArray(data)) {
+    return Promise.all(data.map(item => encryptUrlsRecursively(item)));
+  }
+  if (typeof data === 'object') {
+    const processed: any = {};
+    for (const [key, val] of Object.entries(data)) {
+      processed[key] = await encryptUrlsRecursively(val);
+    }
+    return processed;
+  }
+  return data;
+}
+
 /**
  * Shared fetch utility – mengutamakan API live untuk endpoint tertentu,
  * dengan fallback ke data statis lokal jika API gagal.
@@ -143,10 +167,11 @@ export async function apiFetch<T>(
       
       // Response backend sudah dalam bentuk ApiResponse { success: true, data: ... }
       if (rawData && rawData.success !== undefined && rawData.data !== undefined) {
-        return rawData as T;
+        return await encryptUrlsRecursively(rawData) as T;
       }
 
-      return { success: true, data: rawData } as unknown as T;
+      const wrapped = { success: true, data: rawData };
+      return await encryptUrlsRecursively(wrapped) as unknown as T;
     } catch (error) {
       console.warn(`[apiFetch] Gagal fetch dari API untuk endpoint ${endpoint}, fallback ke mock data lokal. Error:`, error instanceof Error ? error.message : error);
       // Biarkan lanjut ke bawah untuk memanggil resolveEndpoint(endpoint)
@@ -154,5 +179,6 @@ export async function apiFetch<T>(
   }
 
   // Fallback / Data statis lainnya
-  return resolveEndpoint(endpoint) as T;
+  const localData = resolveEndpoint(endpoint);
+  return await encryptUrlsRecursively(localData) as T;
 }

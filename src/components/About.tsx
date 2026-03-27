@@ -4,6 +4,7 @@ import { motion, useInView, useMotionValue, useTransform, animate } from 'motion
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
 import { siteConfig } from '@/config/site';
+import { useCdnUrl } from '@/lib/useCdnUrl';
 import { useEffect, useRef } from 'react';
 import { Container } from './ui/Container';
 import { Section } from './ui/Section';
@@ -29,6 +30,7 @@ function AnimatedCounter({ to, suffix = '' }: { to: number; suffix?: string }) {
 }
 
 export function About() {
+  const aboutImgUrl = useCdnUrl(`${siteConfig.cdnUrl}/images/branding/about.webp`);
   const features = [
     "Practical & Intuitive Systems",
     "Real Business Solutions",
@@ -50,11 +52,10 @@ export function About() {
           >
             <div className="aspect-[4/3] rounded-3xl overflow-hidden relative">
               <img
-                src={`${siteConfig.cdnUrl}/images/branding/about.webp`}
+                src={aboutImgUrl || undefined}
                 alt="Tim M-One Solution — Software House Sukoharjo, Jawa Tengah"
                 loading="lazy"
                 className="object-cover w-full h-full"
-                referrerPolicy="no-referrer"
               />
               <div className="absolute inset-0 bg-blue-900/10 mix-blend-multiply" />
             </div>

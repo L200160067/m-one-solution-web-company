@@ -67,7 +67,6 @@ export function Testimonials({ testimonials }: TestimonialsProps) {
                   alt={testimonial.name}
                   loading="lazy"
                   className="w-12 h-12 rounded-full object-cover ring-2 ring-white/10"
-                  referrerPolicy="no-referrer"
                 />
                 <div>
                   <h4 className="font-bold text-white">{testimonial.name}</h4>

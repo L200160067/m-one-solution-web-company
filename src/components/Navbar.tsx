@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { siteConfig } from '../config/site';
+import { useCdnUrl } from '@/lib/useCdnUrl';
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -13,6 +14,9 @@ export function Navbar() {
   const [isEventDropdownOpen, setIsEventDropdownOpen] = useState(false);
   const [isPaketDropdownOpen, setIsPaketDropdownOpen] = useState(false);
   const pathname = usePathname();
+  
+  const rawLogo = (siteConfig.logo as any)?.src || siteConfig.logo;
+  const logoUrl = useCdnUrl(rawLogo);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,7 +49,7 @@ export function Navbar() {
         <div className="flex items-center justify-between">
           <Link href="/" className="flex-shrink-0 flex items-center gap-3">
             <img
-              src={(siteConfig.logo as any)?.src || siteConfig.logo}
+              src={logoUrl || undefined}
               alt={`${siteConfig.name} Logo`}
               className="h-10 sm:h-12 w-auto object-contain mix-blend-lighten"
             />

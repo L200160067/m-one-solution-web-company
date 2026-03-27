@@ -10,8 +10,8 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 const siteConfig = {
     name: "M-One Solution",
     baseUrl: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.NEXT_PUBLIC_BASE_URL || 'https://mone.mutudev.com',
-    cdnUrl: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.NEXT_PUBLIC_CDN_URL || 'https://l200160067.github.io/mone-assets',
-    logo: `${__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.NEXT_PUBLIC_CDN_URL || 'https://l200160067.github.io/mone-assets'}/images/branding/mone.webp`,
+    cdnUrl: 'https://l200160067.github.io/mone-assets',
+    logo: 'https://l200160067.github.io/mone-assets/images/branding/mone.webp',
     whatsapp: {
         number: "6285168850712",
         defaultMessage: "Halo M-One Solution, saya ingin berkonsultasi mengenai layanan Anda."

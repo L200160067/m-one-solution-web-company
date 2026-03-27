@@ -40,6 +40,26 @@ const nextConfig: NextConfig = {
                 protocol: 'https',
                 hostname: 'placehold.co',
             },
+            // GitHub raw content — for images uploaded via GitHub API
+            {
+                protocol: 'https',
+                hostname: 'raw.githubusercontent.com',
+            },
+            // CDN Proxy Worker (Development/Fallback)
+            {
+                protocol: 'https',
+                hostname: 'falling-brook-2a16.kurialfarez.workers.dev',
+            },
+            // CDN Proxy Worker (Production)
+            {
+                protocol: 'https',
+                hostname: 'cdn.mutudev.com',
+            },
+            // Laravel API — local Herd (berita-mone)
+            {
+                protocol: 'http',
+                hostname: 'berita-mone.test',
+            },
         ],
     },
     async headers() {

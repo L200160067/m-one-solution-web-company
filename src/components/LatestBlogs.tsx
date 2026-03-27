@@ -96,7 +96,6 @@ export function LatestBlogs({ posts }: LatestBlogsProps) {
                                             alt={post.title}
                                             loading="lazy"
                                             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                            referrerPolicy="no-referrer"
                                         />
                                     ) : (
                                         <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 text-slate-400">

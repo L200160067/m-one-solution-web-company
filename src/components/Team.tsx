@@ -46,7 +46,6 @@ export function Team({ team }: TeamProps) {
                                         alt={member.name}
                                         loading="lazy"
                                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                        referrerPolicy="no-referrer"
                                     />
                                 ) : (
                                     <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 text-slate-300 transition-transform duration-500 group-hover:scale-110">

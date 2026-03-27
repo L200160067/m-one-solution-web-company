@@ -44,7 +44,6 @@ export default function ServiceDetailClient({ service }: { service: any }) {
                                         src={service.image_url}
                                         alt={service.title}
                                         className="w-full h-full object-cover"
-                                        referrerPolicy="no-referrer"
                                     />
                                 ) : (
                                     <div className="w-full h-full flex items-center justify-center bg-slate-100 text-slate-400">

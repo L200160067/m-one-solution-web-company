@@ -63,7 +63,6 @@ export function Alumni({ groups }: AlumniProps) {
                                                 alt={person.name}
                                                 loading="lazy"
                                                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                                                referrerPolicy="no-referrer"
                                             />
                                         ) : (
                                             <div className="w-full h-full flex items-center justify-center bg-slate-700 text-slate-500">

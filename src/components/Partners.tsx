@@ -49,7 +49,6 @@ export function Partners({ partners }: PartnersProps) {
                       alt={partner.name}
                       loading="lazy"
                       className="max-h-12 md:max-h-14 w-auto object-contain brightness-0 invert opacity-50 grayscale hover:opacity-100 hover:brightness-100 hover:invert-0 hover:grayscale-0 transition-all duration-300"
-                      referrerPolicy="no-referrer"
                     />
                   ) : (
                     <span className="text-slate-400 font-bold text-lg md:text-xl opacity-70 hover:opacity-100 hover:text-white transition-colors whitespace-nowrap px-4">
