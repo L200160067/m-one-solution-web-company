@@ -60,6 +60,23 @@ const nextConfig: NextConfig = {
                 protocol: 'http',
                 hostname: 'berita-mone.test',
             },
+            // WordPress CDN Images (e.g. Jetpack)
+            {
+                protocol: 'https',
+                hostname: 'i0.wp.com',
+            },
+            {
+                protocol: 'https',
+                hostname: 'i1.wp.com',
+            },
+            {
+                protocol: 'https',
+                hostname: 'i2.wp.com',
+            },
+            {
+                protocol: 'https',
+                hostname: 'i3.wp.com',
+            },
         ],
     },
     async headers() {
