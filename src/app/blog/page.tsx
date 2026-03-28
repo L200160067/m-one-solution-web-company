@@ -3,6 +3,8 @@ import type { ApiResponse, Post } from '@/types/api';
 import BlogListClient from './BlogListClient';
 import type { Metadata } from 'next';
 
+export const revalidate = 60;
+
 export const metadata: Metadata = {
     title: 'Blog & Artikel Teknologi | Tips Digital — M-One Solution',
     description: 'Baca artikel seputar website, aplikasi, ERP, dan transformasi digital untuk bisnis dari tim M-One Solution — software house di Sukoharjo & Solo.',

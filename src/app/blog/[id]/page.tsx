@@ -4,6 +4,8 @@ import { notFound } from 'next/navigation';
 import BlogPostClient from './client';
 import type { Metadata } from 'next';
 
+export const revalidate = 60;
+
 const BASE_URL = 'https://mone.mutudev.com';
 
 async function getPost(slug: string): Promise<Post | null> {
