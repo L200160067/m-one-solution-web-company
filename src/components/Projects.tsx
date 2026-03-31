@@ -50,9 +50,9 @@ export function Projects({ projects }: ProjectsProps) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group cursor-pointer"
+              className="group"
             >
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-6 bg-slate-100">
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-6 bg-slate-100 border border-slate-200">
                 {project.image_url ? (
                   <img
                     src={project.image_url}
@@ -65,19 +65,43 @@ export function Projects({ projects }: ProjectsProps) {
                     <ImageIcon className="w-12 h-12 opacity-50" />
                   </div>
                 )}
-                <div className="absolute inset-0 bg-slate-900/20 group-hover:bg-transparent transition-colors duration-500" />
+                <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors duration-500" />
                 <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-bold uppercase tracking-wider rounded-full">
+                  <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-slate-900 text-[10px] font-bold uppercase tracking-wider rounded-full shadow-sm">
                     {project.category}
                   </span>
                 </div>
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
-                {project.title}
-              </h3>
-              <p className="text-slate-600">
-                {project.description}
-              </p>
+
+              <div className="flex flex-col gap-1">
+                {project.client_name && (
+                  <span className="text-[10px] font-bold text-blue-600 uppercase tracking-widest">
+                    {project.client_name}
+                  </span>
+                )}
+                
+                <div className="flex items-start justify-between gap-4">
+                  <h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors line-clamp-1">
+                    {project.title}
+                  </h3>
+                  
+                  {project.project_url && project.project_url !== '#' && (
+                    <a 
+                      href={project.project_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 rounded-full bg-slate-100 text-slate-400 hover:text-blue-600 hover:bg-blue-50 transition-all shadow-sm flex-shrink-0"
+                      title="Kunjungi Website"
+                    >
+                      <ArrowUpRight className="w-5 h-5" />
+                    </a>
+                  )}
+                </div>
+                
+                <p className="text-slate-500 text-sm line-clamp-2 leading-relaxed mt-1">
+                  {project.description}
+                </p>
+              </div>
             </motion.div>
           ))}
         </div>

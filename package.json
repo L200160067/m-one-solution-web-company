@@ -7,7 +7,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui",
+    "check:wp": "tsx src/lib/__tests__/check-wp-endpoints.ts"
   },
   "dependencies": {
     "lucide-react": "^0.546.0",

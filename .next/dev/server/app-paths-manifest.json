@@ -1,7 +1,10 @@
 {
   "/about/page": "app/about/page.js",
+  "/api/revalidate/route": "app/api/revalidate/route.js",
+  "/blog/[id]/page": "app/blog/[id]/page.js",
   "/blog/page": "app/blog/page.js",
+  "/contact/page": "app/contact/page.js",
   "/page": "app/page.js",
-  "/services/[id]/page": "app/services/[id]/page.js",
+  "/portfolio/page": "app/portfolio/page.js",
   "/services/page": "app/services/page.js"
 }

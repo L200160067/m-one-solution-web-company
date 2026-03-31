@@ -1,184 +1,234 @@
 /**
  * ============================================================
- * api.ts – Static Mock Mode
+ * api.ts – Direct WordPress Backend Mode
  * ============================================================
- * Semua panggilan API sekarang dialihkan ke data statis lokal
- * di src/data/mockData.ts. Tidak ada request ke backend.
+ * Semua panggilan API diarahkan langsung ke WordPress REST API.
+ *
+ * WordPress Custom Post Type (CPT) slug mapping:
+ *   'team'         → /team-member
+ *   'projects'     → /project
+ *   'services'     → /layanan
+ *   'alumni'       → /alumni
+ *   'posts'        → /posts
+ *   'testimonials' → /testimonial
+ *   'partners'     → /partner
+ *   'settings'     → /pages?slug=settings
  * ============================================================
  */
+
+import type {
+  Post,
+  Project,
+  Service,
+  TeamMember,
+  AlumniGroup,
+  AlumniMember,
+  Testimonial,
+  Partner,
+  Settings,
+  ApiResponse,
+} from '@/types/api';
 
 import {
-  mockSettings,
-  mockPosts,
-  mockServices,
-  mockProjects,
-  mockTeamMembers,
-  mockAlumni,
-  mockTestimonials,
-  mockPartners,
-} from '@/data/mockData';
-import type { ApiResponse } from '@/types/api';
+  mapWordPressPostToAppPost,
+  mapWordPressProjectToAppProject,
+  mapWordPressServiceToAppService,
+  mapWordPressTeamMemberToAppTeamMember,
+  mapWordPressTestimonialToAppTestimonial,
+  mapWordPressPartnerToAppPartner,
+  mapWordPressAlumniToAppAlumni,
+  mapWordPressSettingsToAppSettings,
+  groupAlumni,
+  type WordPressPost,
+  type WordPressProject,
+  type WordPressService,
+  type WordPressTeamMember,
+  type WordPressTestimonial,
+  type WordPressPartner,
+  type WordPressAlumni,
+  type WordPressSettings,
+} from './wordpress';
 
-type MockDb = {
-  settings: typeof mockSettings;
-  posts: typeof mockPosts;
-  services: typeof mockServices;
-  projects: typeof mockProjects;
-  team: typeof mockTeamMembers;
-  alumni: typeof mockAlumni;
-  testimonials: typeof mockTestimonials;
-  partners: typeof mockPartners;
-};
+// ─── Constants ────────────────────────────────────────────────────────────────
 
-const MOCK_DB: MockDb = {
-  settings: mockSettings,
-  posts: mockPosts,
-  services: mockServices,
-  projects: mockProjects,
-  team: mockTeamMembers,
-  alumni: mockAlumni,
-  testimonials: mockTestimonials,
-  partners: mockPartners,
-};
+const WP_BASE = (process.env.NEXT_PUBLIC_WORDPRESS_URL ?? '').replace(/\/$/, '');
 
 /**
- * Resolve data lokal berdasarkan endpoint.
- * Mendukung:
- *   /settings
- *   /posts  /posts?limit=N  /posts/:slug
- *   /services  /services/:slug
- *   /projects  /projects?featured=true
- *   /team
- *   /alumni
- *   /testimonials
- *   /partners
+ * Mapping dari nama resource kita → slug WP REST API endpoint
  */
-function resolveEndpoint(endpoint: string): unknown {
-  // Hapus leading slash & query string untuk parsing awal
-  const [path, query] = endpoint.replace(/^\//, '').split('?');
-  const params = new URLSearchParams(query ?? '');
-  const segments = path.split('/');
-  const resource = segments[0];
-  const slug = segments[1]; // e.g. /posts/:slug → slug
+const WP_ENDPOINT_MAP: Record<string, string> = {
+  posts:        '/posts',
+  projects:     '/project',
+  services:     '/service',
+  team:         '/team-member',
+  testimonials: '/testimonial',
+  partners:     '/partner',
+  alumni:       '/alumni',
+  settings:     '/pages',
+};
 
+// List resources yang single-item-nya ditemukan by slug (bukan by ID)
+const SLUG_BASED_RESOURCES = new Set([
+  'posts', 'projects', 'services',
+]);
+
+// ─── Fetch helper ─────────────────────────────────────────────────────────────
+
+interface FetchOptions extends RequestInit {
+  revalidate?: number | false;
+  tags?: string[];
+}
+
+async function wpFetch<T>(url: string, options: FetchOptions = {}): Promise<T> {
+  const { tags, revalidate, ...restOptions } = options;
+  const res = await fetch(url, {
+    ...restOptions,
+    next: {
+      tags: tags ?? [],
+      revalidate: revalidate !== undefined ? revalidate : 3600,
+    },
+  });
+
+  if (!res.ok) {
+    throw new Error(`WordPress API returned ${res.status} for: ${url}`);
+  }
+  return res.json() as Promise<T>;
+}
+
+// ─── Item mapper ──────────────────────────────────────────────────────────────
+
+function mapItem(resource: string, item: unknown): unknown {
   switch (resource) {
-    case 'settings':
-      return { success: true, data: MOCK_DB.settings } as ApiResponse<typeof mockSettings>;
-
-    case 'posts': {
-      if (slug) {
-        const post = MOCK_DB.posts.find((p) => p.slug === slug || String(p.id) === slug);
-        if (!post) throw new Error(`Post not found: ${slug}`);
-        return { success: true, data: post } as ApiResponse<typeof mockPosts[0]>;
-      }
-      let posts = [...MOCK_DB.posts];
-      const limit = params.get('limit');
-      if (limit) posts = posts.slice(0, parseInt(limit, 10));
-      return { success: true, data: posts } as ApiResponse<typeof mockPosts>;
-    }
-
-    case 'services': {
-      if (slug) {
-        const service = MOCK_DB.services.find((s) => s.slug === slug || String(s.id) === slug);
-        if (!service) throw new Error(`Service not found: ${slug}`);
-        return { success: true, data: service } as ApiResponse<typeof mockServices[0]>;
-      }
-      return { success: true, data: MOCK_DB.services } as ApiResponse<typeof mockServices>;
-    }
-
-    case 'projects': {
-      let projects = [...MOCK_DB.projects];
-      if (params.get('featured') === 'true') {
-        projects = projects.filter((p) => p.is_featured);
-      }
-      return { success: true, data: projects } as ApiResponse<typeof mockProjects>;
-    }
-
+    case 'posts':
+      return mapWordPressPostToAppPost(item as WordPressPost);
+    case 'projects':
+      return mapWordPressProjectToAppProject(item as WordPressProject);
+    case 'services':
+      return mapWordPressServiceToAppService(item as WordPressService);
     case 'team':
-      return { success: true, data: MOCK_DB.team } as ApiResponse<typeof mockTeamMembers>;
-
-    case 'alumni':
-      return { success: true, data: MOCK_DB.alumni } as ApiResponse<typeof mockAlumni>;
-
+      return mapWordPressTeamMemberToAppTeamMember(item as WordPressTeamMember);
     case 'testimonials':
-      return { success: true, data: MOCK_DB.testimonials } as ApiResponse<typeof mockTestimonials>;
-
+      return mapWordPressTestimonialToAppTestimonial(item as WordPressTestimonial);
     case 'partners':
-      return { success: true, data: MOCK_DB.partners } as ApiResponse<typeof mockPartners>;
-
+      return mapWordPressPartnerToAppPartner(item as WordPressPartner);
     default:
-      console.warn(`[api] Endpoint tidak dikenal: ${endpoint} → mengembalikan null`);
-      return { success: true, data: null };
+      return item;
   }
 }
 
-import { convertGithubUrl } from './cdn';
-
-// Helper rekursif untuk mencari dan mengenkripsi URL GitHub
-async function encryptUrlsRecursively(data: any): Promise<any> {
-  if (!data) return data;
-  if (typeof data === 'string') {
-    if (data.includes('github.io') || data.includes('raw.githubusercontent.com')) {
-      return await convertGithubUrl(data);
-    }
-    return data;
-  }
-  if (Array.isArray(data)) {
-    return Promise.all(data.map(item => encryptUrlsRecursively(item)));
-  }
-  if (typeof data === 'object') {
-    const processed: any = {};
-    for (const [key, val] of Object.entries(data)) {
-      processed[key] = await encryptUrlsRecursively(val);
-    }
-    return processed;
-  }
-  return data;
-}
+// ─── Public apiFetch ──────────────────────────────────────────────────────────
 
 /**
- * Shared fetch utility – mengutamakan API live untuk endpoint tertentu,
- * dengan fallback ke data statis lokal jika API gagal.
+ * Fetch data dari WordPress REST API.
+ *
+ * Supported endpoint formats:
+ *   '/posts'                    → semua posts
+ *   '/projects?featured=true'   → semua projects (filter featured client-side)
+ *   '/posts/some-slug'          → single post by slug
+ *   '/services/some-slug'       → single service by slug
+ *   '/team'                     → semua team members
+ *   '/alumni'                   → semua alumni (dikelompokkan per batch)
+ *   '/settings'                 → settings dari ACF options page
  */
 export async function apiFetch<T>(
   endpoint: string,
-  options?: RequestInit & { revalidate?: number | false; tags?: string[] }
+  options: FetchOptions = {}
 ): Promise<T> {
-  const [path] = endpoint.replace(/^\//, '').split('?');
-  const resource = path.split('/')[0];
 
-  // Khusus untuk resource 'posts', coba panggil API asli
-  if (resource === 'posts') {
-    try {
-      const baseUrl = process.env.NEXT_PUBLIC_NEWS_API_URL || process.env.NEXT_PUBLIC_API_URL || 'http://berita-mone.test/api';
-      const cleanEndpoint = endpoint.startsWith('/') ? endpoint : `/${endpoint}`;
-      
-      const fetchOptions: RequestInit = {
-        ...options,
-      };
+  // Pisahkan path dan query string
+  const [rawPath, search] = endpoint.split('?');
+  const params = new URLSearchParams(search ?? '');
 
-      const res = await fetch(`${baseUrl}${cleanEndpoint}`, fetchOptions);
+  // Contoh: '/posts/some-slug' → parts = ['', 'posts', 'some-slug']
+  const parts = rawPath.split('/').filter(Boolean);
+  const resource = parts[0]; // 'posts', 'team', 'alumni', dll.
+  const pathSlug = parts[1]; // slug path-param, jika ada
 
-      if (!res.ok) {
-        throw new Error(`API returned ${res.status} ${res.statusText}`);
-      }
-
-      const rawData = await res.json();
-      
-      // Response backend sudah dalam bentuk ApiResponse { success: true, data: ... }
-      if (rawData && rawData.success !== undefined && rawData.data !== undefined) {
-        return await encryptUrlsRecursively(rawData) as T;
-      }
-
-      const wrapped = { success: true, data: rawData };
-      return await encryptUrlsRecursively(wrapped) as unknown as T;
-    } catch (error) {
-      console.warn(`[apiFetch] Gagal fetch dari API untuk endpoint ${endpoint}, fallback ke mock data lokal. Error:`, error instanceof Error ? error.message : error);
-      // Biarkan lanjut ke bawah untuk memanggil resolveEndpoint(endpoint)
-    }
+  if (!resource) {
+    console.warn('[apiFetch] Empty endpoint. Returning empty response.');
+    return { success: false, data: [] } as unknown as T;
   }
 
-  // Fallback / Data statis lainnya
-  const localData = resolveEndpoint(endpoint);
-  return await encryptUrlsRecursively(localData) as T;
+  const wpSlug = WP_ENDPOINT_MAP[resource];
+  if (!wpSlug) {
+    console.warn(`[apiFetch] Unknown resource: "${resource}". Cek WP_ENDPOINT_MAP.`);
+    return { success: false, data: [] } as unknown as T;
+  }
+
+  const LIST_RESOURCES = [
+    'posts', 'projects', 'services', 'team',
+    'testimonials', 'partners', 'alumni',
+  ];
+
+  try {
+
+    // ── SETTINGS ────────────────────────────────────────────────────────────
+    if (resource === 'settings') {
+      const url = `${WP_BASE}/pages?slug=company-setting&_embed`;
+      const pages = await wpFetch<WordPressSettings[]>(url, options);
+      const raw = Array.isArray(pages) && pages.length > 0 ? pages[0] : {};
+      const mapped = mapWordPressSettingsToAppSettings(raw as WordPressSettings);
+      return { success: true, data: mapped } as unknown as T;
+    }
+
+    // ── ALUMNI (selalu list, lalu dikelompokkan) ─────────────────────────────
+    if (resource === 'alumni') {
+      const url = `${WP_BASE}${wpSlug}?_embed&per_page=100`;
+      const raw = await wpFetch<WordPressAlumni[]>(url, options);
+      const members: AlumniMember[] = Array.isArray(raw)
+        ? raw.map(mapWordPressAlumniToAppAlumni)
+        : [];
+      const groups: AlumniGroup[] = groupAlumni(members);
+      return { success: true, data: groups } as unknown as T;
+    }
+
+    // ── SINGLE ITEM (path slug: /posts/some-slug) ───────────────────────────
+    if (pathSlug && SLUG_BASED_RESOURCES.has(resource)) {
+      const url = `${WP_BASE}${wpSlug}?slug=${pathSlug}&_embed`;
+      const raw = await wpFetch<unknown[]>(url, options);
+      const item = Array.isArray(raw) ? raw[0] : raw;
+      if (!item) throw new Error(`${resource} not found: slug="${pathSlug}"`);
+      const mapped = mapItem(resource, item);
+      return { success: true, data: mapped } as unknown as T;
+    }
+
+    // ── LIST ────────────────────────────────────────────────────────────────
+    const listParams = new URLSearchParams();
+    listParams.set('_embed', '1');
+    listParams.set('per_page', params.get('per_page') ?? '100');
+
+    // Forward kategori jika ada
+    if (params.get('category')) {
+      listParams.set('categories', params.get('category')!);
+    }
+
+    const url = `${WP_BASE}${wpSlug}?${listParams.toString()}`;
+    const raw = await wpFetch<unknown[]>(url, options);
+    let list = Array.isArray(raw) ? raw.map((item) => mapItem(resource, item)) : [];
+
+    // Filter featured client-side (WP tidak mendukung filter ACF boolean via REST)
+    if (params.get('featured') === 'true') {
+      list = list.filter((p: unknown) => (p as Project).is_featured);
+    }
+
+    // Batasi jumlah jika ada ?limit=N
+    const limit = params.get('limit');
+    if (limit) {
+      list = list.slice(0, parseInt(limit, 10));
+    }
+
+    return { success: true, data: list } as unknown as T;
+
+  } catch (error) {
+    console.error(`[apiFetch] Gagal fetch "${endpoint}":`, error);
+
+    return {
+      success: false,
+      data: LIST_RESOURCES.includes(resource)
+        ? []
+        : resource === 'settings'
+        ? ({} as Settings)
+        : null,
+    } as unknown as T;
+  }
 }

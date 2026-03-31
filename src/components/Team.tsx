@@ -3,15 +3,19 @@
 import { motion } from 'motion/react';
 import { Github, Linkedin, Instagram, User as UserIcon } from 'lucide-react';
 import type { TeamMember } from '@/types/api';
+import { Container } from './ui/Container';
+import { Section } from './ui/Section';
 
 interface TeamProps {
     team: TeamMember[];
 }
 
 export function Team({ team }: TeamProps) {
+    if (!team || !Array.isArray(team)) return null;
+    
     return (
-        <section className="py-16 md:py-24 bg-slate-50 border-t border-slate-100 relative overflow-hidden">
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Section className="bg-slate-50 border-t border-slate-100 relative overflow-hidden">
+            <Container>
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -95,8 +99,8 @@ export function Team({ team }: TeamProps) {
                         </motion.div>
                     ))}
                 </div>
-            </div>
-        </section>
+            </Container>
+        </Section>
     );
 }
 

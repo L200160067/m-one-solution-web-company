@@ -39,6 +39,7 @@ export interface Service {
     keywords: string[];
     image_url: string;
     image_thumb: string;
+    icon_name?: string; // Nama icon dari Lucide (misal: "Globe", "Code")
 }
 
 // ─── Projects / Portfolio ─────────────────────────────────────────────────────

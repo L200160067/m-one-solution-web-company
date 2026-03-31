@@ -3,10 +3,19 @@
 import { useState, useMemo } from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, Search, Layout, Globe, Briefcase, Code, Layers } from 'lucide-react';
+import * as LucideIcons from 'lucide-react';
 import Link from 'next/link';
 import type { Service } from '@/types/api';
 
-const getCategoryIcon = (category: string) => {
+const getCategoryIcon = (category: string, iconName?: string) => {
+    if (iconName) {
+        // @ts-ignore
+        const DynamicIcon = LucideIcons[iconName];
+        if (DynamicIcon) {
+            return <DynamicIcon className="w-6 h-6" />;
+        }
+    }
+
     switch (category) {
         case 'Development': return <Globe className="w-6 h-6" />;
         case 'Sistem Informasi': return <Layout className="w-6 h-6" />;
@@ -132,34 +141,25 @@ export default function ServicesListClient({ services, categories }: ServicesLis
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.1 }}
-                            className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col h-full"
+                            className="bg-slate-50 rounded-3xl p-6 sm:p-8 border border-slate-100 hover:shadow-xl transition-all duration-300 group flex flex-col h-full"
                         >
-                            <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 mb-6">
-                                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                                    {getCategoryIcon(service.category)}
-                                </div>
-                                <div>
-                                    <span className="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-xs font-semibold rounded-full mb-3">
-                                        {service.category}
-                                    </span>
-                                    <h2 className="text-xl sm:text-2xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors line-clamp-2">
-                                        <Link href={`/services/${service.id}`}>
-                                            {service.title}
-                                        </Link>
-                                    </h2>
-                                </div>
+                            <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-white text-blue-600 flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform duration-300">
+                                {getCategoryIcon(service.category, service.icon_name)}
                             </div>
-
-                            <p className="text-slate-600 mb-6 sm:mb-8 leading-relaxed flex-grow text-sm sm:text-base">
+                            <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3 md:mb-4 group-hover:text-blue-600 transition-colors line-clamp-2">
+                                <Link href={`/services/${service.slug}`}>
+                                    {service.title}
+                                </Link>
+                            </h2>
+                            <p className="text-slate-600 mb-6 md:mb-8 leading-relaxed flex-grow text-sm md:text-base line-clamp-3 md:line-clamp-4">
                                 {service.short_description}
                             </p>
-
-                            <div className="mt-auto pt-5 sm:pt-6 border-t border-slate-100">
+                            <div className="mt-auto pt-5 md:pt-6 border-t border-slate-200/60">
                                 <Link
                                     href={`/services/${service.slug}`}
-                                    className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors group/link text-sm sm:text-base"
+                                    className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors group/link text-sm md:text-base"
                                 >
-                                    Pelajari Lebih Lanjut
+                                    Detail Layanan
                                     <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
                                 </Link>
                             </div>

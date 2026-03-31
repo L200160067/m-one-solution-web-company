@@ -77,6 +77,23 @@ const nextConfig: NextConfig = {
                 protocol: 'https',
                 hostname: 'i3.wp.com',
             },
+            {
+                protocol: 'https',
+                hostname: 'ppdb.smkmuh1-skh.sch.id',
+            },
+            // Local WordPress Images
+            {
+                protocol: 'http',
+                hostname: 'localhost',
+            },
+            {
+                protocol: 'http',
+                hostname: '127.0.0.1',
+            },
+            {
+                protocol: 'http',
+                hostname: '*.test',
+            },
         ],
     },
     async headers() {

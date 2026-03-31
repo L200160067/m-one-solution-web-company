@@ -56,9 +56,10 @@ export default function ServiceDetailClient({ service }: { service: any }) {
                         {/* Content Side */}
                         <div className="prose prose-lg prose-slate max-w-none">
                             <h2 className="text-3xl font-bold text-slate-900 mb-6 mt-0">Tentang Layanan Ini</h2>
-                            <p className="text-slate-600 leading-relaxed mb-12 text-lg">
-                                {service.full_description}
-                            </p>
+                            <div 
+                                className="text-slate-600 leading-relaxed mb-12 text-lg"
+                                dangerouslySetInnerHTML={{ __html: service.full_description }}
+                            />
 
                             <div className="space-y-12 mb-16">
                                 {/* Fitur Utama */}

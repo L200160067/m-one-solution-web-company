@@ -92,8 +92,7 @@ function ServiceDetailClient({ service }) {
                                     children: service.image_url ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                                         src: service.image_url,
                                         alt: service.title,
-                                        className: "w-full h-full object-cover",
-                                        referrerPolicy: "no-referrer"
+                                        className: "w-full h-full object-cover"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/services/[id]/client.tsx",
                                         lineNumber: 43,
@@ -103,7 +102,7 @@ function ServiceDetailClient({ service }) {
                                         children: "No Image Available"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/services/[id]/client.tsx",
-                                        lineNumber: 50,
+                                        lineNumber: 49,
                                         columnNumber: 37
                                     }, this)
                                 }, void 0, false, {
@@ -124,15 +123,17 @@ function ServiceDetailClient({ service }) {
                                         children: "Tentang Layanan Ini"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/services/[id]/client.tsx",
-                                        lineNumber: 59,
+                                        lineNumber: 58,
                                         columnNumber: 29
                                     }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "text-slate-600 leading-relaxed mb-12 text-lg",
-                                        children: service.full_description
+                                        dangerouslySetInnerHTML: {
+                                            __html: service.full_description
+                                        }
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/services/[id]/client.tsx",
-                                        lineNumber: 60,
+                                        lineNumber: 59,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -243,7 +244,7 @@ function ServiceDetailClient({ service }) {
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/services/[id]/client.tsx",
-                                lineNumber: 58,
+                                lineNumber: 57,
                                 columnNumber: 25
                             }, this)
                         ]

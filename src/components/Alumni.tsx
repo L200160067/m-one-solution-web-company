@@ -9,6 +9,8 @@ interface AlumniProps {
 }
 
 export function Alumni({ groups }: AlumniProps) {
+    if (!groups || !Array.isArray(groups)) return null;
+    
     return (
         <section className="py-16 md:py-24 bg-slate-900 text-white relative overflow-hidden">
             {/* Background Elements */}
@@ -47,7 +49,7 @@ export function Alumni({ groups }: AlumniProps) {
                             {group.batch_period}
                         </motion.h3>
                         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                            {group.members.map((person, index) => (
+                            {group.members?.map((person, index) => (
                                 <motion.div
                                     key={person.id}
                                     initial={{ opacity: 0, y: 20 }}

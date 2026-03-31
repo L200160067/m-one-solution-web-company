@@ -2,6 +2,7 @@
 
 import { motion } from 'motion/react';
 import { ArrowRight, Layout, Globe, Briefcase, Code } from 'lucide-react';
+import * as LucideIcons from 'lucide-react';
 import Link from 'next/link';
 import type { Service } from '@/types/api';
 import { Container } from './ui/Container';
@@ -11,7 +12,15 @@ interface ServicesProps {
   services: Service[];
 }
 
-const getCategoryIcon = (category: string) => {
+const getCategoryIcon = (category: string, iconName?: string) => {
+  if (iconName) {
+    // @ts-ignore
+    const DynamicIcon = LucideIcons[iconName];
+    if (DynamicIcon) {
+      return <DynamicIcon className="w-6 h-6" />;
+    }
+  }
+
   switch (category) {
     case 'Development':
       return <Globe className="w-6 h-6" />;
@@ -78,7 +87,7 @@ export function Services({ services }: ServicesProps) {
                 className="bg-slate-50 rounded-3xl p-6 border border-slate-100 hover:shadow-xl transition-all duration-300 group flex flex-col h-full"
               >
                 <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-white text-blue-600 flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform duration-300">
-                  {getCategoryIcon(service.category)}
+                  {getCategoryIcon(service.category, service.icon_name)}
                 </div>
                 <h3 className="text-lg font-bold text-slate-900 mb-3 md:mb-4 group-hover:text-blue-600 transition-colors line-clamp-2">
                   <Link href={`/services/${service.slug}`}>

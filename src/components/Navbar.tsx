@@ -14,7 +14,7 @@ export function Navbar() {
   const [isEventDropdownOpen, setIsEventDropdownOpen] = useState(false);
   const [isPaketDropdownOpen, setIsPaketDropdownOpen] = useState(false);
   const pathname = usePathname();
-  
+
   const rawLogo = (siteConfig.logo as any)?.src || siteConfig.logo;
   const logoUrl = useCdnUrl(rawLogo);
 
@@ -74,21 +74,21 @@ export function Navbar() {
                 {link.name}
               </Link>
             ))}
-            
+
             {/* Paket Web Dropdown Desktop */}
-            <div 
+            <div
               className="relative"
               onMouseEnter={() => setIsPaketDropdownOpen(true)}
               onMouseLeave={() => setIsPaketDropdownOpen(false)}
             >
-              <button 
+              <button
                 className="flex items-center gap-1 text-sm font-medium text-emerald-400 hover:text-emerald-300 transition-colors py-2"
                 onClick={() => setIsPaketDropdownOpen(!isPaketDropdownOpen)}
               >
                 Paket Cepat
                 <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isPaketDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
-              
+
               <AnimatePresence>
                 {isPaketDropdownOpen && (
                   <motion.div
@@ -98,16 +98,16 @@ export function Navbar() {
                     transition={{ duration: 0.2 }}
                     className="absolute top-full left-0 mt-1 w-64 bg-slate-900 border border-white/10 rounded-xl shadow-xl overflow-hidden"
                   >
-                    <Link 
-                      href="/layanan/jasa-pembuatan-website-sekolah" 
+                    <Link
+                      href="/layanan/jasa-pembuatan-website-sekolah"
                       className="block px-4 py-3 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors border-b border-white/5"
                       onClick={() => setIsPaketDropdownOpen(false)}
                     >
                       <div className="font-bold text-emerald-400 mb-1">🎓 Paket Web Sekolah</div>
                       <div className="text-xs text-slate-500">Website & Sistem PPDB Online</div>
                     </Link>
-                    <Link 
-                      href="/layanan/jasa-erp-umkm" 
+                    <Link
+                      href="/layanan/jasa-erp-umkm"
                       className="block px-4 py-3 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors"
                       onClick={() => setIsPaketDropdownOpen(false)}
                     >
@@ -118,21 +118,21 @@ export function Navbar() {
                 )}
               </AnimatePresence>
             </div>
-            
+
             {/* Event Dropdown Desktop */}
-            <div 
+            <div
               className="relative"
               onMouseEnter={() => setIsEventDropdownOpen(true)}
               onMouseLeave={() => setIsEventDropdownOpen(false)}
             >
-              <button 
+              <button
                 className="flex items-center gap-1 text-sm font-medium text-slate-300 hover:text-blue-400 transition-colors py-2"
                 onClick={() => setIsEventDropdownOpen(!isEventDropdownOpen)}
               >
                 Event
                 <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isEventDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
-              
+
               <AnimatePresence>
                 {isEventDropdownOpen && (
                   <motion.div
@@ -142,9 +142,9 @@ export function Navbar() {
                     transition={{ duration: 0.2 }}
                     className="absolute top-full left-0 mt-1 w-48 bg-slate-900 border border-white/10 rounded-xl shadow-xl overflow-hidden"
                   >
-                    <a 
-                      href="https://bootcamp.mutudev.com" 
-                      target="_blank" 
+                    <a
+                      href="https://bootcamp.mutudev.com"
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="block px-4 py-3 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors"
                       onClick={() => setIsEventDropdownOpen(false)}
@@ -198,10 +198,10 @@ export function Navbar() {
                   {link.name}
                 </Link>
               ))}
-              
+
               {/* Paket Web Dropdown Mobile */}
               <div>
-                <button 
+                <button
                   className="w-full flex items-center justify-between px-3 py-3 text-base font-medium text-emerald-400 hover:text-emerald-300 rounded-lg transition-colors"
                   onClick={() => setIsPaketDropdownOpen(!isPaketDropdownOpen)}
                 >
@@ -217,15 +217,15 @@ export function Navbar() {
                       className="overflow-hidden bg-white/5 rounded-lg mx-3"
                     >
                       <div className="py-2">
-                        <Link 
-                          href="/layanan/jasa-pembuatan-website-sekolah" 
+                        <Link
+                          href="/layanan/jasa-pembuatan-website-sekolah"
                           className="block px-4 py-3 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors border-b border-white/5"
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
                           <div className="font-bold text-emerald-400">🎓 Paket Web Sekolah</div>
                         </Link>
-                        <Link 
-                          href="/layanan/jasa-erp-umkm" 
+                        <Link
+                          href="/layanan/jasa-erp-umkm"
                           className="block px-4 py-3 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors"
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
@@ -236,10 +236,10 @@ export function Navbar() {
                   )}
                 </AnimatePresence>
               </div>
-              
+
               {/* Event Dropdown Mobile */}
               <div>
-                <button 
+                <button
                   className="w-full flex items-center justify-between px-3 py-3 text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
                   onClick={() => setIsEventDropdownOpen(!isEventDropdownOpen)}
                 >
@@ -255,9 +255,9 @@ export function Navbar() {
                       className="overflow-hidden"
                     >
                       <div className="pl-6 pr-3 py-1 space-y-1">
-                        <a 
-                          href="https://bootcamp.mutudev.com" 
-                          target="_blank" 
+                        <a
+                          href="https://bootcamp.mutudev.com"
+                          target="_blank"
                           rel="noopener noreferrer"
                           className="block px-3 py-2 text-sm font-medium text-slate-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
                           onClick={() => setIsMobileMenuOpen(false)}
