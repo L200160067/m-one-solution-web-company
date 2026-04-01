@@ -15,22 +15,27 @@ export function Footer({ settings }: FooterProps) {
   const rawLogo = (siteConfig.logo as any)?.src || siteConfig.logo;
   const logoUrl = useCdnUrl(rawLogo);
 
+  const getValidUrl = (apiUrl?: string, fallbackUrl?: string) => {
+    if (apiUrl && apiUrl !== '#') return apiUrl;
+    return fallbackUrl || '';
+  };
+
   const socialLinks = [
     {
       label: 'Facebook',
-      href: settings?.facebook_url || siteConfig.social.facebook,
+      href: getValidUrl(settings?.facebook_url, siteConfig.social.facebook),
       icon: Facebook,
       hoverColor: 'hover:bg-blue-600',
     },
     {
       label: 'Instagram',
-      href: settings?.instagram_url || siteConfig.social.instagram,
+      href: getValidUrl(settings?.instagram_url, siteConfig.social.instagram),
       icon: Instagram,
       hoverColor: 'hover:bg-pink-600',
     },
     {
       label: 'LinkedIn',
-      href: settings?.linkedin_url || siteConfig.social.linkedin,
+      href: getValidUrl(settings?.linkedin_url, siteConfig.social.linkedin),
       icon: Linkedin,
       hoverColor: 'hover:bg-blue-700',
     },
