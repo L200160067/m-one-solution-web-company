@@ -1,0 +1,42 @@
+
+> m-one-solution-web@0.0.0 check:wp
+> tsx src/lib/__tests__/check-wp-endpoints.ts
+
+
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+  ≡ƒöì  WordPress API Endpoint Checker ΓÇô M-One Solution
+  ≡ƒôí  Base URL: https://berita-mone.mutudev.com/index.php?rest_route=/wp/v2
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+
+
+ΓöÇΓöÇ Hasil Pengecekan ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+ΓÜá∩╕Å  /project [0 item(s)]
+   CPT project ada, tapi ada ACF field yang kosong/belum diisi.
+   ΓÜá∩╕Å  ACF fields hilang: client_name, project_url, is_featured
+Γ£à /project_category [0 item(s)]
+   Taxonomy project_category terdaftar dan bisa diakses via REST API.
+ΓÜá∩╕Å  /service [0 item(s)]
+   CPT service ada, tapi ada ACF field kosong/belum diisi.
+   ΓÜá∩╕Å  ACF fields hilang: icon_name, features, benefits, keywords
+Γ£à /posts [3 item(s)]
+   Blog posts berhasil diambil.
+Γ£à /partner [0 item(s)]
+   CPT partner OK. (Hanya butuh title + featured image)
+ΓÜá∩╕Å  /alumni [0 item(s)]
+   CPT alumni ada, tapi ada ACF field kosong/belum diisi.
+   ΓÜá∩╕Å  ACF fields hilang: school, batch_period
+ΓÜá∩╕Å  /testimonial [0 item(s)]
+   CPT testimonial ada, tapi ada ACF field kosong/belum diisi.
+   ΓÜá∩╕Å  ACF fields hilang: role, company, rating
+ΓÜá∩╕Å  /pages?slug=company-setting
+   Halaman company-setting ada, tapi ada ACF field yang belum diisi.
+   ΓÜá∩╕Å  ACF fields hilang: company_name, company_address, contact_email, contact_phone, whatsapp_number, facebook_url, instagram_url, tiktok_url, youtube_url, linkedin_url
+ΓÜá∩╕Å  /team-member [2 item(s)]
+   CPT team-member ada, tapi ada ACF field kosong/belum diisi.
+   ΓÜá∩╕Å  ACF fields hilang: role, social_linkedin, social_github, social_instagram
+
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+  Ringkasan: Γ£à 3 OK  |  ΓÜá∩╕Å  6 WARN  |  Γ¥î 0 FAIL
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+

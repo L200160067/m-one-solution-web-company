@@ -9,6 +9,12 @@
 
 const WP_BASE = process.env.NEXT_PUBLIC_WORDPRESS_URL ?? 'http://sekolah.test/wp-json/wp/v2';
 
+function buildWpUrl(path: string, queryString: string): string {
+  if (!queryString) return `${WP_BASE}${path}`;
+  const separator = WP_BASE.includes('?') ? '&' : '?';
+  return `${WP_BASE}${path}${separator}${queryString}`;
+}
+
 interface CheckResult {
   endpoint: string;
   status: 'OK' | 'FAIL' | 'WARN';
@@ -57,7 +63,7 @@ function checkAcfFields(item: Record<string, unknown>, expected: string[]): { fo
 // ─── Endpoint Checks ──────────────────────────────────────────────────────────
 
 async function checkPosts() {
-  const url = `${WP_BASE}/posts?_embed&per_page=3`;
+  const url = buildWpUrl('/posts', '_embed=1&per_page=3');
   const { ok, status, data } = await fetchEndpoint(url);
   if (!ok || !Array.isArray(data)) {
     results.push({ endpoint: '/posts', status: 'FAIL', httpCode: status, message: `HTTP ${status} – Endpoint tidak dapat diakses.` });
@@ -73,7 +79,7 @@ async function checkPosts() {
 }
 
 async function checkProjects() {
-  const url = `${WP_BASE}/project?_embed&per_page=3`;
+  const url = buildWpUrl('/project', '_embed=1&per_page=3');
   const { ok, status, data } = await fetchEndpoint(url);
   if (!ok || !Array.isArray(data)) {
     results.push({ endpoint: '/project', status: 'FAIL', httpCode: status, message: `HTTP ${status} – CPT 'project' tidak ditemukan. Pastikan sudah register_post_type.` });
@@ -94,7 +100,7 @@ async function checkProjects() {
 }
 
 async function checkServices() {
-  const url = `${WP_BASE}/service?_embed&per_page=3`;
+  const url = buildWpUrl('/service', '_embed=1&per_page=3');
   const { ok, status, data } = await fetchEndpoint(url);
   if (!ok || !Array.isArray(data)) {
     results.push({ endpoint: '/service', status: 'FAIL', httpCode: status, message: `HTTP ${status} – CPT 'service' tidak ditemukan.` });
@@ -115,7 +121,7 @@ async function checkServices() {
 }
 
 async function checkTeamMembers() {
-  const url = `${WP_BASE}/team-member?_embed&per_page=3`;
+  const url = buildWpUrl('/team-member', '_embed=1&per_page=3');
   const { ok, status, data } = await fetchEndpoint(url);
   if (!ok || !Array.isArray(data)) {
     results.push({ endpoint: '/team-member', status: 'FAIL', httpCode: status, message: `HTTP ${status} – CPT 'team-member' tidak ditemukan.` });
@@ -136,7 +142,7 @@ async function checkTeamMembers() {
 }
 
 async function checkTestimonials() {
-  const url = `${WP_BASE}/testimonial?_embed&per_page=3`;
+  const url = buildWpUrl('/testimonial', '_embed=1&per_page=3');
   const { ok, status, data } = await fetchEndpoint(url);
   if (!ok || !Array.isArray(data)) {
     results.push({ endpoint: '/testimonial', status: 'FAIL', httpCode: status, message: `HTTP ${status} – CPT 'testimonial' tidak ditemukan.` });
@@ -157,7 +163,7 @@ async function checkTestimonials() {
 }
 
 async function checkPartners() {
-  const url = `${WP_BASE}/partner?_embed&per_page=3`;
+  const url = buildWpUrl('/partner', '_embed=1&per_page=3');
   const { ok, status, data } = await fetchEndpoint(url);
   if (!ok || !Array.isArray(data)) {
     results.push({ endpoint: '/partner', status: 'FAIL', httpCode: status, message: `HTTP ${status} – CPT 'partner' tidak ditemukan.` });
@@ -173,7 +179,7 @@ async function checkPartners() {
 }
 
 async function checkAlumni() {
-  const url = `${WP_BASE}/alumni?_embed&per_page=3`;
+  const url = buildWpUrl('/alumni', '_embed=1&per_page=3');
   const { ok, status, data } = await fetchEndpoint(url);
   if (!ok || !Array.isArray(data)) {
     results.push({ endpoint: '/alumni', status: 'FAIL', httpCode: status, message: `HTTP ${status} – CPT 'alumni' tidak ditemukan.` });
@@ -194,7 +200,7 @@ async function checkAlumni() {
 }
 
 async function checkSettings() {
-  const url = `${WP_BASE}/pages?slug=company-setting&_embed`;
+  const url = buildWpUrl('/pages', 'slug=company-setting&_embed=1');
   const { ok, status, data } = await fetchEndpoint(url);
   if (!ok || !Array.isArray(data) || data.length === 0) {
     results.push({ endpoint: '/pages?slug=company-setting', status: 'FAIL', httpCode: status, message: `HTTP ${status} – Halaman 'company-setting' tidak ditemukan. Pastikan sudah dibuat di WordPress.` });
@@ -218,7 +224,7 @@ async function checkSettings() {
 }
 
 async function checkProjectCategory() {
-  const url = `${WP_BASE}/project_category`;
+  const url = buildWpUrl('/project_category', '');
   const { ok, status, data } = await fetchEndpoint(url);
   if (!ok) {
     results.push({ endpoint: '/project_category', status: 'FAIL', httpCode: status, message: `HTTP ${status} – Taxonomy 'project_category' tidak ditemukan.` });

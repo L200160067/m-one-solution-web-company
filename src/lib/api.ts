@@ -53,6 +53,13 @@ import {
 
 const WP_BASE = (process.env.NEXT_PUBLIC_WORDPRESS_URL ?? '').replace(/\/$/, '');
 
+// Helper to safely append query string to URL since WP_BASE may contain "?"
+function buildWpUrl(path: string, queryString: string): string {
+  if (!queryString) return `${WP_BASE}${path}`;
+  const separator = WP_BASE.includes('?') ? '&' : '?';
+  return `${WP_BASE}${path}${separator}${queryString}`;
+}
+
 /**
  * Mapping dari nama resource kita → slug WP REST API endpoint
  */
@@ -164,7 +171,7 @@ export async function apiFetch<T>(
 
     // ── SETTINGS ────────────────────────────────────────────────────────────
     if (resource === 'settings') {
-      const url = `${WP_BASE}/pages?slug=company-setting&_embed`;
+      const url = buildWpUrl('/pages', 'slug=company-setting&_embed=1');
       const pages = await wpFetch<WordPressSettings[]>(url, options);
       const raw = Array.isArray(pages) && pages.length > 0 ? pages[0] : {};
       const mapped = mapWordPressSettingsToAppSettings(raw as WordPressSettings);
@@ -173,7 +180,7 @@ export async function apiFetch<T>(
 
     // ── ALUMNI (selalu list, lalu dikelompokkan) ─────────────────────────────
     if (resource === 'alumni') {
-      const url = `${WP_BASE}${wpSlug}?_embed&per_page=100`;
+      const url = buildWpUrl(wpSlug, '_embed=1&per_page=100');
       const raw = await wpFetch<WordPressAlumni[]>(url, options);
       const members: AlumniMember[] = Array.isArray(raw)
         ? raw.map(mapWordPressAlumniToAppAlumni)
@@ -184,7 +191,7 @@ export async function apiFetch<T>(
 
     // ── SINGLE ITEM (path slug: /posts/some-slug) ───────────────────────────
     if (pathSlug && SLUG_BASED_RESOURCES.has(resource)) {
-      const url = `${WP_BASE}${wpSlug}?slug=${pathSlug}&_embed`;
+      const url = buildWpUrl(wpSlug, `slug=${pathSlug}&_embed=1`);
       const raw = await wpFetch<unknown[]>(url, options);
       const item = Array.isArray(raw) ? raw[0] : raw;
       if (!item) throw new Error(`${resource} not found: slug="${pathSlug}"`);
@@ -202,7 +209,7 @@ export async function apiFetch<T>(
       listParams.set('categories', params.get('category')!);
     }
 
-    const url = `${WP_BASE}${wpSlug}?${listParams.toString()}`;
+    const url = buildWpUrl(wpSlug, listParams.toString());
     const raw = await wpFetch<unknown[]>(url, options);
     let list = Array.isArray(raw) ? raw.map((item) => mapItem(resource, item)) : [];
 
