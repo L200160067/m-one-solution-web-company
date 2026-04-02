@@ -9,14 +9,14 @@ const lilitaOne = Lilita_One({
 });
 
 export const metadata: Metadata = {
-  title: 'Student Agency Incubator — Freelance Website Sebelum Lulus | M-One Solution',
+  title: 'Freelance Website untuk Mahasiswa | M-One Solution',
   description: 'Bergabunglah dengan Student Agency Incubator M-One Solution! Program kemitraan eksklusif untuk mahasiswa yang ingin hasilkan uang dari menjual website tanpa harus bisa coding. Daftar gratis sekarang!',
   keywords: 'Student Agency Incubator sukoharjo, freelance mahasiswa, jualan website mahasiswa, program magang IT solo, penghasilan mahasiswa dari website, agen website mahasiswa, M-One Solution',
   alternates: {
     canonical: 'https://mone.mutudev.com/student-agency',
   },
   openGraph: {
-    title: 'Student Agency Incubator — Freelance Website Sebelum Lulus | M-One Solution',
+    title: 'Student Agency Incubator | Freelance Website | M-One',
     description: 'Hasilkan uang dari jualan website tanpa harus bisa coding! Join Student Agency Incubator M-One Solution — gratis, fleksibel, cocok untuk mahasiswa aktif.',
     url: 'https://mone.mutudev.com/student-agency',
     type: 'website',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Student Agency Incubator — Freelance Website Sebelum Lulus | M-One Solution',
+    title: 'Student Agency Incubator | Freelance | M-One Solution',
     description: 'Hasilkan uang dari jualan website! Join Student Agency Incubator M-One Solution — gratis & fleksibel untuk mahasiswa aktif.',
     images: ['https://mone.mutudev.com/og-student-agency.png'],
   },
