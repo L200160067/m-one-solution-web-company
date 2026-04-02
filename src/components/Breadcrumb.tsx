@@ -38,15 +38,15 @@ export function Breadcrumb({ items, className = '' }: BreadcrumbProps) {
     };
 
     return (
-        <nav aria-label="Breadcrumb" className={`w-full ${className}`}>
+        <nav aria-label="Breadcrumb" className={`w-full min-w-0 ${className}`}>
             <Script
                 id="schema-breadcrumb"
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
             
-            <ol className="flex items-center space-x-2 text-sm text-slate-500 overflow-x-auto whitespace-nowrap py-2 px-4 bg-white/50 backdrop-blur-sm rounded-full border border-slate-100 shadow-sm w-fit">
-                <li>
+            <ol className="flex items-center space-x-2 text-sm text-slate-500 overflow-hidden whitespace-nowrap py-2 px-4 bg-white/50 backdrop-blur-sm rounded-full border border-slate-100 shadow-sm w-fit max-w-full">
+                <li className="flex-shrink-0">
                     <Link href="/" className="flex items-center hover:text-blue-600 transition-colors">
                         <Home className="w-4 h-4" />
                         <span className="sr-only">Home</span>
@@ -57,16 +57,21 @@ export function Breadcrumb({ items, className = '' }: BreadcrumbProps) {
                     const isLast = index === items.length - 1;
                     
                     return (
-                        <li key={index} className="flex items-center">
+                        <li key={index} className="flex items-center min-w-0">
                             <ChevronRight className="w-4 h-4 mx-1 text-slate-400 flex-shrink-0" />
                             {isLast || !item.href ? (
-                                <span className="text-slate-900 font-medium" aria-current="page">
+                                <span 
+                                    className="text-slate-900 font-medium truncate block" 
+                                    aria-current="page"
+                                    title={item.label}
+                                >
                                     {item.label}
                                 </span>
                             ) : (
                                 <Link 
                                     href={item.href}
-                                    className="hover:text-blue-600 transition-colors"
+                                    className="hover:text-blue-600 transition-colors truncate block"
+                                    title={item.label}
                                 >
                                     {item.label}
                                 </Link>

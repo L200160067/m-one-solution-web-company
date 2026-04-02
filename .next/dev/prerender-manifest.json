@@ -1,11 +1,1 @@
-{
-  "version": 4,
-  "routes": {},
-  "dynamicRoutes": {},
-  "notFoundRoutes": [],
-  "preview": {
-    "previewModeId": "9d3fb5b8324a0a6a4ac5c6c1e0c40d0b",
-    "previewModeSigningKey": "d639fc9226f4899bcad8436638dcccbb049e25975f489c48a3f10257738115d5",
-    "previewModeEncryptionKey": "ded11df0d0f5069e650bd1ab2c9cd3dfe081c51ca8215231a032e1a82db19e01"
-  }
-}
+{"version":4,"routes":{"/blog/keseruan-monthly-meeting-tim-m-one-solution-dalam-balutan-kehangatan-kuliner-khas-di-siomay-manahan":{},"/blog/kegiatan-produktif-tim-m-one-pembahasan-proyek-berbasis-teknologi-untuk-meningkatkan-kolaborasi-inovasi-dan-kualitas-pengembangan-sistem-digital":{},"/blog/pengenalan-website-kepada-murid-smk-muhammadiyah-1-sukoharjo-oleh-mahasiswa-universitas-muhammadiyah-surakarta-di-m-one-solution-edukasi-digital-dan-dasar-pengembangan-website-untuk-generasi-smk":{}},"dynamicRoutes":{"/blog/[id]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/blog/[id]","routeRegex":"^\\/blog\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"2989847106933093d462cbb1c4902dbc","previewModeSigningKey":"9d99a1f256aef601373c614ac9d6947e03dd376d89286b75ca15a01298179f9d","previewModeEncryptionKey":"f94418156a87848ba16993007a93c7d9b6b97425fef4e63ea366f14eefa13abd"}}
