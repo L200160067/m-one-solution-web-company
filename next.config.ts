@@ -60,6 +60,11 @@ const nextConfig: NextConfig = {
                 protocol: 'http',
                 hostname: 'berita-mone.test',
             },
+            // WordPress Headless (Live Server)
+            {
+                protocol: 'https',
+                hostname: 'berita-mone.mutudev.com',
+            },
             // WordPress CDN Images (e.g. Jetpack)
             {
                 protocol: 'https',
