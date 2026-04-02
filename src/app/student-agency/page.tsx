@@ -139,36 +139,36 @@ export default function StudentAgencyPage() {
             className="space-y-1 mb-6"
           >
             <div
-              className="inline-block px-3 py-1 rounded-md text-3xl sm:text-4xl lg:text-5xl font-black italic"
+              className="inline-block px-4 py-2 rounded-xl text-3xl sm:text-4xl lg:text-5xl tracking-wide italic"
               style={{
                 background: '#FFF3A3',
                 color: '#E0007A',
-                WebkitTextStroke: '1.5px #E0007A',
-                fontFamily: '"Inter", sans-serif',
+                fontFamily: 'var(--font-lilita), "Lilita One", "Impact", sans-serif',
+                boxShadow: '3px 3px 0 rgba(224, 0, 122, 0.2)',
               }}
             >
               Kalau Mahasiswa
             </div>
             <br />
             <div
-              className="inline-block px-3 py-1 mt-2 rounded-md text-3xl sm:text-4xl lg:text-5xl font-black italic"
+              className="inline-block px-4 py-2 mt-2 rounded-xl text-3xl sm:text-4xl lg:text-5xl tracking-wide italic"
               style={{
                 background: '#FFE4F5',
                 color: '#E0007A',
-                WebkitTextStroke: '1.5px #E0007A',
-                fontFamily: '"Inter", sans-serif',
+                fontFamily: 'var(--font-lilita), "Lilita One", "Impact", sans-serif',
+                boxShadow: '3px 3px 0 rgba(224, 0, 122, 0.2)',
               }}
             >
               Bisa Freelance
             </div>
             <br />
             <div
-              className="inline-block px-3 py-1 mt-2 rounded-md text-3xl sm:text-4xl lg:text-5xl font-black italic"
+              className="inline-block px-4 py-2 mt-2 rounded-xl text-3xl sm:text-4xl lg:text-5xl tracking-wide italic"
               style={{
                 background: '#FFF3A3',
                 color: '#E0007A',
-                WebkitTextStroke: '1.5px #E0007A',
-                fontFamily: '"Inter", sans-serif',
+                fontFamily: 'var(--font-lilita), "Lilita One", "Impact", sans-serif',
+                boxShadow: '3px 3px 0 rgba(224, 0, 122, 0.2)',
               }}
             >
               Sebelum Lulus??

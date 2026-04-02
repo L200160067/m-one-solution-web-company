@@ -4256,18 +4256,6 @@
   }
 
   @media (min-width: 40rem) {
-    .sm\:col-span-2 {
-      grid-column: span 2 / span 2;
-    }
-  }
-
-  @media (min-width: 40rem) {
-    .sm\:mx-auto {
-      margin-inline: auto;
-    }
-  }
-
-  @media (min-width: 40rem) {
     .sm\:block {
       display: block;
     }
@@ -4306,12 +4294,6 @@
   @media (min-width: 40rem) {
     .sm\:w-auto {
       width: auto;
-    }
-  }
-
-  @media (min-width: 40rem) {
-    .sm\:max-w-sm {
-      max-width: var(--container-sm);
     }
   }
 
