@@ -1,1 +1,11 @@
-{"version":4,"routes":{"/blog/aku-adalah-test":{},"/blog/hello-world":{}},"dynamicRoutes":{"/blog/[id]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/blog/[id]","routeRegex":"^\\/blog\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"602e5ef23a7fed4d69375ac4788752a3","previewModeSigningKey":"6d38b1d3d91ba06d459145a2f579a7b7d45973f38ff53a6c62d4905d433ee5c6","previewModeEncryptionKey":"b2d75c840669b4273b9129508b5cf701074e19070aa359c6e62bca27b154152d"}}
+{
+  "version": 4,
+  "routes": {},
+  "dynamicRoutes": {},
+  "notFoundRoutes": [],
+  "preview": {
+    "previewModeId": "8ffc4d2eb190db196f9dbe7a0b1a9405",
+    "previewModeSigningKey": "2e5eac7a3eed393fd80cafc9331546677511403c723bac6c815c454606d75ea7",
+    "previewModeEncryptionKey": "e0630279e02bf8150598c1c823570ba2f01b2e6f93db086e000189b1c1e4d222"
+  }
+}

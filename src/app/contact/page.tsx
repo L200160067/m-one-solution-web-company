@@ -1,6 +1,7 @@
 import { ContactForm } from '@/components/ContactForm';
 import { CTA } from '@/components/CTA';
 import { MapPin, Mail, Clock, Phone } from 'lucide-react';
+import { siteConfig } from '@/config/site';
 
 export const metadata = {
     title: 'Contact Us | M-One Solution Software House',
@@ -18,7 +19,6 @@ export const metadata = {
     },
 };
 
-import { siteConfig } from '@/config/site';
 
 const contactInfo = [
     {

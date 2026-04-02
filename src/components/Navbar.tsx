@@ -140,17 +140,16 @@ export function Navbar() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute top-full left-0 mt-1 w-48 bg-slate-900 border border-white/10 rounded-xl shadow-xl overflow-hidden"
+                    className="absolute top-full left-0 mt-1 w-56 bg-slate-900 border border-white/10 rounded-xl shadow-xl overflow-hidden"
                   >
-                    <a
-                      href="https://bootcamp.mutudev.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <Link
+                      href="/student-agency"
                       className="block px-4 py-3 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors"
                       onClick={() => setIsEventDropdownOpen(false)}
                     >
-                      Bootcamp
-                    </a>
+                      <div className="font-bold text-pink-400 mb-1">🎓 Student Agency Incubator</div>
+                      <div className="text-xs text-slate-500">Freelance website sebelum lulus</div>
+                    </Link>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -255,15 +254,13 @@ export function Navbar() {
                       className="overflow-hidden"
                     >
                       <div className="pl-6 pr-3 py-1 space-y-1">
-                        <a
-                          href="https://bootcamp.mutudev.com"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="block px-3 py-2 text-sm font-medium text-slate-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+                        <Link
+                          href="/student-agency"
+                          className="block px-3 py-2 text-sm font-medium text-pink-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
-                          Bootcamp
-                        </a>
+                          🎓 Student Agency Incubator
+                        </Link>
                       </div>
                     </motion.div>
                   )}
