@@ -24,10 +24,10 @@ export const metadata: Metadata = {
     siteName: 'M-One Solution',
     images: [
       {
-        url: '/og-image.png',
+        url: 'https://mone.mutudev.com/og-student-agency.png',
         width: 1200,
         height: 630,
-        alt: 'Student Agency Incubator M-One Solution — Program Freelance Website untuk Mahasiswa',
+        alt: 'BERANI BUKTIIN — Student Agency Incubator M-One Solution, Program Freelance Website untuk Mahasiswa',
       },
     ],
   },
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Student Agency Incubator — Freelance Website Sebelum Lulus | M-One Solution',
     description: 'Hasilkan uang dari jualan website! Join Student Agency Incubator M-One Solution — gratis & fleksibel untuk mahasiswa aktif.',
-    images: ['/og-image.png'],
+    images: ['https://mone.mutudev.com/og-student-agency.png'],
   },
 };
 
