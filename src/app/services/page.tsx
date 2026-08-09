@@ -4,6 +4,7 @@ import ServicesListClient from './ServicesListClient';
 import { FastPackages } from '@/components/FastPackages';
 import { Container } from '@/components/ui/Container';
 import type { Metadata } from 'next';
+import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
     title: 'Layanan Jasa IT Sukoharjo | Web, Aplikasi & ERP — M-One Solution',
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: 'Layanan Jasa IT Sukoharjo | M-One Solution',
         description: 'Jasa pembuatan website, aplikasi mobile, dan sistem ERP di Sukoharjo & Solo. Konsultasi GRATIS — hubungi sekarang!',
-        url: 'https://mone.mutudev.com/services',
+        url: `${siteConfig.baseUrl}/services`,
         type: 'website',
         images: ['/og-image.jpg'],
     },

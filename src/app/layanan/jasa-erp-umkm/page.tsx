@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     description: 'Tinggalkan cara manual! Jasa pembuatan website toko online dan sistem ERP terjangkau untuk UMKM: manajemen stok, kasir (POS), dan laporan keuangan langsung beres.',
     keywords: 'jasa sistem erp, erp untuk umkm, aplikasi kasir custom, website toko online, web app manajemen bisnis, buat web umkm',
     alternates: {
-        canonical: 'https://mone.mutudev.com/layanan/jasa-erp-umkm',
+        canonical: `${siteConfig.baseUrl}/layanan/jasa-erp-umkm`,
     }
 };
 

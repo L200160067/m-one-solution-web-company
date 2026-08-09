@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description: 'Jasa pembuatan website sekolah SD, SMP, SMA/SMK dengan sistem PPDB Online (Penerimaan Siswa Baru) dan e-learning. Tarif jelas, pengerjaan cepat, terima beres.',
     keywords: 'jasa pembuatan website sekolah, website ppdb online, aplikasi sekolah, e-learning sekolah, siakad sekolah',
     alternates: {
-        canonical: 'https://mone.mutudev.com/layanan/jasa-pembuatan-website-sekolah',
+        canonical: `${siteConfig.baseUrl}/layanan/jasa-pembuatan-website-sekolah`,
     }
 };
 

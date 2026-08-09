@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Script from 'next/script';
 import { ChevronRight, Home } from 'lucide-react';
+import { siteConfig } from '@/config/site';
 
 export interface BreadcrumbItem {
     label: string;
@@ -13,7 +14,7 @@ interface BreadcrumbProps {
 }
 
 export function Breadcrumb({ items, className = '' }: BreadcrumbProps) {
-    const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://mone.mutudev.com';
+    const BASE_URL = siteConfig.baseUrl;
 
     // Build the JSON-LD schema array
     const itemListElement = [

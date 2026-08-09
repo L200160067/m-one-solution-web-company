@@ -9,7 +9,7 @@ export const metadata = {
     openGraph: {
         title: 'Contact Us | M-One Solution',
         description: 'Hubungi M-One Solution untuk mendiskusikan ide Anda dan wujudkan bersama tim ahli kami.',
-        url: 'https://mone.mutudev.com/contact',
+        url: `${siteConfig.baseUrl}/contact`,
         type: 'website',
     },
     twitter: {

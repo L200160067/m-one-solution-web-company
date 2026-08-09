@@ -2,13 +2,14 @@ import { CTA } from '@/components/CTA';
 import type { Metadata } from 'next';
 import { ShieldCheck, Zap, Rocket, CheckCircle } from 'lucide-react';
 import { Breadcrumb } from '@/components/Breadcrumb';
+import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
     title: 'Software House Solo & Sukoharjo Terbaik | M-One Solution',
     description: 'Mencari software house di Solo Raya? M-One Solution melayani pembuatan website, aplikasi Android/iOS, & sistem ERP dengan harga terjangkau & profesional.',
     keywords: 'software house solo, jasa pembuatan website solo, jasa IT solo raya, web development sukoharjo, company profile solo',
     alternates: {
-        canonical: 'https://mone.mutudev.com/layanan/software-house-solo',
+        canonical: `${siteConfig.baseUrl}/layanan/software-house-solo`,
     }
 };
 

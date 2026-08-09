@@ -2,6 +2,7 @@ import { apiFetch } from '@/lib/api';
 import type { ApiResponse, Post } from '@/types/api';
 import BlogListClient from './BlogListClient';
 import type { Metadata } from 'next';
+import { siteConfig } from '@/config/site';
 
 export const revalidate = 60;
 
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: 'Blog & Artikel Teknologi | M-One Solution',
         description: 'Tips dan wawasan seputar website, aplikasi, dan transformasi digital dari software house Sukoharjo — M-One Solution.',
-        url: 'https://mone.mutudev.com/blog',
+        url: `${siteConfig.baseUrl}/blog`,
         type: 'website',
         images: ['/og-image.jpg'],
     },

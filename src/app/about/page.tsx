@@ -3,6 +3,7 @@ import { Team } from '@/components/Team';
 import { Alumni } from '@/components/Alumni';
 import { apiFetch } from '@/lib/api';
 import type { ApiResponse, TeamMember, AlumniGroup } from '@/types/api';
+import { siteConfig } from '@/config/site';
 
 export const metadata = {
     title: 'Tentang Kami | Software House Sukoharjo — M-One Solution',
@@ -10,7 +11,7 @@ export const metadata = {
     openGraph: {
         title: 'Tentang Kami | M-One Solution Software House Sukoharjo',
         description: 'Software house di Sukoharjo yang membantu bisnis tumbuh lewat website dan aplikasi digital yang tepat sasaran.',
-        url: 'https://mone.mutudev.com/about',
+        url: `${siteConfig.baseUrl}/about`,
         type: 'website',
     },
     twitter: {
