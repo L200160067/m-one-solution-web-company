@@ -1,13 +1,14 @@
 "use client";
 
 import { motion, useInView, useMotionValue, useTransform, animate } from 'motion/react';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Image as ImageIcon } from 'lucide-react';
 import Link from 'next/link';
 import { siteConfig } from '@/config/site';
 import { useCdnUrl } from '@/lib/useCdnUrl';
 import { useEffect, useRef } from 'react';
 import { Container } from './ui/Container';
 import { Section } from './ui/Section';
+import { WpImage } from '@/components/image/WpImage';
 
 function AnimatedCounter({ to, suffix = '' }: { to: number; suffix?: string }) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -51,10 +52,14 @@ export function About() {
             className="relative"
           >
             <div className="aspect-[4/3] rounded-3xl overflow-hidden relative">
-              <img
-                src={aboutImgUrl || undefined}
+              <WpImage
+                src={aboutImgUrl}
                 alt="Tim M-One Solution — Software House Sukoharjo, Jawa Tengah"
-                loading="lazy"
+                fallback={
+                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 text-slate-400">
+                    <ImageIcon className="w-12 h-12 opacity-50" />
+                  </div>
+                }
                 className="object-cover w-full h-full"
               />
               <div className="absolute inset-0 bg-blue-900/10 mix-blend-multiply" />

@@ -1,17 +1,19 @@
 "use client";
 
 import { motion } from 'motion/react';
-import { ArrowLeft, CheckCircle2, ArrowRight } from 'lucide-react';
+import { ArrowLeft, CheckCircle2, ArrowRight, Image as ImageIcon } from 'lucide-react';
 import Link from 'next/link';
 import { EmptyState } from '@/components/ui/EmptyState';
+import { ErrorState } from '@/components/ui/ErrorState';
+import { WpImage } from '@/components/image/WpImage';
 
 export default function ServiceDetailClient({ service }: { service: any }) {
   if (!service) {
     return (
       <main className="pt-24 pb-16 min-h-screen bg-slate-50">
         <article className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
-          <EmptyState
-            title="Layanan tidak ditemukan."
+          <ErrorState
+            title="Layanan tidak ditemukan"
             description="Layanan yang Anda cari mungkin sudah diubah atau dipindahkan."
             actionLabel="Lihat Semua Layanan"
             onAction={() => {
@@ -19,7 +21,6 @@ export default function ServiceDetailClient({ service }: { service: any }) {
                 window.location.href = '/services';
               }
             }}
-            icon="search"
           />
         </article>
       </main>
@@ -59,10 +60,15 @@ export default function ServiceDetailClient({ service }: { service: any }) {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             <div className="lg:sticky lg:top-32">
               <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
-                <img
-                  src={service.image_url || ''}
+                <WpImage
+                  src={service.image_url}
                   alt={service.title}
-                  className="w-full h-full object-cover"
+                  fallback={
+                    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 text-slate-400">
+                      <ImageIcon className="w-12 h-12 opacity-50" />
+                    </div>
+                  }
+                  fill
                 />
               </div>
             </div>

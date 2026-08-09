@@ -8,6 +8,7 @@ import type { Post } from '@/types/api';
 import { Container } from './ui/Container';
 import { Section } from './ui/Section';
 import { EmptyState } from '@/components/ui/EmptyState';
+import { WpImage } from '@/components/image/WpImage';
 
 interface LatestBlogsProps {
     posts: Post[];
@@ -93,18 +94,16 @@ export function LatestBlogs({ posts }: LatestBlogsProps) {
                                 className="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300 group flex flex-col flex-shrink-0 w-[85vw] sm:w-[350px] snap-center"
                             >
                                 <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
-                                    {post.cover_url ? (
-                                        <img
-                                            src={post.cover_url}
-                                            alt={post.title}
-                                            loading="lazy"
-                                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                        />
-                                    ) : (
-                                        <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 text-slate-400">
-                                            <ImageIcon className="w-12 h-12 mb-2 opacity-50" />
-                                        </div>
-                                    )}
+                                    <WpImage
+                                        src={post.cover_url}
+                                        alt={post.title}
+                                        fallback={
+                                            <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 text-slate-400">
+                                                <ImageIcon className="w-12 h-12 mb-2 opacity-50" />
+                                            </div>
+                                        }
+                                        fill
+                                    />
                                     <div className="absolute top-4 left-4">
                                         <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-blue-600 text-xs font-bold uppercase tracking-wider rounded-full shadow-sm">
                                             {post.category?.name || 'Berita'}

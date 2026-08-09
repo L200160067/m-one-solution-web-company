@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { siteConfig } from '../config/site';
 import { Container } from './ui/Container';
 import { BlobBackground } from './ui/BlobBackground';
+import { WpImage } from '@/components/image/WpImage';
 
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -105,7 +106,7 @@ export function Hero() {
                 className="absolute inset-8 rounded-3xl overflow-hidden border border-white/10 shadow-2xl z-0"
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent z-10 pointer-events-none" />
-                <img
+                <WpImage
                   src={`${siteConfig.cdnUrl}/images/branding/hero.webp`}
                   alt="Tim developer M-One Solution — Software House Sukoharjo, Jawa Tengah"
                   className="w-full h-full object-cover"

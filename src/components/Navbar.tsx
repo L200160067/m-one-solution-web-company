@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { siteConfig } from '../config/site';
 import { useCdnUrl } from '@/lib/useCdnUrl';
+import { WpImage } from '@/components/image/WpImage';
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -48,8 +49,8 @@ export function Navbar() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex-shrink-0 flex items-center gap-3">
-            <img
-              src={logoUrl || undefined}
+            <WpImage
+              src={logoUrl}
               alt={`${siteConfig.name} Logo`}
               className="h-10 sm:h-12 w-auto object-contain mix-blend-lighten"
             />

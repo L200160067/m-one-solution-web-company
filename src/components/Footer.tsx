@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { siteConfig } from '../config/site';
 import type { Settings } from '@/types/api';
 import { useCdnUrl } from '@/lib/useCdnUrl';
+import { WpImage } from '@/components/image/WpImage';
 
 interface FooterProps {
   settings?: Settings;
@@ -48,8 +49,8 @@ export function Footer({ settings }: FooterProps) {
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
-              <img
-                src={logoUrl || undefined}
+              <WpImage
+                src={logoUrl}
                 alt={`${siteConfig.name} Logo`}
                 className="h-12 sm:h-14 w-auto object-contain mix-blend-lighten"
               />

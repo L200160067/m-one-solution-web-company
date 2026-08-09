@@ -3,6 +3,7 @@
 import { motion } from 'motion/react';
 import { GraduationCap, User as UserIcon } from 'lucide-react';
 import type { AlumniGroup } from '@/types/api';
+import { WpImage } from '@/components/image/WpImage';
 
 interface AlumniProps {
     groups: AlumniGroup[];
@@ -59,18 +60,16 @@ export function Alumni({ groups }: AlumniProps) {
                                     className="bg-white/5 border border-white/10 p-6 rounded-3xl backdrop-blur-sm hover:bg-white/10 transition-colors flex flex-col items-center text-center group"
                                 >
                                     <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-slate-800 group-hover:border-blue-500 transition-colors mb-4 bg-slate-800">
-                                        {person.photo_url ? (
-                                            <img
-                                                src={person.photo_url}
-                                                alt={person.name}
-                                                loading="lazy"
-                                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                                            />
-                                        ) : (
+                                    <WpImage
+                                        src={person.photo_url}
+                                        alt={person.name}
+                                        fallback={
                                             <div className="w-full h-full flex items-center justify-center bg-slate-700 text-slate-500">
                                                 <UserIcon className="w-10 h-10 opacity-50" />
                                             </div>
-                                        )}
+                                        }
+                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                    />
                                     </div>
                                     <h3 className="text-xl font-bold text-white mb-2">{person.name}</h3>
                                     <p className="text-blue-400 font-medium text-sm mb-1">{person.school}</p>
