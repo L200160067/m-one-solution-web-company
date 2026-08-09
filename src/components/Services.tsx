@@ -15,8 +15,7 @@ interface ServicesProps {
 
 const getCategoryIcon = (category: string, iconName?: string) => {
   if (iconName) {
-    // @ts-ignore
-    const DynamicIcon = LucideIcons[iconName];
+    const DynamicIcon = (LucideIcons as any)[iconName];
     if (DynamicIcon) {
       return <DynamicIcon className="w-6 h-6" />;
     }
