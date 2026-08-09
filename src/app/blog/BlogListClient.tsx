@@ -169,7 +169,7 @@ export default function BlogListClient({ posts, categories }: BlogListClientProp
                                         href={`/blog/${post.slug}`}
                                         className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors mt-auto"
                                     >
-                                        Read More
+                                        Baca Selengkapnya
                                         <ArrowRight className="w-4 h-4" />
                                     </Link>
                                 </div>

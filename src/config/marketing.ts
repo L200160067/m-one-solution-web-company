@@ -282,7 +282,7 @@ export const studentAgency: StudentAgencyConfig = {
 };
 
 export const homepageBlocks: HomepageBlockConfig = {
-  contactCtaLabel: 'Contact Us',
+  contactCtaLabel: 'Hubungi Kami',
   contactCtaHref: '/contact',
   emailCtaLabel: 'Email Kami',
 };

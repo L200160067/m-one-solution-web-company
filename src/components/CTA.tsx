@@ -42,7 +42,7 @@ export function CTA() {
               onClick={() => track({ event: 'cta_click', label: 'contact_us' })}
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-blue-600 text-base font-bold rounded-full hover:bg-blue-50 transition-all hover:scale-105 shadow-xl"
             >
-              {homepageBlocks.contactCtaLabel || 'Contact Us'}
+              {homepageBlocks.contactCtaLabel || 'Hubungi Kami'}
               <ArrowRight className="w-5 h-5" />
             </Link>
             <a
