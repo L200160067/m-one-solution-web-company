@@ -3,10 +3,11 @@ import type { ApiResponse, Post } from '@/types/api';
 import { notFound } from 'next/navigation';
 import BlogPostClient from './client';
 import type { Metadata } from 'next';
+import { siteConfig } from '@/config/site';
 
 export const revalidate = 60;
 
-const BASE_URL = 'https://mone.mutudev.com';
+const BASE_URL = siteConfig.baseUrl;
 
 async function getPost(slug: string): Promise<Post | null> {
     try {
@@ -25,7 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     const title = post.meta_title || `${post.title} | M-One Solution Blog`;
     const description = post.meta_description || post.excerpt;
     const url = `${BASE_URL}/blog/${slug}`;
-    const image = post.cover_url || `${BASE_URL}/og-image.jpg`;
+    const image = post.cover_url || `${BASE_URL}/og-image.png`;
 
     return {
         title,

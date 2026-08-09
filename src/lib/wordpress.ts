@@ -1,15 +1,27 @@
-import type { 
-    Post, 
-    PostCategory, 
-    Project, 
-    Service, 
-    Testimonial, 
-    Partner, 
-    TeamMember, 
+import type {
+    Post,
+    PostCategory,
+    Project,
+    Service,
+    Testimonial,
+    Partner,
+    TeamMember,
     AlumniMember,
     AlumniGroup,
-    Settings 
+    Settings
 } from '@/types/api';
+import {
+    PostSchema,
+    ProjectSchema,
+    ServiceSchema,
+    TeamMemberSchema,
+    TestimonialSchema,
+    PartnerSchema,
+    AlumniMemberSchema,
+    AlumniGroupSchema,
+    SettingsSchema,
+    ApiResponseSchema,
+} from '@/lib/validation/api';
 
 /**
  * Interface untuk struktur data dari WordPress REST API (parsial)
@@ -45,8 +57,7 @@ export interface WordPressPost {
  * Map WordPress REST API Post ke format Post aplikasi kita
  */
 export function mapWordPressPostToAppPost(wpPost: WordPressPost): Post {
-    if (!wpPost) return {} as Post; // Defensive check
-    // Cari kategori pertama
+    if (!wpPost) return {} as Post;
     const categories = wpPost._embedded?.['wp:term']?.find(terms =>
         terms.some(term => term.taxonomy === 'category')
     );
@@ -61,17 +72,15 @@ export function mapWordPressPostToAppPost(wpPost: WordPressPost): Post {
         slug: 'uncategorized'
     };
 
-    // Ambil Gambar Unggulan (Featured Media)
     const featuredMedia = wpPost._embedded?.['wp:featuredmedia']?.[0];
     const cover_url = featuredMedia?.source_url || '';
     const cover_thumb = featuredMedia?.media_details?.sizes?.medium?.source_url
         || featuredMedia?.media_details?.sizes?.thumbnail?.source_url
         || cover_url;
 
-    // Bersihkan HTML dari excerpt
     const cleanExcerpt = wpPost.excerpt.rendered.replace(/<[^>]*>/g, '').substring(0, 160) + '...';
 
-    return {
+    const mapped = {
         id: wpPost.id,
         title: wpPost.title.rendered,
         slug: wpPost.slug,
@@ -84,6 +93,13 @@ export function mapWordPressPostToAppPost(wpPost: WordPressPost): Post {
         published_at: wpPost.date,
         meta_title: wpPost.title.rendered,
     };
+
+    const result = PostSchema.safeParse(mapped);
+    if (!result.success) {
+        console.warn('[validation] Invalid post payload', result.error.format());
+        return mapped as Post;
+    }
+    return result.data;
 }
 
 /**
@@ -101,7 +117,7 @@ export interface WordPressProject {
         is_featured?: boolean;
     };
     _embedded?: {
-        'wp:featuredmedia'?: Array<{ 
+        'wp:featuredmedia'?: Array<{
             source_url: string;
             media_details?: {
                 sizes?: {
@@ -124,21 +140,21 @@ export interface WordPressProject {
  */
 export function mapWordPressProjectToAppProject(wpProject: WordPressProject): Project {
     if (!wpProject) return {} as Project;
-    const categories = wpProject._embedded?.['wp:term']?.find(terms => 
+    const categories = wpProject._embedded?.['wp:term']?.find(terms =>
         terms.some(term => term.taxonomy === 'project_category')
     );
-    
+
     const categoryName = categories && categories[0] ? categories[0].name : 'Project';
 
     const featuredMedia = wpProject._embedded?.['wp:featuredmedia']?.[0];
     const image_url = featuredMedia?.source_url || '';
-    const image_thumb = featuredMedia?.media_details?.sizes?.medium?.source_url 
-                        || featuredMedia?.media_details?.sizes?.thumbnail?.source_url 
+    const image_thumb = featuredMedia?.media_details?.sizes?.medium?.source_url
+                        || featuredMedia?.media_details?.sizes?.thumbnail?.source_url
                         || image_url;
 
     const cleanDescription = wpProject.excerpt.rendered.replace(/<[^>]*>/g, '').trim();
 
-    return {
+    const mapped = {
         id: wpProject.id,
         title: wpProject.title.rendered,
         slug: wpProject.slug,
@@ -150,6 +166,13 @@ export function mapWordPressProjectToAppProject(wpProject: WordPressProject): Pr
         image_url: image_url,
         image_thumb: image_thumb
     };
+
+    const result = ProjectSchema.safeParse(mapped);
+    if (!result.success) {
+        console.warn('[validation] Invalid project payload', result.error.format());
+        return mapped as Project;
+    }
+    return result.data;
 }
 
 /**
@@ -168,7 +191,7 @@ export interface WordPressService {
         keywords?: string;
     };
     _embedded?: {
-        'wp:featuredmedia'?: Array<{ 
+        'wp:featuredmedia'?: Array<{
             source_url: string;
             media_details?: {
                 sizes?: {
@@ -187,8 +210,8 @@ export function mapWordPressServiceToAppService(wpService: WordPressService): Se
     if (!wpService) return {} as Service;
     const featuredMedia = wpService._embedded?.['wp:featuredmedia']?.[0];
     const image_url = featuredMedia?.source_url || '';
-    const image_thumb = featuredMedia?.media_details?.sizes?.medium?.source_url 
-                        || featuredMedia?.media_details?.sizes?.thumbnail?.source_url 
+    const image_thumb = featuredMedia?.media_details?.sizes?.medium?.source_url
+                        || featuredMedia?.media_details?.sizes?.thumbnail?.source_url
                         || image_url;
 
     const cleanShortDesc = wpService.excerpt.rendered.replace(/<[^>]*>/g, '').trim();
@@ -200,7 +223,7 @@ export function mapWordPressServiceToAppService(wpService: WordPressService): Se
         return str.split(/\r?\n/).map(line => line.trim()).filter(line => line.length > 0);
     };
 
-    return {
+    const mapped = {
         id: wpService.id,
         title: wpService.title.rendered,
         slug: wpService.slug,
@@ -214,6 +237,13 @@ export function mapWordPressServiceToAppService(wpService: WordPressService): Se
         image_thumb: image_thumb,
         icon_name: wpService.acf?.icon_name
     };
+
+    const result = ServiceSchema.safeParse(mapped);
+    if (!result.success) {
+        console.warn('[validation] Invalid service payload', result.error.format());
+        return mapped as Service;
+    }
+    return result.data;
 }
 
 /**
@@ -236,7 +266,7 @@ export interface WordPressTeamMember {
 export function mapWordPressTeamMemberToAppTeamMember(wpTeam: WordPressTeamMember): TeamMember {
     if (!wpTeam) return {} as TeamMember;
     const avatar_url = wpTeam._embedded?.['wp:featuredmedia']?.[0]?.source_url || '';
-    return {
+    const mapped = {
         id: wpTeam.id,
         name: wpTeam.title.rendered,
         role: wpTeam.acf?.role || 'Team Member',
@@ -245,6 +275,13 @@ export function mapWordPressTeamMemberToAppTeamMember(wpTeam: WordPressTeamMembe
         social_instagram: wpTeam.acf?.social_instagram || '#',
         avatar_url: avatar_url
     };
+
+    const result = TeamMemberSchema.safeParse(mapped);
+    if (!result.success) {
+        console.warn('[validation] Invalid team payload', result.error.format());
+        return mapped as TeamMember;
+    }
+    return result.data;
 }
 
 /**
@@ -267,7 +304,7 @@ export interface WordPressTestimonial {
 export function mapWordPressTestimonialToAppTestimonial(wpTestimonial: WordPressTestimonial): Testimonial {
     if (!wpTestimonial) return {} as Testimonial;
     const avatar_url = wpTestimonial._embedded?.['wp:featuredmedia']?.[0]?.source_url || '';
-    return {
+    const mapped = {
         id: wpTestimonial.id,
         name: wpTestimonial.title.rendered,
         role: wpTestimonial.acf?.role || 'Client',
@@ -276,6 +313,13 @@ export function mapWordPressTestimonialToAppTestimonial(wpTestimonial: WordPress
         rating: Number(wpTestimonial.acf?.rating) || 5,
         avatar_url: avatar_url
     };
+
+    const result = TestimonialSchema.safeParse(mapped);
+    if (!result.success) {
+        console.warn('[validation] Invalid testimonial payload', result.error.format());
+        return mapped as Testimonial;
+    }
+    return result.data;
 }
 
 /**
@@ -291,11 +335,18 @@ export interface WordPressPartner {
 
 export function mapWordPressPartnerToAppPartner(wpPartner: WordPressPartner): Partner {
     if (!wpPartner) return {} as Partner;
-    return {
+    const mapped = {
         id: wpPartner.id,
         name: wpPartner.title.rendered,
         logo_url: wpPartner._embedded?.['wp:featuredmedia']?.[0]?.source_url || ''
     };
+
+    const result = PartnerSchema.safeParse(mapped);
+    if (!result.success) {
+        console.warn('[validation] Invalid partner payload', result.error.format());
+        return mapped as Partner;
+    }
+    return result.data;
 }
 
 /**
@@ -315,13 +366,20 @@ export interface WordPressAlumni {
 
 export function mapWordPressAlumniToAppAlumni(wpAlumni: WordPressAlumni): AlumniMember {
     if (!wpAlumni) return {} as AlumniMember;
-    return {
+    const mapped = {
         id: wpAlumni.id,
         name: wpAlumni.title.rendered,
         school: wpAlumni.acf?.school || '',
         batch_period: wpAlumni.acf?.batch_period || '2024',
         photo_url: wpAlumni._embedded?.['wp:featuredmedia']?.[0]?.source_url || ''
     };
+
+    const result = AlumniMemberSchema.safeParse(mapped);
+    if (!result.success) {
+        console.warn('[validation] Invalid alumni payload', result.error.format());
+        return mapped as AlumniMember;
+    }
+    return result.data;
 }
 
 /**
@@ -329,7 +387,7 @@ export function mapWordPressAlumniToAppAlumni(wpAlumni: WordPressAlumni): Alumni
  */
 export function groupAlumni(alumni: AlumniMember[]): AlumniGroup[] {
     const groups: { [key: string]: AlumniMember[] } = {};
-    
+
     alumni.forEach(member => {
         if (!groups[member.batch_period]) {
             groups[member.batch_period] = [];
@@ -363,7 +421,7 @@ export interface WordPressSettings {
 
 export function mapWordPressSettingsToAppSettings(wpSettings: WordPressSettings): Settings {
     const acf = wpSettings?.acf;
-    return {
+    const mapped = {
         company_name: acf?.company_name || 'M-One Solution',
         company_address: acf?.company_address || '',
         contact_email: acf?.contact_email || '',
@@ -375,4 +433,11 @@ export function mapWordPressSettingsToAppSettings(wpSettings: WordPressSettings)
         youtube_url: acf?.youtube_url || '#',
         linkedin_url: acf?.linkedin_url || '#'
     };
+
+    const result = SettingsSchema.safeParse(mapped);
+    if (!result.success) {
+        console.warn('[validation] Invalid settings payload', result.error.format());
+        return mapped as Settings;
+    }
+    return result.data;
 }

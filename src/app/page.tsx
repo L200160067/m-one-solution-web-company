@@ -5,12 +5,14 @@ import { Services } from '@/components/Services';
 import { Projects } from '@/components/Projects';
 import { Partners } from '@/components/Partners';
 import { Testimonials } from '@/components/Testimonials';
-import { LatestBlogs } from '@/components/LatestBlogs';
 import { CTA } from '@/components/CTA';
 import { apiFetch } from '@/lib/api';
 import type { ApiResponse, Post, Project, Testimonial, Partner, Service } from '@/types/api';
 import { homepageBlocks } from '@/config/marketing';
 import { siteConfig } from '@/config/site';
+import dynamic from 'next/dynamic';
+
+const DynamicLatestBlogs = dynamic(() => import('@/components/LatestBlogs').then((mod) => mod.LatestBlogs), { ssr: true });
 
 export const metadata = {
     title: 'Software House Sukoharjo | Jasa Website & Aplikasi — M-One Solution',
@@ -47,7 +49,7 @@ export default async function Home() {
             <Projects projects={featuredProjects} />
             <Partners partners={partners} />
             <Testimonials testimonials={testimonials} />
-            <LatestBlogs posts={posts} />
+            <DynamicLatestBlogs posts={posts} />
             <CTA />
         </main>
     );
