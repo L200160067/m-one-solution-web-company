@@ -2,6 +2,7 @@
 
 import { siteConfig } from '@/config/site';
 import { homepageBlocks } from '@/config/marketing';
+import { track } from '@/lib/analytics';
 import { motion } from 'motion/react';
 import { ArrowRight, Mail } from 'lucide-react';
 import Link from 'next/link';
@@ -38,6 +39,7 @@ export function CTA() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href={homepageBlocks.contactCtaHref || '/contact'}
+              onClick={() => track({ event: 'cta_click', label: 'contact_us' })}
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-blue-600 text-base font-bold rounded-full hover:bg-blue-50 transition-all hover:scale-105 shadow-xl"
             >
               {homepageBlocks.contactCtaLabel || 'Contact Us'}
@@ -45,6 +47,7 @@ export function CTA() {
             </Link>
             <a
               href={`mailto:${siteConfig.contact.email}`}
+              onClick={() => track({ event: 'cta_click', label: 'email_us' })}
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-blue-700/50 text-white border border-white/20 text-base font-semibold rounded-full hover:bg-blue-700/80 transition-all"
             >
               <Mail className="w-5 h-5" />

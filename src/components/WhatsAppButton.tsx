@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { siteConfig } from '../config/site';
+import { track } from '@/lib/analytics';
 
 interface WhatsAppButtonProps {
   whatsappNumber?: string;
@@ -36,6 +37,7 @@ export function WhatsAppButton({ whatsappNumber }: WhatsAppButtonProps) {
           exit={{ scale: 0, opacity: 0 }}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
+          onClick={() => track({ event: 'whatsapp_click' })}
           className="fixed bottom-24 right-6 z-50 flex items-center justify-center w-14 h-14 bg-[#25D366] text-white rounded-full shadow-lg hover:shadow-xl hover:shadow-[#25D366]/30 transition-shadow duration-300 group"
           aria-label="Chat on WhatsApp"
         >

@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { motion } from 'motion/react';
 import { Send, User, Mail, Phone, MessageSquare, Briefcase, CheckCircle2 } from 'lucide-react';
 import { siteConfig } from '@/config/site';
+import { track } from '@/lib/analytics';
 
 const serviceOptions = [
     'Web Development',
@@ -64,6 +65,8 @@ export function ContactForm() {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         if (!validate()) return;
+
+        track({ event: 'contact_form_open', label: 'contact_page' });
 
         const text = `Halo M-One Solution! 👋
 

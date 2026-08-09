@@ -76,6 +76,29 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
         },
         url: pageUrl,
         image: service.image_url || `${siteConfig.baseUrl}/og-image.png`,
+        breadcrumb: {
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+                {
+                    '@type': 'ListItem',
+                    position: 1,
+                    name: 'Beranda',
+                    item: `${siteConfig.baseUrl}/`,
+                },
+                {
+                    '@type': 'ListItem',
+                    position: 2,
+                    name: 'Layanan',
+                    item: `${siteConfig.baseUrl}/services`,
+                },
+                {
+                    '@type': 'ListItem',
+                    position: 3,
+                    name: service.title,
+                    item: pageUrl,
+                },
+            ],
+        },
     };
 
     return (
