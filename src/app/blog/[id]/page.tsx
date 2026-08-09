@@ -98,6 +98,14 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
             '@type': 'WebPage',
             '@id': pageUrl,
         },
+        breadcrumb: {
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+                { '@type': 'ListItem', position: 1, name: 'Beranda', item: `${BASE_URL}/` },
+                { '@type': 'ListItem', position: 2, name: 'Blog', item: `${BASE_URL}/blog` },
+                { '@type': 'ListItem', position: 3, name: post.title, item: pageUrl },
+            ],
+        },
     };
 
     return (

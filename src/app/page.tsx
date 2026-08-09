@@ -13,6 +13,9 @@ import { siteConfig } from '@/config/site';
 import dynamic from 'next/dynamic';
 
 const DynamicLatestBlogs = dynamic(() => import('@/components/LatestBlogs').then((mod) => mod.LatestBlogs), { ssr: true });
+const DynamicProjects = dynamic(() => import('@/components/Projects').then((mod) => mod.Projects), { ssr: true });
+const DynamicPartners = dynamic(() => import('@/components/Partners').then((mod) => mod.Partners), { ssr: true });
+const DynamicTestimonials = dynamic(() => import('@/components/Testimonials').then((mod) => mod.Testimonials), { ssr: true });
 
 export const metadata = {
     title: 'Software House Sukoharjo | Jasa Website & Aplikasi — M-One Solution',
@@ -46,9 +49,9 @@ export default async function Home() {
             <FastPackages />
             <About />
             <Services services={services} />
-            <Projects projects={featuredProjects} />
-            <Partners partners={partners} />
-            <Testimonials testimonials={testimonials} />
+            <DynamicProjects projects={featuredProjects} />
+            <DynamicPartners partners={partners} />
+            <DynamicTestimonials testimonials={testimonials} />
             <DynamicLatestBlogs posts={posts} />
             <CTA />
         </main>

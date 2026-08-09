@@ -7,6 +7,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import type { Post } from '@/types/api';
 import { EmptyState } from '@/components/ui/EmptyState';
+import { WpImage } from '@/components/image/WpImage';
 
 interface BlogListClientProps {
     posts: Post[];
@@ -127,19 +128,16 @@ export default function BlogListClient({ posts, categories }: BlogListClientProp
                                 className="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300 group flex flex-col"
                             >
                                 <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
-                                    {post.cover_url ? (
-                                        <Image
-                                            src={post.cover_url}
-                                            alt={post.title}
-                                            fill
-                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                            className="object-cover transition-transform duration-500 group-hover:scale-105"
-                                        />
-                                    ) : (
-                                        <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 text-slate-400 p-8 text-center">
-                                            <ImageIcon className="w-12 h-12 mb-4 opacity-50" />
-                                        </div>
-                                    )}
+                                    <WpImage
+                                        src={post.cover_url}
+                                        alt={post.title}
+                                        fallback={
+                                            <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 text-slate-400 p-8 text-center">
+                                                <ImageIcon className="w-12 h-12 mb-4 opacity-50" />
+                                            </div>
+                                        }
+                                        fill
+                                    />
                                     <div className="absolute top-4 left-4">
                                         <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-blue-600 text-xs font-bold uppercase tracking-wider rounded-full shadow-sm">
                                             {post.category?.name || 'Berita'}

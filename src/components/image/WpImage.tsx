@@ -14,6 +14,7 @@ type WpImageProps = {
   fallback?: React.ReactNode;
   priority?: boolean;
   quality?: number;
+  fill?: boolean;
 };
 
 function resolveSrc(src?: ImageSource): string | undefined {
@@ -31,6 +32,7 @@ export function WpImage({
   fallback,
   priority,
   quality,
+  fill,
 }: WpImageProps) {
   const resolvedSrc = resolveSrc(src);
   const [errored, setErrored] = useState(false);
@@ -40,6 +42,20 @@ export function WpImage({
       <div className={`bg-slate-100 text-slate-400 flex items-center justify-center ${className || ''}`}>
         {fallback ?? <span className="text-xs">No Image</span>}
       </div>
+    );
+  }
+
+  if (fill) {
+    return (
+      <Image
+        src={resolvedSrc}
+        alt={alt}
+        fill
+        className={className}
+        priority={priority}
+        quality={quality}
+        onError={() => setErrored(true)}
+      />
     );
   }
 

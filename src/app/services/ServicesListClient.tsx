@@ -2,40 +2,11 @@
 
 import { useState, useMemo } from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight, Search, Layout, Globe, Briefcase, Code, Layers } from 'lucide-react';
-import * as LucideIcons from 'lucide-react';
+import { ArrowRight, Search, Image as ImageIcon } from 'lucide-react';
 import Link from 'next/link';
 import type { Service } from '@/types/api';
 import { EmptyState } from '@/components/ui/EmptyState';
-
-const getCategoryIcon = (category: string, iconName?: string) => {
-    if (iconName) {
-        // @ts-ignore
-        const DynamicIcon = LucideIcons[iconName];
-        if (DynamicIcon) {
-            return <DynamicIcon className="w-6 h-6" />;
-        }
-    }
-
-    switch (category) {
-        case 'Development': return <Globe className="w-6 h-6" />;
-        case 'Sistem Informasi': return <Layout className="w-6 h-6" />;
-        case 'Profil Perusahaan': return <Briefcase className="w-6 h-6" />;
-        case 'Aplikasi Khusus': return <Code className="w-6 h-6" />;
-        default: return <Layout className="w-6 h-6" />;
-    }
-};
-
-const getFilterIcon = (category: string) => {
-    switch (category) {
-        case 'Semua': return <Layers className="w-4 h-4" />;
-        case 'Development': return <Globe className="w-4 h-4" />;
-        case 'Sistem Informasi': return <Layout className="w-4 h-4" />;
-        case 'Profil Perusahaan': return <Briefcase className="w-4 h-4" />;
-        case 'Aplikasi Khusus': return <Code className="w-4 h-4" />;
-        default: return null;
-    }
-};
+import { WpImage } from '@/components/image/WpImage';
 
 interface ServicesListClientProps {
     services: Service[];
@@ -98,7 +69,6 @@ export default function ServicesListClient({ services, categories }: ServicesLis
                                 : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 hover:text-blue-600'
                                 }`}
                         >
-                            {getFilterIcon(category)}
                             {category}
                         </button>
                     ))}
@@ -130,27 +100,38 @@ export default function ServicesListClient({ services, categories }: ServicesLis
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.1 }}
-                            className="bg-slate-50 rounded-3xl p-6 sm:p-8 border border-slate-100 hover:shadow-xl transition-all duration-300 group flex flex-col h-full"
+                            className="bg-white rounded-3xl overflow-hidden border border-slate-100 hover:shadow-xl transition-all duration-300 group flex flex-col h-full"
                         >
-                            <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-white text-blue-600 flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform duration-300">
-                                {getCategoryIcon(service.category, service.icon_name)}
+                            <div className="relative aspect-[4/3] overflow-hidden bg-slate-100">
+                                <WpImage
+                                    src={service.image_url}
+                                    alt={service.title}
+                                    fallback={
+                                        <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 text-slate-400">
+                                            <ImageIcon className="w-12 h-12 opacity-50" />
+                                        </div>
+                                    }
+                                    fill
+                                />
                             </div>
-                            <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3 md:mb-4 group-hover:text-blue-600 transition-colors line-clamp-2">
-                                <Link href={`/services/${service.slug}`}>
-                                    {service.title}
-                                </Link>
-                            </h2>
-                            <p className="text-slate-600 mb-6 md:mb-8 leading-relaxed flex-grow text-sm md:text-base line-clamp-3 md:line-clamp-4">
-                                {service.short_description}
-                            </p>
-                            <div className="mt-auto pt-5 md:pt-6 border-t border-slate-200/60">
-                                <Link
-                                    href={`/services/${service.slug}`}
-                                    className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors group/link text-sm md:text-base"
-                                >
-                                    Detail Layanan
-                                    <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
-                                </Link>
+                            <div className="p-6 sm:p-8 flex flex-col flex-grow">
+                                <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3 md:mb-4 group-hover:text-blue-600 transition-colors line-clamp-2">
+                                    <Link href={`/services/${service.slug}`}>
+                                        {service.title}
+                                    </Link>
+                                </h2>
+                                <p className="text-slate-600 mb-6 md:mb-8 leading-relaxed flex-grow text-sm md:text-base line-clamp-3 md:line-clamp-4">
+                                    {service.short_description}
+                                </p>
+                                <div className="mt-auto pt-5 md:pt-6 border-t border-slate-200/60">
+                                    <Link
+                                        href={`/services/${service.slug}`}
+                                        className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors text-sm md:text-base"
+                                    >
+                                        Detail Layanan
+                                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                    </Link>
+                                </div>
                             </div>
                         </motion.div>
                     ))}

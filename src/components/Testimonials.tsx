@@ -5,6 +5,7 @@ import { Quote, Star } from 'lucide-react';
 import type { Testimonial } from '@/types/api';
 import { Container } from './ui/Container';
 import { Section } from './ui/Section';
+import { WpImage } from '@/components/image/WpImage';
 
 interface TestimonialsProps {
   testimonials: Testimonial[];
@@ -62,11 +63,12 @@ export function Testimonials({ testimonials }: TestimonialsProps) {
                 "{testimonial.content}"
               </p>
               <div className="flex items-center gap-4 mt-auto">
-                <img
-                  src={testimonial.avatar_url || '/images/placeholder-avatar.webp'}
+                <WpImage
+                  src={testimonial.avatar_url}
                   alt={testimonial.name}
-                  loading="lazy"
                   className="w-12 h-12 rounded-full object-cover ring-2 ring-white/10"
+                  width={48}
+                  height={48}
                 />
                 <div>
                   <h4 className="font-bold text-white">{testimonial.name}</h4>

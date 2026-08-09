@@ -6,6 +6,7 @@ import Link from 'next/link';
 import type { Project } from '@/types/api';
 import { Container } from './ui/Container';
 import { Section } from './ui/Section';
+import { WpImage } from '@/components/image/WpImage';
 
 interface ProjectsProps {
   projects: Project[];
@@ -53,18 +54,17 @@ export function Projects({ projects }: ProjectsProps) {
               className="group"
             >
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-6 bg-slate-100 border border-slate-200">
-                {project.image_url ? (
-                  <img
-                    src={project.image_url}
-                    alt={project.title}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 text-slate-400">
-                    <ImageIcon className="w-12 h-12 opacity-50" />
-                  </div>
-                )}
+                <WpImage
+                  src={project.image_url}
+                  alt={project.title}
+                  fallback={
+                    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 text-slate-400">
+                      <ImageIcon className="w-12 h-12 opacity-50" />
+                    </div>
+                  }
+                  className="transition-transform duration-500 group-hover:scale-105"
+                  fill
+                />
                 <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors duration-500" />
                 <div className="absolute top-4 left-4">
                   <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-slate-900 text-[10px] font-bold uppercase tracking-wider rounded-full shadow-sm">
