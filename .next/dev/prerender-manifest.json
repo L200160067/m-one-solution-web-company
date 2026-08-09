@@ -1,1 +1,11 @@
-{"version":4,"routes":{"/blog/keseruan-monthly-meeting-tim-m-one-solution-dalam-balutan-kehangatan-kuliner-khas-di-siomay-manahan":{},"/blog/kegiatan-produktif-tim-m-one-pembahasan-proyek-berbasis-teknologi-untuk-meningkatkan-kolaborasi-inovasi-dan-kualitas-pengembangan-sistem-digital":{},"/blog/pengenalan-website-kepada-murid-smk-muhammadiyah-1-sukoharjo-oleh-mahasiswa-universitas-muhammadiyah-surakarta-di-m-one-solution-edukasi-digital-dan-dasar-pengembangan-website-untuk-generasi-smk":{}},"dynamicRoutes":{"/blog/[id]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/blog/[id]","routeRegex":"^\\/blog\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"2989847106933093d462cbb1c4902dbc","previewModeSigningKey":"9d99a1f256aef601373c614ac9d6947e03dd376d89286b75ca15a01298179f9d","previewModeEncryptionKey":"f94418156a87848ba16993007a93c7d9b6b97425fef4e63ea366f14eefa13abd"}}
+{
+  "version": 4,
+  "routes": {},
+  "dynamicRoutes": {},
+  "notFoundRoutes": [],
+  "preview": {
+    "previewModeId": "9e1b5de6d20957bc518e7ea09aa941fa",
+    "previewModeSigningKey": "4b5e4586579b1f8cd0953ff64b30a4dcbe2debce929c3b3d22879c176bf5aeab",
+    "previewModeEncryptionKey": "d61ea55f6ff8813ae629c26f7169793b5367adbc2d90a74896af7d1d7fb020b7"
+  }
+}

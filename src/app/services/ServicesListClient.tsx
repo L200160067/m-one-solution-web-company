@@ -6,6 +6,7 @@ import { ArrowRight, Search, Layout, Globe, Briefcase, Code, Layers } from 'luci
 import * as LucideIcons from 'lucide-react';
 import Link from 'next/link';
 import type { Service } from '@/types/api';
+import { EmptyState } from '@/components/ui/EmptyState';
 
 const getCategoryIcon = (category: string, iconName?: string) => {
     if (iconName) {
@@ -105,34 +106,22 @@ export default function ServicesListClient({ services, categories }: ServicesLis
             </motion.div>
 
             {services.length === 0 ? (
-                <div className="text-center py-20 max-w-2xl mx-auto bg-white rounded-3xl border border-slate-100 shadow-sm">
-                    <div className="w-20 h-20 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <Layers className="w-10 h-10 text-slate-400" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-slate-900 mb-2">Belum ada data layanan</h3>
-                    <p className="text-slate-600 mb-6">
-                        Saat ini belum ada layanan yang ditambahkan. Silakan cek kembali nanti.
-                    </p>
-                </div>
+                <EmptyState
+                    title="Belum ada data layanan"
+                    description="Saat ini belum ada layanan yang ditambahkan. Silakan cek kembali nanti."
+                    icon="inbox"
+                />
             ) : filteredServices.length === 0 ? (
-                <div className="text-center py-20">
-                    <div className="w-20 h-20 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <Search className="w-10 h-10 text-slate-400" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-slate-900 mb-2">Layanan tidak ditemukan</h3>
-                    <p className="text-slate-600">
-                        Maaf, kami tidak dapat menemukan layanan yang cocok dengan pencarian &quot;{searchQuery}&quot;.
-                    </p>
-                    <button
-                        onClick={() => {
-                            setSearchQuery('');
-                            setActiveCategory('Semua');
-                        }}
-                        className="mt-6 px-6 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors font-medium"
-                    >
-                        Hapus Pencarian
-                    </button>
-                </div>
+                <EmptyState
+                    title="Layanan tidak ditemukan"
+                    description={`Maaf, kami tidak dapat menemukan layanan yang cocok dengan pencarian "${searchQuery}".`}
+                    actionLabel="Hapus Pencarian"
+                    onAction={() => {
+                        setSearchQuery('');
+                        setActiveCategory('Semua');
+                    }}
+                    icon="search"
+                />
             ) : (
                 <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
                     {filteredServices.map((service, index) => (

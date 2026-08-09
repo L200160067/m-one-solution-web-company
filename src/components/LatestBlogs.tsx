@@ -7,6 +7,7 @@ import Link from 'next/link';
 import type { Post } from '@/types/api';
 import { Container } from './ui/Container';
 import { Section } from './ui/Section';
+import { EmptyState } from '@/components/ui/EmptyState';
 
 interface LatestBlogsProps {
     posts: Post[];
@@ -53,9 +54,11 @@ export function LatestBlogs({ posts }: LatestBlogsProps) {
                 </div>
 
                 {posts.length === 0 ? (
-                    <div className="text-center py-12 bg-white rounded-2xl border border-slate-100 shadow-sm">
-                        <p className="text-slate-600 text-lg">Belum ada artikel terbaru saat ini.</p>
-                    </div>
+                    <EmptyState
+                        title="Belum ada artikel terbaru saat ini"
+                        description="Konten blog akan segera hadir. Cek kembali nanti."
+                        icon="inbox"
+                    />
                 ) : (
                     <div className="relative group">
                         {/* Tombol Kiri */}

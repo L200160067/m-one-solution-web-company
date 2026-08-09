@@ -1,2 +1,37 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+
+:root {
+  --brand-pink: #E0007A;
+  --brand-yellow: #F5C400;
+  --brand-blue: #2563eb;
+  --brand-cyan: #06b6d4;
+  --brand-emerald: #10b981;
+  --brand-teal: #14b8a6;
+  --surface-white: #ffffff;
+  --surface-slate-50: #f8fafc;
+  --surface-slate-100: #f1f5f9;
+  --surface-slate-200: #e2e8f0;
+  --surface-slate-300: #cbd5e1;
+  --surface-slate-400: #94a3b8;
+  --surface-slate-500: #64748b;
+  --surface-slate-600: #475569;
+  --surface-slate-700: #334155;
+  --surface-slate-800: #1e293b;
+  --surface-slate-900: #0f172a;
+  --surface-slate-950: #020617;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --text-inverse: #ffffff;
+  --radius-sm: 0.75rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-xl: 2rem;
+  --radius-2xl: 3rem;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-brand-pink: 0 10px 30px -10px var(--brand-pink);
+}

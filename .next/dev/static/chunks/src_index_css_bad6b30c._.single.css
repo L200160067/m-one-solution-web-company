@@ -200,69 +200,69 @@
 
   @supports (color: lab(0% 0 0)) {
     :root, :host {
-      --color-red-50: lab(96.5005% 4.18511 1.52329);
-      --color-red-400: lab(63.7053% 60.7449 31.3109);
+      --color-red-50: lab(96.5005% 4.18508 1.52328);
+      --color-red-400: lab(63.7053% 60.745 31.3109);
       --color-red-500: lab(55.4814% 75.0732 48.8528);
       --color-yellow-400: lab(83.2664% 8.65132 106.895);
-      --color-green-50: lab(98.1563% -5.60117 2.75913);
-      --color-green-100: lab(96.186% -13.8464 6.52362);
+      --color-green-50: lab(98.1563% -5.60117 2.75915);
+      --color-green-100: lab(96.1861% -13.8464 6.52365);
       --color-green-200: lab(92.4222% -26.4702 12.9427);
-      --color-green-500: lab(70.5521% -66.5147 45.8072);
+      --color-green-500: lab(70.5521% -66.5147 45.8073);
       --color-green-600: lab(59.0978% -58.6621 41.2579);
       --color-green-700: lab(47.0329% -47.0239 31.4788);
-      --color-emerald-50: lab(97.8462% -6.94963 1.85487);
+      --color-emerald-50: lab(97.8462% -6.94966 1.85487);
       --color-emerald-100: lab(94.9004% -17.0769 5.63836);
       --color-emerald-200: lab(90.2247% -31.039 9.47084);
       --color-emerald-300: lab(83.9203% -48.7124 13.8849);
-      --color-emerald-400: lab(75.0771% -60.7313 19.4146);
+      --color-emerald-400: lab(75.0771% -60.7313 19.4147);
       --color-emerald-500: lab(66.9756% -58.27 19.5419);
       --color-emerald-600: lab(55.0481% -49.9246 15.93);
-      --color-teal-50: lab(98.3189% -4.74921 -.111723);
-      --color-teal-100: lab(95.1845% -17.4212 -.425434);
+      --color-teal-50: lab(98.3189% -4.74921 -.111711);
+      --color-teal-100: lab(95.1845% -17.4212 -.425422);
       --color-teal-200: lab(90.7612% -33.1343 -.542295);
-      --color-teal-300: lab(84.8977% -48.1517 -1.3321);
-      --color-teal-400: lab(76.0109% -53.3483 -2.27907);
+      --color-teal-300: lab(84.8977% -48.1516 -1.3321);
+      --color-teal-400: lab(76.0109% -53.3483 -2.27906);
       --color-teal-500: lab(67.3859% -49.0983 -2.63511);
       --color-teal-600: lab(55.0223% -41.0774 -3.90277);
       --color-teal-900: lab(29.506% -21.4706 -3.59886);
-      --color-cyan-50: lab(98.3303% -5.97429 -2.62109);
+      --color-cyan-50: lab(98.3304% -5.97432 -2.62108);
       --color-cyan-400: lab(76.6045% -40.9406 -29.6231);
       --color-cyan-500: lab(67.805% -35.3952 -30.2018);
-      --color-cyan-600: lab(55.1767% -26.7496 -30.5138);
-      --color-blue-50: lab(96.492% -1.14647 -5.11479);
+      --color-cyan-600: lab(55.1767% -26.7496 -30.5139);
+      --color-blue-50: lab(96.492% -1.14644 -5.11479);
       --color-blue-100: lab(92.0301% -2.24757 -11.6453);
       --color-blue-200: lab(86.15% -4.04379 -21.0797);
-      --color-blue-400: lab(65.0361% -1.42062 -56.9803);
-      --color-blue-500: lab(54.1736% 13.3368 -74.6839);
+      --color-blue-400: lab(65.0361% -1.42065 -56.9802);
+      --color-blue-500: lab(54.1736% 13.3369 -74.6839);
       --color-blue-600: lab(44.0605% 29.0279 -86.0352);
       --color-blue-700: lab(36.9089% 35.0961 -85.6872);
       --color-blue-900: lab(26.1542% 15.7545 -51.5504);
       --color-indigo-50: lab(95.4818% .411302 -6.78529);
       --color-indigo-100: lab(91.6577% 1.04591 -12.7199);
-      --color-indigo-200: lab(84.4329% 3.18974 -23.9688);
+      --color-indigo-200: lab(84.4329% 3.18977 -23.9688);
       --color-indigo-300: lab(74.0235% 8.54138 -41.6075);
-      --color-indigo-400: lab(59.866% 22.4833 -64.4485);
+      --color-indigo-400: lab(59.866% 22.4834 -64.4485);
       --color-indigo-500: lab(48.295% 38.3129 -81.9673);
       --color-indigo-600: lab(38.4009% 52.6132 -92.3857);
-      --color-indigo-900: lab(23.3911% 24.6978 -50.4719);
-      --color-purple-50: lab(97.1626% 2.99937 -4.13398);
+      --color-indigo-900: lab(23.3911% 24.6978 -50.4718);
+      --color-purple-50: lab(97.1627% 2.99937 -4.13398);
       --color-purple-600: lab(43.0295% 75.21 -86.5669);
       --color-pink-300: lab(77.8308% 38.525 -10.5394);
       --color-pink-400: lab(64.5597% 64.3615 -12.7988);
       --color-pink-500: lab(56.9303% 76.8162 -8.07021);
-      --color-pink-600: lab(49.5493% 79.8381 2.31769);
-      --color-slate-50: lab(98.1434% -.369549 -1.05968);
-      --color-slate-100: lab(96.286% -.852466 -2.46847);
+      --color-pink-600: lab(49.5493% 79.8381 2.31768);
+      --color-slate-50: lab(98.1434% -.369519 -1.05966);
+      --color-slate-100: lab(96.286% -.852436 -2.46847);
       --color-slate-200: lab(91.7353% -.998765 -4.76968);
       --color-slate-300: lab(84.7652% -1.94535 -7.93337);
       --color-slate-400: lab(65.5349% -2.25151 -14.5072);
       --color-slate-500: lab(48.0876% -2.03595 -16.5814);
       --color-slate-600: lab(35.5623% -1.74978 -15.4316);
-      --color-slate-700: lab(26.9569% -1.47018 -15.6993);
-      --color-slate-800: lab(16.132% -.318021 -14.6672);
-      --color-slate-900: lab(7.78673% 1.82346 -15.0537);
+      --color-slate-700: lab(26.9569% -1.47016 -15.6993);
+      --color-slate-800: lab(16.132% -.318035 -14.6672);
+      --color-slate-900: lab(7.78673% 1.82345 -15.0537);
       --color-slate-950: lab(1.76974% 1.32743 -9.28855);
-      --color-gray-200: lab(91.6229% -.159085 -2.26791);
+      --color-gray-200: lab(91.6229% -.159115 -2.26791);
     }
   }
 }
@@ -522,6 +522,10 @@
 
   .pointer-events-none {
     pointer-events: none;
+  }
+
+  .visible {
+    visibility: visible;
   }
 
   .sr-only {
@@ -1163,27 +1167,27 @@
       --tw-prose-lead: lab(35.6337% -1.58697 -10.8425);
       --tw-prose-links: lab(8.11897% .811279 -12.254);
       --tw-prose-bold: lab(8.11897% .811279 -12.254);
-      --tw-prose-counters: lab(47.7841% -.393212 -10.0268);
+      --tw-prose-counters: lab(47.7841% -.393182 -10.0268);
       --tw-prose-bullets: lab(85.1236% -.612259 -3.7138);
-      --tw-prose-hr: lab(91.6229% -.159085 -2.26791);
+      --tw-prose-hr: lab(91.6229% -.159115 -2.26791);
       --tw-prose-quotes: lab(8.11897% .811279 -12.254);
-      --tw-prose-quote-borders: lab(91.6229% -.159085 -2.26791);
-      --tw-prose-captions: lab(47.7841% -.393212 -10.0268);
+      --tw-prose-quote-borders: lab(91.6229% -.159115 -2.26791);
+      --tw-prose-captions: lab(47.7841% -.393182 -10.0268);
       --tw-prose-kbd: lab(8.11897% .811279 -12.254);
       --tw-prose-kbd-shadows: lab(8.11897% .811279 -12.254 / .1);
       --tw-prose-code: lab(8.11897% .811279 -12.254);
-      --tw-prose-pre-code: lab(91.6229% -.159085 -2.26791);
+      --tw-prose-pre-code: lab(91.6229% -.159115 -2.26791);
       --tw-prose-pre-bg: lab(16.1051% -1.18239 -11.7533);
       --tw-prose-th-borders: lab(85.1236% -.612259 -3.7138);
-      --tw-prose-td-borders: lab(91.6229% -.159085 -2.26791);
+      --tw-prose-td-borders: lab(91.6229% -.159115 -2.26791);
       --tw-prose-invert-body: lab(85.1236% -.612259 -3.7138);
-      --tw-prose-invert-lead: lab(65.9269% -.832707 -8.17474);
-      --tw-prose-invert-counters: lab(65.9269% -.832707 -8.17474);
+      --tw-prose-invert-lead: lab(65.9269% -.832707 -8.17473);
+      --tw-prose-invert-counters: lab(65.9269% -.832707 -8.17473);
       --tw-prose-invert-bullets: lab(35.6337% -1.58697 -10.8425);
       --tw-prose-invert-hr: lab(27.1134% -.956401 -12.3224);
-      --tw-prose-invert-quotes: lab(96.1596% -.082314 -1.13575);
+      --tw-prose-invert-quotes: lab(96.1596% -.0823438 -1.13575);
       --tw-prose-invert-quote-borders: lab(27.1134% -.956401 -12.3224);
-      --tw-prose-invert-captions: lab(65.9269% -.832707 -8.17474);
+      --tw-prose-invert-captions: lab(65.9269% -.832707 -8.17473);
       --tw-prose-invert-pre-code: lab(85.1236% -.612259 -3.7138);
       --tw-prose-invert-th-borders: lab(35.6337% -1.58697 -10.8425);
       --tw-prose-invert-td-borders: lab(27.1134% -.956401 -12.3224);
@@ -3751,35 +3755,35 @@
 
   @supports (color: lab(0% 0 0)) {
     .prose-slate {
-      --tw-prose-body: lab(26.9569% -1.47018 -15.6993);
-      --tw-prose-headings: lab(7.78673% 1.82346 -15.0537);
+      --tw-prose-body: lab(26.9569% -1.47016 -15.6993);
+      --tw-prose-headings: lab(7.78673% 1.82345 -15.0537);
       --tw-prose-lead: lab(35.5623% -1.74978 -15.4316);
-      --tw-prose-links: lab(7.78673% 1.82346 -15.0537);
-      --tw-prose-bold: lab(7.78673% 1.82346 -15.0537);
+      --tw-prose-links: lab(7.78673% 1.82345 -15.0537);
+      --tw-prose-bold: lab(7.78673% 1.82345 -15.0537);
       --tw-prose-counters: lab(48.0876% -2.03595 -16.5814);
       --tw-prose-bullets: lab(84.7652% -1.94535 -7.93337);
       --tw-prose-hr: lab(91.7353% -.998765 -4.76968);
-      --tw-prose-quotes: lab(7.78673% 1.82346 -15.0537);
+      --tw-prose-quotes: lab(7.78673% 1.82345 -15.0537);
       --tw-prose-quote-borders: lab(91.7353% -.998765 -4.76968);
       --tw-prose-captions: lab(48.0876% -2.03595 -16.5814);
-      --tw-prose-kbd: lab(7.78673% 1.82346 -15.0537);
-      --tw-prose-kbd-shadows: lab(7.78673% 1.82346 -15.0537 / .1);
-      --tw-prose-code: lab(7.78673% 1.82346 -15.0537);
+      --tw-prose-kbd: lab(7.78673% 1.82345 -15.0537);
+      --tw-prose-kbd-shadows: lab(7.78673% 1.82345 -15.0537 / .1);
+      --tw-prose-code: lab(7.78673% 1.82345 -15.0537);
       --tw-prose-pre-code: lab(91.7353% -.998765 -4.76968);
-      --tw-prose-pre-bg: lab(16.132% -.318021 -14.6672);
+      --tw-prose-pre-bg: lab(16.132% -.318035 -14.6672);
       --tw-prose-th-borders: lab(84.7652% -1.94535 -7.93337);
       --tw-prose-td-borders: lab(91.7353% -.998765 -4.76968);
       --tw-prose-invert-body: lab(84.7652% -1.94535 -7.93337);
       --tw-prose-invert-lead: lab(65.5349% -2.25151 -14.5072);
       --tw-prose-invert-counters: lab(65.5349% -2.25151 -14.5072);
       --tw-prose-invert-bullets: lab(35.5623% -1.74978 -15.4316);
-      --tw-prose-invert-hr: lab(26.9569% -1.47018 -15.6993);
-      --tw-prose-invert-quotes: lab(96.286% -.852466 -2.46847);
-      --tw-prose-invert-quote-borders: lab(26.9569% -1.47018 -15.6993);
+      --tw-prose-invert-hr: lab(26.9569% -1.47016 -15.6993);
+      --tw-prose-invert-quotes: lab(96.286% -.852436 -2.46847);
+      --tw-prose-invert-quote-borders: lab(26.9569% -1.47016 -15.6993);
       --tw-prose-invert-captions: lab(65.5349% -2.25151 -14.5072);
       --tw-prose-invert-pre-code: lab(84.7652% -1.94535 -7.93337);
       --tw-prose-invert-th-borders: lab(35.5623% -1.74978 -15.4316);
-      --tw-prose-invert-td-borders: lab(26.9569% -1.47018 -15.6993);
+      --tw-prose-invert-td-borders: lab(26.9569% -1.47016 -15.6993);
     }
   }
 
@@ -3791,7 +3795,7 @@
   @supports (color: lab(0% 0 0)) {
     .prose-blue {
       --tw-prose-links: lab(44.0605% 29.0279 -86.0352);
-      --tw-prose-invert-links: lab(54.1736% 13.3368 -74.6839);
+      --tw-prose-invert-links: lab(54.1736% 13.3369 -74.6839);
     }
   }
 
@@ -4721,6 +4725,41 @@
   .\[\&\:\:-webkit-scrollbar\]\:hidden::-webkit-scrollbar {
     display: none;
   }
+}
+
+:root {
+  --brand-pink: #e0007a;
+  --brand-yellow: #f5c400;
+  --brand-blue: #2563eb;
+  --brand-cyan: #06b6d4;
+  --brand-emerald: #10b981;
+  --brand-teal: #14b8a6;
+  --surface-white: #fff;
+  --surface-slate-50: #f8fafc;
+  --surface-slate-100: #f1f5f9;
+  --surface-slate-200: #e2e8f0;
+  --surface-slate-300: #cbd5e1;
+  --surface-slate-400: #94a3b8;
+  --surface-slate-500: #64748b;
+  --surface-slate-600: #475569;
+  --surface-slate-700: #334155;
+  --surface-slate-800: #1e293b;
+  --surface-slate-900: #0f172a;
+  --surface-slate-950: #020617;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --text-inverse: #fff;
+  --radius-sm: .75rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-xl: 2rem;
+  --radius-2xl: 3rem;
+  --shadow-sm: 0 1px 2px 0 #0000000d;
+  --shadow-md: 0 4px 6px -1px #0000001a, 0 2px 4px -2px #0000001a;
+  --shadow-lg: 0 10px 15px -3px #0000001a, 0 4px 6px -4px #0000001a;
+  --shadow-xl: 0 20px 25px -5px #0000001a, 0 8px 10px -6px #0000001a;
+  --shadow-brand-pink: 0 10px 30px -10px var(--brand-pink);
 }
 
 @property --tw-translate-x {

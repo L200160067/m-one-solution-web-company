@@ -53,6 +53,12 @@ import {
 
 const WP_BASE = (process.env.NEXT_PUBLIC_WORDPRESS_URL ?? '').replace(/\/$/, '');
 
+const WP_CONFIGURED = WP_BASE.length > 0;
+
+const DEFAULT_HEADERS = {
+  Accept: 'application/json',
+};
+
 // Helper to safely append query string to URL since WP_BASE may contain "?"
 function buildWpUrl(path: string, queryString: string): string {
   if (!queryString) return `${WP_BASE}${path}`;
@@ -97,7 +103,8 @@ async function wpFetch<T>(url: string, options: FetchOptions = {}): Promise<T> {
   });
 
   if (!res.ok) {
-    throw new Error(`WordPress API returned ${res.status} for: ${url}`);
+    const text = await res.text().catch(() => '');
+    throw new Error(`WordPress API returned ${res.status} for: ${url}${text ? ` — ${text.slice(0, 120)}` : ''}`);
   }
   return res.json() as Promise<T>;
 }
@@ -166,6 +173,17 @@ export async function apiFetch<T>(
     'posts', 'projects', 'services', 'team',
     'testimonials', 'partners', 'alumni',
   ];
+
+  if (!WP_CONFIGURED) {
+    return {
+      success: false,
+      data: LIST_RESOURCES.includes(resource)
+        ? []
+        : resource === 'settings'
+        ? ({} as Settings)
+        : null,
+    } as unknown as T;
+  }
 
   try {
 

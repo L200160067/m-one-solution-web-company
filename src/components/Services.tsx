@@ -7,6 +7,7 @@ import Link from 'next/link';
 import type { Service } from '@/types/api';
 import { Container } from './ui/Container';
 import { Section } from './ui/Section';
+import { EmptyState } from '@/components/ui/EmptyState';
 
 interface ServicesProps {
   services: Service[];
@@ -72,9 +73,11 @@ export function Services({ services }: ServicesProps) {
         </div>
 
         {featuredServices.length === 0 ? (
-          <div className="text-center py-12 bg-slate-50 rounded-3xl border border-slate-100 mb-12">
-            <p className="text-slate-600">Belum ada data layanan saat ini.</p>
-          </div>
+          <EmptyState
+            title="Belum ada data layanan saat ini"
+            description="Kami sedang menambahkan layanan baru. Cek kembali nanti."
+            icon="inbox"
+          />
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12">
             {featuredServices.map((service, index) => (

@@ -1,8 +1,9 @@
 import { MetadataRoute } from 'next';
 import { apiFetch } from '@/lib/api';
 import type { ApiResponse, Post, Service } from '@/types/api';
+import { siteConfig } from '@/config/site';
 
-const BASE_URL = 'https://mone.mutudev.com';
+const BASE_URL = siteConfig.baseUrl;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Static pages

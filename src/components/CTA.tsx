@@ -1,9 +1,10 @@
 "use client";
 
+import { siteConfig } from '@/config/site';
+import { homepageBlocks } from '@/config/marketing';
 import { motion } from 'motion/react';
 import { ArrowRight, Mail } from 'lucide-react';
 import Link from 'next/link';
-import { siteConfig } from '@/config/site';
 import { Section } from './ui/Section';
 
 export function CTA() {
@@ -36,10 +37,10 @@ export function CTA() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
-              href="/contact"
+              href={homepageBlocks.contactCtaHref || '/contact'}
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-blue-600 text-base font-bold rounded-full hover:bg-blue-50 transition-all hover:scale-105 shadow-xl"
             >
-              Contact Us
+              {homepageBlocks.contactCtaLabel || 'Contact Us'}
               <ArrowRight className="w-5 h-5" />
             </Link>
             <a
@@ -47,7 +48,7 @@ export function CTA() {
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-blue-700/50 text-white border border-white/20 text-base font-semibold rounded-full hover:bg-blue-700/80 transition-all"
             >
               <Mail className="w-5 h-5" />
-              Email Kami
+              {homepageBlocks.emailCtaLabel || 'Email Kami'}
             </a>
           </div>
         </motion.div>

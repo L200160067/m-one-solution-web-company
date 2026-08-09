@@ -6,6 +6,7 @@ import { ArrowRight, Calendar, User, ChevronLeft, ChevronRight, Search, Image as
 import Link from 'next/link';
 import Image from 'next/image';
 import type { Post } from '@/types/api';
+import { EmptyState } from '@/components/ui/EmptyState';
 
 interface BlogListClientProps {
     posts: Post[];
@@ -97,35 +98,23 @@ export default function BlogListClient({ posts, categories }: BlogListClientProp
             </motion.div>
 
             {posts.length === 0 ? (
-                <div className="text-center py-20 max-w-2xl mx-auto bg-white rounded-3xl border border-slate-100 shadow-sm">
-                    <div className="w-20 h-20 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <Calendar className="w-10 h-10 text-slate-400" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-slate-900 mb-2">Belum ada artikel</h3>
-                    <p className="text-slate-600 mb-6">
-                        Saat ini belum ada artikel yang dipublikasikan. Silakan cek kembali nanti.
-                    </p>
-                </div>
+                <EmptyState
+                    title="Belum ada artikel"
+                    description="Saat ini belum ada artikel yang dipublikasikan. Silakan cek kembali nanti."
+                    icon="inbox"
+                />
             ) : filteredPosts.length === 0 ? (
-                <div className="text-center py-20">
-                    <div className="w-20 h-20 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <Search className="w-10 h-10 text-slate-400" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-slate-900 mb-2">Tidak ada artikel ditemukan</h3>
-                    <p className="text-slate-600">
-                        Maaf, kami tidak dapat menemukan artikel yang cocok dengan pencarian &quot;{searchQuery}&quot;.
-                    </p>
-                    <button
-                        onClick={() => {
-                            setSearchQuery('');
-                            setActiveCategory('Semua');
-                            setCurrentPage(1);
-                        }}
-                        className="mt-6 px-6 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors font-medium"
-                    >
-                        Hapus Filter
-                    </button>
-                </div>
+                <EmptyState
+                    title="Tidak ada artikel ditemukan"
+                    description={`Maaf, kami tidak dapat menemukan artikel yang cocok dengan pencarian "${searchQuery}".`}
+                    actionLabel="Hapus Filter"
+                    onAction={() => {
+                        setSearchQuery('');
+                        setActiveCategory('Semua');
+                        setCurrentPage(1);
+                    }}
+                    icon="search"
+                />
             ) : (
                 <>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">

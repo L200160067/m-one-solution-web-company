@@ -7,7 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "echo 'next lint is unavailable in Next.js 16; use npm run build or a dedicated linter'",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:ui": "vitest --ui",

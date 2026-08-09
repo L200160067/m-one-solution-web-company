@@ -9,6 +9,8 @@ import { LatestBlogs } from '@/components/LatestBlogs';
 import { CTA } from '@/components/CTA';
 import { apiFetch } from '@/lib/api';
 import type { ApiResponse, Post, Project, Testimonial, Partner, Service } from '@/types/api';
+import { homepageBlocks } from '@/config/marketing';
+import { siteConfig } from '@/config/site';
 
 export const metadata = {
     title: 'Software House Sukoharjo | Jasa Website & Aplikasi — M-One Solution',

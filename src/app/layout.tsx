@@ -7,6 +7,7 @@ import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { BackToTop } from "@/components/BackToTop";
 import { apiFetch } from "@/lib/api";
 import type { ApiResponse, Settings } from "@/types/api";
+import { siteConfig } from '@/config/site';
 import Script from "next/script";
 
 const inter = Inter({
@@ -15,7 +16,7 @@ const inter = Inter({
     variable: "--font-inter",
 });
 
-const BASE_URL = "https://mone.mutudev.com";
+const BASE_URL = siteConfig.baseUrl;
 
 export const metadata = {
     metadataBase: new URL(BASE_URL),
@@ -83,7 +84,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         "alternateName": "M-One Solution Software House",
         "description": "Software house di Sukoharjo, Jawa Tengah yang menyediakan jasa pembuatan website, aplikasi web, dan sistem informasi.",
         "url": BASE_URL,
-        "telephone": "+6285168850712",
+        "telephone": `+${siteConfig.whatsapp.number.slice(0, 2)} ${siteConfig.whatsapp.number.slice(2, 5)}-${siteConfig.whatsapp.number.slice(5, 9)}-${siteConfig.whatsapp.number.slice(9)}`,
         "email": "monesolutionsoftwarehouse@gmail.com",
         "address": {
             "@type": "PostalAddress",
