@@ -85,7 +85,7 @@ export function Hero() {
                   whileTap={{ scale: 0.95 }}
                   className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 text-white text-base font-semibold rounded-full hover:bg-white/10 transition-colors border border-white/10 backdrop-blur-sm"
                 >
-                  Contact Us
+                  Hubungi Kami
                 </motion.div>
               </Link>
             </div>

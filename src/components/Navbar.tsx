@@ -159,7 +159,7 @@ export function Navbar() {
               href="/contact"
               className="hidden lg:flex items-center gap-2 px-5 py-2.5 bg-blue-600 text-white text-sm font-medium rounded-full hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/20"
             >
-              Contact Us
+              Hubungi Kami
               <ChevronRight className="w-4 h-4" />
             </Link>
           </nav>
@@ -273,7 +273,7 @@ export function Navbar() {
                   className="w-full flex items-center justify-center gap-2 px-5 py-3 bg-blue-600 text-white text-base font-medium rounded-xl hover:bg-blue-700 transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Contact Us
+                  Hubungi Kami
                 </Link>
               </div>
             </div>
