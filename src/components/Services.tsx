@@ -49,7 +49,7 @@ export function Services({ services }: ServicesProps) {
             viewport={{ once: true }}
             className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-sm font-semibold mb-6"
           >
-            Our Digital Services
+            Layanan Digital Kami
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -58,7 +58,7 @@ export function Services({ services }: ServicesProps) {
             transition={{ delay: 0.1 }}
             className="text-3xl md:text-5xl lg:text-4xl font-bold text-slate-900 mb-6"
           >
-            Digital Solutions for Your Business
+            Solusi Digital untuk Bisnis Anda
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

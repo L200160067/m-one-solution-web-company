@@ -144,7 +144,7 @@ export function Hero() {
                 className="absolute -bottom-12 right-0 p-5 bg-white/10 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl w-48 z-20"
               >
                 <Globe className="w-8 h-8 text-indigo-400 mb-3" />
-                <h3 className="text-white font-semibold mb-2">Digital Solutions</h3>
+                <h3 className="text-white font-semibold mb-2">Solusi Digital</h3>
               </motion.div>
             </div>
           </motion.div>

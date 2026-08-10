@@ -86,7 +86,7 @@ export function About() {
             transition={{ duration: 0.8 }}
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-sm font-semibold mb-6">
-              About Us
+              Tentang Kami
             </div>
 
             <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold text-slate-900 mb-6 leading-tight">

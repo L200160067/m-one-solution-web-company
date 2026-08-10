@@ -55,7 +55,7 @@ export default function BlogListClient({ posts, categories }: BlogListClientProp
                 className="text-center mb-12 pt-12"
             >
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold mb-6">
-                    Our Blog
+                    Blog & Artikel
                 </div>
                 <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
                     Berita &amp; Artikel Terbaru
