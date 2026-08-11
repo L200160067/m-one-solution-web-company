@@ -5,158 +5,159 @@ It is organized by priority and grouped into phases so improvements can be shipp
 
 ---
 
-## 1. High Priority
+## Completed
 
-### 1.1 Stabilize content/config as first-class inputs
-**Why:** `siteConfig`, pricing, dates, slots, CTAs, and business logic are hard-coded in components. This creates ownership risk, marketing bottlenecks, and production surprises.
+### ✅ Phase 1 — Foundation (merged)
+- Centralized marketing/site config in `src/config/site.ts`.
+- Hardened API layer (`src/lib/api.ts`) with typed mappers and consistent `ApiResponse<T>` shape.
+- Added Zod validation for WordPress payloads (`src/lib/validation/api.ts`).
+- Added shared UI primitives: `EmptyState`, `ErrorState`, `WpImage`.
+- Standardized image strategy with `next/image` and CDN server/client split.
+- Moved secrets/config values out of source; env-driven via `NEXT_PUBLIC_*`.
+- Added CI workflow (`lint`/`build`/`test`).
 
-**What to change:**
-- Move all marketing copy blocks, CTAs, pricing, dates, and limits into a config layer.
-- Preferred: expose these via WordPress ACF options or a lightweight JSON config loaded at runtime.
-- If CMS-only is too heavy for now, at minimum extract to a typed config file, e.g. `src/config/marketing.ts`, and load it in pages/components.
+### ✅ Phase 2 — UX, SEO, and Quality (merged)
+- Added analytics helper (`src/lib/analytics`) with conversion event tracking.
+- Added SEO structured data: `WebSite`, `Service`, breadcrumbs, OpenGraph, sitemap, robots.
+- Rolled out dynamic imports on homepage for below-fold sections.
+- Rolled out `WpImage` across listings and detail pages.
+- Standardized metadata/baseURL via `siteConfig.baseUrl` + `NEXT_PUBLIC_BASE_URL`.
+- Normalized visible UI copy to Bahasa Indonesia.
+- Added homepage integration test, contact form tests, service/blog empty-state tests, API fallback tests, and hardcoded-URL regression test.
+- Build/test green: **44 tests across 10 files**.
 
-### 1.2 Tighten WordPress data typing + validation
-**Why:** The current mappers accept loosely typed objects and use `any`/defensive casts. That makes backend schema changes silent and risky.
-
-**What to change:**
-- Replace hand-rolled “partial” types with explicit WP REST response interfaces per CPT.
-- Add runtime validation on API boundaries using `zod`:
-  - validate `ApiResponse<T>` shape
-  - validate mapped app types before passing them to components
-- Fail fast in dev, fall back gracefully in prod.
-
-### 1.3 Centralize API behavior and error UX
-**Why:** Fetching, caching, error fallback, and logging are currently scattered across pages and components. Behavior is inconsistent.
-
-**What to change:**
-- Introduce a single data-access layer for WordPress endpoints with:
-  - consistent error shape
-  - typed client
-  - request deduplication where appropriate
-- Add a shared `EmptyState` and `ErrorState` component set.
-- Replace ad-hoc `try/catch` fallbacks with uniform UI behavior.
-
-### 1.4 Move sensitive/config values out of source
-**Why:** `src/lib/cdn.ts` contains a secret key pattern in source. Secrets should never live in repo code.
-
-**What to change:**
-- Replace embedded secret handling with runtime-only env-based configuration.
-- Audit `next.config.ts`, `cdn.ts`, and `site.ts` for any credentials, worker URLs, or internal domains that should become env vars.
+### ✅ WordPress backend connectivity check
+- Script `npm run check:wp` exists at `src/lib/__tests__/check-wp-endpoints.ts`.
+- Manual curl confirmed `https://berita-mone.mutudev.com/index.php?rest_route=/wp/v2/posts` returns **HTTP 200** with 5 published posts.
+- Endpoint `/wp-json/wp/v2` on the same host returns **404** because permalinks/pretty-URL REST is disabled; the app must use the `index.php?rest_route=` path style.
 
 ---
 
-## 2. Medium Priority
+## 1. High Priority — Backend Alignment
 
-### 2.1 Design system + token layer
-**Why:** Colors, spacing, radii, shadows, typography scales, and animation curves are repeated across components. Visual drift is easy.
+### 1.1 Register all Custom Post Types and taxonomies in WordPress
+**Why:** The frontend already maps `project`, `service`, `team-member`, `testimonial`, `partner`, `alumni`, and taxonomy `project_category`, but none of them are exposed through the WordPress REST API yet.
+
+**What to change in WordPress:**
+- Register CPT `project` with REST support and slug `project`.
+- Register CPT `service` with REST support and slug `service`.
+- Register CPT `team-member` with REST support and slug `team-member`.
+- Register CPT `testimonial` with REST support and slug `testimonial`.
+- Register CPT `partner` with REST support and slug `partner`.
+- Register CPT `alumni` with REST support and slug `alumni`.
+- Register taxonomy `project_category` with REST support and associate it with CPT `project`.
+- For each CPT, ensure `show_in_rest => true` and `rest_base` matches the slug expected by the frontend.
+
+### 1.2 Create the company settings page in WordPress
+**Why:** The frontend fetches site-wide contact/social info from a page with slug `company-setting` (`/pages?slug=company-setting`). Without this page, every footer/contact block falls back to defaults.
+
+**What to change in WordPress:**
+- Create a published page with slug `company-setting`.
+- Attach ACF fields (or equivalent) matching the mapper expectations:
+  - `company_name`, `company_address`
+  - `contact_email`, `contact_phone`, `whatsapp_number`
+  - `facebook_url`, `instagram_url`, `tiktok_url`, `youtube_url`, `linkedin_url`
+
+### 1.3 Confirm REST API path style
+**Why:** The production host currently serves REST API only under `index.php?rest_route=/wp/v2/...`; `/wp-json/wp/v2/...` returns 404. The frontend must point to the working URL style.
 
 **What to change:**
-- Add CSS custom properties for theme tokens in `globals.css`:
-  - brand colors
-  - neutrals
-  - radii
-  - shadows
-  - motion curves
-- Reuse tokens in components instead of hard-coded values.
-- Document core components in a small internal UI guide.
+- Set `NEXT_PUBLIC_WORDPRESS_URL=https://berita-mone.mutudev.com/index.php?rest_route=/wp/v2` in production env.
+- Verify `WP_BASE` handling in `src/lib/api.ts` and `check-wp-endpoints.ts` supports a base URL containing `?`.
+- Optionally fix WordPress pretty-permalinks so `/wp-json/` also works (preferred long-term).
 
-### 2.2 Consistent image strategy
-**Why:** Some images use raw WP URLs, some use CDN hooks, some are static, and there is custom CDN encryption logic mixed with image loading concerns.
+---
 
-**What to change:**
-- Standardize on `next/image` with explicit `width`/`height`/`fill` and a single image-config strategy.
-- Define a small image helper module that decides source:
-  - WP media
-  - CDN
-  - local `/public`
-- Remove duplicated image fallback logic in favor of shared primitives.
+## 2. Medium Priority — Frontend Polish
 
-### 2.3 Bundle and runtime hygiene
+### 2.1 Expand tests to critical paths
+**Why:** Tests cover mappers, shared UI, and some page smoke tests, but several user flows still lack coverage.
+
+**What to add:**
+- Service detail page with valid mocked service data.
+- Blog detail page with mocked post data.
+- Portfolio page integration (projects + categories).
+- `apiFetch` single-item endpoint success path.
+
+### 2.2 Bundle and runtime hygiene
 **Why:** Many client components pull in `motion`, `lucide-react`, and large page modules even when not needed on every route.
 
 **What to change:**
-- Audit component imports and prefer:
-  - dynamic imports for below-fold or non-critical sections
-  - route-specific client bundles
+- Audit remaining client components and prefer dynamic imports for below-fold sections.
 - Reduce `motion` usage on static decorative elements where CSS animation is sufficient.
 
-### 2.4 Expand tests to critical paths
-**Why:** Tests currently cover mappers only. The main user flows and API integration have no regression coverage.
+### 2.3 Design token documentation
+**Why:** Tokens exist in CSS but are not documented for future contributors/marketers.
 
-**What to add:**
-- Component smoke tests for:
-  - home page sections rendering with fallback data
-  - contact form validation and submission flow
-  - service detail page missing state
-- API route tests or request-mocked integration tests for `apiFetch`:
-  - list endpoints
-  - single-item endpoint
-  - settings fallback
+**What to change:**
+- Add a short `docs/ui-tokens.md` describing brand colors, spacing, radii, shadows, and typography usage.
 
 ---
 
 ## 3. Lower Priority / Strategic
 
-### 3.1 SEO and content strategy
-**Why:** SEO metadata and structured data are present but minimal for a business site that depends on local search.
+### 3.1 Internationalization readiness
+**Why:** Content is now locked to Bahasa Indonesia. If multilingual is ever planned, routing placeholders should be introduced early.
 
 **What to change:**
-- Add per-service and per-project SEO modules.
-- Expand structured data to include `Service`, `FAQPage`, and `WebSite` where appropriate.
-- Add breadcrumb structured data to service/project/blog detail pages.
+- If monolingual remains the plan: no action needed; keep enforcing Bahasa Indonesia in UI copy.
+- If multilingual is planned later: introduce Next.js i18n routing placeholders and extract hard-coded strings to a message catalog.
 
-### 3.2 Internationalization / content reuse
-**Why:** Some pages are entirely Indonesian, others mix English headings. This is fine now, but scaling content will become messy.
-
-**What to change:**
-- If multilingual is planned later, introduce routing placeholders and message extraction early.
-- If monolingual is the plan, lock content language and remove mixed-language copy.
-
-### 3.3 Analytics and conversion measurement
-**Why:** There is no visible analytics, conversion events, or funnel measurement.
+### 3.2 Analytics and conversion measurement
+**Why:** Analytics helper exists, but conversion events are only logged locally unless a real `gtag` is loaded.
 
 **What to add:**
-- Privacy-respecting analytics setup.
-- Track key conversion events:
-  - CTA clicks
-  - contact form opens
-  - WhatsApp click
-  - service page views
+- Load Google Analytics / Plausible / privacy-respecting alternative in `layout.tsx` based on env.
+- Add event triggers for: CTA clicks, WhatsApp click, contact form submit, service page views.
 
-### 3.4 Deployment hardening
-**Why:** There is no visible CI workflow in the repo snapshot.
+### 3.3 Deployment hardening
+**Why:** CI workflow exists, but branch protection and preview deploys are outside the repo.
 
 **What to add:**
-- GitHub Actions or equivalent running:
-  - `npm run lint`
-  - `npm run build`
-  - `npm run test`
-- Branch protection and preview deploys for non-production review.
+- Configure branch protection on `main` to require CI pass before merge.
+- Add preview deploys for non-production review (Vercel/Netlify/etc.).
+
+### 3.4 SEO expansion
+**Why:** SEO basics are in place, but detail pages and local search can be strengthened.
+
+**What to add:**
+- Per-project SEO module in `/portfolio/[id]` if/when dynamic project detail pages exist.
+- `FAQPage` structured data if an FAQ section is added.
+- LocalBusiness structured data using settings fields.
 
 ---
 
 ## Suggested Execution Order
 
-1. **Config/content ownership**  
-   Move hard-coded marketing values out of components. This unlocks faster marketing changes and reduces developer-to-marketer friction.
+1. **Backend CPT/taxonomy registration**  
+   Unblock content ingestion from WordPress.
 
-2. **API typing + validation**  
-   Make WordPress integration safer before adding more pages or features.
+2. **Create `company-setting` page + ACF fields**  
+   Unblock dynamic contact info and footer/social links.
 
-3. **Shared UI primitives + design tokens**  
-   Reduce duplication and make future redesigns cheaper.
+3. **Set production `NEXT_PUBLIC_WORDPRESS_URL` correctly**  
+   Use the working `index.php?rest_route=` style until pretty-permalinks are fixed.
 
-4. **Image/media standardization**  
-   Fix the largest source of visual regressions and caching inconsistencies.
+4. **Run `npm run check:wp` against production backend**  
+   Confirm all endpoints return OK before declaring sync complete.
 
-5. **Expanded tests**  
-   Lock in behavior for homepage, contact, and service flows.
+5. **Frontend: expand critical-path tests and bundle hygiene**  
+   Lock in behavior and performance.
 
-6. **SEO, analytics, CI**  
-   Growth and reliability improvements once the foundation is stable.
+6. **SEO, analytics, deployment hardening**  
+   Growth and reliability improvements once content flows end-to-end.
+
+---
+
+## Verification Checklist
+
+- [ ] `NEXT_PUBLIC_WORDPRESS_URL=https://berita-mone.mutudev.com/index.php?rest_route=/wp/v2 npm run check:wp` → 0 FAIL.
+- [ ] `npm run test` → 44 passing (or more after new tests).
+- [ ] `npm run build` → success, no TypeScript errors.
+- [ ] Production env contains `NEXT_PUBLIC_BASE_URL`, `NEXT_PUBLIC_WORDPRESS_URL`, `NEXT_PUBLIC_CDN_URL`, `NEXT_PUBLIC_WHATSAPP_NUMBER`.
 
 ---
 
 ## Notes
 - This plan assumes the project remains a Next.js marketing site backed by WordPress.
-- If you want, I can turn this into a task backlog with issue-style acceptance criteria next.
+- If you want, I can turn this into a GitHub issue backlog with acceptance criteria next.
