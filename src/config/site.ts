@@ -4,7 +4,7 @@ export const siteConfig = {
     cdnUrl: process.env.NEXT_PUBLIC_CDN_URL || 'https://l200160067.github.io/mone-assets',
     logo: process.env.NEXT_PUBLIC_CDN_URL ? `${process.env.NEXT_PUBLIC_CDN_URL}/images/branding/mone.webp` : 'https://l200160067.github.io/mone-assets/images/branding/mone.webp',
     whatsapp: {
-        number: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "6285168850712",
+        number: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "6285879535070",
         defaultMessage: "Halo M-One Solution, saya ingin berkonsultasi mengenai layanan Anda."
     },
     social: {
