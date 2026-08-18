@@ -1527,10 +1527,6 @@
     margin-top: calc(var(--spacing) * 3);
   }
 
-  .mt-6 {
-    margin-top: calc(var(--spacing) * 6);
-  }
-
   .mt-8 {
     margin-top: calc(var(--spacing) * 8);
   }
@@ -3046,10 +3042,6 @@
 
   .py-8 {
     padding-block: calc(var(--spacing) * 8);
-  }
-
-  .py-12 {
-    padding-block: calc(var(--spacing) * 12);
   }
 
   .py-16 {
@@ -4641,6 +4633,12 @@
   }
 
   @media (min-width: 64rem) {
+    .lg\:hidden {
+      display: none;
+    }
+  }
+
+  @media (min-width: 64rem) {
     .lg\:grid-cols-2 {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -4719,6 +4717,12 @@
     .lg\:text-7xl {
       font-size: var(--text-7xl);
       line-height: var(--tw-leading, var(--text-7xl--line-height));
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .xl\:gap-6 {
+      gap: calc(var(--spacing) * 6);
     }
   }
 

@@ -65,7 +65,7 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8 relative">
+          <nav className="hidden lg:flex items-center gap-4 xl:gap-6 relative">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -166,7 +166,7 @@ export function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-slate-300 hover:text-white transition-colors"
+            className="lg:hidden p-2 text-slate-300 hover:text-white transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
@@ -185,7 +185,7 @@ export function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 right-0 bg-slate-900 shadow-xl border-t border-white/10 md:hidden"
+            className="absolute top-full left-0 right-0 bg-slate-900 shadow-xl border-t border-white/10 lg:hidden"
           >
             <div className="px-4 pt-2 pb-6 space-y-1">
               {navLinks.map((link) => (
