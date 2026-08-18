@@ -50,6 +50,14 @@ export async function getCdnUrl(path: string, source: "pages" | "raw" = "pages")
 }
 
 export async function convertGithubUrl(githubUrl: string): Promise<string> {
+  const configuredCdn = process.env.NEXT_PUBLIC_CDN_URL || "";
+
+  // CDN worker belum aktif; pakai URL asli GitHub Pages agar gambar tidak blank.
+  // Aktifkan kembali rewrite ke worker setelah CDN benar-benar bisa diakses.
+  if (!configuredCdn || configuredCdn.includes("github.io")) {
+    return githubUrl;
+  }
+
   for (const [pattern, source] of Object.entries(GITHUB_SOURCE_MAP)) {
     if (githubUrl.includes(pattern)) {
       const baseUrl = source === "pages" ? `https://${pattern}` : `https://${pattern}/main`;

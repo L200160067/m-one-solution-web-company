@@ -1,54 +1,23 @@
 "use client";
 
-import { useState, useEffect } from "react";
-
 /**
- * Hook untuk satu URL GitHub → CDN.
- * Gunakan hanya di Client Component.
+ * lib/cdn.ts — Client-side CDN URL converter.
+ *
+ * Convert known GitHub Pages / raw.githubusercontent.com URLs into
+ * encrypted CDN worker tokens. Falls back to the original URL if the
+ * source is not recognised.
  */
-export function useCdnUrl(githubUrl: string): string | null {
-  const [url, setUrl] = useState<string | null>(null);
-
-  useEffect(() => {
-    if (!githubUrl) return;
-    let cancelled = false;
-
-    convertGithubUrl(githubUrl).then((resolved) => {
-      if (!cancelled) setUrl(resolved);
-    });
-
-    return () => {
-      cancelled = true;
-    };
-  }, [githubUrl]);
-
-  return url;
-}
-
-/**
- * Hook untuk banyak URL sekaligus.
- */
-export function useCdnUrls(githubUrls: string[]): (string | null)[] {
-  const [urls, setUrls] = useState<(string | null)[]>(githubUrls.map(() => null));
-
-  useEffect(() => {
-    if (!githubUrls.length) return;
-    let cancelled = false;
-
-    Promise.all(githubUrls.map(convertGithubUrl)).then((resolved) => {
-      if (!cancelled) setUrls(resolved);
-    });
-
-    return () => {
-      cancelled = true;
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [JSON.stringify(githubUrls)]);
-
-  return urls;
-}
 
 export async function convertGithubUrl(githubUrl: string): Promise<string> {
+  const configuredCdn = process.env.NEXT_PUBLIC_CDN_URL || "";
+
+  // CDN worker belum aktif (cdn.mutudev.com tidak resolve, fallback worker
+  // mengembalikan 403/CORS). Lewati rewrite dan pakai URL asli GitHub Pages
+  // agar gambar tetap bisa diakses. Aktifkan kembali setelah worker CDN siap.
+  if (!configuredCdn || configuredCdn.includes("github.io")) {
+    return githubUrl;
+  }
+
   const mappings: [string, "pages" | "raw"][] = [
     ["l200160067.github.io/mone-assets", "pages"],
     ["raw.githubusercontent.com/L200160067/mone-assets", "raw"],

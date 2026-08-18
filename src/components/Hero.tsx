@@ -4,7 +4,6 @@ import { motion, useScroll, useTransform } from 'motion/react';
 import { ArrowRight, Code2, Smartphone, Globe } from 'lucide-react';
 import { useRef } from 'react';
 import Link from 'next/link';
-import { siteConfig } from '../config/site';
 import { Container } from './ui/Container';
 import { BlobBackground } from './ui/BlobBackground';
 import { WpImage } from '@/components/image/WpImage';
@@ -107,7 +106,7 @@ export function Hero() {
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent z-10 pointer-events-none" />
                 <WpImage
-                  src={`${siteConfig.cdnUrl}/images/branding/hero.webp`}
+                  src="/images/branding/hero.webp"
                   alt="Tim developer M-One Solution — Software House Sukoharjo, Jawa Tengah"
                   className="w-full h-full object-cover"
                 />
