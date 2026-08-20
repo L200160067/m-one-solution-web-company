@@ -29,11 +29,11 @@ export function CTA() {
           </div>
 
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-            Your Trusted <br /> Solution!
+            Wujudkan Sistem Digital Bisnis Anda
           </h2>
 
           <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
-            Solusi digital terpercaya untuk bisnis anda. Mari diskusikan ide Anda dan wujudkan bersama tim ahli kami.
+            Dari website profil hingga sistem ERP — konsultasi gratis, dibalas dalam 2–3 jam di jam kerja.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

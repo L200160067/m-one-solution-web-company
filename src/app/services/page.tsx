@@ -50,7 +50,7 @@ export default async function ServicesPage() {
                     </div>
                     <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6">Butuh Solusi IT Berskala Besar?</h2>
                     <p className="text-lg text-slate-600">
-                        Selain paket ritel di atas, tim Software House kami siap membangun arsitektur sistem kustom tingkat lanjut, mulai dari Aplikasi Mobile hingga Enterprise Resource Planning (ERP).
+                        Selain paket instan di atas, tim Software House kami siap membangun arsitektur sistem kustom tingkat lanjut — mulai dari aplikasi mobile hingga ERP yang disesuaikan dengan proses bisnis Anda.
                     </p>
                 </div>
                 <ServicesListClient services={services} categories={categories} />

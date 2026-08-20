@@ -67,7 +67,7 @@ export default function JasaERPMPage() {
                         </div>
                         <div className="text-center">
                             <h4 className="text-2xl font-bold text-slate-800">100%</h4>
-                            <p className="text-sm font-medium text-slate-500">Aman & Terpusat</p>
+                            <p className="text-sm font-medium text-slate-500">Tanpa Biaya Bulanan</p>
                         </div>
                         <div className="text-center">
                             <h4 className="text-2xl font-bold text-slate-800">0%</h4>
@@ -174,7 +174,7 @@ export default function JasaERPMPage() {
                                 <p className="text-indigo-100 text-sm">Sistem toko online siap jualan untuk butik/retail.</p>
                             </div>
                             <div className="mb-6">
-                                <span className="text-4xl font-extrabold">Rp 2.5 JT</span>
+                                <span className="text-4xl font-extrabold">Rp 2.5 JT</span><span className="text-slate-400 text-lg">/thn</span>
                             </div>
                             <div className="mb-8 flex-1">
                                 <ul className="space-y-4 text-white text-sm">
@@ -197,7 +197,7 @@ export default function JasaERPMPage() {
                                 <p className="text-slate-400 text-sm">Sistem kasir komplit & multi-cabang (Tanpa Langganan).</p>
                             </div>
                             <div className="mb-6">
-                                <span className="text-4xl font-extrabold">Rp 5 JT</span>
+                                <span className="text-4xl font-extrabold">Rp 5 JT</span><span className="text-slate-400 text-lg">/thn</span>
                             </div>
                             <div className="mb-8 flex-1">
                                 <ul className="space-y-4 text-slate-300 text-sm">
@@ -225,9 +225,9 @@ export default function JasaERPMPage() {
 
                     <div className="space-y-6">
                         {[
-                            { Q: "Apakah sistem Kasir (POS) ini harus langganan bulanan?", A: "Tidak! Paket ERP Mini kami dijual putus (beli putus) untuk fungsi utamanya. Anda hanya perlu membayar biaya maintenance/server tahunan yang jauh lebih murah dibanding langganan bulanan aplikasi sejenis." },
-                            { Q: "Saya gaptek, apakah akan diajari cara pemakaiannya?", A: "Pasti. Tim kami akan memberikan training online maupun panduan video cara memasukkan produk, melayani kasir, hingga membaca laporan keuangan." },
-                            { Q: "Berapa lama website toko atau sistem kasir saya siap?", A: "Layanan Productized kami menjamin sistem siap pakai dalam 7-14 hari kerja setelah Anda memberikan daftar produk/menu awal." },
+                            { Q: "Apakah sistem Kasir (POS) ini harus langganan bulanan?", A: "Tidak! Paket ERP Mini kami menggunakan model pembelian sekali bayar untuk fitur utama. Anda hanya membayar biaya perpanjangan server/domain tahunan, yang jauh lebih hemat dibanding langganan aplikasi kasir bulanan." },
+                            { Q: "Saya gaptek, apakah akan diajari cara pemakaiannya?", A: "Pasti. Tim kami memberikan training online dan panduan video cara memasukkan produk, melayani kasir, hingga membaca laporan keuangan." },
+                            { Q: "Berapa lama website toko atau sistem kasir saya siap?", A: "Layanan productized kami menjamin sistem siap pakai dalam 7–14 hari kerja setelah Anda memberikan daftar produk/menu awal." },
                         ].map((faq, i) => (
                             <div key={i} className="bg-slate-50 p-6 rounded-2xl shadow-sm border border-slate-100">
                                 <h4 className="text-lg font-bold text-slate-900 mb-2">{faq.Q}</h4>

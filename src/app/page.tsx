@@ -19,7 +19,7 @@ const DynamicTestimonials = dynamic(() => import('@/components/Testimonials').th
 
 export const metadata = {
     title: 'Software House Sukoharjo | Jasa Website & Aplikasi — M-One Solution',
-    description: 'Jasa pembuatan website & aplikasi profesional di Sukoharjo, Solo, dan Jawa Tengah. Konsultasi GRATIS — hubungi M-One Solution sekarang dan wujudkan ide digitalmu!',
+    description: 'Jasa pembuatan website & aplikasi profesional di Sukoharjo, Solo, dan Jawa Tengah. Konsultasi GRATIS — wujudkan transformasi digital bisnis Anda bersama M-One Solution!',
 };
 
 async function fetchSafe<T>(endpoint: string, fallback: T, tags?: string[]): Promise<T> {

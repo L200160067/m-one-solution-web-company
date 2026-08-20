@@ -228,20 +228,20 @@ export const studentAgency: StudentAgencyConfig = {
     },
   },
   quota: {
-    max: 20,
-    label: '0 / 20 Peserta',
+  max: 20,
+  label: 'Pendaftaran dibuka',
   },
   stats: [
     { value: '20+', label: 'Proyek M-One Selesai' },
-    { value: '5 Slot', label: 'Early Bird Tersedia' },
+    { value: '5 Slot', label: 'Harga Early Bird' },
     { value: '2 Kota', label: 'Area Terlayani' },
     { value: '20 Org', label: 'Kuota Per Kelas' },
   ],
   faqs: [
     {
-      question: 'Apakah ini penipuan?',
+      question: 'Apakah M-One Solution punya portofolio nyata?',
       answer:
-        'Tidak! M-One Solution adalah software house terdaftar di Sukoharjo dengan rekam jejak proyek nyata. Kamu bisa verifikasi portofolio kami di halaman Portfolio.',
+        'Ya. M-One Solution adalah software house di Sukoharjo dengan rekam jejak proyek nyata untuk UMKM dan sekolah. Kamu bisa melihat portofolio kami di halaman Portofolio.',
     },
     {
       question: 'Berapa komisinya?',

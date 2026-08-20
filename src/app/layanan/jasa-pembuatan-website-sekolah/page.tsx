@@ -71,8 +71,8 @@ export default function WebsiteSekolahPage() {
                             <p className="text-sm font-medium text-slate-500">Gratis Maintenance 1 Thn</p>
                         </div>
                         <div className="text-center">
-                            <h4 className="text-2xl font-bold text-slate-800">24/7</h4>
-                            <p className="text-sm font-medium text-slate-500">Support Tim Teknis</p>
+                            <h4 className="text-2xl font-bold text-slate-800">Responsif</h4>
+                            <p className="text-sm font-medium text-slate-500">Support via WhatsApp</p>
                         </div>
                     </div>
                 </Container>
@@ -216,7 +216,7 @@ export default function WebsiteSekolahPage() {
                     </div>
                     
                     <div className="mt-12 text-center text-slate-400 text-sm">
-                        *Perpanjangan tahun berikutnya mulai dari Rp 1.000.000,- (termasuk server, domain, dan maintenance)
+                        *Perpanjangan tahun berikutnya mulai dari Rp 1.000.000,- per tahun (termasuk server, domain, dan maintenance dasar).
                     </div>
                 </Container>
             </Section>
@@ -232,7 +232,7 @@ export default function WebsiteSekolahPage() {
                         {[
                             { Q: "Apakah dibantu kalau tidak bisa pakai aplikasinya?", A: "Tentu! Kami berikan buku panduan dan sesi online training secara gratis untuk admin/guru yang ditunjuk sekolah. Kami sangat responsif membalas WhatsApp jika ada kendala." },
                             { Q: "Berapa lama proses pembuatannya?", A: "Untuk Paket Basic dan Standar (PPDB), website siap digunakan dalam 7-14 hari kerja setelah materi dan dokumen persyaratan domain diserahkan." },
-                            { Q: "Apakah harga perpanjangannya akan naik drastis?", A: "Tidak. Harga perpanjangan di M-One Solution jelas dari awal (Transparan). Anda hanya membayar biaya perpanjangan server dan domain untuk tahun-tahun berikutnya." },
+                            { Q: "Apakah harga perpanjangannya akan naik drastis?", A: "Tidak. Harga perpanjangan di M-One Solution transparan sejak awal. Anda hanya membayar biaya server, domain, dan maintenance dasar untuk tahun-tahun berikutnya." },
                         ].map((faq, i) => (
                             <div key={i} className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
                                 <h4 className="text-lg font-bold text-slate-900 mb-2">{faq.Q}</h4>

@@ -30,12 +30,12 @@ export function Navbar() {
   const isHomePage = pathname === '/';
 
   const navLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'Services', href: '/services' },
+    { name: 'Beranda', href: '/' },
+    { name: 'Tentang', href: '/about' },
+    { name: 'Layanan', href: '/services' },
     { name: 'Portofolio', href: '/portfolio' },
-    { name: 'Contact', href: '/contact' },
-    { name: 'News', href: '/blog' },
+    { name: 'Kontak', href: '/contact' },
+    { name: 'Berita', href: '/blog' },
     //{ name: 'Privacy Policy', href: '/privacy' },
   ];
 

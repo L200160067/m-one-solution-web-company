@@ -41,7 +41,7 @@ export function LatestBlogs({ posts }: LatestBlogsProps) {
                             Wawasan Terbaru
                         </h2>
                         <p className="text-base text-slate-600 leading-relaxed md:pr-4">
-                            Tetap udpate dengan berita terbaru, tren teknologi, dan wawasan seputar dunia digital langsung dari tim ahli kami.
+                            Tetap update dengan berita terbaru, tren teknologi, dan wawasan seputar dunia digital langsung dari tim ahli kami.
                         </p>
                     </motion.div>
 

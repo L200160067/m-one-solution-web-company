@@ -67,7 +67,7 @@ export function Services({ services }: ServicesProps) {
             transition={{ delay: 0.2 }}
             className="text-lg text-slate-600 max-w-2xl mx-auto"
           >
-            Kami menyediakan layanan pengembangan website, aplikasi, dan sistem digital yang dirancang untuk membantu bisnis Anda bekerja lebih efisien, berkembang lebih cepat, dan siap menghadapi era digital.
+            Hemat waktu operasional, percepat layanan pelanggan, dan rapikan data bisnis Anda dalam satu sistem yang bisa diakses kapan saja.
           </motion.p>
         </div>
 

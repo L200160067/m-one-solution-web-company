@@ -31,7 +31,7 @@ export function Projects({ projects }: ProjectsProps) {
               Proyek Terkini
             </h2>
             <p className="text-base text-slate-600 leading-relaxed md:pr-4">
-              "Inilah jejak perjalanan kami dalam dunia digital. Dari website sekolah hingga aplikasi organisasi, setiap proyek yang kami kerjakan punya cerita dan tantangannya sendiri. Dan dari setiap tantangan itulah, kami belajar merancang solusi yang lebih baik dan lebih efektif."
+              Jejak nyata kolaborasi kami dengan UMKM, sekolah, dan organisasi di Sukoharjo, Solo, dan sekitarnya. Setiap proyek mengajarkan kami cara merancang solusi yang lebih baik, lebih cepat, dan lebih efektif.
             </p>
           </motion.div>
 
@@ -39,7 +39,7 @@ export function Projects({ projects }: ProjectsProps) {
             href="/portfolio"
             className="inline-flex items-center gap-2 px-6 py-3 bg-white text-slate-900 border border-slate-200 text-base font-semibold rounded-full hover:border-blue-600 hover:text-blue-600 transition-colors whitespace-nowrap"
           >
-            View All Projects
+            Lihat Semua Proyek
             <ArrowUpRight className="w-5 h-5" />
           </Link>
         </div>

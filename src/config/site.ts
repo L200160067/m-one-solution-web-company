@@ -7,7 +7,7 @@ export const siteConfig = {
     logo: '/images/branding/mone.webp',
     whatsapp: {
         number: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "6285879535070",
-        defaultMessage: "Halo M-One Solution, saya ingin berkonsultasi mengenai layanan Anda."
+        defaultMessage: "Halo M-One Solution, saya tertarik dengan layanan [website/aplikasi/ERP]. Bisa diskusi singkat?"
     },
     social: {
         linkedin: "https://www.linkedin.com/company/m-one-solution/",

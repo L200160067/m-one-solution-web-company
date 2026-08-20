@@ -87,8 +87,8 @@ export function About() {
             </div>
 
             <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold text-slate-900 mb-6 leading-tight">
-              Transforming Ideas into<br />
-              <span className="text-blue-600">Digital Products</span>
+              Mengubah Ide Menjadi<br />
+              <span className="text-blue-600">Produk Digital</span>
             </h2>
 
             <p className="text-base text-slate-600 mb-6 leading-relaxed">
@@ -115,7 +115,7 @@ export function About() {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-4 mb-8 py-6 border-t border-b border-slate-100">
               {[
-                { value: 50, suffix: '+', label: 'Proyek Selesai' },
+                { value: 50, suffix: '+', label: 'Proyek Selesai sejak 2022' },
                 { value: 30, suffix: '+', label: 'Klien Puas' },
                 { value: 3, suffix: '+', label: 'Tahun Pengalaman' },
               ].map((stat, i) => (
@@ -132,7 +132,7 @@ export function About() {
               href="/about"
               className="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 text-white text-base font-semibold rounded-full hover:bg-blue-600 transition-colors shadow-lg shadow-slate-900/20"
             >
-              Learn more
+              Pelajari Lebih Lanjut
               <ArrowRight className="w-5 h-5" />
             </Link>
           </motion.div>

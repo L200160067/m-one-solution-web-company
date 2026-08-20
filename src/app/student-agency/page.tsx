@@ -487,7 +487,7 @@ export default function StudentAgencyPage() {
               Siap <span style={{ color: branding.pinkAccent }}>Buktiin</span> Kamu Bisa Freelance<br />Sebelum Lulus? 🚀
             </h2>
             <p className="text-lg text-slate-500 mb-10 max-w-xl mx-auto">
-              Daftar sekarang, gratis! Langsung masuk grup eksklusif dan mulai perjalanan freelance-mu bersama M-One Solution.
+              Tanya-tanya dulu, gratis! Langsung masuk grup eksklusif dan mulai perjalanan freelance-mu bersama M-One Solution.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <a

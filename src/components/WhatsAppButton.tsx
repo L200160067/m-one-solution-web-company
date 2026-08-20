@@ -43,7 +43,7 @@ export function WhatsAppButton({ whatsappNumber }: WhatsAppButtonProps) {
         >
           {/* Tooltip */}
           <span className="absolute right-full mr-4 px-3 py-2 bg-slate-900 text-white text-sm font-medium rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap shadow-lg">
-            Hubungi Kami
+            Konsultasi Gratis via WA
             {/* Arrow */}
             <span className="absolute top-1/2 -right-1 -translate-y-1/2 w-2 h-2 bg-slate-900 rotate-45"></span>
           </span>

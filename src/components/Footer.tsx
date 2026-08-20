@@ -108,24 +108,24 @@ export function Footer({ settings }: FooterProps) {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-white font-semibold mb-6">Quick Links</h4>
+            <h4 className="text-white font-semibold mb-6">Tautan Cepat</h4>
             <ul className="space-y-4">
-              <li><Link href="/" className="hover:text-blue-400 transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> Home</Link></li>
+              <li><Link href="/" className="hover:text-blue-400 transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> Beranda</Link></li>
               <li><Link href="/about" className="hover:text-blue-400 transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> Tentang Kami</Link></li>
-              <li><Link href="/services" className="hover:text-blue-400 transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> Services</Link></li>
+              <li><Link href="/services" className="hover:text-blue-400 transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> Layanan</Link></li>
               <li><Link href="/portfolio" className="hover:text-blue-400 transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> Portofolio</Link></li>
-              <li><Link href="/blog" className="hover:text-blue-400 transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> News</Link></li>
-              <li><Link href="/contact" className="hover:text-blue-400 transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> Contact</Link></li>
+              <li><Link href="/blog" className="hover:text-blue-400 transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> Berita</Link></li>
+              <li><Link href="/contact" className="hover:text-blue-400 transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> Kontak</Link></li>
               <li><Link href="/student-agency" className="hover:text-pink-400 transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> 🎓 Student Agency Incubator</Link></li>
             </ul>
           </div>
 
           {/* Legal */}
           <div>
-            <h4 className="text-white font-semibold mb-6">Legal</h4>
+            <h4 className="text-white font-semibold mb-6">Ketentuan</h4>
             <ul className="space-y-4">
-              <li><Link href="/privacy" className="hover:text-blue-400 transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> Privacy Policy</Link></li>
-              <li><Link href="/terms" className="hover:text-blue-400 transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> Terms and Conditions</Link></li>
+              <li><Link href="/privacy" className="hover:text-blue-400 transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> Kebijakan Privasi</Link></li>
+              <li><Link href="/terms" className="hover:text-blue-400 transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> Syarat dan Ketentuan</Link></li>
             </ul>
             <div className="mt-8">
               <h4 className="text-white font-semibold mb-4">Kontak</h4>
@@ -141,7 +141,7 @@ export function Footer({ settings }: FooterProps) {
 
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-slate-500 text-sm">
-            © {currentYear} M-One Solution Software house. All Rights Reserved.
+            © {currentYear} M-One Solution Software House. Hak Cipta Dilindungi.
           </p>
           <p className="text-slate-500 text-sm font-medium">
             Solusi Digital Terpercaya Anda

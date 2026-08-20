@@ -50,25 +50,25 @@ export function Hero() {
               Software House
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-6 leading-[1.1]">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-[1.1]">
               Jasa Pembuatan Website <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
-                &amp; Aplikasi di Sukoharjo
+                &amp; Aplikasi Siap Pakai
               </span>
             </h1>
 
             <p className="text-lg text-slate-300 mb-8 leading-relaxed max-w-lg">
-              Software house terpercaya di Sukoharjo &amp; Solo. Kami membantu bisnis dan organisasi tumbuh lewat website, aplikasi, dan sistem digital yang praktis.
+              Software house di Sukoharjo &amp; Solo. Konsultasi gratis, pengerjaan profesional, dan support langsung dari tim lokal untuk website, aplikasi, dan sistem ERP Anda.
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
-              <a href="/services">
+              <Link href="/contact">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white text-base font-semibold rounded-full hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/25 group"
                 >
-                  Lihat Layanan
+                  Konsultasi Gratis
                   <motion.div
                     initial={{ x: 0 }}
                     whileHover={{ x: 5 }}
@@ -77,14 +77,14 @@ export function Hero() {
                     <ArrowRight className="w-5 h-5" />
                   </motion.div>
                 </motion.div>
-              </a>
-              <Link href="/contact">
+              </Link>
+              <Link href="/services">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 text-white text-base font-semibold rounded-full hover:bg-white/10 transition-colors border border-white/10 backdrop-blur-sm"
                 >
-                  Hubungi Kami
+                  Lihat Layanan
                 </motion.div>
               </Link>
             </div>

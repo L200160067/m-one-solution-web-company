@@ -5,7 +5,7 @@ import { siteConfig } from '@/config/site';
 
 export const metadata = {
     title: 'Hubungi Kami | M-One Solution Software House',
-    description: 'Hubungi M-One Solution untuk mendiskusikan ide Anda dan wujudkan bersama tim ahli kami. Solusi digital terpercaya untuk bisnis anda.',
+    description: 'Hubungi M-One Solution via WhatsApp. Konsultasi gratis untuk kebutuhan website, aplikasi, dan sistem ERP bisnis Anda — dibalas dalam 2–3 jam di jam kerja.',
     openGraph: {
         title: 'Hubungi Kami | M-One Solution',
         description: 'Hubungi M-One Solution untuk mendiskusikan ide Anda dan wujudkan bersama tim ahli kami.',
