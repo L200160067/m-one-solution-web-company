@@ -200,6 +200,12 @@ export interface WordPressService {
                 }
             }
         }>;
+        'wp:term'?: Array<Array<{
+            id: number;
+            name: string;
+            slug: string;
+            taxonomy: string;
+        }>>;
     };
 }
 
@@ -216,6 +222,12 @@ export function mapWordPressServiceToAppService(wpService: WordPressService): Se
 
     const cleanShortDesc = wpService.excerpt.rendered.replace(/<[^>]*>/g, '').trim();
 
+    // Ambil kategori dari taxonomy service_category (mirip dengan project)
+    const categories = wpService._embedded?.['wp:term']?.find(terms =>
+        terms.some(term => term.taxonomy === 'service_category')
+    );
+    const categoryName = categories && categories[0] ? categories[0].name : 'Layanan';
+
     const stringToArray = (str: any) => {
         if (!str) return [];
         if (Array.isArray(str)) return str.map(s => String(s).trim()).filter(s => s.length > 0);
@@ -227,7 +239,7 @@ export function mapWordPressServiceToAppService(wpService: WordPressService): Se
         id: wpService.id,
         title: wpService.title.rendered,
         slug: wpService.slug,
-        category: 'Development',
+        category: categoryName,
         short_description: cleanShortDesc,
         full_description: wpService.content.rendered,
         features: stringToArray(wpService.acf?.features),

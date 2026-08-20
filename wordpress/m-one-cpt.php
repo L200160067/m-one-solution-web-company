@@ -126,6 +126,7 @@ function mone_register_post_types_and_taxonomies(): void
         'menu_icon'   => 'dashicons-admin-tools',
         'rewrite'     => ['slug' => 'layanan'],
         'rest_base'   => 'service',
+        'taxonomies'  => ['service_category'],
     ]));
 
     // Project
@@ -190,6 +191,29 @@ function mone_register_post_types_and_taxonomies(): void
         'show_in_rest'       => true,
         'rest_base'          => 'project_category',
         'rewrite'            => ['slug' => 'kategori-project'],
+    ]);
+
+    // Service Category taxonomy
+    $labels_service_category = [
+        'name'              => __('Kategori Layanan', 'mone-solution'),
+        'singular_name'     => __('Kategori Layanan', 'mone-solution'),
+        'search_items'      => __('Cari Kategori', 'mone-solution'),
+        'all_items'         => __('Semua Kategori', 'mone-solution'),
+        'edit_item'         => __('Edit Kategori', 'mone-solution'),
+        'add_new_item'      => __('Tambah Kategori Baru', 'mone-solution'),
+        'new_item_name'     => __('Nama Kategori Baru', 'mone-solution'),
+        'menu_name'         => __('Kategori Layanan', 'mone-solution'),
+    ];
+
+    register_taxonomy('service_category', ['service'], [
+        'labels'             => $labels_service_category,
+        'hierarchical'       => true,
+        'public'             => true,
+        'show_ui'            => true,
+        'show_admin_column'  => true,
+        'show_in_rest'       => true,
+        'rest_base'          => 'service_category',
+        'rewrite'            => ['slug' => 'kategori-layanan'],
     ]);
 }
 

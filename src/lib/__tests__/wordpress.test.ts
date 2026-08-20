@@ -95,6 +95,9 @@ const mockWpService: WordPressService = {
       source_url: 'https://example.com/service.jpg',
       media_details: { sizes: {} },
     }],
+    'wp:term': [[
+      { id: 7, name: 'Web Development', slug: 'web-development', taxonomy: 'service_category' },
+    ]],
   },
 };
 
@@ -263,6 +266,17 @@ describe('mapWordPressServiceToAppService', () => {
     expect(result.features).toEqual([]);
     expect(result.benefits).toEqual([]);
     expect(result.keywords).toEqual([]);
+  });
+
+  it('mengambil kategori dari taxonomy service_category', () => {
+    const result = mapWordPressServiceToAppService(mockWpService);
+    expect(result.category).toBe('Web Development');
+  });
+
+  it('fallback ke "Layanan" jika tidak ada taxonomy', () => {
+    const noTerm = { ...mockWpService, _embedded: { 'wp:featuredmedia': mockWpService._embedded?.['wp:featuredmedia'] } };
+    const result = mapWordPressServiceToAppService(noTerm);
+    expect(result.category).toBe('Layanan');
   });
 });
 
