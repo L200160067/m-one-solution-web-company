@@ -48,7 +48,7 @@ export default async function ServicesPage() {
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 font-semibold mb-4 text-sm">
                         🏢 M-One Pro (Enterprise)
                     </div>
-                    <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6">Butuh Solusi IT Berskala Besar?</h2>
+                    <div className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6">Butuh Solusi IT Berskala Besar?</div>
                     <p className="text-lg text-slate-600">
                         Selain paket instan di atas, tim Software House kami siap membangun arsitektur sistem kustom tingkat lanjut — mulai dari aplikasi mobile hingga ERP yang disesuaikan dengan proses bisnis Anda.
                     </p>

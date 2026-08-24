@@ -63,12 +63,15 @@ export function Alumni({ groups }: AlumniProps) {
                                     <WpImage
                                         src={person.photo_url}
                                         alt={person.name}
+                                        fill
+                                        sizes="(max-width: 640px) 50vw, 25vw"
+                                        loading="lazy"
+                                        className="object-cover group-hover:scale-110 transition-transform duration-500"
                                         fallback={
-                                            <div className="w-full h-full flex items-center justify-center bg-slate-700 text-slate-500">
-                                                <UserIcon className="w-10 h-10 opacity-50" />
+                                            <div className="w-full h-full flex items-center justify-center bg-slate-700 text-slate-300">
+                                                <UserIcon className="w-10 h-10 opacity-70" />
                                             </div>
                                         }
-                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                                     />
                                     </div>
                                     <h3 className="text-xl font-bold text-white mb-2">{person.name}</h3>

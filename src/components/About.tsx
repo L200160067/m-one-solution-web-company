@@ -52,12 +52,15 @@ export function About() {
               <WpImage
                 src="/images/branding/about.webp"
                 alt="Tim M-One Solution — Software House Sukoharjo, Jawa Tengah"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                loading="lazy"
+                className="object-cover w-full h-full"
                 fallback={
-                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 text-slate-400">
-                    <ImageIcon className="w-12 h-12 opacity-50" />
+                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 text-slate-500">
+                    <ImageIcon className="w-12 h-12 opacity-70" />
                   </div>
                 }
-                className="object-cover w-full h-full"
               />
               <div className="absolute inset-0 bg-blue-900/10 mix-blend-multiply" />
             </div>
@@ -86,10 +89,10 @@ export function About() {
               Tentang Kami
             </div>
 
-            <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold text-slate-900 mb-6 leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-4xl font-bold text-slate-900 mb-6 leading-tight">
               Mengubah Ide Menjadi<br />
               <span className="text-blue-600">Produk Digital</span>
-            </h2>
+            </h1>
 
             <p className="text-base text-slate-600 mb-6 leading-relaxed">
               M-One Solution membantu bisnis dan organisasi mengubah ide menjadi website, aplikasi, dan sistem digital yang praktis, intuitif, dan scalable.

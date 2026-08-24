@@ -27,9 +27,9 @@ export function Projects({ projects }: ProjectsProps) {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold mb-6">
               Portofolio
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold text-slate-900 mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-4xl font-bold text-slate-900 mb-6">
               Proyek Terkini
-            </h2>
+            </h1>
             <p className="text-base text-slate-600 leading-relaxed md:pr-4">
               Jejak nyata kolaborasi kami dengan UMKM, sekolah, dan organisasi di Sukoharjo, Solo, dan sekitarnya. Setiap proyek mengajarkan kami cara merancang solusi yang lebih baik, lebih cepat, dan lebih efektif.
             </p>
@@ -64,13 +64,15 @@ export function Projects({ projects }: ProjectsProps) {
                   <WpImage
                     src={project.image_url}
                     alt={project.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    loading="lazy"
+                    className="transition-transform duration-500 group-hover:scale-105"
                     fallback={
                       <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 text-slate-400">
                         <ImageIcon className="w-12 h-12 opacity-50" />
                       </div>
                     }
-                    className="transition-transform duration-500 group-hover:scale-105"
-                    fill
                   />
                   <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors duration-500" />
                   <div className="absolute top-4 left-4">

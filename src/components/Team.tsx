@@ -26,9 +26,9 @@ export function Team({ team }: TeamProps) {
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold mb-6">
                         Tim Kami
                     </div>
-                    <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                        Orang-orang Hebat di Balik Layar
-                    </h2>
+                    <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                      Orang-orang Hebat di Balik Layar
+                    </h1>
                     <p className="text-lg text-slate-600 max-w-2xl mx-auto">
                         Berkenalan dengan para profesional yang berdedikasi tinggi untuk mewujudkan visi digital Anda.
                     </p>
@@ -48,12 +48,15 @@ export function Team({ team }: TeamProps) {
                                 <WpImage
                                     src={member.avatar_url}
                                     alt={member.name}
+                                    fill
+                                    sizes="(max-width: 640px) 50vw, 25vw"
+                                    loading="lazy"
+                                    className="object-cover transition-transform duration-500 group-hover:scale-110"
                                     fallback={
                                         <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 text-slate-300 transition-transform duration-500 group-hover:scale-110">
                                             <UserIcon className="w-16 h-16 opacity-50" />
                                         </div>
                                     }
-                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6 gap-4">
                                     {member.social_linkedin && member.social_linkedin !== '#' && (
