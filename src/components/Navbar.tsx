@@ -52,6 +52,9 @@ export function Navbar() {
             <WpImage
               src={logoUrl}
               alt={`${siteConfig.name} Logo`}
+              width={48}
+              height={48}
+              priority
               className="h-10 sm:h-12 w-auto object-contain mix-blend-lighten"
             />
             <div className="flex flex-col">
@@ -166,6 +169,7 @@ export function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
+            aria-label="Toggle mobile menu"
             className="lg:hidden p-2 text-slate-300 hover:text-white transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >

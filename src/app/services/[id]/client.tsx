@@ -63,12 +63,15 @@ export default function ServiceDetailClient({ service }: { service: any }) {
                 <WpImage
                   src={service.image_url}
                   alt={service.title}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  loading="lazy"
+                  className="object-cover"
                   fallback={
                     <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 text-slate-400">
                       <ImageIcon className="w-12 h-12 opacity-50" />
                     </div>
                   }
-                  fill
                 />
               </div>
             </div>

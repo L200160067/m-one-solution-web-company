@@ -52,6 +52,9 @@ export function Footer({ settings }: FooterProps) {
               <WpImage
                 src={logoUrl}
                 alt={`${siteConfig.name} Logo`}
+                width={56}
+                height={56}
+                loading="lazy"
                 className="h-12 sm:h-14 w-auto object-contain mix-blend-lighten"
               />
               <div className="flex flex-col">

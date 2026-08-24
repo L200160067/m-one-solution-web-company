@@ -108,7 +108,10 @@ export function Hero() {
                 <WpImage
                   src="/images/branding/hero.webp"
                   alt="Tim developer M-One Solution — Software House Sukoharjo, Jawa Tengah"
-                  className="w-full h-full object-cover"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 0vw, 50vw"
+                  className="object-cover"
                 />
               </motion.div>
 

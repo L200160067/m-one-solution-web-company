@@ -66,9 +66,10 @@ export function Testimonials({ testimonials }: TestimonialsProps) {
                 <WpImage
                   src={testimonial.avatar_url}
                   alt={testimonial.name}
-                  className="w-12 h-12 rounded-full object-cover ring-2 ring-white/10"
                   width={48}
                   height={48}
+                  loading="lazy"
+                  className="w-12 h-12 rounded-full object-cover ring-2 ring-white/10"
                 />
                 <div>
                   <h4 className="font-bold text-white">{testimonial.name}</h4>

@@ -125,6 +125,13 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     return (
         <html lang="id" className={inter.variable}>
             <head>
+                <link rel="preconnect" href="https://berita-mone.mutudev.com" />
+                <link rel="preconnect" href="https://cdn.mutudev.com" />
+                <link rel="preconnect" href="https://i0.wp.com" />
+                <link rel="preconnect" href="https://i1.wp.com" />
+                <link rel="preconnect" href="https://i2.wp.com" />
+                <link rel="preconnect" href="https://i3.wp.com" />
+                <link rel="preload" href="/images/branding/hero.webp" as="image" type="image/webp" />
                 <Script
                     id="schema-localbusiness"
                     type="application/ld+json"

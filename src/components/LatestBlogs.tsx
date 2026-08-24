@@ -63,9 +63,9 @@ export function LatestBlogs({ posts }: LatestBlogsProps) {
                 ) : (
                     <div className="relative group">
                         {/* Tombol Kiri */}
-                        <button 
+                        <button
                             onClick={() => scroll('left')}
-                            className="hidden md:flex items-center justify-center absolute -left-5 top-[40%] -translate-y-1/2 z-10 p-3 rounded-full bg-white/95 backdrop-blur border border-slate-200 text-slate-600 shadow-xl hover:text-blue-600 hover:border-blue-600 hover:scale-110 transition-all duration-300 focus:outline-none opacity-0 group-hover:opacity-100"
+                            className="flex items-center justify-center absolute -left-5 top-[40%] -translate-y-1/2 z-10 p-3 rounded-full bg-white/95 backdrop-blur border border-slate-200 text-slate-600 shadow-xl hover:text-blue-600 hover:border-blue-600 hover:scale-110 transition-all duration-300 focus:outline-none opacity-20 md:opacity-100"
                             aria-label="Geser ke kiri"
                         >
                             <ChevronLeft className="w-6 h-6" />
@@ -97,12 +97,15 @@ export function LatestBlogs({ posts }: LatestBlogsProps) {
                                     <WpImage
                                         src={post.cover_url}
                                         alt={post.title}
+                                        fill
+                                        sizes="(max-width: 640px) 85vw, 350px"
+                                        loading="lazy"
+                                        className="object-cover"
                                         fallback={
                                             <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 text-slate-400">
                                                 <ImageIcon className="w-12 h-12 mb-2 opacity-50" />
                                             </div>
                                         }
-                                        fill
                                     />
                                     <div className="absolute top-4 left-4">
                                         <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-blue-600 text-xs font-bold uppercase tracking-wider rounded-full shadow-sm">

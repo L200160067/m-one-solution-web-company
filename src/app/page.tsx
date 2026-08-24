@@ -2,20 +2,12 @@ import { Hero } from '@/components/Hero';
 import { FastPackages } from '@/components/FastPackages';
 import { About } from '@/components/About';
 import { Services } from '@/components/Services';
-import { Projects } from '@/components/Projects';
-import { Partners } from '@/components/Partners';
-import { Testimonials } from '@/components/Testimonials';
+import HomepageBelowFold from '@/components/HomepageBelowFold';
 import { CTA } from '@/components/CTA';
 import { apiFetch } from '@/lib/api';
 import type { ApiResponse, Post, Project, Testimonial, Partner, Service } from '@/types/api';
 import { homepageBlocks } from '@/config/marketing';
 import { siteConfig } from '@/config/site';
-import dynamic from 'next/dynamic';
-
-const DynamicLatestBlogs = dynamic(() => import('@/components/LatestBlogs').then((mod) => mod.LatestBlogs), { ssr: true });
-const DynamicProjects = dynamic(() => import('@/components/Projects').then((mod) => mod.Projects), { ssr: true });
-const DynamicPartners = dynamic(() => import('@/components/Partners').then((mod) => mod.Partners), { ssr: true });
-const DynamicTestimonials = dynamic(() => import('@/components/Testimonials').then((mod) => mod.Testimonials), { ssr: true });
 
 export const metadata = {
     title: 'Software House Sukoharjo | Jasa Website & Aplikasi — M-One Solution',
@@ -49,10 +41,12 @@ export default async function Home() {
             <FastPackages />
             <About />
             <Services services={services} />
-            <DynamicProjects projects={featuredProjects} />
-            <DynamicPartners partners={partners} />
-            <DynamicTestimonials testimonials={testimonials} />
-            <DynamicLatestBlogs posts={posts} />
+            <HomepageBelowFold
+              projects={featuredProjects}
+              partners={partners}
+              testimonials={testimonials}
+              posts={posts}
+            />
             <CTA />
         </main>
     );

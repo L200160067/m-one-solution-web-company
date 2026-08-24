@@ -39,17 +39,22 @@ export function Partners({ partners }: PartnersProps) {
                 duration: 35,
               }}
             >
-              {[...partners, ...partners, ...partners, ...partners].map((partner, index) => (
+              {[...partners, ...partners].map((partner, index) => (
                 <div
                   key={`${partner.id}-${index}`}
                   className="flex justify-center items-center px-10 md:px-16 flex-shrink-0"
                 >
                   {partner.logo_url ? (
-                    <WpImage
-                      src={partner.logo_url}
-                      alt={partner.name}
-                      className="max-h-12 md:max-h-14 w-auto object-contain brightness-0 invert opacity-50 grayscale hover:opacity-100 hover:brightness-100 hover:invert-0 hover:grayscale-0 transition-all duration-300"
-                    />
+                    <div className="w-24 h-12 md:w-28 md:h-14 relative">
+                      <WpImage
+                        src={partner.logo_url}
+                        alt={partner.name}
+                        fill
+                        sizes="112px"
+                        className="object-contain brightness-0 invert opacity-50 grayscale hover:opacity-100 hover:brightness-100 hover:invert-0 hover:grayscale-0 transition-all duration-300"
+                        loading="lazy"
+                      />
+                    </div>
                   ) : (
                     <span className="text-slate-400 font-bold text-lg md:text-xl opacity-70 hover:opacity-100 hover:text-white transition-colors whitespace-nowrap px-4">
                       {partner.name}

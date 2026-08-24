@@ -84,27 +84,27 @@ export default function BlogPostClient({ post }: { post: any }) {
                         {hasMultipleImages && (
                             <>
                                 <button
-                                    onClick={prevImage}
-                                    className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/30 backdrop-blur-sm text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/50"
-                                    aria-label="Previous image"
+                                  aria-label="Previous image"
+                                  onClick={prevImage}
+                                  className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/30 backdrop-blur-sm text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/50"
                                 >
                                     <ChevronLeft className="w-6 h-6" />
                                 </button>
-                                <button
-                                    onClick={nextImage}
-                                    className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/30 backdrop-blur-sm text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/50"
-                                    aria-label="Next image"
-                                >
+                                    <button
+                                      aria-label="Next image"
+                                      onClick={nextImage}
+                                      className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/30 backdrop-blur-sm text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/50"
+                                    >
                                     <ChevronRight className="w-6 h-6" />
                                 </button>
                                 <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2">
                                     {allImages.map((_, index) => (
                                         <button
-                                            key={index}
-                                            onClick={() => setCurrentImageIndex(index)}
-                                            className={`w-2 h-2 rounded-full transition-all ${index === currentImageIndex ? 'bg-white w-4' : 'bg-white/50 hover:bg-white/80'
-                                                }`}
-                                            aria-label={`Go to image ${index + 1}`}
+                                          key={index}
+                                          aria-label={`Go to image ${index + 1}`}
+                                          onClick={() => setCurrentImageIndex(index)}
+                                          className={`w-2 h-2 rounded-full transition-all ${index === currentImageIndex ? 'bg-white w-4' : 'bg-white/50 hover:bg-white/80'
+                                            }`}
                                         />
                                     ))}
                                 </div>
