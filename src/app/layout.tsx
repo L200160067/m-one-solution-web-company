@@ -9,6 +9,7 @@ import { apiFetch } from "@/lib/api";
 import type { ApiResponse, Settings } from "@/types/api";
 import { siteConfig } from '@/config/site';
 import Script from "next/script";
+import { headers } from "next/headers";
 
 const inter = Inter({
     subsets: ["latin"],
@@ -77,6 +78,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         // Fall back to siteConfig defaults if API unavailable
     }
 
+    const nonce = (await headers()).get('x-nonce') || undefined;
+
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
@@ -127,14 +130,15 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             <head>
                 <link rel="preconnect" href="https://berita-mone.mutudev.com" />
                 <link rel="preconnect" href="https://cdn.mutudev.com" />
-                <link rel="preconnect" href="https://i0.wp.com" />
-                <link rel="preconnect" href="https://i1.wp.com" />
-                <link rel="preconnect" href="https://i2.wp.com" />
-                <link rel="preconnect" href="https://i3.wp.com" />
-                <link rel="preload" href="/images/branding/hero.webp" as="image" type="image/webp" />
+                <link rel="dns-prefetch" href="https://i0.wp.com" />
+                <link rel="dns-prefetch" href="https://i1.wp.com" />
+                <link rel="dns-prefetch" href="https://i2.wp.com" />
+                <link rel="dns-prefetch" href="https://i3.wp.com" />
+                <link rel="preload" href="/images/branding/hero.webp" as="image" type="image/webp" media="(min-width: 1024px)" />
                 <Script
                     id="schema-localbusiness"
                     type="application/ld+json"
+                    nonce={nonce}
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
                 />
             </head>

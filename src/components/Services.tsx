@@ -1,8 +1,7 @@
 "use client";
 
 import { motion } from 'motion/react';
-import { ArrowRight, Layout, Globe, Briefcase, Code } from 'lucide-react';
-import * as LucideIcons from 'lucide-react';
+import { ArrowRight, Layout, Globe, Briefcase, Code, Database, ShoppingCart, GraduationCap, Smartphone, Monitor, LucideIcon } from 'lucide-react';
 import Link from 'next/link';
 import type { Service } from '@/types/api';
 import { Container } from './ui/Container';
@@ -13,26 +12,36 @@ interface ServicesProps {
   services: Service[];
 }
 
-const getCategoryIcon = (category: string, iconName?: string) => {
-  if (iconName) {
-    const DynamicIcon = (LucideIcons as any)[iconName];
-    if (DynamicIcon) {
-      return <DynamicIcon className="w-6 h-6" />;
-    }
-  }
+const ICON_MAP: Record<string, LucideIcon> = {
+    Globe,
+    Layout,
+    Briefcase,
+    Code,
+    Database,
+    'ShoppingCart': ShoppingCart,
+    'GraduationCap': GraduationCap,
+    Smartphone,
+    Monitor,
+};
 
-  switch (category) {
-    case 'Development':
-      return <Globe className="w-6 h-6" />;
-    case 'Sistem Informasi':
-      return <Layout className="w-6 h-6" />;
-    case 'Profil Perusahaan':
-      return <Briefcase className="w-6 h-6" />;
-    case 'Aplikasi Khusus':
-      return <Code className="w-6 h-6" />;
-    default:
-      return <Layout className="w-6 h-6" />;
-  }
+const getCategoryIcon = (category: string, iconName?: string) => {
+    if (iconName && ICON_MAP[iconName]) {
+        const Icon = ICON_MAP[iconName];
+        return <Icon className="w-6 h-6" />;
+    }
+
+    switch (category) {
+        case 'Development':
+            return <Globe className="w-6 h-6" />;
+        case 'Sistem Informasi':
+            return <Layout className="w-6 h-6" />;
+        case 'Profil Perusahaan':
+            return <Briefcase className="w-6 h-6" />;
+        case 'Aplikasi Khusus':
+            return <Code className="w-6 h-6" />;
+        default:
+            return <Layout className="w-6 h-6" />;
+    }
 };
 
 export function Services({ services }: ServicesProps) {

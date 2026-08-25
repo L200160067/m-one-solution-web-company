@@ -65,7 +65,7 @@ export function Partners({ partners }: PartnersProps) {
             </motion.div>
           </div>
         ) : (
-          <p className="text-slate-500 text-sm">Segera hadir</p>
+          <p className="text-slate-400 text-sm">Segera hadir</p>
         )}
       </Container>
     </Section>

@@ -97,6 +97,7 @@ export function Hero() {
             transition={{ duration: 1, delay: 0.2 }}
             className="relative hidden lg:block"
           >
+            <h2 className="sr-only">Layanan Unggulan</h2>
             <div className="relative w-full aspect-square max-w-lg mx-auto">
               {/* Talent Image */}
               <motion.div

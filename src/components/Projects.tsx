@@ -27,9 +27,9 @@ export function Projects({ projects }: ProjectsProps) {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold mb-6">
               Portofolio
             </div>
-            <h1 className="text-3xl md:text-4xl lg:text-4xl font-bold text-slate-900 mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold text-slate-900 mb-6">
               Proyek Terkini
-            </h1>
+            </h2>
             <p className="text-base text-slate-600 leading-relaxed md:pr-4">
               Jejak nyata kolaborasi kami dengan UMKM, sekolah, dan organisasi di Sukoharjo, Solo, dan sekitarnya. Setiap proyek mengajarkan kami cara merancang solusi yang lebih baik, lebih cepat, dan lebih efektif.
             </p>

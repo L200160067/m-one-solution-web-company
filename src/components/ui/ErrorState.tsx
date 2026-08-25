@@ -16,7 +16,7 @@ export function ErrorState({ title, description, actionLabel, onAction }: ErrorS
       <div className="w-16 h-16 bg-red-50 text-red-500 rounded-full flex items-center justify-center mb-4">
         <AlertTriangle className="w-8 h-8" />
       </div>
-      <h3 className="text-xl font-bold text-slate-900 mb-2">{title}</h3>
+      <h2 className="text-xl font-bold text-slate-900 mb-2">{title}</h2>
       {description && <p className="text-slate-600 mb-6 max-w-sm">{description}</p>}
       <div className="flex flex-wrap gap-3 justify-center">
         {actionLabel && onAction && (

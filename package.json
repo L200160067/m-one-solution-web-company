@@ -3,6 +3,10 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "browserslist": [
+    "defaults and supports es6-module",
+    "maintained node versions"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",

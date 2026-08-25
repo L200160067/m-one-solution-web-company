@@ -72,9 +72,9 @@ export function Testimonials({ testimonials }: TestimonialsProps) {
                   className="w-12 h-12 rounded-full object-cover ring-2 ring-white/10"
                 />
                 <div>
-                  <h4 className="font-bold text-white">{testimonial.name}</h4>
+                  <h3 className="font-bold text-white">{testimonial.name}</h3>
                   <p className="text-sm text-blue-400">{testimonial.role}</p>
-                  <p className="text-xs text-slate-500">{testimonial.company}</p>
+                  <p className="text-xs text-slate-400">{testimonial.company}</p>
                 </div>
               </div>
             </motion.div>

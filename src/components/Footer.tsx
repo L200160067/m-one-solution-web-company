@@ -111,7 +111,7 @@ export function Footer({ settings }: FooterProps) {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-white font-semibold mb-6">Tautan Cepat</h4>
+            <h3 className="text-white font-semibold mb-6">Tautan Cepat</h3>
             <ul className="space-y-4">
               <li><Link href="/" className="hover:text-blue-400 transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> Beranda</Link></li>
               <li><Link href="/about" className="hover:text-blue-400 transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> Tentang Kami</Link></li>
@@ -125,13 +125,13 @@ export function Footer({ settings }: FooterProps) {
 
           {/* Legal */}
           <div>
-            <h4 className="text-white font-semibold mb-6">Ketentuan</h4>
+            <h3 className="text-white font-semibold mb-6">Ketentuan</h3>
             <ul className="space-y-4">
               <li><Link href="/privacy" className="hover:text-blue-400 transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> Kebijakan Privasi</Link></li>
               <li><Link href="/terms" className="hover:text-blue-400 transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> Syarat dan Ketentuan</Link></li>
             </ul>
             <div className="mt-8">
-              <h4 className="text-white font-semibold mb-4">Kontak</h4>
+              <h3 className="text-white font-semibold mb-4">Kontak</h3>
               <p className="text-slate-400 text-sm mb-2">
                 <a href={`mailto:${settings?.contact_email || siteConfig.contact.email}`} className="hover:text-blue-400 transition-colors break-all">
                   {settings?.contact_email || siteConfig.contact.email}
@@ -143,10 +143,10 @@ export function Footer({ settings }: FooterProps) {
         </div>
 
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-slate-500 text-sm">
+          <p className="text-slate-400 text-sm">
             © {currentYear} M-One Solution Software House. Hak Cipta Dilindungi.
           </p>
-          <p className="text-slate-500 text-sm font-medium">
+          <p className="text-slate-400 text-sm font-medium">
             Solusi Digital Terpercaya Anda
           </p>
         </div>

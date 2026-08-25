@@ -1,6 +1,11 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
+    modularizeImports: {
+        'lucide-react': {
+            transform: 'lucide-react/dist/esm/icons/{{ kebabCase member }}',
+        },
+    },
     images: {
         unoptimized: process.env.NODE_ENV === 'development',
         remotePatterns: [

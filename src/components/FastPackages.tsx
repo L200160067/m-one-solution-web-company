@@ -13,7 +13,7 @@ export function FastPackages() {
 
       <Container>
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 text-sm font-semibold mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-sm font-semibold mb-4">
             🚀 M-One Lite
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
@@ -46,7 +46,7 @@ export function FastPackages() {
 
             <div className="flex items-center justify-between mt-auto">
               <span className="text-sm font-semibold text-slate-500">Mulai dari Rp 1 JT</span>
-              <Link href="/layanan/jasa-erp-umkm" className="inline-flex items-center gap-2 text-blue-600 font-bold group-hover:gap-3 transition-all">
+              <Link href="/layanan/jasa-erp-umkm" aria-label="Lihat paket web UMKM M-One Lite" className="inline-flex items-center gap-2 text-blue-600 font-bold group-hover:gap-3 transition-all">
                 Lihat Paket <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
@@ -70,7 +70,7 @@ export function FastPackages() {
 
             <div className="flex items-center justify-between mt-auto">
               <span className="text-sm font-semibold text-slate-500">Mulai dari Rp 1.5 JT</span>
-              <Link href="/layanan/jasa-pembuatan-website-sekolah" className="inline-flex items-center gap-2 text-emerald-600 font-bold group-hover:gap-3 transition-all">
+              <Link href="/layanan/jasa-pembuatan-website-sekolah" aria-label="Lihat paket web sekolah M-One Lite" className="inline-flex items-center gap-2 text-emerald-700 font-bold group-hover:gap-3 transition-all">
                 Lihat Paket <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
