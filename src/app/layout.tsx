@@ -6,7 +6,6 @@ import { BackToTop } from "@/components/BackToTop";
 import { FooterData } from "@/components/FooterData";
 import { siteConfig } from '@/config/site';
 import Script from "next/script";
-import { headers } from "next/headers";
 
 const inter = Inter({
     subsets: ["latin"],
@@ -65,9 +64,7 @@ export const metadata = {
     },
 };
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
-    const nonce = (await headers()).get('x-nonce') || undefined;
-
+export default function RootLayout({ children }: { children: React.ReactNode }) {
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
@@ -121,7 +118,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
                 <Script
                     id="schema-localbusiness"
                     type="application/ld+json"
-                    nonce={nonce}
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
                 />
             </head>
