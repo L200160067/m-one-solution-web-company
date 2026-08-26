@@ -117,7 +117,7 @@ export function LatestBlogs({ posts }: LatestBlogsProps) {
                                             )}
                                         </div>
                                         <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors line-clamp-2">
-                                            <Link href={`/blog/${post.slug}`}>
+                                            <Link href={`/blog/${post.slug}`} className="block py-1">
                                                 {post.title}
                                             </Link>
                                         </h3>
@@ -126,7 +126,7 @@ export function LatestBlogs({ posts }: LatestBlogsProps) {
                                         </p>
                                         <Link
                                             href={`/blog/${post.slug}`}
-                                            className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors mt-auto"
+                                            className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors mt-auto py-2"
                                         >
                                             Baca Selengkapnya
                                             <ArrowRight className="w-4 h-4" />
