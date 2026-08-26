@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useMemo } from 'react';
-import { motion } from 'motion/react';
 import { ArrowRight, Calendar, User, ChevronLeft, ChevronRight, Search, Image as ImageIcon } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -49,10 +48,8 @@ export default function BlogListClient({ posts, categories }: BlogListClientProp
 
     return (
         <>
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="text-center mb-12 pt-12"
+            <div
+                className="text-center mb-12 pt-12 animate-fade-in-up"
             >
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold mb-6">
                     Blog & Artikel
@@ -96,7 +93,7 @@ export default function BlogListClient({ posts, categories }: BlogListClientProp
                         </button>
                     ))}
                 </div>
-            </motion.div>
+            </div>
 
             {posts.length === 0 ? (
                 <EmptyState
@@ -120,11 +117,8 @@ export default function BlogListClient({ posts, categories }: BlogListClientProp
                 <>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
                         {currentPosts.map((post, index) => (
-                            <motion.div
+                            <div
                                 key={post.id}
-                                initial={{ opacity: 0, y: 30 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: index * 0.1 }}
                                 className="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300 group flex flex-col"
                             >
                                 <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
@@ -176,7 +170,7 @@ export default function BlogListClient({ posts, categories }: BlogListClientProp
                                         <ArrowRight className="w-4 h-4" />
                                     </Link>
                                 </div>
-                            </motion.div>
+                            </div>
                         ))}
                     </div>
 

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
 import { ArrowLeft, Calendar, User, Tag, Twitter, Linkedin, Facebook, Share2, ChevronLeft, ChevronRight, Link as LinkIcon } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -48,20 +47,13 @@ export default function BlogPostClient({ post }: { post: any }) {
                     Back to Blog
                 </Link>
 
-                <motion.article
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100"
+                <article
+                    className="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 animate-fade-in-up"
                 >
                     <div className="relative aspect-[21/9] bg-slate-200 overflow-hidden group">
                         {allImages.length > 0 ? (
-                        <AnimatePresence mode="wait">
-                            <motion.div
+                            <div
                                 key={currentImageIndex}
-                                initial={{ opacity: 0, scale: 1.05 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                exit={{ opacity: 0 }}
-                                transition={{ duration: 0.3 }}
                                 className="absolute inset-0"
                             >
                                 <Image
@@ -72,8 +64,7 @@ export default function BlogPostClient({ post }: { post: any }) {
                                     className="object-cover"
                                     priority={currentImageIndex === 0}
                                 />
-                            </motion.div>
-                        </AnimatePresence>
+                            </div>
                         ) : (
                             <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 text-slate-400">
                                 <svg className="w-16 h-16 mb-3 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
@@ -90,11 +81,11 @@ export default function BlogPostClient({ post }: { post: any }) {
                                 >
                                     <ChevronLeft className="w-6 h-6" />
                                 </button>
-                                    <button
-                                      aria-label="Next image"
-                                      onClick={nextImage}
-                                      className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/30 backdrop-blur-sm text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/50"
-                                    >
+                                <button
+                                  aria-label="Next image"
+                                  onClick={nextImage}
+                                  className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/30 backdrop-blur-sm text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/50"
+                                >
                                     <ChevronRight className="w-6 h-6" />
                                 </button>
                                 <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2">
@@ -209,7 +200,7 @@ export default function BlogPostClient({ post }: { post: any }) {
                             </div>
                         </div>
                     </div>
-                </motion.article>
+                </article>
             </div>
         </main>
     );

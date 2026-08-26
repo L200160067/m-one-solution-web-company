@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useMemo } from 'react';
-import { motion } from 'motion/react';
 import { ArrowRight, Search, Image as ImageIcon } from 'lucide-react';
 import Link from 'next/link';
 import type { Service } from '@/types/api';
@@ -29,10 +28,8 @@ export default function ServicesListClient({ services, categories }: ServicesLis
 
     return (
         <>
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="text-center mb-12 pt-12"
+            <div
+                className="text-center mb-12 pt-12 animate-fade-in-up"
             >
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold mb-6">
                     Layanan Kami
@@ -73,7 +70,7 @@ export default function ServicesListClient({ services, categories }: ServicesLis
                         </button>
                     ))}
                 </div>
-            </motion.div>
+            </div>
 
             {services.length === 0 ? (
                 <EmptyState
@@ -95,11 +92,8 @@ export default function ServicesListClient({ services, categories }: ServicesLis
             ) : (
                 <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
                     {filteredServices.map((service, index) => (
-                        <motion.div
+                        <div
                             key={service.id}
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: index * 0.1 }}
                             className="bg-white rounded-3xl overflow-hidden border border-slate-100 hover:shadow-xl transition-all duration-300 group flex flex-col h-full"
                         >
                             <div className="relative aspect-[4/3] overflow-hidden bg-slate-100">
@@ -136,17 +130,14 @@ export default function ServicesListClient({ services, categories }: ServicesLis
                                     </Link>
                                 </div>
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             )}
 
             {/* Persistent CTA Button */}
-            <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.5 }}
-                className="fixed bottom-0 left-0 right-0 p-4 md:p-6 bg-gradient-to-t from-white via-white to-transparent z-40 flex justify-center pointer-events-none"
+            <div
+                className="fixed bottom-0 left-0 right-0 p-4 md:p-6 bg-gradient-to-t from-white via-white to-transparent z-40 flex justify-center pointer-events-none animate-fade-in-up"
             >
                 <Link
                     href="/contact"
@@ -155,7 +146,7 @@ export default function ServicesListClient({ services, categories }: ServicesLis
                     Minta Penawaran
                     <ArrowRight className="w-5 h-5" />
                 </Link>
-            </motion.div>
+            </div>
         </>
     );
 }

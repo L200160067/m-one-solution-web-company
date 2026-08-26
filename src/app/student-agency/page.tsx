@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import { motion } from 'motion/react';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle, Star, Zap, MessageCircle } from 'lucide-react';
 import {
@@ -84,22 +83,18 @@ export default function StudentAgencyPage() {
         <div className="relative z-20 flex flex-col items-center text-center px-6 max-w-3xl mx-auto pt-28 pb-20">
 
           {/* Brand Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+          <div
+
             className="mb-6 flex items-center gap-2 bg-white border-2 border-slate-200 rounded-full px-4 py-2 shadow-md"
           >
             <span className="text-sm font-bold text-slate-700 tracking-wide">M-ONE</span>
             <span className="text-sm font-extrabold text-blue-700 tracking-wide">SOLUTION</span>
             <span className="text-xs text-slate-500 font-medium">SOFTWARE HOUSE</span>
-          </motion.div>
+          </div>
 
           {/* Big Headline */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+          <div
+
             className="mb-2"
           >
             <h1
@@ -114,12 +109,10 @@ export default function StudentAgencyPage() {
             >
               BERANI BUKTIIN
             </h1>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+          <div
+
             className="space-y-1 mb-6"
           >
             <div
@@ -156,23 +149,19 @@ export default function StudentAgencyPage() {
             >
               Sebelum Lulus??
             </div>
-          </motion.div>
+          </div>
 
           {/* Sub-text */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
+          <p
+
             className="text-base sm:text-lg text-slate-600 font-medium mb-8 max-w-md"
           >
             Belajar bikin website pakai <strong>WordPress</strong>, cari klien, dan hasilkan uang — semua dibimbing <strong>M-One Solution</strong> tanpa perlu bisa coding!
-          </motion.p>
+          </p>
 
           {/* CTA Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
+          <div
+
             className="flex flex-wrap items-center justify-center gap-4"
           >
             {/* Primary CTA */}
@@ -193,17 +182,15 @@ export default function StudentAgencyPage() {
             >
               Lihat Benefitnya &rarr;
             </button>
-          </motion.div>
+          </div>
 
           {/* Scroll hint */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8 }}
+          <p
+
             className="mt-10 text-xs font-semibold tracking-widest uppercase text-slate-400"
           >
             SWIPE &darr; / SCROLL KE BAWAH
-          </motion.p>
+          </p>
         </div>
       </section>
 
@@ -212,11 +199,8 @@ export default function StudentAgencyPage() {
       ====================================================== */}
       <section className="py-20 px-6 bg-white" id="keuntungan">
         <div className="max-w-5xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+          <div
+
           >
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-bold mb-4" style={{ background: '#FFE4F5', color: branding.pinkAccent }}>
               <Star className="w-4 h-4" />
@@ -228,7 +212,7 @@ export default function StudentAgencyPage() {
             <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
               Program di mana M-One Solution <strong>melatih kamu</strong> cara membuat website profesional menggunakan <strong>WordPress</strong> — tanpa coding. Kamu cari klien, kamu bangun websitenya, M-One Solution yang urus <strong>hosting-nya</strong>. Kamu cukup fokus jualan dan dapat <strong>komisi menarik</strong> dari setiap proyek!
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -245,18 +229,15 @@ export default function StudentAgencyPage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {benefits.map((b, i) => (
-              <motion.div
+              <div
                 key={b.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08, duration: 0.5 }}
+
                 className="bg-white rounded-2xl p-6 border-2 border-slate-100 hover:border-pink-300 hover:shadow-lg transition-all duration-300 group"
               >
                 <div className="text-4xl mb-4">{b.icon}</div>
                 <h3 className="text-lg font-black text-slate-900 mb-2 group-hover:text-pink-600 transition-colors">{b.title}</h3>
                 <p className="text-sm text-slate-500 leading-relaxed">{b.description}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -279,12 +260,9 @@ export default function StudentAgencyPage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             {steps.map((s, i) => (
-              <motion.div
+              <div
                 key={s.num}
-                initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.5 }}
+
                 className="flex gap-5 items-start"
               >
                 <div
@@ -297,7 +275,7 @@ export default function StudentAgencyPage() {
                   <h3 className="text-lg font-black text-slate-900 mb-1">{s.title}</h3>
                   <p className="text-sm text-slate-500 leading-relaxed">{s.description}</p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -309,7 +287,7 @@ export default function StudentAgencyPage() {
       <section className="py-20 px-6" id="harga" style={{ background: '#FAFAFA' }}>
         <div className="max-w-5xl mx-auto">
 
-          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10">
+          <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-bold mb-4" style={{ background: '#FFE4F5', color: branding.pinkAccent }}>
               🎯 Batch 1 — Pendaftaran Dibuka!
             </div>
@@ -319,10 +297,10 @@ export default function StudentAgencyPage() {
             <p className="text-slate-500 max-w-lg mx-auto">
               Harga early bird hanya untuk <strong className="text-slate-700">5 pendaftar pertama</strong>. Kelas batch pertama dimulai:
             </p>
-          </motion.div>
+          </div>
 
           {/* Countdown Timer */}
-          <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="flex justify-center items-end gap-2 sm:gap-4 mb-12">
+          <div className="flex justify-center items-end gap-2 sm:gap-4 mb-12">
             {[
               { val: timeLeft.days, label: 'Hari' },
               { val: timeLeft.hours, label: 'Jam' },
@@ -339,12 +317,12 @@ export default function StudentAgencyPage() {
                 {i < 3 && <span className="text-3xl font-black text-slate-300 mb-7">:</span>}
               </div>
             ))}
-          </motion.div>
+          </div>
 
           {/* Pricing Cards */}
           <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-10">
             {/* Normal */}
-            <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="bg-white rounded-3xl p-8 border-2 border-slate-200">
+            <div className="bg-white rounded-3xl p-8 border-2 border-slate-200">
               <div className="mb-5">
                 <h3 className="text-xl font-black text-slate-500 mb-1">Harga Normal</h3>
                 <p className="text-sm text-slate-400">Berlaku setelah slot early bird habis</p>
@@ -360,10 +338,10 @@ export default function StudentAgencyPage() {
                 ))}
               </ul>
               <p className="text-center text-xs text-slate-400">Ambil early bird sebelum harga naik →</p>
-            </motion.div>
+            </div>
 
             {/* Early Bird */}
-            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="rounded-3xl p-8 border-2 relative" style={{ background: 'linear-gradient(135deg,#fff0f8 0%,#fffbea 100%)', borderColor: branding.pinkAccent, boxShadow: `6px 6px 0 ${branding.yellowAccent}` }}>
+            <div className="rounded-3xl p-8 border-2 relative" style={{ background: 'linear-gradient(135deg,#fff0f8 0%,#fffbea 100%)', borderColor: branding.pinkAccent, boxShadow: `6px 6px 0 ${branding.yellowAccent}` }}>
               <div className="absolute -top-3 right-6 px-4 py-1 rounded-full text-xs font-black text-white" style={{ background: branding.pinkAccent }}>
                 ⚡ 5 SLOT TERSEDIA
               </div>
@@ -391,11 +369,11 @@ export default function StudentAgencyPage() {
               >
                 <MessageCircle className="w-5 h-5" /> {studentAgency.pricing.earlyBird.ctaLabel}
               </a>
-            </motion.div>
+            </div>
           </div>
 
           {/* Quota Progress Bar */}
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mx-auto bg-white rounded-2xl p-6 border-2 border-slate-100 shadow-sm">
+          <div className="max-w-3xl mx-auto bg-white rounded-2xl p-6 border-2 border-slate-100 shadow-sm">
             <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
               <span className="text-sm font-black text-slate-700">📊 Kuota Kelas Batch 1 — 20 April 2026</span>
               <span className="text-sm font-bold" style={{ color: branding.pinkAccent }}>{studentAgency.quota.label}</span>
@@ -407,7 +385,7 @@ export default function StudentAgencyPage() {
               <span className="text-xs font-semibold" style={{ color: branding.pinkAccent }}>⚡ Zona Early Bird ({studentAgency.pricing.earlyBird.price}) — 5 Slot</span>
               <span className="text-xs text-slate-400 font-medium">Maks {studentAgency.quota.max} peserta per kelas</span>
             </div>
-          </motion.div>
+          </div>
 
         </div>
       </section>
@@ -418,10 +396,10 @@ export default function StudentAgencyPage() {
       <section className="py-16 px-6" style={{ background: branding.pinkAccent }}>
         <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
           {studentAgency.stats.map((s, i) => (
-            <motion.div key={s.label} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
+            <div key={s.label}>
               <div className="text-4xl sm:text-5xl font-black mb-1" style={{ color: branding.yellowAccent }}>{s.value}</div>
               <div className="text-sm font-semibold opacity-90">{s.label}</div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </section>
@@ -438,12 +416,9 @@ export default function StudentAgencyPage() {
           </div>
           <div className="space-y-4">
             {faqs.map((faq, i) => (
-              <motion.details
+              <details
                 key={faq.question}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
+
                 className="group border-2 border-slate-200 rounded-2xl p-5 cursor-pointer hover:border-pink-400 transition-all duration-300"
               >
                 <summary className="list-none flex items-center justify-between font-black text-slate-900 text-base">
@@ -451,7 +426,7 @@ export default function StudentAgencyPage() {
                   <span className="text-pink-500 text-xl group-open:rotate-45 transition-transform duration-300">+</span>
                 </summary>
                 <p className="mt-3 text-sm text-slate-500 leading-relaxed">{faq.answer}</p>
-              </motion.details>
+              </details>
             ))}
           </div>
         </div>
@@ -477,11 +452,8 @@ export default function StudentAgencyPage() {
         <div className="absolute -top-8 -left-8 w-32 h-32 rounded-full opacity-10" style={{ background: branding.yellowAccent }} />
 
         <div className="relative z-10 max-w-3xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+          <div
+
           >
             <h2 className="text-4xl sm:text-5xl font-black text-slate-900 leading-tight mb-4">
               Siap <span style={{ color: branding.pinkAccent }}>Buktiin</span> Kamu Bisa Freelance<br />Sebelum Lulus? 🚀
@@ -521,7 +493,7 @@ export default function StudentAgencyPage() {
                 </span>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 

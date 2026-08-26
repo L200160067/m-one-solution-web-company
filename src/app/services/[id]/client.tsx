@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from 'motion/react';
 import { ArrowLeft, CheckCircle2, ArrowRight, Image as ImageIcon } from 'lucide-react';
 import Link from 'next/link';
 import { EmptyState } from '@/components/ui/EmptyState';
@@ -30,10 +29,8 @@ export default function ServiceDetailClient({ service }: { service: any }) {
   return (
     <main className="pt-24 pb-16 min-h-screen bg-slate-50">
       <article className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="mb-12"
+        <div
+          className="mb-12 animate-fade-in-up"
         >
           <Link
             href="/services"
@@ -131,7 +128,7 @@ export default function ServiceDetailClient({ service }: { service: any }) {
               </Link>
             </div>
           </div>
-        </motion.div>
+        </div>
       </article>
     </main>
   );
