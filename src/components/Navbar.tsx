@@ -93,7 +93,10 @@ export function Navbar() {
 
               {isPaketDropdownOpen && (
                 <div
-                  className="absolute top-full left-0 mt-1 w-64 bg-slate-900 border border-white/10 rounded-xl shadow-xl overflow-hidden animate-fade-in"
+                  className="absolute top-full left-0 pt-1 w-64"
+                >
+                <div
+                  className="bg-slate-900 border border-white/10 rounded-xl shadow-xl overflow-hidden animate-fade-in"
                 >
                   <Link
                     href="/layanan/jasa-pembuatan-website-sekolah"
@@ -111,6 +114,7 @@ export function Navbar() {
                     <div className="font-bold text-blue-400 mb-1">Paket Web UMKM</div>
                     <div className="text-xs text-slate-500">Toko Online & Sistem Kasir (POS)</div>
                   </Link>
+                </div>
                 </div>
               )}
             </div>
@@ -131,7 +135,10 @@ export function Navbar() {
 
               {isEventDropdownOpen && (
                 <div
-                  className="absolute top-full left-0 mt-1 w-56 bg-slate-900 border border-white/10 rounded-xl shadow-xl overflow-hidden animate-fade-in"
+                  className="absolute top-full left-0 pt-1 w-56"
+                >
+                <div
+                  className="bg-slate-900 border border-white/10 rounded-xl shadow-xl overflow-hidden animate-fade-in"
                 >
                   <Link
                     href="/student-agency"
@@ -141,6 +148,7 @@ export function Navbar() {
                     <div className="font-bold text-pink-400 mb-1">Student Agency Incubator</div>
                     <div className="text-xs text-slate-500">Freelance website sebelum lulus</div>
                   </Link>
+                </div>
                 </div>
               )}
             </div>
