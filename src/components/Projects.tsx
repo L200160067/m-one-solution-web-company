@@ -85,7 +85,8 @@ export function Projects({ projects }: ProjectsProps) {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="p-2 rounded-full bg-slate-100 text-slate-400 hover:text-blue-600 hover:bg-blue-50 transition-all shadow-sm flex-shrink-0"
-                        title="Kunjungi Website"
+                        aria-label={`Kunjungi website ${project.title}`}
+                        title={`Kunjungi website ${project.title}`}
                       >
                         <ArrowUpRight className="w-5 h-5" />
                       </a>
