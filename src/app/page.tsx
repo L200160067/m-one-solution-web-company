@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { Hero } from '@/components/Hero';
 import { FastPackages } from '@/components/FastPackages';
 import { About } from '@/components/About';
@@ -22,17 +23,41 @@ async function fetchServices(): Promise<Service[]> {
     }
 }
 
-export default async function Home() {
+async function ServicesSection() {
     const services = await fetchServices();
+    return <Services services={services} />;
+}
 
+function ServicesSkeleton() {
     return (
-        <main style={{ position: 'relative' }}>
+        <section className="py-20 md:py-32 bg-white relative overflow-hidden">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="text-center mb-16">
+                    <div className="inline-block h-7 w-36 bg-slate-100 rounded-full animate-pulse mb-6" />
+                    <div className="h-10 w-64 bg-slate-100 rounded-lg animate-pulse mx-auto mb-6" />
+                    <div className="h-5 w-80 bg-slate-100 rounded animate-pulse mx-auto" />
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                    {[1, 2, 3, 4].map(i => (
+                        <div key={i} className="bg-slate-50 rounded-3xl p-6 border border-slate-100 h-64 animate-pulse" />
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+}
+
+export default function Home() {
+    return (
+        <>
             <Hero />
             <FastPackages />
             <About />
-            <Services services={services} />
+            <Suspense fallback={<ServicesSkeleton />}>
+                <ServicesSection />
+            </Suspense>
             <HomepageBelowFold />
             <CTA />
-        </main>
+        </>
     );
 }

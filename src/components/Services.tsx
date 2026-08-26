@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from 'motion/react';
 import { ArrowRight, Layout, Globe, Briefcase, Code, Database, ShoppingCart, GraduationCap, Smartphone, Monitor, LucideIcon } from 'lucide-react';
 import Link from 'next/link';
 import type { Service } from '@/types/api';
@@ -45,39 +42,21 @@ const getCategoryIcon = (category: string, iconName?: string) => {
 };
 
 export function Services({ services }: ServicesProps) {
-  // Only show the first 4 services on the home page
   const featuredServices = services.slice(0, 4);
 
   return (
     <Section className="bg-white relative overflow-hidden">
       <Container>
         <div className="text-center mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-sm font-semibold mb-6"
-          >
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-sm font-semibold mb-6">
             Layanan Digital Kami
-          </motion.div>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-3xl md:text-5xl lg:text-4xl font-bold text-slate-900 mb-6"
-          >
+          </div>
+          <h2 className="text-3xl md:text-5xl lg:text-4xl font-bold text-slate-900 mb-6">
             Solusi Digital untuk Bisnis Anda
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-lg text-slate-600 max-w-2xl mx-auto"
-          >
+          </h2>
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             Hemat waktu operasional, percepat layanan pelanggan, dan rapikan data bisnis Anda dalam satu sistem yang bisa diakses kapan saja.
-          </motion.p>
+          </p>
         </div>
 
         {featuredServices.length === 0 ? (
@@ -88,13 +67,9 @@ export function Services({ services }: ServicesProps) {
           />
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12">
-            {featuredServices.map((service, index) => (
-              <motion.div
+            {featuredServices.map((service) => (
+              <div
                 key={service.slug}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
                 className="bg-slate-50 rounded-3xl p-6 border border-slate-100 hover:shadow-xl transition-all duration-300 group flex flex-col h-full"
               >
                 <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-white text-blue-600 flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform duration-300">
@@ -117,17 +92,12 @@ export function Services({ services }: ServicesProps) {
                     <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
                   </Link>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         )}
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
+        <div className="text-center">
           <Link
             href="/services"
             className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-slate-900 text-white text-base font-bold rounded-full hover:bg-blue-600 transition-colors shadow-lg"
@@ -135,7 +105,7 @@ export function Services({ services }: ServicesProps) {
             Lihat Semua Layanan
             <ArrowRight className="w-5 h-5" />
           </Link>
-        </motion.div>
+        </div>
       </Container>
     </Section>
   );

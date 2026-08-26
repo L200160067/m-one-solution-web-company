@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef } from 'react';
-import { motion } from 'motion/react';
 import { ArrowRight, Calendar, User, ArrowUpRight, Image as ImageIcon, ChevronLeft, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import type { Post } from '@/types/api';
@@ -19,7 +18,7 @@ export function LatestBlogs({ posts }: LatestBlogsProps) {
 
     const scroll = (direction: 'left' | 'right') => {
         if (scrollContainerRef.current) {
-            const scrollAmount = direction === 'left' ? -400 : 400; // menyesuaikan panjang kartu
+            const scrollAmount = direction === 'left' ? -400 : 400;
             scrollContainerRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
         }
     };
@@ -28,12 +27,7 @@ export function LatestBlogs({ posts }: LatestBlogsProps) {
         <Section className="bg-slate-50 border-t border-slate-100">
             <Container>
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="max-w-2xl"
-                    >
+                    <div className="max-w-2xl">
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold mb-6">
                             Berita & Artikel
                         </div>
@@ -43,7 +37,7 @@ export function LatestBlogs({ posts }: LatestBlogsProps) {
                         <p className="text-base text-slate-600 leading-relaxed md:pr-4">
                             Tetap update dengan berita terbaru, tren teknologi, dan wawasan seputar dunia digital langsung dari tim ahli kami.
                         </p>
-                    </motion.div>
+                    </div>
 
                     <Link
                         href="/blog"
@@ -84,66 +78,62 @@ export function LatestBlogs({ posts }: LatestBlogsProps) {
                             ref={scrollContainerRef}
                             className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth"
                         >
-                            {posts.map((post, index) => (
-                            <motion.div
-                                key={post.id}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
-                                className="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300 group flex flex-col flex-shrink-0 w-[85vw] sm:w-[350px] snap-center"
-                            >
-                                <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
-                                    <WpImage
-                                        src={post.cover_url}
-                                        alt={post.title}
-                                        fill
-                                        sizes="(max-width: 640px) 85vw, 350px"
-                                        loading="lazy"
-                                        className="object-cover"
-                                        fallback={
-                                            <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 text-slate-400">
-                                                <ImageIcon className="w-12 h-12 mb-2 opacity-50" />
-                                            </div>
-                                        }
-                                    />
-                                    <div className="absolute top-4 left-4">
-                                        <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-blue-600 text-xs font-bold uppercase tracking-wider rounded-full shadow-sm">
-                                            {post.category?.name || 'Berita'}
-                                        </span>
-                                    </div>
-                                </div>
-                                <div className="p-6 flex flex-col flex-grow">
-                                    <div className="flex items-center gap-4 text-sm text-slate-500 mb-4">
-                                        <div className="flex items-center gap-1.5">
-                                            <Calendar className="w-4 h-4" />
-                                            {new Date(post.published_at).toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' })}
+                            {posts.map((post) => (
+                                <div
+                                    key={post.id}
+                                    className="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300 group flex flex-col flex-shrink-0 w-[85vw] sm:w-[350px] snap-center"
+                                >
+                                    <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
+                                        <WpImage
+                                            src={post.cover_url}
+                                            alt={post.title}
+                                            fill
+                                            sizes="(max-width: 640px) 85vw, 350px"
+                                            loading="lazy"
+                                            className="object-cover"
+                                            fallback={
+                                                <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 text-slate-400">
+                                                    <ImageIcon className="w-12 h-12 mb-2 opacity-50" />
+                                                </div>
+                                            }
+                                        />
+                                        <div className="absolute top-4 left-4">
+                                            <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-blue-600 text-xs font-bold uppercase tracking-wider rounded-full shadow-sm">
+                                                {post.category?.name || 'Berita'}
+                                            </span>
                                         </div>
-                                        {post.author && (
-                                            <div className="flex items-center gap-1.5">
-                                                <User className="w-4 h-4" />
-                                                {post.author}
-                                            </div>
-                                        )}
                                     </div>
-                                    <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors line-clamp-2">
-                                        <Link href={`/blog/${post.slug}`}>
-                                            {post.title}
+                                    <div className="p-6 flex flex-col flex-grow">
+                                        <div className="flex items-center gap-4 text-sm text-slate-500 mb-4">
+                                            <div className="flex items-center gap-1.5">
+                                                <Calendar className="w-4 h-4" />
+                                                {new Date(post.published_at).toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' })}
+                                            </div>
+                                            {post.author && (
+                                                <div className="flex items-center gap-1.5">
+                                                    <User className="w-4 h-4" />
+                                                    {post.author}
+                                                </div>
+                                            )}
+                                        </div>
+                                        <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors line-clamp-2">
+                                            <Link href={`/blog/${post.slug}`}>
+                                                {post.title}
+                                            </Link>
+                                        </h3>
+                                        <p className="text-slate-600 mb-6 line-clamp-3 flex-grow">
+                                            {post.excerpt}
+                                        </p>
+                                        <Link
+                                            href={`/blog/${post.slug}`}
+                                            className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors mt-auto"
+                                        >
+                                            Baca Selengkapnya
+                                            <ArrowRight className="w-4 h-4" />
                                         </Link>
-                                    </h3>
-                                    <p className="text-slate-600 mb-6 line-clamp-3 flex-grow">
-                                        {post.excerpt}
-                                    </p>
-                                    <Link
-                                        href={`/blog/${post.slug}`}
-                                        className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors mt-auto"
-                                    >
-                                        Baca Selengkapnya
-                                        <ArrowRight className="w-4 h-4" />
-                                    </Link>
+                                    </div>
                                 </div>
-                            </motion.div>
-                        ))}
+                            ))}
                         </div>
                     </div>
                 )}

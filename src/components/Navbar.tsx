@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import { Menu, X, ChevronRight, ChevronDown } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { siteConfig } from '../config/site';
@@ -36,14 +35,13 @@ export function Navbar() {
     { name: 'Portofolio', href: '/portfolio' },
     { name: 'Kontak', href: '/contact' },
     { name: 'Berita', href: '/blog' },
-    //{ name: 'Privacy Policy', href: '/privacy' },
   ];
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled || !isHomePage
         ? 'bg-slate-950/90 backdrop-blur-md shadow-sm py-4 border-b border-white/5'
-        : 'bg-transparent py-6'
+        : 'bg-slate-950/80 backdrop-blur-sm py-6'
         }`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -93,34 +91,28 @@ export function Navbar() {
                 <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isPaketDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
 
-              <AnimatePresence>
-                {isPaketDropdownOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 10 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute top-full left-0 mt-1 w-64 bg-slate-900 border border-white/10 rounded-xl shadow-xl overflow-hidden"
+              {isPaketDropdownOpen && (
+                <div
+                  className="absolute top-full left-0 mt-1 w-64 bg-slate-900 border border-white/10 rounded-xl shadow-xl overflow-hidden animate-fade-in"
+                >
+                  <Link
+                    href="/layanan/jasa-pembuatan-website-sekolah"
+                    className="block px-4 py-3 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors border-b border-white/5"
+                    onClick={() => setIsPaketDropdownOpen(false)}
                   >
-                    <Link
-                      href="/layanan/jasa-pembuatan-website-sekolah"
-                      className="block px-4 py-3 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors border-b border-white/5"
-                      onClick={() => setIsPaketDropdownOpen(false)}
-                    >
-                      <div className="font-bold text-emerald-400 mb-1">🎓 Paket Web Sekolah</div>
-                      <div className="text-xs text-slate-500">Website & Sistem PPDB Online</div>
-                    </Link>
-                    <Link
-                      href="/layanan/jasa-erp-umkm"
-                      className="block px-4 py-3 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors"
-                      onClick={() => setIsPaketDropdownOpen(false)}
-                    >
-                      <div className="font-bold text-blue-400 mb-1">🚀 Paket Web UMKM</div>
-                      <div className="text-xs text-slate-500">Toko Online & Sistem Kasir (POS)</div>
-                    </Link>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+                    <div className="font-bold text-emerald-400 mb-1">Paket Web Sekolah</div>
+                    <div className="text-xs text-slate-500">Website & Sistem PPDB Online</div>
+                  </Link>
+                  <Link
+                    href="/layanan/jasa-erp-umkm"
+                    className="block px-4 py-3 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors"
+                    onClick={() => setIsPaketDropdownOpen(false)}
+                  >
+                    <div className="font-bold text-blue-400 mb-1">Paket Web UMKM</div>
+                    <div className="text-xs text-slate-500">Toko Online & Sistem Kasir (POS)</div>
+                  </Link>
+                </div>
+              )}
             </div>
 
             {/* Event Dropdown Desktop */}
@@ -137,26 +129,20 @@ export function Navbar() {
                 <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isEventDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
 
-              <AnimatePresence>
-                {isEventDropdownOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 10 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute top-full left-0 mt-1 w-56 bg-slate-900 border border-white/10 rounded-xl shadow-xl overflow-hidden"
+              {isEventDropdownOpen && (
+                <div
+                  className="absolute top-full left-0 mt-1 w-56 bg-slate-900 border border-white/10 rounded-xl shadow-xl overflow-hidden animate-fade-in"
+                >
+                  <Link
+                    href="/student-agency"
+                    className="block px-4 py-3 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors"
+                    onClick={() => setIsEventDropdownOpen(false)}
                   >
-                    <Link
-                      href="/student-agency"
-                      className="block px-4 py-3 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors"
-                      onClick={() => setIsEventDropdownOpen(false)}
-                    >
-                      <div className="font-bold text-pink-400 mb-1">🎓 Student Agency Incubator</div>
-                      <div className="text-xs text-slate-500">Freelance website sebelum lulus</div>
-                    </Link>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+                    <div className="font-bold text-pink-400 mb-1">Student Agency Incubator</div>
+                    <div className="text-xs text-slate-500">Freelance website sebelum lulus</div>
+                  </Link>
+                </div>
+              )}
             </div>
             <Link
               href="/contact"
@@ -183,107 +169,88 @@ export function Navbar() {
       </div>
 
       {/* Mobile Navigation */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 right-0 bg-slate-900 shadow-xl border-t border-white/10 lg:hidden"
-          >
-            <div className="px-4 pt-2 pb-6 space-y-1">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className="block px-3 py-3 text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.name}
-                </Link>
-              ))}
+      {isMobileMenuOpen && (
+        <div
+          className="absolute top-full left-0 right-0 bg-slate-900 shadow-xl border-t border-white/10 lg:hidden animate-fade-in"
+        >
+          <div className="px-4 pt-2 pb-6 space-y-1">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="block px-3 py-3 text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {link.name}
+              </Link>
+            ))}
 
-              {/* Paket Web Dropdown Mobile */}
-              <div>
-                <button
-                  className="w-full flex items-center justify-between px-3 py-3 text-base font-medium text-emerald-400 hover:text-emerald-300 rounded-lg transition-colors"
-                  onClick={() => setIsPaketDropdownOpen(!isPaketDropdownOpen)}
-                >
-                  Paket Cepat
-                  <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${isPaketDropdownOpen ? 'rotate-180' : ''}`} />
-                </button>
-                <AnimatePresence>
-                  {isPaketDropdownOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      className="overflow-hidden bg-white/5 rounded-lg mx-3"
+            {/* Paket Web Dropdown Mobile */}
+            <div>
+              <button
+                className="w-full flex items-center justify-between px-3 py-3 text-base font-medium text-emerald-400 hover:text-emerald-300 rounded-lg transition-colors"
+                onClick={() => setIsPaketDropdownOpen(!isPaketDropdownOpen)}
+              >
+                Paket Cepat
+                <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${isPaketDropdownOpen ? 'rotate-180' : ''}`} />
+              </button>
+              {isPaketDropdownOpen && (
+                <div className="overflow-hidden bg-white/5 rounded-lg mx-3 animate-fade-in">
+                  <div className="py-2">
+                    <Link
+                      href="/layanan/jasa-pembuatan-website-sekolah"
+                      className="block px-4 py-3 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors border-b border-white/5"
+                      onClick={() => setIsMobileMenuOpen(false)}
                     >
-                      <div className="py-2">
-                        <Link
-                          href="/layanan/jasa-pembuatan-website-sekolah"
-                          className="block px-4 py-3 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors border-b border-white/5"
-                          onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                          <div className="font-bold text-emerald-400">🎓 Paket Web Sekolah</div>
-                        </Link>
-                        <Link
-                          href="/layanan/jasa-erp-umkm"
-                          className="block px-4 py-3 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors"
-                          onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                          <div className="font-bold text-blue-400">🚀 Paket Web UMKM</div>
-                        </Link>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-
-              {/* Event Dropdown Mobile */}
-              <div>
-                <button
-                  className="w-full flex items-center justify-between px-3 py-3 text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
-                  onClick={() => setIsEventDropdownOpen(!isEventDropdownOpen)}
-                >
-                  Event
-                  <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${isEventDropdownOpen ? 'rotate-180' : ''}`} />
-                </button>
-                <AnimatePresence>
-                  {isEventDropdownOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      className="overflow-hidden"
+                      <div className="font-bold text-emerald-400">Paket Web Sekolah</div>
+                    </Link>
+                    <Link
+                      href="/layanan/jasa-erp-umkm"
+                      className="block px-4 py-3 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
                     >
-                      <div className="pl-6 pr-3 py-1 space-y-1">
-                        <Link
-                          href="/student-agency"
-                          className="block px-3 py-2 text-sm font-medium text-pink-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
-                          onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                          🎓 Student Agency Incubator
-                        </Link>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-              <div className="pt-4 px-3">
-                <Link
-                  href="/contact"
-                  className="w-full flex items-center justify-center gap-2 px-5 py-3 bg-blue-600 text-white text-base font-medium rounded-xl hover:bg-blue-700 transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Hubungi Kami
-                </Link>
-              </div>
+                      <div className="font-bold text-blue-400">Paket Web UMKM</div>
+                    </Link>
+                  </div>
+                </div>
+              )}
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+
+            {/* Event Dropdown Mobile */}
+            <div>
+              <button
+                className="w-full flex items-center justify-between px-3 py-3 text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+                onClick={() => setIsEventDropdownOpen(!isEventDropdownOpen)}
+              >
+                Event
+                <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${isEventDropdownOpen ? 'rotate-180' : ''}`} />
+              </button>
+              {isEventDropdownOpen && (
+                <div className="overflow-hidden animate-fade-in">
+                  <div className="pl-6 pr-3 py-1 space-y-1">
+                    <Link
+                      href="/student-agency"
+                      className="block px-3 py-2 text-sm font-medium text-pink-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Student Agency Incubator
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
+            <div className="pt-4 px-3">
+              <Link
+                href="/contact"
+                className="w-full flex items-center justify-center gap-2 px-5 py-3 bg-blue-600 text-white text-base font-medium rounded-xl hover:bg-blue-700 transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Hubungi Kami
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 }

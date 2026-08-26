@@ -44,6 +44,7 @@ export function Footer({ settings }: FooterProps) {
 
   return (
     <footer className="bg-slate-950 text-slate-300 py-16 border-t border-white/10">
+      <h2 className="sr-only">Footer M-One Solution</h2>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand */}

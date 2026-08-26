@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from 'motion/react';
 import { ArrowUpRight, Image as ImageIcon } from 'lucide-react';
 import Link from 'next/link';
 import type { Project } from '@/types/api';
@@ -18,12 +15,7 @@ export function Projects({ projects }: ProjectsProps) {
     <Section className="bg-slate-50">
       <Container>
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="max-w-2xl"
-          >
+          <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold mb-6">
               Portofolio
             </div>
@@ -33,7 +25,7 @@ export function Projects({ projects }: ProjectsProps) {
             <p className="text-base text-slate-600 leading-relaxed md:pr-4">
               Jejak nyata kolaborasi kami dengan UMKM, sekolah, dan organisasi di Sukoharjo, Solo, dan sekitarnya. Setiap proyek mengajarkan kami cara merancang solusi yang lebih baik, lebih cepat, dan lebih efektif.
             </p>
-          </motion.div>
+          </div>
 
           <Link
             href="/portfolio"
@@ -51,15 +43,8 @@ export function Projects({ projects }: ProjectsProps) {
           />
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="group"
-              >
+            {projects.map((project) => (
+              <div key={project.id} className="group">
                 <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-6 bg-slate-100 border border-slate-200">
                   <WpImage
                     src={project.image_url}
@@ -111,7 +96,7 @@ export function Projects({ projects }: ProjectsProps) {
                     {project.description}
                   </p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         )}

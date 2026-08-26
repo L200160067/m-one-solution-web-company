@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from 'react';
-import { motion } from 'motion/react';
 import { Send, User, Mail, Phone, MessageSquare, Briefcase, CheckCircle2 } from 'lucide-react';
 import { siteConfig } from '@/config/site';
 import { track } from '@/lib/analytics';
@@ -89,11 +88,7 @@ Terima kasih!`;
 
     if (isSubmitted) {
         return (
-            <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="flex flex-col items-center justify-center text-center p-8 bg-green-50 border border-green-200 rounded-3xl h-full min-h-[400px]"
-            >
+            <div className="flex flex-col items-center justify-center text-center p-8 bg-green-50 border border-green-200 rounded-3xl h-full min-h-[400px] animate-scale-in">
                 <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-6">
                     <CheckCircle2 className="w-10 h-10 text-green-600" />
                 </div>
@@ -110,17 +105,14 @@ Terima kasih!`;
                 >
                     Kirim Pesan Baru
                 </button>
-            </motion.div>
+            </div>
         );
     }
 
     return (
-        <motion.form
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+        <form
             onSubmit={handleSubmit}
-            className="space-y-5"
+            className="space-y-5 animate-fade-in-up"
             noValidate
         >
             {/* Name */}
@@ -225,18 +217,16 @@ Terima kasih!`;
                 {errors.message && <p className="mt-1.5 text-sm text-red-500">{errors.message}</p>}
             </div>
 
-            <motion.button
+            <button
                 type="submit"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full flex items-center justify-center gap-3 px-8 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/25 text-base"
+                className="w-full flex items-center justify-center gap-3 px-8 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-blue-600/25 text-base"
             >
                 <Send className="w-5 h-5" />
                 Kirim via WhatsApp
-            </motion.button>
+            </button>
             <p className="text-center text-xs text-slate-400">
                 Dengan mengklik kirim, Anda akan diarahkan ke WhatsApp untuk mengirim pesan.
             </p>
-        </motion.form>
+        </form>
     );
 }

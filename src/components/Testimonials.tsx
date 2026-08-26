@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from 'motion/react';
 import { Quote, Star } from 'lucide-react';
 import type { Testimonial } from '@/types/api';
 import { Container } from './ui/Container';
@@ -21,12 +18,7 @@ export function Testimonials({ testimonials }: TestimonialsProps) {
       </div>
 
       <Container className="relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-semibold mb-6">
             Testimoni Klien
           </div>
@@ -36,16 +28,12 @@ export function Testimonials({ testimonials }: TestimonialsProps) {
           <p className="text-lg text-slate-400 max-w-2xl mx-auto">
             Kepercayaan klien adalah prioritas kami. Berikut adalah pengalaman mereka bekerja sama dengan M-One Solution.
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
+          {testimonials.map((testimonial) => (
+            <div
               key={testimonial.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
               className="bg-white/5 border border-white/10 rounded-3xl p-6 backdrop-blur-sm hover:bg-white/10 transition-colors flex flex-col"
             >
               {/* Rating Stars */}
@@ -77,11 +65,10 @@ export function Testimonials({ testimonials }: TestimonialsProps) {
                   <p className="text-xs text-slate-400">{testimonial.company}</p>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </Container>
     </Section>
   );
 }
-

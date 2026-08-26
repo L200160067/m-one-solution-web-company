@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { render, screen, act } from '@testing-library/react';
 import Home from '@/app/page';
 
 const mockPosts = [{ id: '1', title: 'Post 1', slug: 'post-1', category: { name: 'News' }, cover_url: '', published_at: '2026-01-01', author: 'Author', excerpt: 'Excerpt' }];
@@ -49,12 +49,20 @@ describe('Homepage integration', () => {
       return Promise.resolve({ success: true, data: [] } as any);
     });
 
-    render(await Home());
+    // Render and wait for all Suspense boundaries to resolve
+    await act(async () => {
+      render(await Home());
+    });
+
+    // Flush any pending microtasks (Suspense resolution)
+    await act(async () => {
+      await new Promise(resolve => setTimeout(resolve, 0));
+    });
 
     expect(screen.getByTestId('hero')).toBeTruthy();
     expect(screen.getByTestId('fast-packages')).toBeTruthy();
     expect(screen.getByTestId('about')).toBeTruthy();
-    expect(screen.getByTestId('services')).toBeTruthy();
+    expect(await screen.findByTestId('services')).toBeTruthy();
     expect(screen.getByTestId('cta')).toBeTruthy();
 
     expect(vi.mocked(apiFetch)).toHaveBeenCalledWith('/posts?limit=10', { tags: ['posts'] });

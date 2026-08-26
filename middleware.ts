@@ -29,6 +29,7 @@ export function middleware(request: NextRequest) {
     response.headers.set('Content-Security-Policy', csp);
     response.headers.set('Strict-Transport-Security', 'max-age=63072000; includeSubDomains; preload');
     response.headers.set('Cross-Origin-Opener-Policy', 'same-origin');
+    response.headers.set('Cache-Control', 'no-cache, must-revalidate');
 
     return response;
 }

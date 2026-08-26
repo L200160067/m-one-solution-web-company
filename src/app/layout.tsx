@@ -1,12 +1,9 @@
 import "../index.css";
 import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
 import { Inter } from "next/font/google";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
-import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { BackToTop } from "@/components/BackToTop";
-import { apiFetch } from "@/lib/api";
-import type { ApiResponse, Settings } from "@/types/api";
+import { FooterData } from "@/components/FooterData";
 import { siteConfig } from '@/config/site';
 import Script from "next/script";
 import { headers } from "next/headers";
@@ -69,15 +66,6 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-    // Fetch global settings once for Footer and WhatsAppButton
-    let settings: Settings | undefined;
-    try {
-        const res = await apiFetch<ApiResponse<Settings>>('/settings', { tags: ['settings'] });
-        settings = res.data;
-    } catch {
-        // Fall back to siteConfig defaults if API unavailable
-    }
-
     const nonce = (await headers()).get('x-nonce') || undefined;
 
     const jsonLd = {
@@ -128,13 +116,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     return (
         <html lang="id" className={inter.variable}>
             <head>
-                <link rel="preconnect" href="https://berita-mone.mutudev.com" />
-                <link rel="preconnect" href="https://cdn.mutudev.com" />
-                <link rel="dns-prefetch" href="https://i0.wp.com" />
-                <link rel="dns-prefetch" href="https://i1.wp.com" />
-                <link rel="dns-prefetch" href="https://i2.wp.com" />
-                <link rel="dns-prefetch" href="https://i3.wp.com" />
-                <link rel="preload" href="/images/branding/hero.webp" as="image" type="image/webp" media="(min-width: 1024px)" />
+                <link rel="dns-prefetch" href="https://berita-mone.mutudev.com" />
+                <link rel="dns-prefetch" href="https://cdn.mutudev.com" />
                 <Script
                     id="schema-localbusiness"
                     type="application/ld+json"
@@ -147,8 +130,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
                 <ErrorBoundary>
                     <main>{children}</main>
                 </ErrorBoundary>
-                <Footer settings={settings} />
-                <WhatsAppButton whatsappNumber={settings?.whatsapp_number} />
+                <FooterData />
                 <BackToTop />
             </body>
         </html>

@@ -1,32 +1,8 @@
-"use client";
-
-import { motion, useInView, useMotionValue, useTransform, animate } from 'motion/react';
 import { ArrowRight, CheckCircle2, Image as ImageIcon } from 'lucide-react';
 import Link from 'next/link';
-import { useEffect, useRef } from 'react';
 import { Container } from './ui/Container';
 import { Section } from './ui/Section';
 import { WpImage } from '@/components/image/WpImage';
-
-function AnimatedCounter({ to, suffix = '' }: { to: number; suffix?: string }) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true });
-  const count = useMotionValue(0);
-  const rounded = useTransform(count, (v) => Math.round(v));
-
-  useEffect(() => {
-    if (inView) {
-      const controls = animate(count, to, { duration: 1.8, ease: 'easeOut' });
-      return controls.stop;
-    }
-  }, [inView, count, to]);
-
-  return (
-    <span ref={ref}>
-      <motion.span>{rounded}</motion.span>{suffix}
-    </span>
-  );
-}
 
 export function About() {
   const features = [
@@ -41,13 +17,7 @@ export function About() {
       <Container>
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Image Side */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative"
-          >
+          <div className="relative">
             <div className="aspect-[4/3] rounded-3xl overflow-hidden relative">
               <WpImage
                 src="/images/branding/about.webp"
@@ -76,23 +46,18 @@ export function About() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Content Side */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
+          <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-sm font-semibold mb-6">
               Tentang Kami
             </div>
 
-            <h1 className="text-3xl md:text-4xl lg:text-4xl font-bold text-slate-900 mb-6 leading-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold text-slate-900 mb-6 leading-tight">
               Mengubah Ide Menjadi<br />
               <span className="text-blue-600">Produk Digital</span>
-            </h1>
+            </h2>
 
             <p className="text-base text-slate-600 mb-6 leading-relaxed">
               M-One Solution membantu bisnis dan organisasi mengubah ide menjadi website, aplikasi, dan sistem digital yang praktis, intuitif, dan scalable.
@@ -118,13 +83,13 @@ export function About() {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-4 mb-8 py-6 border-t border-b border-slate-100">
               {[
-                { value: 50, suffix: '+', label: 'Proyek Selesai sejak 2022' },
-                { value: 30, suffix: '+', label: 'Klien Puas' },
-                { value: 3, suffix: '+', label: 'Tahun Pengalaman' },
+                { value: '50', suffix: '+', label: 'Proyek Selesai sejak 2022' },
+                { value: '30', suffix: '+', label: 'Klien Puas' },
+                { value: '3', suffix: '+', label: 'Tahun Pengalaman' },
               ].map((stat, i) => (
                 <div key={i} className="text-center">
                   <div className="text-2xl md:text-3xl font-bold text-blue-600 mb-1">
-                    <AnimatedCounter to={stat.value} suffix={stat.suffix} />
+                    {stat.value}{stat.suffix}
                   </div>
                   <p className="text-xs text-slate-500 font-medium leading-tight">{stat.label}</p>
                 </div>
@@ -138,7 +103,7 @@ export function About() {
               Pelajari Lebih Lanjut
               <ArrowRight className="w-5 h-5" />
             </Link>
-          </motion.div>
+          </div>
         </div>
       </Container>
     </Section>

@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from 'motion/react';
 import { GraduationCap, User as UserIcon } from 'lucide-react';
 import type { AlumniGroup } from '@/types/api';
 import { WpImage } from '@/components/image/WpImage';
@@ -21,12 +18,7 @@ export function Alumni({ groups }: AlumniProps) {
             </div>
 
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="text-center mb-16"
-                >
+                <div className="text-center mb-16">
                     <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-400 mb-6 shadow-xl shadow-blue-500/20 text-white">
                         <GraduationCap className="w-8 h-8" />
                     </div>
@@ -36,27 +28,18 @@ export function Alumni({ groups }: AlumniProps) {
                     <p className="text-lg text-slate-400 max-w-2xl mx-auto">
                         Kami bangga telah menjadi bagian dari perjalanan belajar siswa-siswi vokasi berbakat melalui program Praktik Kerja Lapangan (PKL) berkualitas.
                     </p>
-                </motion.div>
+                </div>
 
                 {groups.map((group) => (
                     <div key={group.batch_period} className="mb-12 last:mb-0">
-                        <motion.h3
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            className="text-xl font-bold text-blue-400 mb-6 flex items-center gap-3"
-                        >
+                        <h3 className="text-xl font-bold text-blue-400 mb-6 flex items-center gap-3">
                             <span className="w-8 h-px bg-blue-400/50" />
                             {group.batch_period}
-                        </motion.h3>
+                        </h3>
                         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                            {group.members?.map((person, index) => (
-                                <motion.div
+                            {group.members?.map((person) => (
+                                <div
                                     key={person.id}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: index * 0.1 }}
                                     className="bg-white/5 border border-white/10 p-6 rounded-3xl backdrop-blur-sm hover:bg-white/10 transition-colors flex flex-col items-center text-center group"
                                 >
                                     <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-slate-800 group-hover:border-blue-500 transition-colors mb-4 bg-slate-800">
@@ -79,7 +62,7 @@ export function Alumni({ groups }: AlumniProps) {
                                     <span className="px-3 py-1 bg-white/10 rounded-full text-xs text-slate-300 mt-2">
                                         {person.batch_period}
                                     </span>
-                                </motion.div>
+                                </div>
                             ))}
                         </div>
                     </div>

@@ -1,4 +1,3 @@
-import { motion } from 'motion/react';
 import { RefreshCcw, SearchX, Inbox } from 'lucide-react';
 
 interface EmptyStateProps {
@@ -23,11 +22,7 @@ export function EmptyState({
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="flex flex-col items-center justify-center text-center p-8 bg-slate-50 rounded-3xl border border-slate-100"
-    >
+    <div className="flex flex-col items-center justify-center text-center p-8 bg-slate-50 rounded-3xl border border-slate-100">
       <div className="w-16 h-16 bg-white border border-slate-200 rounded-full flex items-center justify-center text-slate-400 mb-4">
         {icons[icon]}
       </div>
@@ -42,6 +37,6 @@ export function EmptyState({
           {actionLabel}
         </button>
       )}
-    </motion.div>
+    </div>
   );
 }

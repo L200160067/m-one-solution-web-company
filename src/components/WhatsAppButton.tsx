@@ -1,7 +1,5 @@
 "use client";
 
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
 import { siteConfig } from '../config/site';
 import { track } from '@/lib/analytics';
 

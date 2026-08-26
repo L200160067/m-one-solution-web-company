@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "browserslist": [
-    "defaults and supports es6-module",
+    "defaults and fully supports es6-module-dynamic-import",
     "maintained node versions"
   ],
   "scripts": {
@@ -19,7 +19,6 @@
   },
   "dependencies": {
     "lucide-react": "^0.546.0",
-    "motion": "^12.23.24",
     "next": "^16.1.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

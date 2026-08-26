@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from 'motion/react';
 import { Github, Linkedin, Instagram, User as UserIcon } from 'lucide-react';
 import type { TeamMember } from '@/types/api';
 import { Container } from './ui/Container';
@@ -17,12 +14,7 @@ export function Team({ team }: TeamProps) {
     return (
         <Section className="bg-slate-50 border-t border-slate-100 relative overflow-hidden">
             <Container>
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="text-center mb-16"
-                >
+                <div className="text-center mb-16">
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold mb-6">
                         Tim Kami
                     </div>
@@ -32,18 +24,11 @@ export function Team({ team }: TeamProps) {
                     <p className="text-lg text-slate-600 max-w-2xl mx-auto">
                         Berkenalan dengan para profesional yang berdedikasi tinggi untuk mewujudkan visi digital Anda.
                     </p>
-                </motion.div>
+                </div>
 
                 <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {team.map((member, index) => (
-                        <motion.div
-                            key={member.id}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            className="group"
-                        >
+                    {team.map((member) => (
+                        <div key={member.id} className="group">
                             <div className="relative aspect-square rounded-3xl overflow-hidden mb-6 bg-slate-100">
                                 <WpImage
                                     src={member.avatar_url}
@@ -98,11 +83,10 @@ export function Team({ team }: TeamProps) {
                                 <h3 className="text-xl font-bold text-slate-900 mb-1">{member.name}</h3>
                                 <p className="text-blue-600 font-medium">{member.role}</p>
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </Container>
         </Section>
     );
 }
-
