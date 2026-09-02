@@ -121,7 +121,7 @@ export function Footer({ settings }: FooterProps) {
               <li><Link href="/blog" className="hover:text-blue-400 transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> Berita</Link></li>
               <li><Link href="/contact" className="hover:text-blue-400 transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> Kontak</Link></li>
               <li><Link href="/coding-competition" className="hover:text-yellow-400 transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> 🏆 Coding Competition 2026</Link></li>
-              <li><Link href="/student-agency" className="hover:text-pink-400 transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> 🎓 Student Agency Incubator</Link></li>
+              <li><span className="text-slate-500 opacity-60 flex items-center gap-2 cursor-not-allowed select-none line-through" title="Program telah ditutup"><ArrowRight className="w-4 h-4 text-slate-600" /> 🎓 Student Agency Incubator (Ditutup)</span></li>
             </ul>
           </div>
 

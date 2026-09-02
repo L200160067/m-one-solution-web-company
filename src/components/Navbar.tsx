@@ -151,14 +151,16 @@ export function Navbar() {
                     </div>
                     <div className="text-xs text-slate-400">Telkomsel x M-One 2026</div>
                   </Link>
-                  <Link
-                    href="/student-agency"
-                    className="block px-4 py-3 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors"
-                    onClick={() => setIsEventDropdownOpen(false)}
+                  <div
+                    className="block px-4 py-3 text-sm font-medium opacity-50 cursor-not-allowed select-none"
+                    title="Program telah ditutup"
                   >
-                    <div className="font-bold text-pink-400 mb-1">Student Agency Incubator</div>
-                    <div className="text-xs text-slate-500">Freelance website sebelum lulus</div>
-                  </Link>
+                    <div className="font-bold text-slate-400 mb-1 flex items-center justify-between">
+                      <span className="line-through">Student Agency Incubator</span>
+                      <span className="text-[10px] bg-slate-800 text-slate-400 font-bold px-1.5 py-0.5 rounded border border-slate-700">DITUTUP</span>
+                    </div>
+                    <div className="text-xs text-slate-500 line-through">Freelance website sebelum lulus</div>
+                  </div>
                 </div>
                 </div>
               )}
@@ -258,14 +260,16 @@ export function Navbar() {
                       </div>
                       <div className="text-xs text-slate-400">Telkomsel x M-One</div>
                     </Link>
-                    <Link
-                      href="/student-agency"
-                      className="block px-3 py-2 text-sm font-medium text-pink-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
-                      onClick={() => setIsMobileMenuOpen(false)}
+                    <div
+                      className="block px-3 py-2 text-sm font-medium opacity-50 cursor-not-allowed select-none"
+                      title="Program telah ditutup"
                     >
-                      <div className="font-bold">Student Agency Incubator</div>
-                      <div className="text-xs text-slate-400">Freelance website sebelum lulus</div>
-                    </Link>
+                      <div className="font-bold text-slate-400 flex items-center justify-between">
+                        <span className="line-through">Student Agency Incubator</span>
+                        <span className="text-[10px] bg-slate-800 text-slate-400 font-bold px-1.5 py-0.5 rounded border border-slate-700">DITUTUP</span>
+                      </div>
+                      <div className="text-xs text-slate-500 line-through">Freelance website sebelum lulus</div>
+                    </div>
                   </div>
                 </div>
               )}
