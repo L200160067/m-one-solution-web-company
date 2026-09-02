@@ -142,6 +142,15 @@ const nextConfig: NextConfig = {
             },
         ];
     },
+    async redirects() {
+        return [
+            {
+                source: '/student-agency',
+                destination: '/',
+                permanent: false,
+            },
+        ];
+    },
 };
 
 export default nextConfig;
