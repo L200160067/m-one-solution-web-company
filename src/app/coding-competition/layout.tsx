@@ -24,6 +24,7 @@ const bangers = Bangers({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.baseUrl),
   title: 'M-ONE Telkomsel Coding Competition 2026 | Pendaftaran',
   description: 'Lomba Inovasi Website & AI untuk pelajar SMP, SMA/SMK, mahasiswa, dan umum se-Solo Raya. Diselenggarakan oleh M-One Solution dan Telkomsel.',
   keywords: 'lomba coding 2026, kompetisi website solo, coding competition sukoharjo, telkomsel coding competition, lomba ai smp sma mahasiswa, m-one solution event',
@@ -40,8 +41,10 @@ export const metadata: Metadata = {
     images: [
       {
         url: `${siteConfig.baseUrl}/og-coding-competition.jpg`,
+        secureUrl: `${siteConfig.baseUrl}/og-coding-competition.jpg`,
         width: 1200,
         height: 630,
+        type: 'image/jpeg',
         alt: 'M-ONE Telkomsel Coding Competition 2026 — Total Prize Pool Rp 3.200.000,00',
       },
     ],

@@ -1,8 +1,15 @@
 const cdnUrl = process.env.NEXT_PUBLIC_CDN_URL || 'https://l200160067.github.io/mone-assets';
 
+const envBaseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+const isProd = process.env.NODE_ENV === 'production';
+const productionHost = `https://${['mone', 'mutudev', 'com'].join('.')}`;
+const resolvedBaseUrl = (envBaseUrl && !envBaseUrl.includes('localhost'))
+    ? envBaseUrl
+    : (isProd ? productionHost : (envBaseUrl || 'http://localhost:3000'));
+
 export const siteConfig = {
     name: "M-One Solution",
-    baseUrl: process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000',
+    baseUrl: resolvedBaseUrl,
     cdnUrl,
     logo: '/images/branding/mone.webp',
     whatsapp: {
