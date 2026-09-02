@@ -37,6 +37,20 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'id_ID',
     siteName: 'M-One Solution',
+    images: [
+      {
+        url: `${siteConfig.baseUrl}/og-coding-competition.jpg`,
+        width: 1200,
+        height: 630,
+        alt: 'M-ONE Telkomsel Coding Competition 2026 — Total Prize Pool Rp 3.200.000,00',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'M-ONE Telkomsel Coding Competition 2026 — Pendaftaran',
+    description: 'Bikin Website Inovatif & Keren, Dibantu AI! Terbuka untuk SMP, SMA/SMK, Mahasiswa, & Umum se-Solo Raya.',
+    images: [`${siteConfig.baseUrl}/og-coding-competition.jpg`],
   },
 };
 
