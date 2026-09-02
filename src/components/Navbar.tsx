@@ -135,11 +135,22 @@ export function Navbar() {
 
               {isEventDropdownOpen && (
                 <div
-                  className="absolute top-full left-0 pt-1 w-56"
+                  className="absolute top-full left-0 pt-1 w-64"
                 >
                 <div
                   className="bg-slate-900 border border-white/10 rounded-xl shadow-xl overflow-hidden animate-fade-in"
                 >
+                  <Link
+                    href="/coding-competition"
+                    className="block px-4 py-3 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors border-b border-white/5"
+                    onClick={() => setIsEventDropdownOpen(false)}
+                  >
+                    <div className="font-bold text-yellow-400 mb-1 flex items-center justify-between">
+                      <span>Coding Competition</span>
+                      <span className="text-[10px] bg-yellow-400/20 text-yellow-300 font-bold px-1.5 py-0.5 rounded">NEW</span>
+                    </div>
+                    <div className="text-xs text-slate-400">Telkomsel x M-One 2026</div>
+                  </Link>
                   <Link
                     href="/student-agency"
                     className="block px-4 py-3 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors"
@@ -237,11 +248,23 @@ export function Navbar() {
                 <div className="overflow-hidden animate-fade-in">
                   <div className="pl-6 pr-3 py-1 space-y-1">
                     <Link
+                      href="/coding-competition"
+                      className="block px-3 py-2 text-sm font-medium text-yellow-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors border-b border-white/5"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <div className="font-bold flex items-center gap-1.5">
+                        <span>Coding Competition 2026</span>
+                        <span className="text-[10px] bg-yellow-400/20 text-yellow-300 font-bold px-1.5 py-0.5 rounded">NEW</span>
+                      </div>
+                      <div className="text-xs text-slate-400">Telkomsel x M-One</div>
+                    </Link>
+                    <Link
                       href="/student-agency"
                       className="block px-3 py-2 text-sm font-medium text-pink-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
-                      Student Agency Incubator
+                      <div className="font-bold">Student Agency Incubator</div>
+                      <div className="text-xs text-slate-400">Freelance website sebelum lulus</div>
                     </Link>
                   </div>
                 </div>

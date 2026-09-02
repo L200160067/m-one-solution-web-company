@@ -120,6 +120,7 @@ export function Footer({ settings }: FooterProps) {
               <li><Link href="/portfolio" className="hover:text-blue-400 transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> Portofolio</Link></li>
               <li><Link href="/blog" className="hover:text-blue-400 transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> Berita</Link></li>
               <li><Link href="/contact" className="hover:text-blue-400 transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> Kontak</Link></li>
+              <li><Link href="/coding-competition" className="hover:text-yellow-400 transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> 🏆 Coding Competition 2026</Link></li>
               <li><Link href="/student-agency" className="hover:text-pink-400 transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4" /> 🎓 Student Agency Incubator</Link></li>
             </ul>
           </div>
