@@ -66,6 +66,15 @@ export default function CompetitionPage() {
       </div>
 
       <img src="/images/competition/2960ebda-db8a-4637-865a-e68b0b0d6c0d.png" alt="Mascot" className="mascot-img" />
+      
+      {/* Floating Prize Pool Pill on Mascot */}
+      <div className="mascot-prize-tag">
+        <span>🏆</span>
+        <div>
+          <small>TOTAL PRIZE POOL</small>
+          <strong>Rp 3.200.000,00</strong>
+        </div>
+      </div>
     </div>
   </div>
   <svg className="hero-zigzag" viewBox="0 0 1440 48" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" aria-hidden="true"><path d="M0 48L48 0L96 48L144 0L192 48L240 0L288 48L336 0L384 48L432 0L480 48L528 0L576 48L624 0L672 48L720 0L768 48L816 0L864 48L912 0L960 48L1008 0L1056 48L1104 0L1152 48L1200 0L1248 48L1296 0L1344 48L1392 0L1440 48V52H0V48Z" fill="#FFFFFF"/></svg>
@@ -73,11 +82,53 @@ export default function CompetitionPage() {
 
 <section id="tentang">
   <div className="wrap">
-    <span className="badge">✨ Tentang Lombanya</span>
+    {/* Prize Pool Highlight Showcase Card */}
+    <div className="prize-pool-banner reveal">
+      <div className="prize-pool-content">
+        <div className="prize-pool-main">
+          <div className="prize-trophy-box">
+            <span>🏆</span>
+          </div>
+          <div className="prize-text-group">
+            <span className="prize-eyebrow">
+              <span className="live-dot"></span>
+              TOTAL PRIZE POOL
+            </span>
+            <div className="prize-value">
+              Rp 3.200.000<span className="prize-cents">,00</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="prize-divider"></div>
+
+        <div className="prize-perks">
+          <div className="prize-perk-item">
+            <span className="perk-icon">💰</span>
+            <div>
+              <strong>Uang Pembinaan Juara</strong>
+              <span>Diberikan kepada inovator terbaik tiap kategori</span>
+            </div>
+          </div>
+          <div className="prize-perk-item">
+            <span className="perk-icon">📜</span>
+            <div>
+              <strong>Piagam & E-Certificate</strong>
+              <span>Sertifikat resmi kompetisi & piagam penghargaan</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div className="section-head" style={{"marginBottom":"28px"}}>
+      <div style={{ display: "flex", gap: "10px", alignItems: "center", flexWrap: "wrap", marginBottom: "18px" }}>
+        <span className="badge" style={{ marginBottom: 0 }}>✨ Tentang Lombanya</span>
+        <span className="badge prize-pill-badge" style={{ marginBottom: 0 }}>🏆 Prize Pool Rp 3.200.000,00</span>
+      </div>
       <h2>Inovasi Website Dibantu AI</h2>
       <p style={{"fontSize":"15.5px","color":"var(--slate)","fontWeight":"600","maxWidth":"720px","marginTop":"8px"}}>
-        Kamu ditantang merancang dan membangun website inovatif secara perorangan (individu), boleh memanfaatkan bantuan <em>Artificial Intelligence (AI)</em>. Lomba terdiri dari 2 tahap: penyisihan online & final. Pilih kategori sesuai jenjang kamu!
+        Kamu ditantang merancang dan membangun website inovatif secara perorangan (individu), boleh memanfaatkan bantuan <em>Artificial Intelligence (AI)</em>. Lomba terdiri dari 2 tahap: penyisihan online & final dengan <strong>Total Prize Pool Rp 3.200.000,00</strong>. Pilih kategori sesuai jenjang kamu!
       </p>
     </div>
 
@@ -97,6 +148,35 @@ export default function CompetitionPage() {
           <li><strong>Format:</strong> Perorangan (Individu)</li>
           <li><strong>Teknologi:</strong> Bebas (Bebas eksplorasi framework & AI tools)</li>
         </ul>
+
+        {/* Hadiah Kategori Siswa */}
+        <div className="theme-prizes">
+          <div className="theme-prizes-title">
+            <span className="trophy-emoji">🏆</span>
+            <span>Hadiah Kategori Siswa (SMP)</span>
+          </div>
+          <div className="theme-prizes-list">
+            <div className="theme-prize-item juara-1">
+              <span className="prize-rank-badge j1">🥇 Juara 1</span>
+              <span className="prize-nominal">Rp 500.000,-</span>
+              <span className="prize-perk">+ Sertifikat & Piala</span>
+            </div>
+            <div className="theme-prize-item juara-2">
+              <span className="prize-rank-badge j2">🥈 Juara 2</span>
+              <span className="prize-nominal">Rp 300.000,-</span>
+              <span className="prize-perk">+ Sertifikat & Piala</span>
+            </div>
+            <div className="theme-prize-item juara-3">
+              <span className="prize-rank-badge j3">🥉 Juara 3</span>
+              <span className="prize-nominal">Rp 200.000,-</span>
+              <span className="prize-perk">+ Sertifikat & Piala</span>
+            </div>
+            <div className="theme-prize-item juara-finalis">
+              <span className="prize-rank-badge jf">🎖️ Juara 4–10</span>
+              <span className="prize-nominal finalist">Sertifikat Finalis</span>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/*  Kategori Umum  */}
@@ -114,6 +194,31 @@ export default function CompetitionPage() {
           <li><strong>Format:</strong> Perorangan (Individu)</li>
           <li><strong>Teknologi:</strong> Bebas (Bebas eksplorasi framework & AI tools)</li>
         </ul>
+
+        {/* Hadiah Kategori Umum */}
+        <div className="theme-prizes">
+          <div className="theme-prizes-title">
+            <span className="trophy-emoji">🏆</span>
+            <span>Hadiah Kategori Umum</span>
+          </div>
+          <div className="theme-prizes-list">
+            <div className="theme-prize-item juara-1">
+              <span className="prize-rank-badge j1">🥇 Juara 1</span>
+              <span className="prize-nominal">Rp 1.000.000,-</span>
+              <span className="prize-perk">+ E-Sertifikat</span>
+            </div>
+            <div className="theme-prize-item juara-2">
+              <span className="prize-rank-badge j2">🥈 Juara 2</span>
+              <span className="prize-nominal">Rp 700.000,-</span>
+              <span className="prize-perk">+ E-Sertifikat</span>
+            </div>
+            <div className="theme-prize-item juara-3">
+              <span className="prize-rank-badge j3">🥉 Juara 3</span>
+              <span className="prize-nominal">Rp 500.000,-</span>
+              <span className="prize-perk">+ E-Sertifikat</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

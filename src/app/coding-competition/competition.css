@@ -317,9 +317,163 @@
     border-radius: 8px;
   }
 
-  
-  
-  
+  /* Mascot Prize Tag */
+  .mascot-prize-tag {
+    position: absolute;
+    bottom: -6px;
+    background: var(--yellow);
+    border: 3px solid var(--ink);
+    border-radius: 999px;
+    padding: 6px 18px;
+    box-shadow: 4px 4px 0 var(--ink);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 5;
+    transform: rotate(-2deg);
+    animation: float 4.5s ease-in-out infinite 0.8s;
+  }
+  .mascot-prize-tag span {
+    font-size: 22px;
+  }
+  .mascot-prize-tag small {
+    display: block;
+    font-family: var(--font-baloo), 'Baloo 2', sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+    color: var(--blue-deep);
+    letter-spacing: 0.08em;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+  .mascot-prize-tag strong {
+    display: block;
+    font-family: var(--font-baloo), 'Baloo 2', sans-serif;
+    font-size: 15px;
+    font-weight: 900;
+    color: var(--ink);
+    line-height: 1.1;
+  }
+
+  /* Prize Pool Spotlight Banner */
+  .prize-pool-banner {
+    position: relative;
+    background: linear-gradient(135deg, #FFFDF0 0%, #FEF9C3 60%, #FDE047 100%);
+    border: 3px solid var(--ink);
+    border-radius: 24px;
+    box-shadow: 6px 6px 0 var(--ink);
+    padding: 24px 32px;
+    margin-bottom: 36px;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .prize-pool-banner:hover {
+    transform: translateY(-3px);
+    box-shadow: 8px 8px 0 var(--ink);
+  }
+  .prize-pool-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .prize-pool-main {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .prize-trophy-box {
+    width: 62px;
+    height: 62px;
+    border-radius: 18px;
+    background: var(--white);
+    border: 3px solid var(--ink);
+    box-shadow: 3.5px 3.5px 0 var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    flex-shrink: 0;
+    animation: rotatePulse 6s ease-in-out infinite;
+  }
+  .prize-text-group {
+    display: flex;
+    flex-direction: column;
+  }
+  .prize-eyebrow {
+    font-family: var(--font-baloo), 'Baloo 2', sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--blue-deep);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 2px;
+  }
+  .prize-eyebrow .live-dot {
+    width: 7px;
+    height: 7px;
+    background: #16A34A;
+    border-radius: 50%;
+    animation: liveDotPulse 1.4s ease-in-out infinite;
+  }
+  .prize-value {
+    font-family: var(--font-baloo), 'Baloo 2', sans-serif;
+    font-size: clamp(28px, 3.8vw, 40px);
+    font-weight: 900;
+    color: var(--ink);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+  .prize-value .prize-cents {
+    font-size: 0.6em;
+    font-weight: 800;
+    opacity: 0.85;
+  }
+  .prize-divider {
+    width: 2px;
+    height: 52px;
+    background: rgba(22, 33, 62, 0.15);
+    border-radius: 2px;
+  }
+  .prize-perks {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .prize-perk-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .prize-perk-item .perk-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+  }
+  .prize-perk-item strong {
+    display: block;
+    font-size: 14px;
+    color: var(--ink);
+    font-weight: 800;
+    line-height: 1.2;
+  }
+  .prize-perk-item span {
+    display: block;
+    font-size: 12.5px;
+    color: var(--slate);
+    font-weight: 600;
+    margin-top: 2px;
+  }
+
+  /* Badge variant */
+  .badge.prize-pill-badge {
+    background: var(--white);
+    color: var(--ink);
+    border-color: var(--ink);
+  }
 
   /* zigzag bottom edge */
   .hero-zigzag{ position:absolute; left:0; width:100%; bottom:-1px; height:36px; display:block; pointer-events:none; z-index:2; }
@@ -348,6 +502,89 @@
   .theme-features{ list-style:none; padding-top:14px; border-top:2px dashed #CBD5E1; display:flex; flex-direction:column; gap:6px; margin-top:auto; }
   .theme-features li{ font-size:13px; font-weight:600; color:var(--ink); }
   .theme-features li strong{ color:var(--blue); }
+
+  /* Theme Card Prize Breakdown */
+  .theme-prizes {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 2px dashed #CBD5E1;
+  }
+  .theme-prizes-title {
+    font-family: var(--font-baloo), 'Baloo 2', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+  .theme-prizes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .theme-prize-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    background: var(--white);
+    border: 2px solid var(--ink);
+    border-radius: 12px;
+    padding: 7px 12px;
+    box-shadow: 2.5px 2.5px 0 var(--ink);
+    flex-wrap: wrap;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .theme-prize-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 3.5px 3.5px 0 var(--ink);
+  }
+  .theme-prize-item.juara-1 {
+    background: #FFFBEB;
+    border: 2px solid var(--ink);
+    box-shadow: 3px 3px 0 var(--ink);
+  }
+  .theme-prize-item .prize-rank-badge {
+    font-family: var(--font-baloo), 'Baloo 2', sans-serif;
+    font-weight: 800;
+    font-size: 11.5px;
+    padding: 2px 8px;
+    border-radius: 6px;
+    border: 1.5px solid var(--ink);
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    line-height: 1.2;
+  }
+  .theme-prize-item .prize-rank-badge.j1 { background: var(--yellow); color: var(--ink); }
+  .theme-prize-item .prize-rank-badge.j2 { background: #E2E8F0; color: var(--ink); }
+  .theme-prize-item .prize-rank-badge.j3 { background: #FED7AA; color: var(--ink); }
+  .theme-prize-item .prize-rank-badge.jf { background: #F1F5F9; color: var(--slate); border-color: #94A3B8; }
+  .theme-prize-item .prize-nominal {
+    font-family: var(--font-baloo), 'Baloo 2', sans-serif;
+    font-weight: 800;
+    font-size: 14.5px;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .theme-prize-item .prize-nominal.finalist {
+    font-size: 12px;
+    color: var(--slate);
+    font-weight: 700;
+  }
+  .theme-prize-item .prize-perk {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--slate);
+    background: rgba(0, 0, 0, 0.05);
+    padding: 2px 7px;
+    border-radius: 6px;
+    margin-left: auto;
+  }
 
   /* ---------- KATEGORI ---------- */
   .cat-grid{ display:grid; grid-template-columns:1fr 1fr; gap:28px; }
@@ -597,6 +834,23 @@
     .float-logo-3 { width: 44px; height: 44px; right: 6px; bottom: 8%; }
     .float-logo-3 img { max-width: 28px; max-height: 28px; border-radius: 6px; }
     .speech-bubble { font-size: 12.5px; padding: 9px 14px; max-width: 220px; margin-bottom: 10px; }
+    .mascot-prize-tag { bottom: -12px; padding: 4px 14px; gap: 6px; }
+    .mascot-prize-tag span { font-size: 16px; }
+    .mascot-prize-tag small { font-size: 9px; }
+    .mascot-prize-tag strong { font-size: 12.5px; }
+
+    /* Prize Pool Banner Mobile */
+    .prize-pool-banner { padding: 18px 16px; border-radius: 18px; margin-bottom: 24px; }
+    .prize-pool-content { flex-direction: column; align-items: flex-start; gap: 16px; }
+    .prize-pool-main { gap: 12px; }
+    .prize-trophy-box { width: 48px; height: 48px; font-size: 24px; border-radius: 14px; }
+    .prize-eyebrow { font-size: 11px; }
+    .prize-value { font-size: 26px; }
+    .prize-divider { display: none; }
+    .prize-perks { flex-direction: column; align-items: flex-start; gap: 10px; width: 100%; }
+    .prize-perk-item { gap: 10px; }
+    .prize-perk-item strong { font-size: 13px; }
+    .prize-perk-item span { font-size: 11.5px; }
 
     /* About & Theme Cards section */
     .about-theme-grid { grid-template-columns: 1fr; gap: 18px; margin-top: 18px; }
