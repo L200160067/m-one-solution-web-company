@@ -2,6 +2,7 @@
 
 import { Facebook, Instagram, Linkedin, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { siteConfig } from '../config/site';
 import type { Settings } from '@/types/api';
 import { useCdnUrl } from '@/lib/useCdnUrl';
@@ -12,6 +13,11 @@ interface FooterProps {
 }
 
 export function Footer({ settings }: FooterProps) {
+  const pathname = usePathname();
+  if (pathname?.startsWith('/butik-')) {
+    return null;
+  }
+
   const currentYear = new Date().getFullYear();
   const rawLogo = (siteConfig.logo as any)?.src || siteConfig.logo;
   const logoUrl = useCdnUrl(rawLogo);

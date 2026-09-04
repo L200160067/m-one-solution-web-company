@@ -2,8 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import { ArrowUp } from 'lucide-react';
+import { usePathname } from 'next/navigation';
 
 export function BackToTop() {
+  const pathname = usePathname();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -25,6 +27,10 @@ export function BackToTop() {
       behavior: 'smooth',
     });
   };
+
+  if (pathname?.startsWith('/butik-')) {
+    return null;
+  }
 
   return (
     <button

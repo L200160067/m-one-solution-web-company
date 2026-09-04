@@ -26,6 +26,10 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  if (pathname?.startsWith('/butik-')) {
+    return null;
+  }
+
   const isHomePage = pathname === '/';
 
   const navLinks = [

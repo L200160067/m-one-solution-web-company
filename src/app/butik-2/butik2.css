@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+.butik2-root {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #fbf6ee;
+  color: #1e1713;
+}
+
+.butik2-root .font-editorial {
+  font-family: 'Newsreader', Georgia, serif;
+}
+
+.butik2-root .font-mono {
+  font-family: 'Space Mono', monospace;
+}
+
+.butik2-root .rotate-badge {
+  animation: rotateBadge 20s linear infinite;
+}
+
+@keyframes rotateBadge {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.butik2-root .card-retro-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.butik2-root .card-retro-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 30px -8px rgba(74, 36, 20, 0.12);
+}
+
+.butik2-root .custom-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.butik2-root .custom-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

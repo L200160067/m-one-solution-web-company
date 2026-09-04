@@ -1,5 +1,6 @@
 "use client";
 
+import { usePathname } from 'next/navigation';
 import { siteConfig } from '../config/site';
 import { track } from '@/lib/analytics';
 
@@ -8,6 +9,11 @@ interface WhatsAppButtonProps {
 }
 
 export function WhatsAppButton({ whatsappNumber }: WhatsAppButtonProps) {
+  const pathname = usePathname();
+  if (pathname?.startsWith('/butik-')) {
+    return null;
+  }
+
   const phoneNumber = whatsappNumber || siteConfig.whatsapp.number;
   const message = siteConfig.whatsapp.defaultMessage;
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
