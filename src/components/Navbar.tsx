@@ -44,7 +44,7 @@ export function Navbar() {
         : 'bg-slate-950/80 backdrop-blur-sm py-6'
         }`}
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex-shrink-0 flex items-center gap-3">
             <WpImage
@@ -66,12 +66,14 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-4 xl:gap-6 relative">
+          <nav className="hidden lg:flex items-center gap-3 xl:gap-5 relative">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-slate-300 hover:text-blue-400 transition-colors"
+                className={`text-sm font-medium transition-colors ${
+                  pathname === link.href ? 'text-blue-400 font-semibold' : 'text-slate-300 hover:text-blue-400'
+                }`}
               >
                 {link.name}
               </Link>
@@ -107,11 +109,19 @@ export function Navbar() {
                     <div className="text-xs text-slate-500">Website & Sistem PPDB Online</div>
                   </Link>
                   <Link
+                    href="/pricing"
+                    className="block px-4 py-3 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors border-b border-white/5"
+                    onClick={() => setIsPaketDropdownOpen(false)}
+                  >
+                    <div className="font-bold text-cyan-400 mb-1">Landing Page UMKM</div>
+                    <div className="text-xs text-slate-500">Daftar Harga & Paket Website</div>
+                  </Link>
+                  <Link
                     href="/layanan/jasa-erp-umkm"
                     className="block px-4 py-3 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors"
                     onClick={() => setIsPaketDropdownOpen(false)}
                   >
-                    <div className="font-bold text-blue-400 mb-1">Paket Web UMKM</div>
+                    <div className="font-bold text-blue-400 mb-1">Aplikasi UMKM</div>
                     <div className="text-xs text-slate-500">Toko Online & Sistem Kasir (POS)</div>
                   </Link>
                 </div>
@@ -224,13 +234,23 @@ export function Navbar() {
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       <div className="font-bold text-emerald-400">Paket Web Sekolah</div>
+                      <div className="text-xs text-slate-500">Website & Sistem PPDB Online</div>
+                    </Link>
+                    <Link
+                      href="/pricing"
+                      className="block px-4 py-3 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors border-b border-white/5"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <div className="font-bold text-cyan-400">Landing Page UMKM</div>
+                      <div className="text-xs text-slate-500">Daftar Harga & Paket Website</div>
                     </Link>
                     <Link
                       href="/layanan/jasa-erp-umkm"
                       className="block px-4 py-3 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
-                      <div className="font-bold text-blue-400">Paket Web UMKM</div>
+                      <div className="font-bold text-blue-400">Aplikasi UMKM</div>
+                      <div className="text-xs text-slate-500">Toko Online & Sistem Kasir (POS)</div>
                     </Link>
                   </div>
                 </div>
