@@ -22,13 +22,20 @@ export const metadata: Metadata = {
     description: 'Website profesional untuk membantu UMKM tampil lebih terpercaya, mudah ditemukan, dan siap menerima pelanggan dari internet.',
     url: `${siteConfig.baseUrl}/pricing`,
     type: 'website',
-    images: ['/og-image.jpg'],
+    images: [
+      {
+        url: '/og-pricing.png',
+        width: 1200,
+        height: 630,
+        alt: 'Bawa Usaha Anda Naik Kelas - Price List Website UMKM M-One Solution',
+      }
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Price List Website UMKM — M-One Solution',
     description: 'Pilihan paket pembuatan website UMKM profesional mulai Rp 99.000 / bulan.',
-    images: ['/og-image.jpg'],
+    images: ['/og-pricing.png'],
   },
 };
 
