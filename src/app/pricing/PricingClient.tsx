@@ -199,7 +199,7 @@ export default function PricingClient() {
       <Section className="bg-slate-50">
         <Container>
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-6">Tingkatkan Efisiensi, Kurangi Kebocoran Dana</h2>
+            <h2 className="text-3xl font-bold text-slate-900 mb-6">Tingkatkan Visibilitas, Jangkau Lebih Banyak Pelanggan</h2>
             <p className="text-slate-600 text-lg mb-8">
               Kami paham tantangan terbesar UMKM adalah membangun kepercayaan konsumen dan menjangkau pasar baru. Kami siap memberikan website profesional siap pakai untuk usaha Anda.
             </p>
