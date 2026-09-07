@@ -33,14 +33,14 @@ export function FastPackages() {
                             <Store className="w-8 h-8" />
                         </div>
 
-                        <h3 className="text-2xl font-bold text-slate-900 mb-3">Paket Web UMKM</h3>
+                        <h3 className="text-2xl font-bold text-slate-900 mb-3">Paket UMKM</h3>
                         <p className="text-slate-600 mb-6 flex-1">
                             Mulai dari Website Profil, Ecommerce dengan Payment Gateway, hingga Sistem Kasir (POS) dan Gudang tanpa biaya langganan bulanan.
                         </p>
 
                         <div className="flex items-center justify-between mt-auto">
                             <span className="text-sm font-semibold text-slate-500">Mulai dari Rp 1 JT</span>
-                            <Link href="/layanan/jasa-erp-umkm" aria-label="Lihat paket web UMKM M-One Lite" className="inline-flex items-center gap-2 text-blue-600 font-bold group-hover:gap-3 transition-all">
+                            <Link href="/layanan/jasa-erp-umkm" aria-label="Lihat paket UMKM M-One Lite" className="inline-flex items-center gap-2 text-blue-600 font-bold group-hover:gap-3 transition-all">
                                 Lihat Paket <ArrowRight className="w-4 h-4" />
                             </Link>
                         </div>
@@ -54,14 +54,14 @@ export function FastPackages() {
                             <GraduationCap className="w-8 h-8" />
                         </div>
 
-                        <h3 className="text-2xl font-bold text-slate-900 mb-3">Paket Web Sekolah</h3>
+                        <h3 className="text-2xl font-bold text-slate-900 mb-3">Paket Sekolah</h3>
                         <p className="text-slate-600 mb-6 flex-1">
                             Digitalisasi sarana pendidikan mulai dari Profil Resmi (.sch.id), Portal Berita, hingga Sistem PPDB Online & CBT E-Learning lengkap.
                         </p>
 
                         <div className="flex items-center justify-between mt-auto">
                             <span className="text-sm font-semibold text-slate-500">Mulai dari Rp 1.5 JT</span>
-                            <Link href="/layanan/jasa-pembuatan-website-sekolah" aria-label="Lihat paket web sekolah M-One Lite" className="inline-flex items-center gap-2 text-emerald-700 font-bold group-hover:gap-3 transition-all">
+                            <Link href="/layanan/jasa-pembuatan-website-sekolah" aria-label="Lihat paket sekolah M-One Lite" className="inline-flex items-center gap-2 text-emerald-700 font-bold group-hover:gap-3 transition-all">
                                 Lihat Paket <ArrowRight className="w-4 h-4" />
                             </Link>
                         </div>
