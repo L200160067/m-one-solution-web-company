@@ -23,7 +23,7 @@ export default function JasaERPMPage() {
         <main className="pt-20 min-h-screen bg-slate-50">
             <div className="bg-white border-b border-slate-100">
                 <Container className="py-3">
-                    <Breadcrumb items={[{ label: 'Layanan', href: '/services' }, { label: 'Website & IT UMKM' }]} className="!bg-transparent !p-0 !border-none !shadow-none" />
+                    <Breadcrumb items={[{ label: 'Layanan', href: '/services' }, { label: 'Website & IT UMKM' }]} className="bg-transparent! p-0! border-none! shadow-none!" />
                 </Container>
             </div>
 

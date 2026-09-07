@@ -132,7 +132,7 @@ export default function PricingClient() {
               { label: 'Layanan', href: '/services' }, 
               { label: 'Landing Page & Website UMKM' }
             ]} 
-            className="bg-transparent! !p-0 !border-none !shadow-none" 
+            className="bg-transparent! p-0! border-none! shadow-none!" 
           />
         </Container>
       </div>

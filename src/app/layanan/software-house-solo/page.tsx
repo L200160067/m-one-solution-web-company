@@ -18,7 +18,7 @@ export default function SoftwareHouseSoloPage() {
         <main className="pt-20 min-h-screen bg-slate-50">
             <div className="bg-white border-b border-slate-100">
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-                    <Breadcrumb items={[{ label: 'Layanan', href: '/services' }, { label: 'Software House Solo' }]} className="!bg-transparent !p-0 !border-none !shadow-none" />
+                    <Breadcrumb items={[{ label: 'Layanan', href: '/services' }, { label: 'Software House Solo' }]} className="bg-transparent! p-0! border-none! shadow-none!" />
                 </div>
             </div>
             {/* Hero Section */}

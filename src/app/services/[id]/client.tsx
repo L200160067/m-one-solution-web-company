@@ -1,10 +1,15 @@
 "use client";
 
-import { ArrowLeft, CheckCircle2, ArrowRight, Image as ImageIcon } from 'lucide-react';
-import Link from 'next/link';
-import { EmptyState } from '@/components/ui/EmptyState';
-import { ErrorState } from '@/components/ui/ErrorState';
-import { WpImage } from '@/components/image/WpImage';
+import {
+  ArrowLeft,
+  CheckCircle2,
+  ArrowRight,
+  Image as ImageIcon,
+} from "lucide-react";
+import Link from "next/link";
+import { EmptyState } from "@/components/ui/EmptyState";
+import { ErrorState } from "@/components/ui/ErrorState";
+import { WpImage } from "@/components/image/WpImage";
 
 export default function ServiceDetailClient({ service }: { service: any }) {
   if (!service) {
@@ -16,8 +21,8 @@ export default function ServiceDetailClient({ service }: { service: any }) {
             description="Layanan yang Anda cari mungkin sudah diubah atau dipindahkan."
             actionLabel="Lihat Semua Layanan"
             onAction={() => {
-              if (typeof window !== 'undefined') {
-                window.location.href = '/services';
+              if (typeof window !== "undefined") {
+                window.location.href = "/services";
               }
             }}
           />
@@ -29,9 +34,7 @@ export default function ServiceDetailClient({ service }: { service: any }) {
   return (
     <main className="pt-24 pb-16 min-h-screen bg-slate-50">
       <article className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
-        <div
-          className="mb-12 animate-fade-in-up"
-        >
+        <div className="mb-12 animate-fade-in-up">
           <Link
             href="/services"
             className="inline-flex items-center gap-2 text-slate-500 hover:text-blue-600 transition-colors mb-8 font-medium"
@@ -74,7 +77,9 @@ export default function ServiceDetailClient({ service }: { service: any }) {
             </div>
 
             <div className="prose prose-lg prose-slate max-w-none">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6 mt-0">Tentang Layanan Ini</h2>
+              <h2 className="text-3xl font-bold text-slate-900 mb-6 mt-0">
+                Tentang Layanan Ini
+              </h2>
               <div
                 className="text-slate-600 leading-relaxed mb-12 text-lg"
                 dangerouslySetInnerHTML={{ __html: service.full_description }}
@@ -82,10 +87,15 @@ export default function ServiceDetailClient({ service }: { service: any }) {
 
               <div className="space-y-12 mb-16">
                 <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
-                  <h3 className="text-2xl font-bold text-slate-900 mb-6 mt-0">Fitur Utama</h3>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-6 mt-0">
+                    Fitur Utama
+                  </h3>
                   <ul className="space-y-4 m-0 p-0 list-none">
                     {service.features.map((feature: string, index: number) => (
-                      <li key={index} className="flex items-start gap-3 m-0 p-0">
+                      <li
+                        key={index}
+                        className="flex items-start gap-3 m-0 p-0"
+                      >
                         <CheckCircle2 className="w-6 h-6 text-blue-600 shrink-0 mt-0.5" />
                         <span className="text-slate-700">{feature}</span>
                       </li>
@@ -94,10 +104,15 @@ export default function ServiceDetailClient({ service }: { service: any }) {
                 </div>
 
                 <div className="bg-blue-50 p-8 rounded-3xl shadow-sm border border-blue-100">
-                  <h3 className="text-2xl font-bold text-slate-900 mb-6 mt-0">Manfaat untuk Bisnis Anda</h3>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-6 mt-0">
+                    Manfaat untuk Bisnis Anda
+                  </h3>
                   <ul className="space-y-4 m-0 p-0 list-none">
                     {service.benefits.map((benefit: string, index: number) => (
-                      <li key={index} className="flex items-start gap-3 m-0 p-0">
+                      <li
+                        key={index}
+                        className="flex items-start gap-3 m-0 p-0"
+                      >
                         <CheckCircle2 className="w-6 h-6 text-blue-600 shrink-0 mt-0.5" />
                         <span className="text-slate-700">{benefit}</span>
                       </li>
@@ -110,14 +125,15 @@ export default function ServiceDetailClient({ service }: { service: any }) {
 
           <div className="bg-slate-900 rounded-3xl p-12 text-center mt-8 shadow-2xl relative overflow-hidden">
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-              <div className="absolute -top-[50%] -right-[20%] w-[100%] h-[150%] rounded-full bg-blue-500/20 blur-[100px]" />
+              <div className="absolute -top-[50%] -right-[20%] w-full h-[150%] rounded-full bg-blue-500/20 blur-[100px]" />
             </div>
             <div className="relative z-10">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                 Tertarik dengan Layanan Ini?
               </h2>
               <p className="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
-                Mari diskusikan bagaimana {service.title} dapat membantu mengembangkan bisnis Anda ke level selanjutnya.
+                Mari diskusikan bagaimana {service.title} dapat membantu
+                mengembangkan bisnis Anda ke level selanjutnya.
               </p>
               <Link
                 href="/contact"
