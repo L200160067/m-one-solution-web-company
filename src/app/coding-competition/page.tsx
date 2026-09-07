@@ -359,14 +359,14 @@ export default function CompetitionPage() {
             <span className="status-live-dot"></span>
             Sedang Dibuka
           </span>
-          <span className="batch-date">3 Sep – 9 Sep 2026</span>
+          <span className="batch-date">10 Sep – 17 Sep 2026</span>
           <span className="batch-sep">•</span>
           <span className="price-amount highlight">Rp 50.000,-</span>
         </div>
         <div className="price-pill upcoming-batch">
           <span className="batch-name b2">Batch 2</span>
           <span className="batch-status-badge is-upcoming">Segera Dibuka</span>
-          <span className="batch-date">10 Sep – 25 Sep 2026</span>
+          <span className="batch-date">18 Sep – 25 Sep 2026</span>
           <span className="batch-sep">•</span>
           <span className="price-amount">Rp 60.000,-</span>
         </div>
@@ -377,7 +377,7 @@ export default function CompetitionPage() {
         <span className="step-no">1</span>
         <div className="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></div>
         <h3>Bayar Biaya Pendaftaran</h3>
-        <p>Lakukan pembayaran sesuai gelombang (Batch 1: 3–9 Sep / Batch 2: 10–25 Sep), lalu simpan resi / bukti transfernya.</p>
+        <p>Lakukan pembayaran sesuai gelombang (Batch 1: 10–17 Sep / Batch 2: 18–25 Sep), lalu simpan resi / bukti transfernya.</p>
       </div>
       <div className="step reveal">
         <span className="step-no">2</span>
