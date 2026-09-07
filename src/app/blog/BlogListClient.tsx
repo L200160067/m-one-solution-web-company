@@ -121,7 +121,7 @@ export default function BlogListClient({ posts, categories }: BlogListClientProp
                                 key={post.id}
                                 className="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300 group flex flex-col"
                             >
-                                <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
+                                <div className="relative aspect-16/10 overflow-hidden bg-slate-100">
                                     <WpImage
                                         src={post.cover_url}
                                         alt={post.title}
@@ -130,7 +130,7 @@ export default function BlogListClient({ posts, categories }: BlogListClientProp
                                         loading="lazy"
                                         className="object-cover"
                                         fallback={
-                                            <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 text-slate-400 p-8 text-center">
+                                            <div className="w-full h-full flex flex-col items-center justify-center bg-linear-to-br from-slate-100 to-slate-200 text-slate-400 p-8 text-center">
                                                 <ImageIcon className="w-12 h-12 mb-4 opacity-50" />
                                             </div>
                                         }

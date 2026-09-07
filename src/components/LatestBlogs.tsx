@@ -81,9 +81,9 @@ export function LatestBlogs({ posts }: LatestBlogsProps) {
                             {posts.map((post) => (
                                 <div
                                     key={post.id}
-                                    className="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300 group flex flex-col flex-shrink-0 w-[85vw] sm:w-[350px] snap-center"
+                                    className="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300 group flex flex-col shrink-0 w-[85vw] sm:w-87.5 snap-center"
                                 >
-                                    <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
+                                    <div className="relative aspect-16/10 overflow-hidden bg-slate-100">
                                         <WpImage
                                             src={post.cover_url}
                                             alt={post.title}
@@ -92,7 +92,7 @@ export function LatestBlogs({ posts }: LatestBlogsProps) {
                                             loading="lazy"
                                             className="object-cover"
                                             fallback={
-                                                <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 text-slate-400">
+                                                <div className="w-full h-full flex flex-col items-center justify-center bg-linear-to-br from-slate-100 to-slate-200 text-slate-400">
                                                     <ImageIcon className="w-12 h-12 mb-2 opacity-50" />
                                                 </div>
                                             }
@@ -103,7 +103,7 @@ export function LatestBlogs({ posts }: LatestBlogsProps) {
                                             </span>
                                         </div>
                                     </div>
-                                    <div className="p-6 flex flex-col flex-grow">
+                                    <div className="p-6 flex flex-col grow">
                                         <div className="flex items-center gap-4 text-sm text-slate-500 mb-4">
                                             <div className="flex items-center gap-1.5">
                                                 <Calendar className="w-4 h-4" />
@@ -121,7 +121,7 @@ export function LatestBlogs({ posts }: LatestBlogsProps) {
                                                 {post.title}
                                             </Link>
                                         </h3>
-                                        <p className="text-slate-600 mb-6 line-clamp-3 flex-grow">
+                                        <p className="text-slate-600 mb-6 line-clamp-3 grow">
                                             {post.excerpt}
                                         </p>
                                         <Link

@@ -45,7 +45,7 @@ export function Projects({ projects }: ProjectsProps) {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project) => (
               <div key={project.id} className="group">
-                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-6 bg-slate-100 border border-slate-200">
+                <div className="relative aspect-4/3 rounded-2xl overflow-hidden mb-6 bg-slate-100 border border-slate-200">
                   <WpImage
                     src={project.image_url}
                     alt={project.title}
@@ -54,7 +54,7 @@ export function Projects({ projects }: ProjectsProps) {
                     loading="lazy"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                     fallback={
-                      <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 text-slate-400">
+                      <div className="w-full h-full flex items-center justify-center bg-linear-to-br from-slate-100 to-slate-200 text-slate-400">
                         <ImageIcon className="w-12 h-12 opacity-50" />
                       </div>
                     }
@@ -84,7 +84,7 @@ export function Projects({ projects }: ProjectsProps) {
                         href={project.project_url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-2 rounded-full bg-slate-100 text-slate-400 hover:text-blue-600 hover:bg-blue-50 transition-all shadow-sm flex-shrink-0"
+                        className="p-2 rounded-full bg-slate-100 text-slate-400 hover:text-blue-600 hover:bg-blue-50 transition-all shadow-sm shrink-0"
                         aria-label={`Kunjungi website ${project.title}`}
                         title={`Kunjungi website ${project.title}`}
                       >

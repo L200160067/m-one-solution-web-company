@@ -96,7 +96,7 @@ export default function ServicesListClient({ services, categories }: ServicesLis
                             key={service.id}
                             className="bg-white rounded-3xl overflow-hidden border border-slate-100 hover:shadow-xl transition-all duration-300 group flex flex-col h-full"
                         >
-                            <div className="relative aspect-[4/3] overflow-hidden bg-slate-100">
+                            <div className="relative aspect-4/3 overflow-hidden bg-slate-100">
                                 <WpImage
                                     src={service.image_url}
                                     alt={service.title}
@@ -105,19 +105,19 @@ export default function ServicesListClient({ services, categories }: ServicesLis
                                     loading="lazy"
                                     className="object-cover"
                                     fallback={
-                                        <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 text-slate-400">
+                                        <div className="w-full h-full flex items-center justify-center bg-linear-to-br from-slate-100 to-slate-200 text-slate-400">
                                             <ImageIcon className="w-12 h-12 opacity-50" />
                                         </div>
                                     }
                                 />
                             </div>
-                            <div className="p-6 sm:p-8 flex flex-col flex-grow">
+                            <div className="p-6 sm:p-8 flex flex-col grow">
                                 <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3 md:mb-4 group-hover:text-blue-600 transition-colors line-clamp-2">
                                     <Link href={`/services/${service.slug}`}>
                                         {service.title}
                                     </Link>
                                 </h2>
-                                <p className="text-slate-600 mb-6 md:mb-8 leading-relaxed flex-grow text-sm md:text-base line-clamp-3 md:line-clamp-4">
+                                <p className="text-slate-600 mb-6 md:mb-8 leading-relaxed grow text-sm md:text-base line-clamp-3 md:line-clamp-4">
                                     {service.short_description}
                                 </p>
                                 <div className="mt-auto pt-5 md:pt-6 border-t border-slate-200/60">
@@ -137,7 +137,7 @@ export default function ServicesListClient({ services, categories }: ServicesLis
 
             {/* Persistent CTA Button */}
             <div
-                className="fixed bottom-0 left-0 right-0 p-4 md:p-6 bg-gradient-to-t from-white via-white to-transparent z-40 flex justify-center pointer-events-none animate-fade-in-up"
+                className="fixed bottom-0 left-0 right-0 p-4 md:p-6 bg-linear-to-t from-white via-white to-transparent z-40 flex justify-center pointer-events-none animate-fade-in-up"
             >
                 <Link
                     href="/contact"

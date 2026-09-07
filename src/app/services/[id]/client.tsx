@@ -56,7 +56,7 @@ export default function ServiceDetailClient({ service }: { service: any }) {
 
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             <div className="lg:sticky lg:top-32">
-              <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
+              <div className="aspect-4/3 rounded-3xl overflow-hidden shadow-2xl">
                 <WpImage
                   src={service.image_url}
                   alt={service.title}

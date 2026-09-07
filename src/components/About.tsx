@@ -18,7 +18,7 @@ export function About() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Image Side */}
           <div className="relative">
-            <div className="aspect-[4/3] rounded-3xl overflow-hidden relative">
+            <div className="aspect-4/3 rounded-3xl overflow-hidden relative">
               <WpImage
                 src="/images/branding/about.webp"
                 alt="Tim M-One Solution — Software House Sukoharjo, Jawa Tengah"
@@ -27,7 +27,7 @@ export function About() {
                 loading="lazy"
                 className="object-cover w-full h-full"
                 fallback={
-                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 text-slate-500">
+                  <div className="w-full h-full flex items-center justify-center bg-linear-to-br from-slate-100 to-slate-200 text-slate-500">
                     <ImageIcon className="w-12 h-12 opacity-70" />
                   </div>
                 }
@@ -70,7 +70,7 @@ export function About() {
             <div className="grid sm:grid-cols-2 gap-4 mb-8">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-center gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                  <CheckCircle2 className="w-5 h-5 text-blue-600 shrink-0" />
                   <span className="font-medium text-slate-700">{feature}</span>
                 </div>
               ))}
