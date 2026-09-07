@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Baloo_2, Nunito, Bangers } from 'next/font/google';
 import { siteConfig } from '@/config/site';
+import Script from 'next/script';
 
 const baloo = Baloo_2({
   subsets: ['latin'],
@@ -26,7 +27,7 @@ const bangers = Bangers({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.baseUrl),
   title: 'M-ONE Telkomsel Coding Competition 2026 | Pendaftaran',
-  description: 'Lomba Inovasi Website & AI untuk pelajar SMP, SMA/SMK, mahasiswa, dan umum se-Solo Raya. Diselenggarakan oleh M-One Solution dan Telkomsel.',
+  description: 'Lomba Inovasi Website & AI untuk pelajar SMP, SMA/SMK, mahasiswa, dan umum se-Solo Raya. Total prize pool Rp 3.200.000! Daftar sekarang, kuota terbatas! Diselenggarakan oleh M-One Solution dan Telkomsel.',
   keywords: 'lomba coding 2026, kompetisi website solo, coding competition sukoharjo, telkomsel coding competition, lomba ai smp sma mahasiswa, m-one solution event',
   alternates: {
     canonical: `${siteConfig.baseUrl}/coding-competition`,
@@ -58,8 +59,42 @@ export const metadata: Metadata = {
 };
 
 export default function CompetitionLayout({ children }: { children: React.ReactNode }) {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Event',
+    name: 'M-ONE Telkomsel Coding Competition 2026',
+    description: 'Lomba Inovasi Website & AI untuk pelajar SMP, SMA/SMK, mahasiswa, dan umum se-Solo Raya. Total prize pool Rp 3.200.000!',
+    startDate: '2026-09-27',
+    endDate: '2026-10-10',
+    location: {
+      '@type': 'VirtualLocation',
+      url: 'https://m-one-solution.com/coding-competition',
+    },
+    organizer: {
+      '@type': 'Organization',
+      name: 'M-One Solution',
+    },
+    sponsor: {
+      '@type': 'Organization',
+      name: 'Telkomsel',
+    },
+    offers: {
+      '@type': 'Offer',
+      price: '50000',
+      priceCurrency: 'IDR',
+      availability: 'https://schema.org/InStock',
+      validFrom: '2026-09-10',
+    },
+    image: 'https://m-one-solution.com/og-coding-competition.jpg',
+  };
+
   return (
     <div className={`${baloo.variable} ${nunito.variable} ${bangers.variable}`}>
+      <Script
+        id="json-ld-competition"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {children}
     </div>
   );
