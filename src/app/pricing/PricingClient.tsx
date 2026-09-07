@@ -43,6 +43,7 @@ export default function PricingClient() {
       id: 'starter',
       name: 'STARTER',
       tagline: 'Untuk usaha yang butuh kartu nama digital & media promosi online.',
+      benefit: 'Cocok untuk usaha baru yang ingin punya identitas digital profesional.',
       monthlyOriginalPrice: 'Rp 149.000',
       monthlyPrice: 'Rp 99.000',
       monthlyPeriod: '/bln',
@@ -68,6 +69,7 @@ export default function PricingClient() {
       id: 'business',
       name: 'BUSINESS',
       tagline: 'Sistem website komplit siap tingkatkan kredibilitas & penjualan.',
+      benefit: 'Sistem lengkap untuk meningkatkan kredibilitas & penjualan.',
       monthlyOriginalPrice: 'Rp 199.000',
       monthlyPrice: 'Rp 149.000',
       monthlyPeriod: '/bln',
@@ -95,6 +97,7 @@ export default function PricingClient() {
       id: 'pro',
       name: 'PRO',
       tagline: 'Performa maksimal dengan optimasi konversi & SEO lokal mendalam.',
+      benefit: 'Performa maksimal untuk bisnis yang serius di dunia digital.',
       monthlyOriginalPrice: 'Rp 349.000',
       monthlyPrice: 'Rp 249.000',
       monthlyPeriod: '/bln',
@@ -129,7 +132,7 @@ export default function PricingClient() {
               { label: 'Layanan', href: '/services' }, 
               { label: 'Landing Page & Website UMKM' }
             ]} 
-            className="!bg-transparent !p-0 !border-none !shadow-none" 
+            className="bg-transparent! !p-0 !border-none !shadow-none" 
           />
         </Container>
       </div>
@@ -145,9 +148,9 @@ export default function PricingClient() {
           </div>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight max-w-4xl mx-auto">
-            Bawa Usaha Anda Naik Kelas! <br className="hidden md:block"/>
+            Bawa Usaha Anda Naik Kelas dengan Website Profesional <br className="hidden md:block"/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-blue-400">
-              Terima Beres Tanpa Ribet
+              Mulai Rp 99.000/bulan — Terima Beres Tanpa Ribet
             </span>
           </h1>
 
@@ -304,6 +307,11 @@ export default function PricingClient() {
                     <div className="mb-4">
                       <h3 className="text-2xl font-bold mb-2 text-white">{pkg.name}</h3>
                       <p className="text-indigo-100 text-sm">{pkg.tagline}</p>
+                      {pkg.benefit && (
+                        <p className="text-indigo-200 text-sm font-medium mt-1 bg-indigo-500/30 px-3 py-1 rounded-full inline-block">
+                          ✨ {pkg.benefit}
+                        </p>
+                      )}
                     </div>
 
                     {/* Price with strikethrough & starburst badge */}
@@ -452,6 +460,24 @@ export default function PricingClient() {
                   dibayar di muka 1 tahun dan mendapatkan harga lebih hemat (diskon 33%). Domain, hosting, SSL, serta layanan yang tercantum dalam paket berlaku selama periode berlangganan.
                 </div>
 
+                <div className="p-4 rounded-2xl bg-emerald-50 border border-emerald-100">
+                  <span className="font-bold text-emerald-900">Metode Pembayaran: </span>
+                  <span className="text-emerald-800">Transfer bank ke rekening berikut:</span>
+                  <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm">
+                    <div className="bg-white rounded-xl p-3 border border-emerald-100 shadow-sm">
+                      <span className="font-bold text-slate-900">Bank Rakyat Indonesia (BRI)</span>
+                      <p className="text-slate-600">No. Rekening: 1234-5678-9012</p>
+                      <p className="text-slate-500 text-xs">a.n. M-One Solution</p>
+                    </div>
+                    <div className="bg-white rounded-xl p-3 border border-emerald-100 shadow-sm">
+                      <span className="font-bold text-slate-900">Bank Mandiri</span>
+                      <p className="text-slate-600">No. Rekening: 9876-5432-1098</p>
+                      <p className="text-slate-500 text-xs">a.n. M-One Solution</p>
+                    </div>
+                  </div>
+                  <p className="text-xs text-emerald-700 mt-2">* Konfirmasi pembayaran melalui WhatsApp setelah transfer.</p>
+                </div>
+
                 <div className="p-4 rounded-2xl bg-amber-50 border border-amber-100 text-amber-800 text-xs sm:text-sm">
                   <span className="font-bold text-amber-900">Catatan: </span>
                   pengembangan fitur khusus, redesign besar, e-commerce kompleks, sistem booking, dashboard, dan integrasi pihak ketiga dapat dikenakan biaya pengembangan terpisah.
@@ -576,21 +602,29 @@ export default function PricingClient() {
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a 
+            <a
               href={defaultWaHero}
-              target="_blank" 
-              rel="noopener noreferrer" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full sm:w-auto px-8 py-4 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold rounded-xl transition-all flex items-center justify-center gap-2 shadow-lg shadow-green-500/30"
             >
               <MessageCircle className="w-5 h-5" />
               Konsultasi Sekarang via WhatsApp
             </a>
-            <a 
-              href="/portfolio" 
+            <a
+              href="/portfolio"
               className="w-full sm:w-auto px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-medium rounded-xl transition-all border border-white/10 flex items-center justify-center gap-2"
             >
               Lihat Portofolio <ArrowRight className="w-4 h-4" />
             </a>
+          </div>
+
+          <div className="flex flex-wrap items-center justify-center gap-3 mt-6 text-sm">
+            <a href="/services" className="text-slate-300 hover:text-white transition-colors border-b border-slate-700 hover:border-white">Layanan</a>
+            <span className="text-slate-600">·</span>
+            <a href="/blog" className="text-slate-300 hover:text-white transition-colors border-b border-slate-700 hover:border-white">Blog & Artikel</a>
+            <span className="text-slate-600">·</span>
+            <a href="/contact" className="text-slate-300 hover:text-white transition-colors border-b border-slate-700 hover:border-white">Hubungi Kami</a>
           </div>
 
           <p className="text-xs text-slate-400 mt-6 italic">

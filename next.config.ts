@@ -108,9 +108,14 @@ const nextConfig: NextConfig = {
         ],
     },
     async headers() {
+        const isDev = process.env.NODE_ENV === 'development';
+        const scriptSrc = isDev
+            ? "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com"
+            : "script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com";
+
         const csp = [
             "default-src 'self'",
-            "script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com",
+            scriptSrc,
             "style-src 'self' 'unsafe-inline'",
             "img-src 'self' data: https:",
             "font-src 'self'",

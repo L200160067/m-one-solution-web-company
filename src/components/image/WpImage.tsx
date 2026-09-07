@@ -44,9 +44,13 @@ export function WpImage({
   const [errored, setErrored] = useState(false);
 
   if (!resolvedSrc || errored) {
+    // When fill is true, use absolute positioning to fully cover the container
+    const fallbackClassName = fill
+      ? `absolute inset-0 bg-slate-100 text-slate-400 flex items-center justify-center ${className || ''}`
+      : `bg-slate-100 text-slate-400 flex items-center justify-center ${className || ''}`;
     return (
       <div
-        className={`bg-slate-100 text-slate-400 flex items-center justify-center ${className || ''}`}
+        className={fallbackClassName}
         aria-label={alt}
         role="img"
       >

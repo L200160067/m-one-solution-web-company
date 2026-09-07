@@ -42,9 +42,13 @@ export const metadata: Metadata = {
 export default function PricingPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'PriceSpecification',
-    'name': 'Price List Website UMKM M-One Solution',
-    'description': 'Layanan pembuatan website profesional untuk UMKM: Paket Starter, Business, dan Pro.',
+    '@type': 'Product',
+    'name': 'Layanan Pembuatan Website Profesional untuk UMKM',
+    'description': 'Paket website profesional untuk UMKM: Starter, Business, dan Pro. Mulai Rp 99.000/bulan. Domain, hosting, SSL, dan support included.',
+    'brand': {
+      '@type': 'Brand',
+      'name': 'M-One Solution'
+    },
     'provider': {
       '@type': 'Organization',
       'name': siteConfig.name,
@@ -52,29 +56,51 @@ export default function PricingPage() {
       'telephone': '+62 812-2666-2812',
       'email': 'monesolutionsoftwarehouse@gmail.com',
     },
-    'priceCurrency': 'IDR',
-    'minPrice': '99000',
     'offers': [
       {
         '@type': 'Offer',
-        'name': 'STARTER',
+        'name': 'Paket STARTER',
         'price': '99000',
         'priceCurrency': 'IDR',
-        'description': '1 landing page profesional, responsive HP & desktop, domain & hosting, SSL, integrasi WA & Maps.'
+        'priceSpecification': {
+          '@type': 'PriceSpecification',
+          'price': '99000',
+          'priceCurrency': 'IDR',
+          'valueAddedTaxIncluded': true
+        },
+        'description': '1 landing page profesional, responsive HP & desktop, domain & hosting, SSL, integrasi WA & Maps. Cocok untuk usaha baru yang ingin punya identitas digital profesional.',
+        'availability': 'https://schema.org/InStock',
+        'url': `${siteConfig.baseUrl}/pricing#starter`
       },
       {
         '@type': 'Offer',
-        'name': 'BUSINESS',
+        'name': 'Paket BUSINESS',
         'price': '149000',
         'priceCurrency': 'IDR',
-        'description': 'Hingga 5 halaman, katalog produk/jasa, form kontak, Google Analytics, update konten & prioritas support.'
+        'priceSpecification': {
+          '@type': 'PriceSpecification',
+          'price': '149000',
+          'priceCurrency': 'IDR',
+          'valueAddedTaxIncluded': true
+        },
+        'description': 'Hingga 5 halaman, katalog produk/jasa, form kontak, Google Analytics, update konten & prioritas support. Sistem lengkap untuk meningkatkan kredibilitas & penjualan.',
+        'availability': 'https://schema.org/InStock',
+        'url': `${siteConfig.baseUrl}/pricing#business`
       },
       {
         '@type': 'Offer',
-        'name': 'PRO',
+        'name': 'Paket PRO',
         'price': '249000',
         'priceCurrency': 'IDR',
-        'description': 'Hingga 10 halaman, SEO lokal, tracking konversi, Meta Pixel & GTM, optimasi kecepatan & priority maintenance.'
+        'priceSpecification': {
+          '@type': 'PriceSpecification',
+          'price': '249000',
+          'priceCurrency': 'IDR',
+          'valueAddedTaxIncluded': true
+        },
+        'description': 'Hingga 10 halaman, SEO lokal, tracking konversi, Meta Pixel & GTM, optimasi kecepatan & priority maintenance. Performa maksimal untuk bisnis yang serius di dunia digital.',
+        'availability': 'https://schema.org/InStock',
+        'url': `${siteConfig.baseUrl}/pricing#pro`
       }
     ]
   };

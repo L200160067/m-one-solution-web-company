@@ -6,11 +6,12 @@ import { siteConfig } from '@/config/site';
 import { Container } from '@/components/ui/Container';
 import { Section } from '@/components/ui/Section';
 import { BlobBackground } from '@/components/ui/BlobBackground';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
-    title: 'Jasa Pembuatan Website Sekolah & Sistem PPDB | M-One Solution',
-    description: 'Jasa pembuatan website sekolah SD, SMP, SMA/SMK dengan sistem PPDB Online (Penerimaan Siswa Baru) dan e-learning. Tarif jelas, pengerjaan cepat, terima beres.',
-    keywords: 'jasa pembuatan website sekolah, website ppdb online, aplikasi sekolah, e-learning sekolah, siakad sekolah',
+    title: 'Jasa Pembuatan Website Sekolah & Sistem PPDB | M-One Solution Sukoharjo Solo',
+    description: 'Jasa pembuatan website sekolah di Sukoharjo & Solo. Sistem PPDB online, domain .sch.id, dan support 1 tahun. Mulai Rp 1,5 Juta! Untuk SD, SMP, SMA/SMK. Terima beres, garansi 100%.',
+    keywords: 'jasa pembuatan website sekolah, website ppdb online, aplikasi sekolah, e-learning sekolah, siakad sekolah, pembuatan website sekolah sukoharjo, jasa website sekolah solo',
     alternates: {
         canonical: `${siteConfig.baseUrl}/layanan/jasa-pembuatan-website-sekolah`,
     }
@@ -27,6 +28,48 @@ export default function WebsiteSekolahPage() {
                     <Breadcrumb items={[{ label: 'Layanan', href: '/services' }, { label: 'Jasa Website Sekolah' }]} className="!bg-transparent !p-0 !border-none !shadow-none" />
                 </Container>
             </div>
+            <Script
+                id="json-ld-website-sekolah"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "Product",
+                        "name": "Jasa Pembuatan Website Sekolah & PPDB Online",
+                        "description": "Jasa pembuatan website sekolah di Sukoharjo & Solo. Sistem PPDB online, domain .sch.id, dan support 1 tahun. Mulai Rp 1,5 Juta.",
+                        "brand": {
+                            "@type": "Brand",
+                            "name": "M-One Solution"
+                        },
+                        "offers": [
+                            {
+                                "@type": "Offer",
+                                "name": "Paket Basic Profil",
+                                "price": "1500000",
+                                "priceCurrency": "IDR",
+                                "description": "Website profil sekolah dengan domain .sch.id, hosting, desain responsif, dan fitur berita.",
+                                "availability": "https://schema.org/InStock"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Paket Standar + PPDB",
+                                "price": "3500000",
+                                "priceCurrency": "IDR",
+                                "description": "Website lengkap dengan sistem PPDB online, formulir pendaftaran, dashboard admin, dan ekspor data.",
+                                "availability": "https://schema.org/InStock"
+                            },
+                            {
+                                "@type": "Offer",
+                                "name": "Paket Premium SIAKAD",
+                                "price": "7500000",
+                                "priceCurrency": "IDR",
+                                "description": "Sistem SIAKAD lengkap dengan ujian online (CBT), e-rapor, manajemen guru, jadwal, dan absensi digital.",
+                                "availability": "https://schema.org/InStock"
+                            }
+                        ]
+                    })
+                }}
+            />
 
             {/* Hero Section - LOW FRICTION, HIGH CONVERSION */}
             <Section className="bg-slate-900 text-white relative overflow-hidden">
@@ -40,11 +83,11 @@ export default function WebsiteSekolahPage() {
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                         Terima Beres! <br className="hidden md:block"/>
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-400">
-                            Website Sekolah & PPDB Online
+                            Website Sekolah & PPDB Online — Mulai Rp 1,5 Juta
                         </span>
                     </h1>
                     <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-10">
-                        Tidak perlu pusing mikir server atau coding. Kami bangunkan website profil sekolah Anda lengkap dengan sistem pendaftaran siswa baru. Harga transparan, support penuh.
+                        Khusus sekolah di Sukoharjo & Solo. Tidak perlu pusing mikir server atau coding. Kami bangunkan website profil sekolah Anda lengkap dengan sistem pendaftaran siswa baru. Harga transparan, support penuh 1 tahun.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                         <a href={waLink} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto px-8 py-4 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold rounded-xl transition-all flex items-center justify-center gap-2 shadow-lg shadow-green-500/30">
@@ -143,16 +186,23 @@ export default function WebsiteSekolahPage() {
 
                     <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                         {/* Paket Basic */}
-                        <div className="bg-slate-800 rounded-3xl p-8 border border-slate-700 hover:border-slate-500 transition-all flex flex-col">
+                        <div className="bg-slate-800 rounded-3xl p-8 border border-slate-700 hover:border-teal-500 hover:shadow-xl hover:shadow-teal-900/30 transition-all duration-300 flex flex-col group">
                             <div className="mb-6">
-                                <h3 className="text-2xl font-bold mb-2">Basic Profil</h3>
+                                <div className="flex items-center gap-2 mb-2">
+                                    <span className="text-2xl">📄</span>
+                                    <h3 className="text-2xl font-bold">Basic Profil</h3>
+                                </div>
                                 <p className="text-slate-400 text-sm">Cocok untuk sekolah yang baru ingin tampil online.</p>
+                                <p className="text-teal-400 text-sm font-medium mt-2 bg-teal-500/10 px-3 py-1 rounded-full inline-block">
+                                    ✨ Tingkatkan kepercayaan wali murid dengan website resmi sekolah
+                                </p>
                             </div>
                             <div className="mb-6">
-                                <span className="text-4xl font-extrabold">Rp 1.5 JT</span>
+                                <span className="text-5xl font-extrabold text-white">Rp 1.5 JT</span>
+                                <p className="text-slate-400 text-xs mt-1">Pembayaran tahun pertama</p>
                             </div>
                             <div className="mb-8 flex-1">
-                                <ul className="space-y-4 text-slate-300 text-sm">
+                                <ul className="space-y-3 text-slate-300 text-sm">
                                     <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-teal-400 shrink-0" /> Free Domain .sch.id & Hosting 1 Thn</li>
                                     <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-teal-400 shrink-0" /> Desain Responsif & Modern</li>
                                     <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-teal-400 shrink-0" /> Profil, Visi Misi, Fasilitas</li>
@@ -160,25 +210,32 @@ export default function WebsiteSekolahPage() {
                                     <li className="flex items-start gap-3 text-slate-500"><CheckCircle2 className="w-5 h-5 shrink-0" /> (Tanpa Sistem PPDB)</li>
                                 </ul>
                             </div>
-                            <a href={waLink + "&text=Halo+saya+ingin+pesan+Paket+Basic+Profil+Sekolah"} target="_blank" rel="noopener noreferrer" className="w-full block text-center py-4 rounded-xl bg-slate-700 hover:bg-slate-600 text-white font-semibold transition-all">
+                            <a href={waLink + "&text=Halo+saya+ingin+pesan+Paket+Basic+Profil+Sekolah"} target="_blank" rel="noopener noreferrer" className="w-full block text-center py-4 rounded-xl bg-slate-700 hover:bg-teal-600 hover:shadow-lg hover:shadow-teal-600/30 text-white font-semibold transition-all duration-300">
                                 Pesan Paket Basic
                             </a>
                         </div>
 
                         {/* Paket Standar (Best Seller) */}
-                        <div className="bg-gradient-to-br from-teal-500 to-emerald-600 rounded-3xl p-8 border-2 border-teal-300 transform md:-translate-y-4 shadow-xl shadow-teal-900/50 flex flex-col relative">
-                            <div className="absolute top-0 right-8 transform -translate-y-1/2 bg-white text-teal-600 font-bold px-4 py-1 rounded-full text-sm">
-                                PALING LARIS
+                        <div className="bg-gradient-to-br from-teal-500 to-emerald-600 rounded-3xl p-8 border-2 border-teal-300 transform md:-translate-y-4 shadow-xl shadow-teal-900/50 flex flex-col relative group hover:shadow-2xl hover:shadow-teal-900/70 transition-all duration-300">
+                            <div className="absolute top-0 right-8 transform -translate-y-1/2 bg-white text-teal-600 font-bold px-4 py-1 rounded-full text-sm shadow-lg">
+                                ⭐ PALING LARIS
                             </div>
                             <div className="mb-6">
-                                <h3 className="text-2xl font-bold mb-2">Standar + PPDB</h3>
+                                <div className="flex items-center gap-2 mb-2">
+                                    <span className="text-2xl">📋</span>
+                                    <h3 className="text-2xl font-bold">Standar + PPDB</h3>
+                                </div>
                                 <p className="text-teal-100 text-sm">Solusi lengkap untuk penerimaan siswa baru digital.</p>
+                                <p className="text-teal-200 text-sm font-medium mt-2 bg-teal-500/20 px-3 py-1 rounded-full inline-block">
+                                    ✨ Sistem pendaftaran digital — tanpa antre dan kertas, lebih efisien!
+                                </p>
                             </div>
                             <div className="mb-6">
-                                <span className="text-4xl font-extrabold">Rp 3.5 JT</span>
+                                <span className="text-5xl font-extrabold text-white">Rp 3.5 JT</span>
+                                <p className="text-teal-100 text-xs mt-1">Pembayaran tahun pertama</p>
                             </div>
                             <div className="mb-8 flex-1">
-                                <ul className="space-y-4 text-white text-sm">
+                                <ul className="space-y-3 text-white text-sm">
                                     <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-teal-200 shrink-0" /> Semua Fitur Paket Basic</li>
                                     <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-teal-200 shrink-0" /> <b>Sistem PPDB Online Lengkap</b></li>
                                     <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-teal-200 shrink-0" /> Formulir Pendaftaran & Upload Berkas</li>
@@ -186,30 +243,37 @@ export default function WebsiteSekolahPage() {
                                     <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-teal-200 shrink-0" /> Ekspor Data Siswa ke Excel</li>
                                 </ul>
                             </div>
-                            <a href={waLink + "&text=Halo+saya+ingin+pesan+Paket+Standar+PPDB+Sekolah"} target="_blank" rel="noopener noreferrer" className="w-full block text-center py-4 rounded-xl bg-white text-teal-600 hover:bg-slate-50 font-bold transition-all shadow-lg">
+                            <a href={waLink + "&text=Halo+saya+ingin+pesan+Paket+Standar+PPDB+Sekolah"} target="_blank" rel="noopener noreferrer" className="w-full block text-center py-4 rounded-xl bg-white text-teal-600 hover:bg-teal-50 hover:shadow-lg hover:shadow-teal-300/50 font-bold transition-all duration-300">
                                 Pesan Paket Standar
                             </a>
                         </div>
 
                         {/* Paket Premium */}
-                        <div className="bg-slate-800 rounded-3xl p-8 border border-slate-700 hover:border-slate-500 transition-all flex flex-col">
+                        <div className="bg-slate-800 rounded-3xl p-8 border border-slate-700 hover:border-purple-500 hover:shadow-xl hover:shadow-purple-900/30 transition-all duration-300 flex flex-col group">
                             <div className="mb-6">
-                                <h3 className="text-2xl font-bold mb-2">Premium SIAKAD</h3>
+                                <div className="flex items-center gap-2 mb-2">
+                                    <span className="text-2xl">🏫</span>
+                                    <h3 className="text-2xl font-bold">Premium SIAKAD</h3>
+                                </div>
                                 <p className="text-slate-400 text-sm">Untuk sekolah yang butuh sistem ujian online & absensi.</p>
+                                <p className="text-purple-400 text-sm font-medium mt-2 bg-purple-500/10 px-3 py-1 rounded-full inline-block">
+                                    ✨ Solusi digital penuh untuk ujian online, rapor, dan absensi — sekolah siap menghadapi era digital!
+                                </p>
                             </div>
                             <div className="mb-6">
-                                <span className="text-4xl font-extrabold">Rp 7.5 JT</span>
+                                <span className="text-5xl font-extrabold text-white">Rp 7.5 JT</span>
+                                <p className="text-slate-400 text-xs mt-1">Pembayaran tahun pertama</p>
                             </div>
                             <div className="mb-8 flex-1">
-                                <ul className="space-y-4 text-slate-300 text-sm">
-                                    <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-teal-400 shrink-0" /> Semua Fitur Paket Standar</li>
-                                    <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-teal-400 shrink-0" /> Manajemen Guru & Jadwal</li>
-                                    <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-teal-400 shrink-0" /> Ujian Online (CBT) Terintegrasi</li>
-                                    <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-teal-400 shrink-0" /> Sistem E-Rapor & Nilai</li>
-                                    <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-teal-400 shrink-0" /> Integrasi Absensi Digital</li>
+                                <ul className="space-y-3 text-slate-300 text-sm">
+                                    <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-purple-400 shrink-0" /> Semua Fitur Paket Standar</li>
+                                    <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-purple-400 shrink-0" /> Manajemen Guru & Jadwal</li>
+                                    <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-purple-400 shrink-0" /> Ujian Online (CBT) Terintegrasi</li>
+                                    <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-purple-400 shrink-0" /> Sistem E-Rapor & Nilai</li>
+                                    <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-purple-400 shrink-0" /> Integrasi Absensi Digital</li>
                                 </ul>
                             </div>
-                            <a href={waLink + "&text=Halo+saya+ingin+pesan+Paket+Premium+SIAKAD+Sekolah"} target="_blank" rel="noopener noreferrer" className="w-full block text-center py-4 rounded-xl bg-slate-700 hover:bg-slate-600 text-white font-semibold transition-all">
+                            <a href={waLink + "&text=Halo+saya+ingin+pesan+Paket+Premium+SIAKAD+Sekolah"} target="_blank" rel="noopener noreferrer" className="w-full block text-center py-4 rounded-xl bg-slate-700 hover:bg-purple-600 hover:shadow-lg hover:shadow-purple-600/30 text-white font-semibold transition-all duration-300">
                                 Pesan Paket Premium
                             </a>
                         </div>
@@ -241,6 +305,34 @@ export default function WebsiteSekolahPage() {
                         ))}
                     </div>
                 </div>
+            </Section>
+
+            {/* Internal Links */}
+            <Section className="bg-slate-50 border-t border-slate-200">
+                <Container>
+                    <div className="text-center">
+                        <p className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-4">
+                            Jelajahi Layanan Lainnya
+                        </p>
+                        <div className="flex flex-wrap justify-center gap-3">
+                            <Link href="/layanan/jasa-erp-umkm" className="px-5 py-2.5 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-teal-300 hover:bg-teal-50 transition-all">
+                                Jasa ERP UMKM
+                            </Link>
+                            <Link href="/layanan/software-house-solo" className="px-5 py-2.5 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-teal-300 hover:bg-teal-50 transition-all">
+                                Software House Solo
+                            </Link>
+                            <Link href="/pricing" className="px-5 py-2.5 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-teal-300 hover:bg-teal-50 transition-all">
+                                Price List Website UMKM
+                            </Link>
+                            <Link href="/portfolio" className="px-5 py-2.5 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-teal-300 hover:bg-teal-50 transition-all">
+                                Portfolio
+                            </Link>
+                            <Link href="/contact" className="px-5 py-2.5 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-teal-300 hover:bg-teal-50 transition-all">
+                                Hubungi Kami
+                            </Link>
+                        </div>
+                    </div>
+                </Container>
             </Section>
 
         </main>
