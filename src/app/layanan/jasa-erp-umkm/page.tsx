@@ -9,18 +9,91 @@ import { BlobBackground } from '@/components/ui/BlobBackground';
 export const metadata: Metadata = {
     title: 'Jasa Pembuatan Website & Sistem Kasir (ERP) UMKM | M-One Solution',
     description: 'Tinggalkan cara manual! Jasa pembuatan website toko online dan sistem ERP terjangkau untuk UMKM: manajemen stok, kasir (POS), dan laporan keuangan langsung beres.',
-    keywords: 'jasa sistem erp, erp untuk umkm, aplikasi kasir custom, website toko online, web app manajemen bisnis, buat web umkm',
+    keywords: [
+        'jasa sistem erp umkm',
+        'erp untuk umkm',
+        'aplikasi kasir custom',
+        'website toko online',
+        'web app manajemen bisnis',
+        'jasa buat web umkm',
+        'software house sukoharjo'
+    ],
     alternates: {
         canonical: `${siteConfig.baseUrl}/layanan/jasa-erp-umkm`,
-    }
+    },
+    openGraph: {
+        title: 'Jasa Pembuatan Website & Sistem Kasir (ERP) UMKM | M-One Solution',
+        description: 'Tinggalkan cara manual! Jasa pembuatan website toko online dan sistem ERP terjangkau untuk UMKM.',
+        url: `${siteConfig.baseUrl}/layanan/jasa-erp-umkm`,
+        type: 'website',
+        images: ['/og-erp-umkm.png'],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Jasa Website & ERP UMKM | M-One Solution',
+        description: 'Website toko online + sistem kasir & gudang tanpa biaya bulanan untuk UMKM.',
+        images: ['/og-erp-umkm.png'],
+    },
 };
 
 export default function JasaERPMPage() {
     const waMessage = encodeURIComponent("Halo M-One, saya tertarik untuk digitalisasi usaha saya (UMKM). Bisa info lebih lanjut?");
     const waLink = `https://wa.me/${siteConfig.whatsapp.number}?text=${waMessage}`;
 
+    const jsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'Product',
+        'name': 'Jasa Website & Sistem ERP untuk UMKM',
+        'description': 'Jasa pembuatan website toko online dan sistem ERP terjangkau untuk UMKM.',
+        'brand': {
+            '@type': 'Brand',
+            'name': 'M-One Solution'
+        },
+        'provider': {
+            '@type': 'Organization',
+            'name': siteConfig.name,
+            'url': siteConfig.baseUrl,
+            'telephone': '+62 812-2666-2812',
+            'email': 'monesolutionsoftwarehouse@gmail.com',
+        },
+        'offers': [
+            {
+                '@type': 'Offer',
+                'name': 'Paket Go-Online',
+                'price': '1000000',
+                'priceCurrency': 'IDR',
+                'description': 'Website profil & katalog UMKM lengkap dengan domain dan hosting.',
+                'availability': 'https://schema.org/InStock',
+                'url': `${siteConfig.baseUrl}/layanan/jasa-erp-umkm#harga`
+            },
+            {
+                '@type': 'Offer',
+                'name': 'Toko Online Pintar',
+                'price': '2500000',
+                'priceCurrency': 'IDR',
+                'description': 'Sistem toko online dengan keranjang belanja, payment gateway, dan dashboard order.',
+                'availability': 'https://schema.org/InStock',
+                'url': `${siteConfig.baseUrl}/layanan/jasa-erp-umkm#harga`
+            },
+            {
+                '@type': 'Offer',
+                'name': 'ERP Kasir & Gudang',
+                'price': '5000000',
+                'priceCurrency': 'IDR',
+                'description': 'Aplikasi kasir POS, inventori multi-cabang, dan laporan keuangan realtime.',
+                'availability': 'https://schema.org/InStock',
+                'url': `${siteConfig.baseUrl}/layanan/jasa-erp-umkm#harga`
+            }
+        ]
+    };
+
     return (
-        <main className="pt-20 min-h-screen bg-slate-50">
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+            <main className="pt-20 min-h-screen bg-slate-50">
             <div className="bg-white border-b border-slate-100">
                 <Container className="py-3">
                     <Breadcrumb items={[{ label: 'Layanan', href: '/services' }, { label: 'Website & IT UMKM' }]} className="bg-transparent! p-0! border-none! shadow-none!" />
@@ -63,15 +136,15 @@ export default function JasaERPMPage() {
                     <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16 opacity-70">
                         <div className="text-center">
                             <h4 className="text-2xl font-bold text-slate-800">50+</h4>
-                            <p className="text-sm font-medium text-slate-500">UMKM Terbantu</p>
+                            <p className="text-sm font-medium text-slate-500">UMKM Terbantu sejak 2022</p>
                         </div>
                         <div className="text-center">
-                            <h4 className="text-2xl font-bold text-slate-800">100%</h4>
-                            <p className="text-sm font-medium text-slate-500">Tanpa Biaya Bulanan</p>
+                            <h4 className="text-2xl font-bold text-slate-800">7-14</h4>
+                            <p className="text-sm font-medium text-slate-500">Hari Kerja Pengerjaan</p>
                         </div>
                         <div className="text-center">
-                            <h4 className="text-2xl font-bold text-slate-800">0%</h4>
-                            <p className="text-sm font-medium text-slate-500">Ribet Instalasi</p>
+                            <h4 className="text-2xl font-bold text-slate-800">Tanpa</h4>
+                            <p className="text-sm font-medium text-slate-500">Biaya Bulanan Aplikasi</p>
                         </div>
                     </div>
                 </Container>
@@ -130,6 +203,49 @@ export default function JasaERPMPage() {
                 </Container>
             </Section>
 
+            {/* Why Choose Us Section */}
+            <Section className="bg-white border-y border-slate-100">
+                <Container>
+                    <div className="text-center max-w-3xl mx-auto mb-16">
+                        <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Kenapa Memilih M-One Solution?</h2>
+                        <p className="text-slate-600 text-lg">
+                            Kami bukan sekadar vendor IT. Kami mitra digitalisasi bisnis Anda yang fokus pada hasil nyata dan kemudahan penggunaan.
+                        </p>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        {[
+                            {
+                                icon: '📍',
+                                title: 'Tim Lokal Sukoharjo & Solo',
+                                desc: 'Paham kebutuhan UMKM lokal dan bisa meeting langsung jika diperlukan.'
+                            },
+                            {
+                                icon: '⚡',
+                                title: 'Siap Pakai 7-14 Hari',
+                                desc: 'Proses pengerjaan cepat tanpa mengorbankan kualitas sistem.'
+                            },
+                            {
+                                icon: '💰',
+                                title: 'Tanpa Biaya Bulanan',
+                                desc: 'Bayar sekali, pakai selamanya. Hanya perpanjang domain & hosting tahunan.'
+                            },
+                            {
+                                icon: '🛠️',
+                                title: 'Training & Support',
+                                desc: 'Diajari cara pakai sistem lengkap dengan panduan video dan dukungan teknis.'
+                            }
+                        ].map((item, i) => (
+                            <div key={i} className="bg-slate-50 p-8 rounded-3xl border border-slate-100 text-center hover:border-indigo-100 hover:shadow-md transition-all">
+                                <div className="text-4xl mb-4">{item.icon}</div>
+                                <h3 className="text-lg font-bold text-slate-900 mb-3">{item.title}</h3>
+                                <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+                            </div>
+                        ))}
+                    </div>
+                </Container>
+            </Section>
+
             {/* Pricing Section - PRODUCTIZED UMKM */}
             <Section id="harga" className="bg-slate-900 text-white">
                 <Container>
@@ -147,9 +263,10 @@ export default function JasaERPMPage() {
                                 <h3 className="text-2xl font-bold mb-2">Paket Go-Online</h3>
                                 <p className="text-slate-400 text-sm">Untuk usaha yang butuh kartu nama digital & etalase.</p>
                             </div>
-                            <div className="mb-6">
+                            <div className="mb-2">
                                 <span className="text-4xl font-extrabold">Rp 1 JT</span><span className="text-slate-400 text-lg">/thn</span>
                             </div>
+                            <p className="text-xs text-slate-500 mb-6">Sudah termasuk domain, hosting, SSL & setup.</p>
                             <div className="mb-8 flex-1">
                                 <ul className="space-y-4 text-slate-300 text-sm">
                                     <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-indigo-400 shrink-0" /> Free Domain .com / .id</li>
@@ -173,9 +290,10 @@ export default function JasaERPMPage() {
                                 <h3 className="text-2xl font-bold mb-2">Toko Online Pintar</h3>
                                 <p className="text-indigo-100 text-sm">Sistem toko online siap jualan untuk butik/retail.</p>
                             </div>
-                            <div className="mb-6">
+                            <div className="mb-2">
                                 <span className="text-4xl font-extrabold">Rp 2.5 JT</span><span className="text-slate-400 text-lg">/thn</span>
                             </div>
+                            <p className="text-xs text-indigo-200 mb-6">Sudah termasuk domain, hosting, SSL & payment gateway.</p>
                             <div className="mb-8 flex-1">
                                 <ul className="space-y-4 text-white text-sm">
                                     <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-indigo-200 shrink-0" /> Semua Fitur Paket Profil</li>
@@ -196,9 +314,10 @@ export default function JasaERPMPage() {
                                 <h3 className="text-2xl font-bold mb-2">ERP Kasir & Gudang</h3>
                                 <p className="text-slate-400 text-sm">Sistem kasir komplit & multi-cabang (Tanpa Langganan).</p>
                             </div>
-                            <div className="mb-6">
+                            <div className="mb-2">
                                 <span className="text-4xl font-extrabold">Rp 5 JT</span><span className="text-slate-400 text-lg">/thn</span>
                             </div>
+                            <p className="text-xs text-slate-500 mb-6">Sudah termasuk domain, hosting, SSL & training pemakaian.</p>
                             <div className="mb-8 flex-1">
                                 <ul className="space-y-4 text-slate-300 text-sm">
                                     <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-indigo-400 shrink-0" /> Aplikasi Kasir (POS) Berbasis Web</li>
@@ -216,6 +335,46 @@ export default function JasaERPMPage() {
                 </Container>
             </Section>
 
+            {/* Testimonials Section */}
+            <Section className="bg-indigo-50">
+                <Container>
+                    <div className="text-center max-w-3xl mx-auto mb-16">
+                        <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Apa Kata UMKM yang Sudah Bertransformasi?</h2>
+                        <p className="text-slate-600 text-lg">
+                            Bergabung bersama puluhan UMKM yang kini mengelola bisnisnya dengan lebih rapi, cepat, dan profesional.
+                        </p>
+                    </div>
+
+                    <div className="grid md:grid-cols-3 gap-8">
+                        {[
+                            {
+                                name: 'Bu Ratna',
+                                role: 'Pemilik Butik Sazmoon',
+                                quote: 'Sistem kasir dan website toko online dari M-One benar-benar memudahkan. Saya bisa pantau stok dan orderan dari HP tanpa ribet.'
+                            },
+                            {
+                                name: 'Pak Budi',
+                                role: 'Owner Gudang Sembako',
+                                quote: 'Dulu pembukuan manual sering selisih. Sekarang dengan ERP M-One, laporan laba rugi langsung terlihat setiap hari.'
+                            },
+                            {
+                                name: 'Mba Sari',
+                                role: 'Founder Kuliner Homemade',
+                                quote: 'Website katalog dan WhatsApp order otomatis sangat membantu. Pelanggan jadi lebih percaya karena tampilannya profesional.'
+                            }
+                        ].map((testi, i) => (
+                            <div key={i} className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
+                                <p className="text-slate-600 leading-relaxed mb-6 italic">"{testi.quote}"</p>
+                                <div>
+                                    <h4 className="font-bold text-slate-900">{testi.name}</h4>
+                                    <p className="text-sm text-indigo-600">{testi.role}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </Container>
+            </Section>
+
             {/* FAQ Section */}
             <Section className="bg-white">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -228,6 +387,8 @@ export default function JasaERPMPage() {
                             { Q: "Apakah sistem Kasir (POS) ini harus langganan bulanan?", A: "Tidak! Paket ERP Mini kami menggunakan model pembelian sekali bayar untuk fitur utama. Anda hanya membayar biaya perpanjangan server/domain tahunan, yang jauh lebih hemat dibanding langganan aplikasi kasir bulanan." },
                             { Q: "Saya gaptek, apakah akan diajari cara pemakaiannya?", A: "Pasti. Tim kami memberikan training online dan panduan video cara memasukkan produk, melayani kasir, hingga membaca laporan keuangan." },
                             { Q: "Berapa lama website toko atau sistem kasir saya siap?", A: "Layanan productized kami menjamin sistem siap pakai dalam 7–14 hari kerja setelah Anda memberikan daftar produk/menu awal." },
+                            { Q: "Apakah harga sudah termasuk domain dan hosting?", A: "Ya. Semua paket sudah include domain (.com / .id), hosting, SSL, dan setup awal. Anda hanya perlu memperpanjang domain & hosting di tahun berikutnya." },
+                            { Q: "Bisa request fitur tambahan?", A: "Bisa. Jika fitur yang Anda butuhkan di luar paket, kami bisa diskusikan estimasi tambahan biayanya secara transparan." },
                         ].map((faq, i) => (
                             <div key={i} className="bg-slate-50 p-6 rounded-2xl shadow-sm border border-slate-100">
                                 <h4 className="text-lg font-bold text-slate-900 mb-2">{faq.Q}</h4>
@@ -238,6 +399,36 @@ export default function JasaERPMPage() {
                 </div>
             </Section>
 
+            {/* Internal Links & CTA */}
+            <Section className="bg-slate-900 text-white">
+                <Container>
+                    <div className="text-center max-w-3xl mx-auto">
+                        <h2 className="text-3xl md:text-4xl font-bold mb-6">Siap Digitalisasi Usaha Anda?</h2>
+                        <p className="text-slate-400 text-lg mb-10">
+                            Jangan biarkan pencatatan manual menghambat pertumbuhan bisnis. Konsultasikan kebutuhan UMKM Anda secara GRATIS.
+                        </p>
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+                            <a href={waLink} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto px-8 py-4 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold rounded-xl transition-all flex items-center justify-center gap-2 shadow-lg shadow-green-500/30">
+                                <MessageCircle className="w-5 h-5" />
+                                Konsultasi Gratis via WhatsApp
+                            </a>
+                        </div>
+                        <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-slate-400">
+                            <a href="/pricing" className="hover:text-white transition-colors flex items-center gap-2">
+                                <ArrowRight className="w-4 h-4" /> Lihat Daftar Harga Lengkap
+                            </a>
+                            <a href="/portfolio" className="hover:text-white transition-colors flex items-center gap-2">
+                                <ArrowRight className="w-4 h-4" /> Portofolio Proyek UMKM
+                            </a>
+                            <a href="/contact" className="hover:text-white transition-colors flex items-center gap-2">
+                                <ArrowRight className="w-4 h-4" /> Hubungi Tim Kami
+                            </a>
+                        </div>
+                    </div>
+                </Container>
+            </Section>
+
         </main>
+    </>
     )
 }
