@@ -7,10 +7,18 @@ import type { Metadata } from 'next';
 import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
-    title: 'Layanan Jasa IT Sukoharjo | Web, Aplikasi & ERP — M-One Solution',
-    description: 'Jasa pembuatan website, aplikasi mobile, dan sistem ERP profesional di Sukoharjo & Solo. Tim berpengalaman M-One Solution. Konsultasi GRATIS sekarang!',
+    title: 'Jasa Pembuatan Website & Aplikasi Sukoharjo Solo | M-One Solution',
+    description: 'Jasa pembuatan website, aplikasi mobile, dan sistem ERP di Sukoharjo & Solo. Tim profesional siap bantu bisnis Anda. Konsultasi GRATIS!',
+    keywords: [
+        'jasa pembuatan website sukoharjo',
+        'software house solo',
+        'jasa aplikasi mobile sukoharjo',
+        'sistem erp solo',
+        'm-one solution layanan',
+        'jasa it sukoharjo'
+    ],
     openGraph: {
-        title: 'Layanan Jasa IT Sukoharjo | M-One Solution',
+        title: 'Jasa Pembuatan Website & Aplikasi Sukoharjo Solo | M-One Solution',
         description: 'Jasa pembuatan website, aplikasi mobile, dan sistem ERP di Sukoharjo & Solo. Konsultasi GRATIS — hubungi sekarang!',
         url: `${siteConfig.baseUrl}/services`,
         type: 'website',
@@ -18,7 +26,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Layanan Software House Sukoharjo | M-One Solution',
+        title: 'Jasa Pembuatan Website & Aplikasi Sukoharjo Solo | M-One Solution',
         description: 'Website, aplikasi mobile, dan sistem ERP dari software house terpercaya di Sukoharjo & Solo.',
         images: ['/og-image.jpg'],
     },
