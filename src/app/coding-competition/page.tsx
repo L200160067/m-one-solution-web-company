@@ -42,8 +42,8 @@ export default function CompetitionPage() {
 
       {/*  High-Impact Headline: Event Name First  */}
       <h1 className="hero-fade d-1">M-ONE TELKOMSEL CODING<br />COMPETITION <span className="ai-highlight">2026</span></h1>
-      <p className="hero-tagline bangers hero-fade d-1">Bikin Website Inovatif & Keren, Dibantu AI! 🤖</p>
-      <p className="lead hero-fade d-2">Buat kamu pelajar SMP, SMA/SMK, mahasiswa, dan masyarakat umum se-Solo Raya & sekitarnya. Nggak perlu jago-jago amat, modal semangat belajar aja udah cukup buat ikutan!</p>
+      <p className="hero-tagline bangers hero-fade d-1">Rancang Website Inovatif dengan Bantuan AI — Raih Total Hadiah Rp 3.200.000! 🏆</p>
+      <p className="lead hero-fade d-2">Buat kamu pelajar SMP, SMA/SMK, mahasiswa, dan masyarakat umum se-Solo Raya & sekitarnya. Kami mencari ide kreatif dan semangat belajar, bukan sekadar keahlian teknis. Setiap peserta punya kesempatan yang sama untuk menjadi juara!</p>
       <div className="hero-ctas hero-fade d-3">
         <a className="btn btn-primary" href="#daftar">Yuk, Daftar Sekarang! 🚀</a>
         <a className="btn btn-outline-light" href="#tentang">Cek Serunya Dulu</a>
@@ -141,7 +141,8 @@ export default function CompetitionPage() {
             <span className="t-badge-cat sekolah">Kategori Sekolah (SMP)</span>
           </div>
           <h3>"School Website Innovation"</h3>
-          <p>Peserta ditantang untuk merancang dan membangun website profil inovatif untuk sekolah masing-masing. Karya harus orisinal, buatan sendiri, dan belum pernah diikutsertakan dalam lomba lain. Bahasa pemrograman dan framework bebas. Informasi dan materi dasar dapat menggunakan data sekolah masing-masing, dengan panduan teknis yang akan dibagikan saat Technical Meeting!</p>
+          <p><strong>Fokus:</strong> Bangun website profil inovatif untuk sekolah kamu sendiri!<br/>
+          Peserta ditantang merancang dan mengembangkan website yang menampilkan identitas, prestasi, fasilitas, dan informasi sekolah dengan sentuhan kreatif. Karya harus orisinal, buatan sendiri, dan belum pernah dilombakan sebelumnya. Bahasa pemrograman dan framework bebas — kamu bebas eksplorasi! Informasi dan materi dasar dapat menggunakan data sekolah masing-masing, dengan panduan teknis yang akan dibagikan saat Technical Meeting.</p>
         </div>
         <ul className="theme-features">
           <li><strong>Peserta:</strong> Siswa/i aktif SMP se-Sukoharjo & sekitarnya</li>
@@ -341,7 +342,7 @@ export default function CompetitionPage() {
       <div className="rule"><span className="rule-num"><span>3</span></span><p>Bahasa pemrograman, framework, dan teknologi yang digunakan dibebaskan.</p></div>
       <div className="rule"><span className="rule-num"><span>4</span></span><p>Karya harus orisinal dan belum pernah dilombakan sebelumnya.</p></div>
       <div className="rule"><span className="rule-num"><span>5</span></span><p>Peserta wajib mengumpulkan karya sesuai format dan batas waktu yang telah ditentukan oleh panitia.</p></div>
-      <div className="rule"><span className="rule-num"><span>6</span></span><p>Panitia berhak mendiskualifikasi peserta yang terbukti menggunakan karya atau kode milik pihak lain tanpa izin, memperoleh bantuan di luar ketentuan lomba, memanipulasi hasil atau proses pengerjaan, bekerja sama secara tidak sah, atau melakukan tindakan lain yang memberikan keuntungan tidak wajar dalam perlombaan.</p></div>
+      <div className="rule"><span className="rule-num"><span>6</span></span><p>Panitia berhak mendiskualifikasi peserta yang terbukti:<br/>- Menggunakan karya atau kode milik pihak lain tanpa izin<br/>- Memperoleh bantuan di luar ketentuan lomba<br/>- Memanipulasi hasil atau proses pengerjaan<br/>- Bekerja sama secara tidak sah<br/>- Melakukan tindakan lain yang memberikan keuntungan tidak wajar</p></div>
       <div className="rule"><span className="rule-num"><span>7</span></span><p>Keputusan dewan juri bersifat mutlak dan tidak dapat diganggu gugat.</p></div>
     </div>
   </div>
@@ -395,7 +396,7 @@ export default function CompetitionPage() {
         <span className="step-no">4</span>
         <div className="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2"/><line x1="3.5" y1="9.5" x2="20.5" y2="9.5"/><line x1="7.5" y1="3" x2="7.5" y2="6.5"/><line x1="16.5" y1="3" x2="16.5" y2="6.5"/><circle cx="9" cy="14" r="1"/><circle cx="13" cy="14" r="1"/><circle cx="17" cy="14" r="1"/></svg></div>
         <h3>Pantau TM</h3>
-        <p>Cek email/kontak panitia secara berkala untuk jadwal dan link Technical Meeting online.</p>
+        <p>Pantau email dan WhatsApp panitia secara berkala untuk jadwal Technical Meeting dan pengumuman selanjutnya. Jika belum menerima informasi dalam 1x24 jam setelah pendaftaran, hubungi panitia melalui kontak yang tersedia.</p>
       </div>
     </div>
 
