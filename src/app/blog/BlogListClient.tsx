@@ -141,7 +141,7 @@ export default function BlogListClient({ posts, categories }: BlogListClientProp
                                         </span>
                                     </div>
                                 </div>
-                                <div className="p-6 flex flex-col flex-grow">
+                                <div className="p-6 flex flex-col grow">
                                     <div className="flex items-center gap-4 text-sm text-slate-500 mb-4">
                                         <div className="flex items-center gap-1.5">
                                             <Calendar className="w-4 h-4" />
@@ -159,7 +159,7 @@ export default function BlogListClient({ posts, categories }: BlogListClientProp
                                             {post.title}
                                         </Link>
                                     </h2>
-                                    <p className="text-slate-600 mb-6 line-clamp-3 flex-grow">
+                                    <p className="text-slate-600 mb-6 line-clamp-3 grow">
                                         {post.excerpt}
                                     </p>
                                     <Link

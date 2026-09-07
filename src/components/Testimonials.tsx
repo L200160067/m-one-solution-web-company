@@ -47,7 +47,7 @@ export function Testimonials({ testimonials }: TestimonialsProps) {
               </div>
 
               <Quote className="w-8 h-8 text-blue-400 mb-4 opacity-50" />
-              <p className="text-base text-slate-300 mb-6 leading-relaxed flex-grow">
+              <p className="text-base text-slate-300 mb-6 leading-relaxed grow">
                 "{testimonial.content}"
               </p>
               <div className="flex items-center gap-4 mt-auto">

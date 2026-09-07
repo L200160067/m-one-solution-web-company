@@ -21,12 +21,12 @@ export function Partners({ partners }: PartnersProps) {
         </div>
 
         {partners.length > 0 ? (
-          <div className="relative w-full overflow-hidden flex py-8 [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
+          <div className="relative w-full overflow-hidden flex py-8 mask-[linear-gradient(to_right,transparent_0,black_128px,black_calc(100%-128px),transparent_100%)]">
             <div className="flex w-max items-center hover:[animation-play-state:paused] animate-[scroll_35s_linear_infinite]">
               {[...partners, ...partners].map((partner, index) => (
                 <div
                   key={`${partner.id}-${index}`}
-                  className="flex justify-center items-center px-10 md:px-16 flex-shrink-0"
+                  className="flex justify-center items-center px-10 md:px-16 shrink-0"
                 >
                   {partner.logo_url ? (
                     <div className="w-24 h-12 md:w-28 md:h-14 relative">

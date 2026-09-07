@@ -38,7 +38,7 @@ export default function JasaERPMPage() {
                     </div>
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight max-w-4xl mx-auto">
                         Bawa Usaha Anda Naik Kelas! <br className="hidden md:block"/>
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-blue-400">
+                        <span className="text-transparent bg-clip-text bg-linear-to-r from-indigo-400 to-blue-400">
                             Terima Beres Tanpa Ribet
                         </span>
                     </h1>
@@ -165,7 +165,7 @@ export default function JasaERPMPage() {
                         </div>
 
                         {/* Paket Toko Pintar (Best Seller) */}
-                        <div className="bg-gradient-to-br from-indigo-500 to-blue-600 rounded-3xl p-8 border-2 border-indigo-300 transform md:-translate-y-4 shadow-xl shadow-indigo-900/50 flex flex-col relative">
+                        <div className="bg-linear-to-br from-indigo-500 to-blue-600 rounded-3xl p-8 border-2 border-indigo-300 transform md:-translate-y-4 shadow-xl shadow-indigo-900/50 flex flex-col relative">
                             <div className="absolute top-0 right-8 transform -translate-y-1/2 bg-white text-indigo-600 font-bold px-4 py-1 rounded-full text-sm">
                                 PALING LARIS
                             </div>

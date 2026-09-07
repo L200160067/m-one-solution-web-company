@@ -47,7 +47,7 @@ export function Breadcrumb({ items, className = '' }: BreadcrumbProps) {
             />
             
             <ol className="flex items-center space-x-2 text-sm text-slate-500 overflow-hidden whitespace-nowrap py-2 px-4 bg-white/50 backdrop-blur-sm rounded-full border border-slate-100 shadow-sm w-fit max-w-full">
-                <li className="flex-shrink-0">
+                <li className="shrink-0">
                     <Link href="/" className="flex items-center hover:text-blue-600 transition-colors">
                         <Home className="w-4 h-4" />
                         <span className="sr-only">Home</span>
@@ -59,7 +59,7 @@ export function Breadcrumb({ items, className = '' }: BreadcrumbProps) {
                     
                     return (
                         <li key={index} className="flex items-center min-w-0">
-                            <ChevronRight className="w-4 h-4 mx-1 text-slate-400 flex-shrink-0" />
+                            <ChevronRight className="w-4 h-4 mx-1 text-slate-400 shrink-0" />
                             {isLast || !item.href ? (
                                 <span 
                                     className="text-slate-900 font-medium truncate block" 

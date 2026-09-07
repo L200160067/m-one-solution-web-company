@@ -273,7 +273,7 @@ export default function Butik2Page() {
                 className="relative flex items-center justify-center w-9 h-9 rounded-full bg-white border border-[#e4d8c5] text-[#723d24] hover:bg-[#f5eedf] transition-all shadow-sm"
               >
                 <Heart className="w-4 h-4" />
-                <span className="absolute -top-1 -right-1 flex items-center justify-center min-w-[17px] h-[17px] px-1 rounded-full bg-[#8c4224] text-white text-[10px] font-bold font-mono">
+                <span className="absolute -top-1 -right-1 flex items-center justify-center min-w-4.25 h-4.25 px-1 rounded-full bg-[#8c4224] text-white text-[10px] font-bold font-mono">
                   {wishlist.size}
                 </span>
               </button>
@@ -439,7 +439,7 @@ export default function Butik2Page() {
                   <img 
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7Wb_EZYNRSWRb6Ob3zIDvc4NyYvoUc2tPWIVdspIeH16RbCI_wl48_xifVASCjvLovBnB4j_bKQwB8GDz4LA9YnbSkn6nzUDsoSZ20J39kK5fPzZlOqLEw-nRDaUevasyk5z_ZkHsWTkDxYJIfgC2mtQbzPNye0k6F4TuihyLHJ7kX4J7RghkQyoQvjj3MZi6JYuYsuGjpTcYdBBUHWwgLPkXKAJs1f4SzubAZCWwmSc1DAfw_GnaMw" 
                     alt="Model wearing Sazmoon Buttercream Cable Cardigan in warm cafe setting" 
-                    className="w-full h-[480px] sm:h-[560px] object-cover object-center hover:scale-105 transition-transform duration-700"
+                    className="w-full h-120 sm:h-140 object-cover object-center hover:scale-105 transition-transform duration-700"
                   />
                   
                   {/* Rotating Stamp */}
@@ -546,7 +546,7 @@ export default function Butik2Page() {
                     key={product.id}
                     className="product-card card-retro-hover flex flex-col bg-white rounded-3xl overflow-hidden border-2 border-[#e4d8c5] shadow-sm"
                   >
-                    <div className="relative aspect-[4/5] overflow-hidden bg-[#f5eedf]">
+                    <div className="relative aspect-4/5 overflow-hidden bg-[#f5eedf]">
                       <img 
                         src={product.image} 
                         alt={product.imageAlt} 
@@ -655,7 +655,7 @@ export default function Butik2Page() {
             
             {/* Look 1 */}
             <div className="bg-white rounded-3xl p-3 border-2 border-[#e4d8c5] shadow-sm group">
-              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-[#f5eedf]">
+              <div className="relative aspect-3/4 rounded-2xl overflow-hidden bg-[#f5eedf]">
                 <img 
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7Wb_EZYNRSWRb6Ob3zIDvc4NyYvoUc2tPWIVdspIeH16RbCI_wl48_xifVASCjvLovBnB4j_bKQwB8GDz4LA9YnbSkn6nzUDsoSZ20J39kK5fPzZlOqLEw-nRDaUevasyk5z_ZkHsWTkDxYJIfgC2mtQbzPNye0k6F4TuihyLHJ7kX4J7RghkQyoQvjj3MZi6JYuYsuGjpTcYdBBUHWwgLPkXKAJs1f4SzubAZCWwmSc1DAfw_GnaMw" 
                   alt="Autumn Afternoon with Buttercream Knit" 
@@ -671,7 +671,7 @@ export default function Butik2Page() {
 
             {/* Look 2 */}
             <div className="bg-white rounded-3xl p-3 border-2 border-[#e4d8c5] shadow-sm group">
-              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-[#f5eedf]">
+              <div className="relative aspect-3/4 rounded-2xl overflow-hidden bg-[#f5eedf]">
                 <img 
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0RP5zD_wb77JXevRgUiXmQG3V6OdJG3D0U08nBLNWHLpjYE3l3n51x7_U2BEW6rU87hzVmN8YbZifqI8RRCcsuv1FB0ykh0uf-qfcgbuJoMLQ9NMwtAfWtDYfpUxTVfrGNDxVkrrLKCZGu6KXk53ClGbOHJFW-JTLfj3XcomBekiKYDhKLn3-53lDfr7vLf0gSD-CsRhrMODMe85RzKeMSh133EXQ7WS_ymENKLfe53hoMP6UShIubQ" 
                   alt="City Bookstore & Art Gallery Look" 
@@ -687,7 +687,7 @@ export default function Butik2Page() {
 
             {/* Look 3 */}
             <div className="bg-white rounded-3xl p-3 border-2 border-[#e4d8c5] shadow-sm group">
-              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-[#f5eedf]">
+              <div className="relative aspect-3/4 rounded-2xl overflow-hidden bg-[#f5eedf]">
                 <img 
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6JLB0sSzDBl_p5D6o8iz7ZZ9Snzbyz7XHr9kvZR6QhuRwqKAQC-up26vMzd9HEOHEGXlwFxP0az2mC58NX5XQo0WlwA9e1FWsayCZTT_PEvTnhU32yQmiRmVIJbvgwUeddO8oSp7feLVcSzRDfy1EpYQyLz7oIFzBv4uUqunhhMpFIRNT9WQ4INkQXOIkVr4tYso5iPkqTA5FSeYoWzIdlN3DUGRqPlTNGclmvG8PPaWfws1sML45AA" 
                   alt="Weekend Flower Market Mood" 
@@ -722,7 +722,7 @@ export default function Butik2Page() {
             
             {/* Big Booth Card */}
             <div className="lg:col-span-8 bg-white rounded-3xl overflow-hidden border-2 border-[#caa885] shadow-md flex flex-col md:flex-row">
-              <div className="md:w-1/2 relative min-h-[280px] md:min-h-full overflow-hidden bg-[#f5eedf]">
+              <div className="md:w-1/2 relative min-h-70 md:min-h-full overflow-hidden bg-[#f5eedf]">
                 <img 
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVPx25l7g67N9JsX4jhp2ZMxscTE_It5VRHyDd0lNVGjLzbtxSn0lbfZFh0jMRk7AmC3Vi1wtjMwmLfJoPrBS8IGNzHVzMFAbTuIZTH4nJe7M4YJ-nOTTih7e9YcAIg_F3TxGlw_03MyTkqNB3IBVzkdSOKAjDeMCJ9gIxTBY9_i1K2xqACd9LyASWNo5vJHDGd1PhG4upcNpkI0uAS0-jq3UllFLnBPUBkatF4EkCWs5tZOHvMKlqWw" 
                   alt="Sazmoon pop-up booth in M Bloc Space Jakarta" 

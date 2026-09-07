@@ -82,7 +82,7 @@ export default function WebsiteSekolahPage() {
                     </div>
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                         Terima Beres! <br className="hidden md:block"/>
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-400">
+                        <span className="text-transparent bg-clip-text bg-linear-to-r from-teal-400 to-emerald-400">
                             Website Sekolah & PPDB Online — Mulai Rp 1,5 Juta
                         </span>
                     </h1>
@@ -216,7 +216,7 @@ export default function WebsiteSekolahPage() {
                         </div>
 
                         {/* Paket Standar (Best Seller) */}
-                        <div className="bg-gradient-to-br from-teal-500 to-emerald-600 rounded-3xl p-8 border-2 border-teal-300 transform md:-translate-y-4 shadow-xl shadow-teal-900/50 flex flex-col relative group hover:shadow-2xl hover:shadow-teal-900/70 transition-all duration-300">
+                        <div className="bg-linear-to-br from-teal-500 to-emerald-600 rounded-3xl p-8 border-2 border-teal-300 transform md:-translate-y-4 shadow-xl shadow-teal-900/50 flex flex-col relative group hover:shadow-2xl hover:shadow-teal-900/70 transition-all duration-300">
                             <div className="absolute top-0 right-8 transform -translate-y-1/2 bg-white text-teal-600 font-bold px-4 py-1 rounded-full text-sm shadow-lg">
                                 ⭐ PALING LARIS
                             </div>

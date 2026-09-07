@@ -247,7 +247,7 @@ export default function ButikPage() {
               className="relative flex items-center justify-center w-9 h-9 rounded-full bg-white border border-[#e5e2dd] text-[#4f4541] hover:text-[#7b5455] hover:border-[#7b5455] transition-all shadow-sm"
             >
               <Heart className="w-4 h-4" />
-              <span className="absolute -top-1 -right-1 flex items-center justify-center min-w-[17px] h-[17px] px-1 rounded-full bg-[#7b5455] text-white text-[10px] font-bold">
+              <span className="absolute -top-1 -right-1 flex items-center justify-center min-w-4.25 h-4.25 px-1 rounded-full bg-[#7b5455] text-white text-[10px] font-bold">
                 {wishlist.size}
               </span>
             </button>
@@ -412,7 +412,7 @@ export default function ButikPage() {
                   <img 
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7Wb_EZYNRSWRb6Ob3zIDvc4NyYvoUc2tPWIVdspIeH16RbCI_wl48_xifVASCjvLovBnB4j_bKQwB8GDz4LA9YnbSkn6nzUDsoSZ20J39kK5fPzZlOqLEw-nRDaUevasyk5z_ZkHsWTkDxYJIfgC2mtQbzPNye0k6F4TuihyLHJ7kX4J7RghkQyoQvjj3MZi6JYuYsuGjpTcYdBBUHWwgLPkXKAJs1f4SzubAZCWwmSc1DAfw_GnaMw" 
                     alt="Model mengenakan Sazmoon Buttercream Cable Cardigan di cafe bernuansa estetik hangat" 
-                    className="w-full h-[460px] sm:h-[540px] object-cover object-center hover:scale-105 transition-transform duration-700 ease-out"
+                    className="w-full h-115 sm:h-135 object-cover object-center hover:scale-105 transition-transform duration-700 ease-out"
                   />
                   
                   {/* Floating Pill */}
@@ -513,7 +513,7 @@ export default function ButikPage() {
                     key={product.id}
                     className="product-card group flex flex-col bg-white rounded-2xl overflow-hidden border border-[#e5e2dd] shadow-sm"
                   >
-                    <div className="relative aspect-[4/5] overflow-hidden bg-[#f6f3ee]">
+                    <div className="relative aspect-4/5 overflow-hidden bg-[#f6f3ee]">
                       <img 
                         src={product.image} 
                         alt={product.imageAlt} 
@@ -615,13 +615,13 @@ export default function ButikPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Look 1 */}
-            <div className="group relative rounded-3xl overflow-hidden aspect-[3/4] bg-[#f0ede9] border border-[#e5e2dd] shadow-sm">
+            <div className="group relative rounded-3xl overflow-hidden aspect-3/4 bg-[#f0ede9] border border-[#e5e2dd] shadow-sm">
               <img 
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7Wb_EZYNRSWRb6Ob3zIDvc4NyYvoUc2tPWIVdspIeH16RbCI_wl48_xifVASCjvLovBnB4j_bKQwB8GDz4LA9YnbSkn6nzUDsoSZ20J39kK5fPzZlOqLEw-nRDaUevasyk5z_ZkHsWTkDxYJIfgC2mtQbzPNye0k6F4TuihyLHJ7kX4J7RghkQyoQvjj3MZi6JYuYsuGjpTcYdBBUHWwgLPkXKAJs1f4SzubAZCWwmSc1DAfw_GnaMw" 
                 alt="Autumn Afternoon Cafe Walk with Buttercream Knit" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#120604]/80 via-[#120604]/20 to-transparent flex flex-col justify-end p-6 text-white">
+              <div className="absolute inset-0 bg-linear-to-t from-[#120604]/80 via-[#120604]/20 to-transparent flex flex-col justify-end p-6 text-white">
                 <span className="text-[11px] font-bold tracking-widest text-[#ffdad9] uppercase">Look 01</span>
                 <h3 className="font-headline text-2xl font-bold mt-1">Autumn Afternoon Cafe Walk</h3>
                 <p className="text-xs text-white/80 mt-1">Buttercream Knit + Fluid Pleated Skirt</p>
@@ -629,13 +629,13 @@ export default function ButikPage() {
             </div>
 
             {/* Look 2 */}
-            <div className="group relative rounded-3xl overflow-hidden aspect-[3/4] bg-[#f0ede9] border border-[#e5e2dd] shadow-sm">
+            <div className="group relative rounded-3xl overflow-hidden aspect-3/4 bg-[#f0ede9] border border-[#e5e2dd] shadow-sm">
               <img 
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0RP5zD_wb77JXevRgUiXmQG3V6OdJG3D0U08nBLNWHLpjYE3l3n51x7_U2BEW6rU87hzVmN8YbZifqI8RRCcsuv1FB0ykh0uf-qfcgbuJoMLQ9NMwtAfWtDYfpUxTVfrGNDxVkrrLKCZGu6KXk53ClGbOHJFW-JTLfj3XcomBekiKYDhKLn3-53lDfr7vLf0gSD-CsRhrMODMe85RzKeMSh133EXQ7WS_ymENKLfe53hoMP6UShIubQ" 
                 alt="City Bookstore & Art Gallery Look" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#120604]/80 via-[#120604]/20 to-transparent flex flex-col justify-end p-6 text-white">
+              <div className="absolute inset-0 bg-linear-to-t from-[#120604]/80 via-[#120604]/20 to-transparent flex flex-col justify-end p-6 text-white">
                 <span className="text-[11px] font-bold tracking-widest text-[#ffdad9] uppercase">Look 02</span>
                 <h3 className="font-headline text-2xl font-bold mt-1">City Bookstore &amp; Art Gallery</h3>
                 <p className="text-xs text-white/80 mt-1">Mint Polo Sweater + Straight Denim</p>
@@ -643,13 +643,13 @@ export default function ButikPage() {
             </div>
 
             {/* Look 3 */}
-            <div className="group relative rounded-3xl overflow-hidden aspect-[3/4] bg-[#f0ede9] border border-[#e5e2dd] shadow-sm">
+            <div className="group relative rounded-3xl overflow-hidden aspect-3/4 bg-[#f0ede9] border border-[#e5e2dd] shadow-sm">
               <img 
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6JLB0sSzDBl_p5D6o8iz7ZZ9Snzbyz7XHr9kvZR6QhuRwqKAQC-up26vMzd9HEOHEGXlwFxP0az2mC58NX5XQo0WlwA9e1FWsayCZTT_PEvTnhU32yQmiRmVIJbvgwUeddO8oSp7feLVcSzRDfy1EpYQyLz7oIFzBv4uUqunhhMpFIRNT9WQ4INkQXOIkVr4tYso5iPkqTA5FSeYoWzIdlN3DUGRqPlTNGclmvG8PPaWfws1sML45AA" 
                 alt="Weekend Flower Market Mood" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#120604]/80 via-[#120604]/20 to-transparent flex flex-col justify-end p-6 text-white">
+              <div className="absolute inset-0 bg-linear-to-t from-[#120604]/80 via-[#120604]/20 to-transparent flex flex-col justify-end p-6 text-white">
                 <span className="text-[11px] font-bold tracking-widest text-[#ffdad9] uppercase">Look 03</span>
                 <h3 className="font-headline text-2xl font-bold mt-1">Weekend Flower Market Mood</h3>
                 <p className="text-xs text-white/80 mt-1">Lilac Cable Vest + White Cotton Shirt</p>
@@ -678,7 +678,7 @@ export default function ButikPage() {
             
             {/* Large Featured Booth (8 cols) */}
             <div className="lg:col-span-8 bg-white rounded-3xl overflow-hidden border border-[#e5e2dd] shadow-sm flex flex-col md:flex-row group">
-              <div className="md:w-1/2 relative min-h-[280px] md:min-h-full overflow-hidden bg-[#f6f3ee]">
+              <div className="md:w-1/2 relative min-h-70 md:min-h-full overflow-hidden bg-[#f6f3ee]">
                 <img 
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVPx25l7g67N9JsX4jhp2ZMxscTE_It5VRHyDd0lNVGjLzbtxSn0lbfZFh0jMRk7AmC3Vi1wtjMwmLfJoPrBS8IGNzHVzMFAbTuIZTH4nJe7M4YJ-nOTTih7e9YcAIg_F3TxGlw_03MyTkqNB3IBVzkdSOKAjDeMCJ9gIxTBY9_i1K2xqACd9LyASWNo5vJHDGd1PhG4upcNpkI0uAS0-jq3UllFLnBPUBkatF4EkCWs5tZOHvMKlqWw" 
                   alt="Sazmoon cozy pop-up boutique booth di M Bloc Space Jakarta" 

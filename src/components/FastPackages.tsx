@@ -6,7 +6,7 @@ import { Section } from './ui/Section';
 export function FastPackages() {
     return (
         <Section id="paket-cepat" className="bg-slate-50 relative overflow-hidden">
-            <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+            <div className="absolute top-0 inset-x-0 h-px bg-linear-to-r from-transparent via-slate-200 to-transparent" />
 
             <Container>
                 <div className="text-center max-w-3xl mx-auto mb-16">
@@ -15,7 +15,7 @@ export function FastPackages() {
                     </div>
                     <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
                         Pusing Mikir Website? <br className="hidden md:block" />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-400">
+                        <span className="text-transparent bg-clip-text bg-linear-to-r from-emerald-500 to-teal-400">
                             Pilih Paket "Terima Beres"
                         </span>
                     </h2>

@@ -19,7 +19,7 @@ export function Alumni({ groups }: AlumniProps) {
 
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="text-center mb-16">
-                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-400 mb-6 shadow-xl shadow-blue-500/20 text-white">
+                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-linear-to-br from-blue-500 to-cyan-400 mb-6 shadow-xl shadow-blue-500/20 text-white">
                         <GraduationCap className="w-8 h-8" />
                     </div>
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">

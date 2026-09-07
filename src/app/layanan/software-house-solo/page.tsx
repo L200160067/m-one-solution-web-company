@@ -30,7 +30,7 @@ export default function SoftwareHouseSoloPage() {
                     </div>
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                         Software House Solo & Sukoharjo <br className="hidden md:block"/>
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+                        <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-cyan-400">
                             Profesional & Terpercaya
                         </span>
                     </h1>
@@ -57,7 +57,7 @@ export default function SoftwareHouseSoloPage() {
                                     'Dukungan maintenance dan server yang transparan'
                                 ].map((item, i) => (
                                     <li key={i} className="flex items-start gap-3">
-                                        <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                                        <CheckCircle className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
                                         <span className="text-slate-700">{item}</span>
                                     </li>
                                 ))}
@@ -67,7 +67,7 @@ export default function SoftwareHouseSoloPage() {
                             <h3 className="text-xl font-bold text-slate-900 mb-6">Layanan Utama Kami</h3>
                             <div className="space-y-6">
                                 <div className="flex gap-4">
-                                    <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center flex-shrink-0 text-blue-600">
+                                    <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center shrink-0 text-blue-600">
                                         <Zap className="w-6 h-6" />
                                     </div>
                                     <div>
@@ -76,7 +76,7 @@ export default function SoftwareHouseSoloPage() {
                                     </div>
                                 </div>
                                 <div className="flex gap-4">
-                                    <div className="w-12 h-12 rounded-xl bg-cyan-50 flex items-center justify-center flex-shrink-0 text-cyan-600">
+                                    <div className="w-12 h-12 rounded-xl bg-cyan-50 flex items-center justify-center shrink-0 text-cyan-600">
                                         <Rocket className="w-6 h-6" />
                                     </div>
                                     <div>
@@ -85,7 +85,7 @@ export default function SoftwareHouseSoloPage() {
                                     </div>
                                 </div>
                                 <div className="flex gap-4">
-                                    <div className="w-12 h-12 rounded-xl bg-indigo-50 flex items-center justify-center flex-shrink-0 text-indigo-600">
+                                    <div className="w-12 h-12 rounded-xl bg-indigo-50 flex items-center justify-center shrink-0 text-indigo-600">
                                         <ShieldCheck className="w-6 h-6" />
                                     </div>
                                     <div>

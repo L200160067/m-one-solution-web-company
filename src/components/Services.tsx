@@ -80,7 +80,7 @@ export function Services({ services }: ServicesProps) {
                     {service.title}
                   </Link>
                 </h3>
-                <p className="text-slate-600 mb-6 md:mb-8 leading-relaxed flex-grow text-sm md:text-base line-clamp-3 md:line-clamp-4">
+                <p className="text-slate-600 mb-6 md:mb-8 leading-relaxed grow text-sm md:text-base line-clamp-3 md:line-clamp-4">
                   {service.short_description}
                 </p>
                 <div className="mt-auto pt-5 md:pt-6 border-t border-slate-200/60">

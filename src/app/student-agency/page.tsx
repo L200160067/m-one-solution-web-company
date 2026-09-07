@@ -266,7 +266,7 @@ export default function StudentAgencyPage() {
                 className="flex gap-5 items-start"
               >
                 <div
-                  className="flex-shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center font-black text-xl text-white"
+                  className="shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center font-black text-xl text-white"
                   style={{ background: branding.pinkAccent, boxShadow: `3px 3px 0 ${branding.yellowAccent}` }}
                 >
                   {s.num}
@@ -333,7 +333,7 @@ export default function StudentAgencyPage() {
               <ul className="space-y-3 mb-8">
                 {studentAgency.pricing.normal.features.map(item => (
                   <li key={item} className="flex items-center gap-3 text-sm text-slate-400">
-                    <CheckCircle className="w-4 h-4 text-slate-200 flex-shrink-0" />{item}
+                    <CheckCircle className="w-4 h-4 text-slate-200 shrink-0" />{item}
                   </li>
                 ))}
               </ul>
@@ -356,7 +356,7 @@ export default function StudentAgencyPage() {
               <ul className="space-y-3 mb-8">
                 {studentAgency.pricing.earlyBird.features.map(item => (
                   <li key={item} className="flex items-center gap-3 text-sm text-slate-700 font-medium">
-                    <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />{item}
+                    <CheckCircle className="w-4 h-4 text-green-500 shrink-0" />{item}
                   </li>
                 ))}
               </ul>

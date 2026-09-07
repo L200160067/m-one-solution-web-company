@@ -15,7 +15,7 @@ function FooterFallback() {
                     <div className="h-12 w-12 rounded-lg bg-white/5 animate-pulse" />
                     <div className="flex flex-col">
                         <span className="text-xl font-bold text-white tracking-tight leading-none mb-1">
-                            M-One <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Solution</span>
+                            M-One <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-cyan-400">Solution</span>
                         </span>
                         <span className="text-[11px] font-medium text-slate-400 tracking-[0.2em] uppercase leading-none">
                             Software House

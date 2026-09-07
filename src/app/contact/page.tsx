@@ -60,7 +60,7 @@ export default function ContactPage() {
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
             Konsultasi Gratis dengan <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-cyan-400">
               Software House Sukoharjo
             </span>
           </h1>
@@ -87,7 +87,7 @@ export default function ContactPage() {
               <div className="space-y-5">
                 {contactInfo.map((item, i) => (
                   <div key={i} className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center shrink-0">
                       <item.icon className="w-5 h-5 text-blue-600" />
                     </div>
                     <div>
@@ -111,7 +111,7 @@ export default function ContactPage() {
 
               {/* Quick Response Badge */}
               <div className="bg-green-50 border border-green-200 rounded-2xl p-5 flex items-start gap-4">
-                <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center shrink-0 mt-0.5">
                   <span className="text-lg">⚡</span>
                 </div>
                 <div>

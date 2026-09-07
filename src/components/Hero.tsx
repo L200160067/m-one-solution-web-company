@@ -10,7 +10,7 @@ export function Hero() {
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute -top-[20%] -right-[10%] w-[70%] h-[70%] rounded-full bg-blue-600/20 blur-[120px]" />
                 <div className="absolute top-[40%] -left-[10%] w-[50%] h-[50%] rounded-full bg-cyan-500/20 blur-[120px]" />
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-900/5 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-br from-blue-900/5 to-transparent" />
             </div>
 
             <Container className="relative py-16 lg:py-24 z-10">
@@ -23,7 +23,7 @@ export function Hero() {
 
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-[1.1]">
                             Jasa Pembuatan Website <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+                            <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-cyan-400">
                                 &amp; Aplikasi Siap Pakai
                             </span>
                         </h1>
@@ -53,7 +53,7 @@ export function Hero() {
                         <div className="relative w-full aspect-square max-w-lg mx-auto">
                             {/* Talent Image */}
                             <div className="absolute inset-8 rounded-3xl overflow-hidden border border-white/10 shadow-2xl z-0 animate-float-slow">
-                                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent z-10 pointer-events-none" />
+                                <div className="absolute inset-0 bg-linear-to-t from-slate-900/40 to-transparent z-10 pointer-events-none" />
                                 <WpImage
                                     src="/images/branding/hero.webp"
                                     alt="Tim developer M-One Solution — Software House Sukoharjo, Jawa Tengah"

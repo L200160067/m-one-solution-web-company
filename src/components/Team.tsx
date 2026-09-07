@@ -38,12 +38,12 @@ export function Team({ team }: TeamProps) {
                                     loading="lazy"
                                     className="object-cover transition-transform duration-500 group-hover:scale-110"
                                     fallback={
-                                        <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 text-slate-300 transition-transform duration-500 group-hover:scale-110">
+                                        <div className="w-full h-full flex items-center justify-center bg-linear-to-br from-slate-100 to-slate-200 text-slate-300 transition-transform duration-500 group-hover:scale-110">
                                             <UserIcon className="w-16 h-16 opacity-50" />
                                         </div>
                                     }
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6 gap-4">
+                                <div className="absolute inset-0 bg-linear-to-t from-slate-900/80 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6 gap-4">
                                     {member.social_linkedin && member.social_linkedin !== '#' && (
                                         <a
                                             href={member.social_linkedin}

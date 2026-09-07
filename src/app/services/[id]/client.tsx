@@ -65,7 +65,7 @@ export default function ServiceDetailClient({ service }: { service: any }) {
                   loading="lazy"
                   className="object-cover"
                   fallback={
-                    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 text-slate-400">
+                    <div className="w-full h-full flex items-center justify-center bg-linear-to-br from-slate-100 to-slate-200 text-slate-400">
                       <ImageIcon className="w-12 h-12 opacity-50" />
                     </div>
                   }
@@ -86,7 +86,7 @@ export default function ServiceDetailClient({ service }: { service: any }) {
                   <ul className="space-y-4 m-0 p-0 list-none">
                     {service.features.map((feature: string, index: number) => (
                       <li key={index} className="flex items-start gap-3 m-0 p-0">
-                        <CheckCircle2 className="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-6 h-6 text-blue-600 shrink-0 mt-0.5" />
                         <span className="text-slate-700">{feature}</span>
                       </li>
                     ))}
@@ -98,7 +98,7 @@ export default function ServiceDetailClient({ service }: { service: any }) {
                   <ul className="space-y-4 m-0 p-0 list-none">
                     {service.benefits.map((benefit: string, index: number) => (
                       <li key={index} className="flex items-start gap-3 m-0 p-0">
-                        <CheckCircle2 className="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-6 h-6 text-blue-600 shrink-0 mt-0.5" />
                         <span className="text-slate-700">{benefit}</span>
                       </li>
                     ))}
