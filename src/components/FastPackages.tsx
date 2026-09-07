@@ -26,7 +26,7 @@ export function FastPackages() {
 
                 <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                     {/* Paket UMKM Card */}
-                    <div className="group relative bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl border border-slate-100 hover:border-blue-200 transition-all flex flex-col hover:-translate-y-2 duration-300">
+                    <div className="group relative bg-white rounded-3xl overflow-hidden p-8 shadow-sm hover:shadow-xl border border-slate-100 hover:border-blue-200 transition-all flex flex-col hover:-translate-y-2 duration-300">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-full -z-10 group-hover:scale-110 transition-transform" />
 
                         <div className="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6">
@@ -47,7 +47,7 @@ export function FastPackages() {
                     </div>
 
                     {/* Paket Sekolah Card */}
-                    <div className="group relative bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl border border-slate-100 hover:border-emerald-200 transition-all flex flex-col hover:-translate-y-2 duration-300">
+                    <div className="group relative bg-white rounded-3xl overflow-hidden p-8 shadow-sm hover:shadow-xl border border-slate-100 hover:border-emerald-200 transition-all flex flex-col hover:-translate-y-2 duration-300">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-50 rounded-bl-full -z-10 group-hover:scale-110 transition-transform" />
 
                         <div className="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center mb-6">

@@ -35,7 +35,7 @@ export default function ServicesListClient({ services, categories }: ServicesLis
                     Layanan Kami
                 </div>
                 <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-                    Solusi Digital untuk Bisnis Anda
+                    Jasa Pembuatan Website & Aplikasi di Sukoharjo & Solo
                 </h1>
                 <p className="text-lg text-slate-600 max-w-2xl mx-auto mb-10">
                     Kami menyediakan berbagai layanan pengembangan perangkat lunak yang dirancang khusus untuk memenuhi kebutuhan dan tujuan bisnis Anda.
@@ -94,7 +94,7 @@ export default function ServicesListClient({ services, categories }: ServicesLis
                     {filteredServices.map((service, index) => (
                         <div
                             key={service.id}
-                            className="bg-white rounded-3xl overflow-hidden border border-slate-100 hover:shadow-xl transition-all duration-300 group flex flex-col h-full"
+                            className="bg-white rounded-3xl overflow-hidden border border-slate-100 hover:shadow-xl transition-all duration-300 group flex flex-col h-full hover:-translate-y-2"
                         >
                             <div className="relative aspect-4/3 overflow-hidden bg-slate-100">
                                 <WpImage
