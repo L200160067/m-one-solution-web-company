@@ -273,19 +273,25 @@ export default function CompetitionPage() {
         <div className="timeline stagger-group">
           <div className="t-item">
             <div className="stage-circle"><span>1</span></div>
-            <div className="t-meta"><span className="t-date">27 September 2026</span><span className="t-tag online">ONLINE</span></div>
+            <div className="t-meta"><span className="t-date">26 – 27 September 2026</span><span className="t-tag online">GRATIS / ONLINE</span></div>
+            <h4>Seminar Gratis</h4>
+            <p>Sesi workshop & seminar online gratis pengenalan website & AI untuk seluruh peserta.</p>
+          </div>
+          <div className="t-item">
+            <div className="stage-circle"><span>2</span></div>
+            <div className="t-meta"><span className="t-date">29 September 2026</span><span className="t-tag online">ONLINE</span></div>
             <h4>Technical Meeting</h4>
             <p>Briefing teknis perlombaan dan penyampaian petunjuk pengerjaan secara daring.</p>
           </div>
           <div className="t-item">
-            <div className="stage-circle"><span>2</span></div>
-            <div className="t-meta"><span className="t-date">30 Sep – 3 Okt 2026</span><span className="t-tag online">ONLINE</span></div>
+            <div className="stage-circle"><span>3</span></div>
+            <div className="t-meta"><span className="t-date">1 – 10 Oktober 2026</span><span className="t-tag online">ONLINE</span></div>
             <h4>Babak Utama / Penyisihan</h4>
             <p>Proses pengerjaan & pengumpulan karya website secara online di waktu yang ditentukan.</p>
           </div>
           <div className="t-item">
-            <div className="stage-circle"><span>3</span></div>
-            <div className="t-meta"><span className="t-date">10 Oktober 2026</span><span className="t-tag announcement">ONLINE</span></div>
+            <div className="stage-circle"><span>4</span></div>
+            <div className="t-meta"><span className="t-date">25 Oktober 2026</span><span className="t-tag announcement">ONLINE</span></div>
             <h4>Pengumuman Pemenang</h4>
             <p>Pengumuman resmi daftar pemenang lomba untuk Kategori Umum.</p>
           </div>
@@ -301,24 +307,36 @@ export default function CompetitionPage() {
         <div className="timeline stagger-group">
           <div className="t-item">
             <div className="stage-circle"><span>1</span></div>
-            <div className="t-meta"><span className="t-date">27 September 2026</span><span className="t-tag online">ONLINE</span></div>
+            <div className="t-meta"><span className="t-date">26 – 27 September 2026</span><span className="t-tag online">GRATIS / ONLINE</span></div>
+            <h4>Seminar Gratis</h4>
+            <p>Sesi workshop & seminar online gratis pengenalan website & AI untuk seluruh peserta.</p>
+          </div>
+          <div className="t-item">
+            <div className="stage-circle"><span>2</span></div>
+            <div className="t-meta"><span className="t-date">29 September 2026</span><span className="t-tag online">ONLINE</span></div>
             <h4>Technical Meeting</h4>
             <p>Briefing teknis perlombaan dan arahan dari panitia secara daring.</p>
           </div>
           <div className="t-item">
-            <div className="stage-circle"><span>2</span></div>
-            <div className="t-meta"><span className="t-date">30 Sep – 3 Okt 2026</span><span className="t-tag online">ONLINE</span></div>
+            <div className="stage-circle"><span>3</span></div>
+            <div className="t-meta"><span className="t-date">1 – 24 Oktober 2026</span><span className="t-tag online">ONLINE</span></div>
             <h4>Babak Penyisihan</h4>
             <p>Tahap awal pengerjaan karya website secara online oleh para peserta.</p>
           </div>
           <div className="t-item">
-            <div className="stage-circle"><span>3</span></div>
-            <div className="t-meta"><span className="t-date">10 Oktober 2026</span><span className="t-tag announcement">ONLINE</span></div>
+            <div className="stage-circle"><span>4</span></div>
+            <div className="t-meta"><span className="t-date">14 November 2026</span><span className="t-tag announcement">ONLINE</span></div>
             <h4>Pengumuman Finalis</h4>
             <p>Pengumuman daftar peserta yang berhasil lolos melaju ke Babak Final.</p>
           </div>
           <div className="t-item">
-            <div className="stage-circle final-circle"><span>4</span></div>
+            <div className="stage-circle"><span>5</span></div>
+            <div className="t-meta"><span className="t-date">9 Desember 2026</span><span className="t-tag online">ONLINE</span></div>
+            <h4>Technical Meeting Final</h4>
+            <p>Briefing teknis dan arahan persiapan babak final secara daring.</p>
+          </div>
+          <div className="t-item">
+            <div className="stage-circle final-circle"><span>6</span></div>
             <div className="t-meta"><span className="t-date">12 Desember 2026</span><span className="t-tag offline">LURING (OFFLINE)</span></div>
             <h4>Babak Final</h4>
             <p>Pelaksanaan babak final secara luring (offline).</p>
