@@ -1,9 +1,36 @@
 import type { Metadata } from 'next';
+import { siteConfig } from '@/config/site';
 import './butik2.css';
 
 export const metadata: Metadata = {
   title: 'The Retro Knit Club — Sazmoon Studio | Demo Toko Online Butik 2',
   description: 'Slow-fashion knitwear and vintage modest pieces inspired by 70s-90s Tokyo tea rooms and Seoul quiet mornings.',
+  keywords: 'retro knit club, slow fashion, vintage knitwear, modest fashion, sazmoon, toko online butik, heirloom knits, 70s 90s inspired',
+  alternates: {
+    canonical: `${siteConfig.baseUrl}/butik-2`,
+  },
+  openGraph: {
+    title: 'The Retro Knit Club — Sazmoon Studio',
+    description: 'Slow-fashion knitwear and vintage modest pieces inspired by 70s-90s Tokyo tea rooms and Seoul quiet mornings.',
+    url: `${siteConfig.baseUrl}/butik-2`,
+    type: 'website',
+    locale: 'id_ID',
+    siteName: 'Sazmoon by M-One Solution',
+    images: [
+      {
+        url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD7Wb_EZYNRSWRb6Ob3zIDvc4NyYvoUc2tPWIVdspIeH16RbCI_wl48_xifVASCjvLovBnB4j_bKQwB8GDz4LA9YnbSkn6nzUDsoSZ20J39kK5fPzZlOqLEw-nRDaUevasyk5z_ZkHsWTkDxYJIfgC2mtQbzPNye0k6F4TuihyLHJ7kX4J7RghkQyoQvjj3MZi6JYuYsuGjpTcYdBBUHWwgLPkXKAJs1f4SzubAZCWwmSc1DAfw_GnaMw',
+        width: 1200,
+        height: 630,
+        alt: 'The Retro Knit Club — Heirloom Knits Spun With Timeless Warmth, Autumn/Winter 2025',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'The Retro Knit Club — Sazmoon Studio',
+    description: 'Slow-fashion knitwear and vintage modest pieces inspired by 70s-90s Tokyo tea rooms.',
+    images: ['https://lh3.googleusercontent.com/aida-public/AB6AXuD7Wb_EZYNRSWRb6Ob3zIDvc4NyYvoUc2tPWIVdspIeH16RbCI_wl48_xifVASCjvLovBnB4j_bKQwB8GDz4LA9YnbSkn6nzUDsoSZ20J39kK5fPzZlOqLEw-nRDaUevasyk5z_ZkHsWTkDxYJIfgC2mtQbzPNye0k6F4TuihyLHJ7kX4J7RghkQyoQvjj3MZi6JYuYsuGjpTcYdBBUHWwgLPkXKAJs1f4SzubAZCWwmSc1DAfw_GnaMw'],
+  },
   robots: {
     index: false,
     follow: false,
