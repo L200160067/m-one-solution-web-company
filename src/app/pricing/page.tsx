@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import PricingClient from './PricingClient';
 import { siteConfig } from '@/config/site';
+import { serializeJsonLd } from '@/lib/jsonLd';
 
 export const metadata: Metadata = {
   title: 'Price List Jasa Pembuatan Website UMKM | M-One Solution',
@@ -109,7 +110,7 @@ export default function PricingPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+                dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
       />
       <PricingClient />
     </>

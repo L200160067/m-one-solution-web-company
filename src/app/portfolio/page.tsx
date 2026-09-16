@@ -2,6 +2,7 @@ import { Projects } from '@/components/Projects';
 import { apiFetch } from '@/lib/api';
 import type { ApiResponse, Project } from '@/types/api';
 import { siteConfig } from '@/config/site';
+import { serializeJsonLd } from '@/lib/jsonLd';
 
 export const metadata = {
     title: 'Portofolio Proyek | Software House Sukoharjo — M-One Solution',
@@ -54,7 +55,7 @@ export default async function PortfolioPage() {
         <>
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+                dangerouslySetInnerHTML={{ __html: serializeJsonLd(schema) }}
             />
             <main className="pt-20 min-h-screen bg-slate-50">
                 <Projects projects={projects} />

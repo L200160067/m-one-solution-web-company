@@ -17,6 +17,9 @@
     "test:ui": "vitest --ui",
     "check:wp": "tsx src/lib/__tests__/check-wp-endpoints.ts"
   },
+  "overrides": {
+    "esbuild": "$esbuild"
+  },
   "dependencies": {
     "lucide-react": "^0.546.0",
     "next": "^16.1.6",
@@ -37,6 +40,7 @@
     "@types/react-dom": "^19.2.3",
     "@types/sanitize-html": "^2.16.1",
     "autoprefixer": "^10.4.21",
+    "esbuild": "^0.28.1",
     "jsdom": "^28.1.0",
     "postcss": "^8.5.8",
     "tailwindcss": "^4.1.14",

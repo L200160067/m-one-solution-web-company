@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Baloo_2, Nunito, Bangers } from 'next/font/google';
 import { siteConfig } from '@/config/site';
 import Script from 'next/script';
+import { serializeJsonLd } from '@/lib/jsonLd';
 
 const baloo = Baloo_2({
   subsets: ['latin'],
@@ -93,7 +94,7 @@ export default function CompetitionLayout({ children }: { children: React.ReactN
       <Script
         id="json-ld-competition"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
       />
       {children}
     </div>

@@ -6,6 +6,7 @@ import { BackToTop } from "@/components/BackToTop";
 import { FooterData } from "@/components/FooterData";
 import { siteConfig } from "@/config/site";
 import Script from "next/script";
+import { serializeJsonLd } from "@/lib/jsonLd";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -131,7 +132,7 @@ export default function RootLayout({
         <Script
           id="schema-localbusiness"
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+                    dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
         />
       </head>
       <body className="font-sans antialiased">

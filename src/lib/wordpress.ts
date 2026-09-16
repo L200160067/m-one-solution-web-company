@@ -23,6 +23,7 @@ import {
   ApiResponseSchema,
 } from "@/lib/validation/api";
 import { sanitizeCmsHtml } from "@/lib/sanitizeHtml";
+import { sanitizeExternalUrl } from "@/lib/safeUrl";
 
 /**
  * Interface untuk struktur data dari WordPress REST API (parsial)
@@ -177,7 +178,7 @@ export function mapWordPressProjectToAppProject(
     category: categoryName,
     description: cleanDescription,
     client_name: wpProject.acf?.client_name || "Personal Client",
-    project_url: wpProject.acf?.project_url || "#",
+    project_url: sanitizeExternalUrl(wpProject.acf?.project_url),
     is_featured: wpProject.acf?.is_featured || false,
     image_url: image_url,
     image_thumb: image_thumb,

@@ -16,6 +16,7 @@ import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { BlobBackground } from "@/components/ui/BlobBackground";
 import Script from "next/script";
+import { serializeJsonLd } from "@/lib/jsonLd";
 
 export const metadata: Metadata = {
   title:
@@ -125,7 +126,7 @@ export default function WebsiteSekolahPage() {
       <Script
         id="json-ld-website-sekolah"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
       />
 
       {/* Hero Section */}

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Script from 'next/script';
 import { ChevronRight, Home } from 'lucide-react';
 import { siteConfig } from '@/config/site';
+import { serializeJsonLd } from '@/lib/jsonLd';
 
 export interface BreadcrumbItem {
     label: string;
@@ -43,7 +44,7 @@ export function Breadcrumb({ items, className = '' }: BreadcrumbProps) {
             <Script
                 id="schema-breadcrumb"
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+                dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
             />
             
             <ol className="flex items-center space-x-2 text-sm text-slate-500 overflow-hidden whitespace-nowrap py-2 px-4 bg-white/50 backdrop-blur-sm rounded-full border border-slate-100 shadow-sm w-fit max-w-full">

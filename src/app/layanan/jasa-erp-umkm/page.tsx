@@ -14,6 +14,7 @@ import { siteConfig } from "@/config/site";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { BlobBackground } from "@/components/ui/BlobBackground";
+import { serializeJsonLd } from "@/lib/jsonLd";
 
 export const metadata: Metadata = {
   title: "Jasa Pembuatan Website & Sistem Kasir (ERP) UMKM | M-One Solution",
@@ -109,7 +110,7 @@ export default function JasaERPMPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
       />
       <main className="pt-20 min-h-screen bg-slate-50">
         <div className="bg-white border-b border-slate-100">
