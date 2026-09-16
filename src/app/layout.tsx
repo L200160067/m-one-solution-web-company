@@ -132,7 +132,7 @@ export default function RootLayout({
         <Script
           id="schema-localbusiness"
           type="application/ld+json"
-                    dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
         />
       </head>
       <body className="font-sans antialiased">
