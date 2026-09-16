@@ -439,6 +439,8 @@ export default function Butik2Page() {
                   <img 
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7Wb_EZYNRSWRb6Ob3zIDvc4NyYvoUc2tPWIVdspIeH16RbCI_wl48_xifVASCjvLovBnB4j_bKQwB8GDz4LA9YnbSkn6nzUDsoSZ20J39kK5fPzZlOqLEw-nRDaUevasyk5z_ZkHsWTkDxYJIfgC2mtQbzPNye0k6F4TuihyLHJ7kX4J7RghkQyoQvjj3MZi6JYuYsuGjpTcYdBBUHWwgLPkXKAJs1f4SzubAZCWwmSc1DAfw_GnaMw" 
                     alt="Model wearing Sazmoon Buttercream Cable Cardigan in warm cafe setting" 
+                    fetchPriority="high"
+                    decoding="async"
                     className="w-full h-120 sm:h-140 object-cover object-center hover:scale-105 transition-transform duration-700"
                   />
                   

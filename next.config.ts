@@ -120,9 +120,13 @@ const nextConfig: NextConfig = {
             "img-src 'self' data: https:",
             "font-src 'self'",
             "connect-src 'self' https://berita-mone.mutudev.com https://cdn.mutudev.com https://static.cloudflareinsights.com",
+            "object-src 'none'",
+            "frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com",
+            "worker-src 'self' blob:",
             "frame-ancestors 'none'",
             "base-uri 'self'",
             "form-action 'self'",
+            ...(isDev ? [] : ["upgrade-insecure-requests"]),
         ].join('; ');
 
         return [
