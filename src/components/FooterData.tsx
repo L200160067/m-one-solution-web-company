@@ -2,9 +2,7 @@ import { Suspense } from 'react';
 import { apiFetch } from '@/lib/api';
 import type { ApiResponse, Settings } from '@/types/api';
 import { Footer } from '@/components/Footer';
-import { siteConfig } from '@/config/site';
 import { WhatsAppButton } from '@/components/WhatsAppButton';
-import { BackToTop } from '@/components/BackToTop';
 
 function FooterFallback() {
     const currentYear = new Date().getFullYear();

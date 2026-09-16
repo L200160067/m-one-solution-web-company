@@ -1,12 +1,13 @@
 "use client";
 
-import { useState, useEffect } from 'react';
-import { ArrowLeft, Calendar, User, Tag, Twitter, Linkedin, Facebook, Share2, ChevronLeft, ChevronRight, Link as LinkIcon } from 'lucide-react';
+import { useState } from 'react';
+import { ArrowLeft, Calendar, Tag, Twitter, Linkedin, Facebook, Share2, ChevronLeft, ChevronRight, Link as LinkIcon } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Breadcrumb } from '@/components/Breadcrumb';
+import type { Post } from '@/types/api';
 
-export default function BlogPostClient({ post }: { post: any }) {
+export default function BlogPostClient({ post, pageUrl }: { post: Post; pageUrl: string }) {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     // Filter out null/empty values so <Image> never receives an empty src
@@ -20,12 +21,6 @@ export default function BlogPostClient({ post }: { post: any }) {
     const prevImage = () => {
         setCurrentImageIndex((prev) => (prev - 1 + allImages.length) % allImages.length);
     };
-
-    const [currentUrl, setCurrentUrl] = useState('');
-
-    useEffect(() => {
-        setCurrentUrl(window.location.href);
-    }, []);
 
     return (
         <main className="pt-24 pb-16 min-h-screen bg-slate-50">
@@ -137,7 +132,7 @@ export default function BlogPostClient({ post }: { post: any }) {
 
                         <div 
                              className="prose prose-lg prose-blue max-w-none mb-12 text-slate-600 leading-relaxed"
-                             dangerouslySetInnerHTML={{ __html: post.content }}
+                             dangerouslySetInnerHTML={{ __html: post.content ?? '' }}
                         />
 
                         <div className="pt-8 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -147,7 +142,7 @@ export default function BlogPostClient({ post }: { post: any }) {
                             </div>
                             <div className="flex flex-wrap items-center gap-3">
                                 <a
-                                    href={`https://api.whatsapp.com/send?text=${encodeURIComponent(post.title + ' \n' + currentUrl)}`}
+                                    href={`https://api.whatsapp.com/send?text=${encodeURIComponent(post.title + ' \n' + pageUrl)}`}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-[#25D366] hover:text-white transition-colors"
@@ -156,7 +151,7 @@ export default function BlogPostClient({ post }: { post: any }) {
                                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.031 0C5.385 0 0 5.385 0 12.031c0 2.128.552 4.135 1.542 5.918L.06 24l6.236-1.503c1.722.923 3.664 1.455 5.735 1.455 6.646 0 12.031-5.385 12.031-12.031C24 5.385 18.677 0 12.031 0zm.006 21.944c-1.785 0-3.486-.481-4.991-1.371l-.358-.212-3.704.891.905-3.612-.232-.369C2.613 15.655 2.052 13.918 2.052 12.033c0-5.503 4.478-9.981 9.985-9.981 5.507 0 9.985 4.478 9.985 9.981 0 5.503-4.478 9.981-9.985 9.981zm5.474-7.48c-.3-.15-1.776-.876-2.053-.976-.276-.1-.477-.15-.678.15-.201.3-.777.976-.953 1.176-.176.2-.352.225-.653.075-.3-.15-1.268-.467-2.417-1.493-.894-.799-1.496-1.786-1.672-2.087-.176-.301-.019-.464.132-.614.135-.135.3-.3.45-.45.15-.15.201-.25.301-.417.1-.167.05-.317-.025-.467-.075-.15-.678-1.636-.928-2.241-.242-.584-.488-.505-.678-.515-.176-.008-.376-.008-.577-.008s-.527.075-.803.376c-.276.301-1.054 1.029-1.054 2.508 0 1.48 1.079 2.91 1.229 3.111.15.201 2.122 3.235 5.141 4.536 2.153.929 2.871 1.002 3.91 1.002 1.396 0 2.934-.526 3.447-1.154.513-.627.513-1.154.363-1.278-.15-.125-.552-.275-.853-.425z" /></svg>
                                 </a>
                                 <a
-                                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}`}
+                                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}`}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-[#1877F2] hover:text-white transition-colors"
@@ -165,7 +160,7 @@ export default function BlogPostClient({ post }: { post: any }) {
                                     <Facebook className="w-5 h-5" />
                                 </a>
                                 <a
-                                    href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(currentUrl)}&text=${encodeURIComponent(post.title)}`}
+                                    href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(pageUrl)}&text=${encodeURIComponent(post.title)}`}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-[#1DA1F2] hover:text-white transition-colors"
@@ -174,7 +169,7 @@ export default function BlogPostClient({ post }: { post: any }) {
                                     <Twitter className="w-5 h-5" />
                                 </a>
                                 <a
-                                    href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(currentUrl)}&title=${encodeURIComponent(post.title)}`}
+                                    href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(pageUrl)}&title=${encodeURIComponent(post.title)}`}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-[#0A66C2] hover:text-white transition-colors"
@@ -185,9 +180,9 @@ export default function BlogPostClient({ post }: { post: any }) {
                                 <button
                                     onClick={() => {
                                         if (navigator.share) {
-                                            navigator.share({ title: post.title, url: currentUrl }).catch(console.error);
+                                            navigator.share({ title: post.title, url: pageUrl }).catch(console.error);
                                         } else {
-                                            navigator.clipboard.writeText(currentUrl);
+                                            navigator.clipboard.writeText(pageUrl);
                                             alert("Link artikel berhasil disalin!");
                                         }
                                     }}

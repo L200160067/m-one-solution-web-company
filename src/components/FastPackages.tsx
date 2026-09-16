@@ -16,7 +16,7 @@ export function FastPackages() {
                     <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
                         Pusing Mikir Website? <br className="hidden md:block" />
                         <span className="text-transparent bg-clip-text bg-linear-to-r from-emerald-500 to-teal-400">
-                            Pilih Paket "Terima Beres"
+                            Pilih Paket &ldquo;Terima Beres&rdquo;
                         </span>
                     </h2>
                     <p className="text-lg text-slate-600">

@@ -6,7 +6,7 @@ import { useState } from 'react';
 type ImageSource = string | { src: string; width?: number; height?: number };
 
 type WpImageProps = {
-  src?: ImageSource;
+  src?: ImageSource | null;
   alt: string;
   width?: number;
   height?: number;
@@ -20,7 +20,7 @@ type WpImageProps = {
   placeholder?: 'blur' | 'empty';
 };
 
-function resolveSrc(src?: ImageSource): string | undefined {
+function resolveSrc(src?: ImageSource | null): string | undefined {
   if (!src) return undefined;
   if (typeof src === 'string') return src;
   return src.src;

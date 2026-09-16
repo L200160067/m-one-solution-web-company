@@ -1,15 +1,13 @@
 import { describe, it, expect } from 'vitest';
 import {
   mapWordPressPostToAppPost,
-  mapWordPressProjectToAppProject,
   mapWordPressServiceToAppService,
   mapWordPressSettingsToAppSettings,
   type WordPressPost,
-  type WordPressProject,
   type WordPressService,
   type WordPressSettings,
 } from '@/lib/wordpress';
-import { PostSchema, ProjectSchema, ServiceSchema, SettingsSchema } from '@/lib/validation/api';
+import { PostSchema, ServiceSchema, SettingsSchema } from '@/lib/validation/api';
 
 describe('wordpress zod validation', () => {
   it('validates a valid post payload', () => {

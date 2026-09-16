@@ -18,9 +18,7 @@ import {
   TestimonialSchema,
   PartnerSchema,
   AlumniMemberSchema,
-  AlumniGroupSchema,
   SettingsSchema,
-  ApiResponseSchema,
 } from "@/lib/validation/api";
 import { sanitizeCmsHtml } from "@/lib/sanitizeHtml";
 import { sanitizeExternalUrl } from "@/lib/safeUrl";
@@ -253,7 +251,7 @@ export function mapWordPressServiceToAppService(
   const categoryName =
     categories && categories[0] ? categories[0].name : "Layanan";
 
-  const stringToArray = (str: any) => {
+  const stringToArray = (str: unknown) => {
     if (!str) return [];
     if (Array.isArray(str))
       return str.map((s) => String(s).trim()).filter((s) => s.length > 0);

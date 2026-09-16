@@ -3,7 +3,6 @@
 import React, { useState, useMemo } from 'react';
 import { ArrowRight, Calendar, User, ChevronLeft, ChevronRight, Search, Image as ImageIcon } from 'lucide-react';
 import Link from 'next/link';
-import Image from 'next/image';
 import type { Post } from '@/types/api';
 import { EmptyState } from '@/components/ui/EmptyState';
 import { WpImage } from '@/components/image/WpImage';
@@ -116,7 +115,7 @@ export default function BlogListClient({ posts, categories }: BlogListClientProp
             ) : (
                 <>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-                        {currentPosts.map((post, index) => (
+                        {currentPosts.map((post) => (
                             <div
                                 key={post.id}
                                 className="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300 group flex flex-col"

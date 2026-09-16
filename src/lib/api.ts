@@ -16,18 +16,7 @@
  * ============================================================
  */
 
-import type {
-  Post,
-  Project,
-  Service,
-  TeamMember,
-  AlumniGroup,
-  AlumniMember,
-  Testimonial,
-  Partner,
-  Settings,
-  ApiResponse,
-} from "@/types/api";
+import type { Project, AlumniGroup, AlumniMember, Settings } from '@/types/api';
 
 import {
   mapWordPressPostToAppPost,
@@ -47,25 +36,18 @@ import {
   type WordPressPartner,
   type WordPressAlumni,
   type WordPressSettings,
-} from "./wordpress";
+} from './wordpress';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
-const WP_BASE = (process.env.NEXT_PUBLIC_WORDPRESS_URL ?? "").replace(
-  /\/$/,
-  "",
-);
+const WP_BASE = (process.env.NEXT_PUBLIC_WORDPRESS_URL ?? '').replace(/\/$/, '');
 
 const WP_CONFIGURED = WP_BASE.length > 0;
-
-const DEFAULT_HEADERS = {
-  Accept: "application/json",
-};
 
 // Helper to safely append query string to URL since WP_BASE may contain "?"
 function buildWpUrl(path: string, queryString: string): string {
   if (!queryString) return `${WP_BASE}${path}`;
-  const separator = WP_BASE.includes("?") ? "&" : "?";
+  const separator = WP_BASE.includes('?') ? '&' : '?';
   return `${WP_BASE}${path}${separator}${queryString}`;
 }
 
@@ -73,18 +55,18 @@ function buildWpUrl(path: string, queryString: string): string {
  * Mapping dari nama resource kita → slug WP REST API endpoint
  */
 const WP_ENDPOINT_MAP: Record<string, string> = {
-  posts: "/posts",
-  projects: "/project",
-  services: "/service",
-  team: "/team-member",
-  testimonials: "/testimonial",
-  partners: "/partner",
-  alumni: "/alumni",
-  settings: "/pages",
+  posts: '/posts',
+  projects: '/project',
+  services: '/service',
+  team: '/team-member',
+  testimonials: '/testimonial',
+  partners: '/partner',
+  alumni: '/alumni',
+  settings: '/pages',
 };
 
 // List resources yang single-item-nya ditemukan by slug (bukan by ID)
-const SLUG_BASED_RESOURCES = new Set(["posts", "projects", "services"]);
+const SLUG_BASED_RESOURCES = new Set(['posts', 'projects', 'services']);
 
 // ─── Fetch helper ─────────────────────────────────────────────────────────────
 
@@ -105,9 +87,9 @@ async function wpFetch<T>(url: string, options: FetchOptions = {}): Promise<T> {
   });
 
   if (!res.ok) {
-    const text = await res.text().catch(() => "");
+    const text = await res.text().catch(() => '');
     throw new Error(
-      `WordPress API returned ${res.status} for: ${url}${text ? ` — ${text.slice(0, 120)}` : ""}`,
+      `WordPress API returned ${res.status} for: ${url}${text ? ` — ${text.slice(0, 120)}` : ''}`,
     );
   }
   return res.json() as Promise<T>;
@@ -117,19 +99,17 @@ async function wpFetch<T>(url: string, options: FetchOptions = {}): Promise<T> {
 
 function mapItem(resource: string, item: unknown): unknown {
   switch (resource) {
-    case "posts":
+    case 'posts':
       return mapWordPressPostToAppPost(item as WordPressPost);
-    case "projects":
+    case 'projects':
       return mapWordPressProjectToAppProject(item as WordPressProject);
-    case "services":
+    case 'services':
       return mapWordPressServiceToAppService(item as WordPressService);
-    case "team":
+    case 'team':
       return mapWordPressTeamMemberToAppTeamMember(item as WordPressTeamMember);
-    case "testimonials":
-      return mapWordPressTestimonialToAppTestimonial(
-        item as WordPressTestimonial,
-      );
-    case "partners":
+    case 'testimonials':
+      return mapWordPressTestimonialToAppTestimonial(item as WordPressTestimonial);
+    case 'partners':
       return mapWordPressPartnerToAppPartner(item as WordPressPartner);
     default:
       return item;
@@ -150,40 +130,35 @@ function mapItem(resource: string, item: unknown): unknown {
  *   '/alumni'                   → semua alumni (dikelompokkan per batch)
  *   '/settings'                 → settings dari ACF options page
  */
-export async function apiFetch<T>(
-  endpoint: string,
-  options: FetchOptions = {},
-): Promise<T> {
+export async function apiFetch<T>(endpoint: string, options: FetchOptions = {}): Promise<T> {
   // Pisahkan path dan query string
-  const [rawPath, search] = endpoint.split("?");
-  const params = new URLSearchParams(search ?? "");
+  const [rawPath, search] = endpoint.split('?');
+  const params = new URLSearchParams(search ?? '');
 
   // Contoh: '/posts/some-slug' → parts = ['', 'posts', 'some-slug']
-  const parts = rawPath.split("/").filter(Boolean);
+  const parts = rawPath.split('/').filter(Boolean);
   const resource = parts[0]; // 'posts', 'team', 'alumni', dll.
   const pathSlug = parts[1]; // slug path-param, jika ada
 
   if (!resource) {
-    console.warn("[apiFetch] Empty endpoint. Returning empty response.");
+    console.warn('[apiFetch] Empty endpoint. Returning empty response.');
     return { success: false, data: [] } as unknown as T;
   }
 
   const wpSlug = WP_ENDPOINT_MAP[resource];
   if (!wpSlug) {
-    console.warn(
-      `[apiFetch] Unknown resource: "${resource}". Cek WP_ENDPOINT_MAP.`,
-    );
+    console.warn(`[apiFetch] Unknown resource: "${resource}". Cek WP_ENDPOINT_MAP.`);
     return { success: false, data: [] } as unknown as T;
   }
 
   const LIST_RESOURCES = [
-    "posts",
-    "projects",
-    "services",
-    "team",
-    "testimonials",
-    "partners",
-    "alumni",
+    'posts',
+    'projects',
+    'services',
+    'team',
+    'testimonials',
+    'partners',
+    'alumni',
   ];
 
   if (!WP_CONFIGURED) {
@@ -191,7 +166,7 @@ export async function apiFetch<T>(
       success: false,
       data: LIST_RESOURCES.includes(resource)
         ? []
-        : resource === "settings"
+        : resource === 'settings'
           ? ({} as Settings)
           : null,
     } as unknown as T;
@@ -199,19 +174,17 @@ export async function apiFetch<T>(
 
   try {
     // ── SETTINGS ────────────────────────────────────────────────────────────
-    if (resource === "settings") {
-      const url = buildWpUrl("/pages", "slug=company-setting&_embed=1");
+    if (resource === 'settings') {
+      const url = buildWpUrl('/pages', 'slug=company-setting&_embed=1');
       const pages = await wpFetch<WordPressSettings[]>(url, options);
       const raw = Array.isArray(pages) && pages.length > 0 ? pages[0] : {};
-      const mapped = mapWordPressSettingsToAppSettings(
-        raw as WordPressSettings,
-      );
+      const mapped = mapWordPressSettingsToAppSettings(raw as WordPressSettings);
       return { success: true, data: mapped } as unknown as T;
     }
 
     // ── ALUMNI (selalu list, lalu dikelompokkan) ─────────────────────────────
-    if (resource === "alumni") {
-      const url = buildWpUrl(wpSlug, "_embed=1&per_page=100");
+    if (resource === 'alumni') {
+      const url = buildWpUrl(wpSlug, '_embed=1&per_page=100');
       const raw = await wpFetch<WordPressAlumni[]>(url, options);
       const members: AlumniMember[] = Array.isArray(raw)
         ? raw.map(mapWordPressAlumniToAppAlumni)
@@ -232,29 +205,31 @@ export async function apiFetch<T>(
 
     // ── LIST ────────────────────────────────────────────────────────────────
     const listParams = new URLSearchParams();
-    listParams.set("_embed", "1");
-    listParams.set("per_page", params.get("per_page") ?? "100");
+    listParams.set('_embed', '1');
+    const limitParam = params.get('limit');
+    const parsedLimit =
+      limitParam && /^[1-9]\d*$/.test(limitParam) ? Math.min(Number(limitParam), 100) : undefined;
+    const isFeatured = params.get('featured') === 'true';
+
+    // Featured filtering happens client-side, so fetch enough candidates first.
+    listParams.set('per_page', isFeatured ? '100' : String(parsedLimit ?? 100));
 
     // Forward kategori jika ada
-    if (params.get("category")) {
-      listParams.set("categories", params.get("category")!);
+    if (params.get('category')) {
+      listParams.set('categories', params.get('category')!);
     }
 
     const url = buildWpUrl(wpSlug, listParams.toString());
     const raw = await wpFetch<unknown[]>(url, options);
-    let list = Array.isArray(raw)
-      ? raw.map((item) => mapItem(resource, item))
-      : [];
+    let list = Array.isArray(raw) ? raw.map((item) => mapItem(resource, item)) : [];
 
     // Filter featured client-side (WP tidak mendukung filter ACF boolean via REST)
-    if (params.get("featured") === "true") {
+    if (isFeatured) {
       list = list.filter((p: unknown) => (p as Project).is_featured);
     }
 
-    // Batasi jumlah jika ada ?limit=N
-    const limit = params.get("limit");
-    if (limit) {
-      list = list.slice(0, parseInt(limit, 10));
+    if (parsedLimit !== undefined) {
+      list = list.slice(0, parsedLimit);
     }
 
     return { success: true, data: list } as unknown as T;
@@ -265,7 +240,7 @@ export async function apiFetch<T>(
       success: false,
       data: LIST_RESOURCES.includes(resource)
         ? []
-        : resource === "settings"
+        : resource === 'settings'
           ? ({} as Settings)
           : null,
     } as unknown as T;

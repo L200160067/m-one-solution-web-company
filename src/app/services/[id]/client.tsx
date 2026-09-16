@@ -7,11 +7,14 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 import Link from "next/link";
-import { EmptyState } from "@/components/ui/EmptyState";
+import { useRouter } from "next/navigation";
 import { ErrorState } from "@/components/ui/ErrorState";
 import { WpImage } from "@/components/image/WpImage";
+import type { Service } from "@/types/api";
 
-export default function ServiceDetailClient({ service }: { service: any }) {
+export default function ServiceDetailClient({ service }: { service: Service | null }) {
+  const router = useRouter();
+
   if (!service) {
     return (
       <main className="pt-24 pb-16 min-h-screen bg-slate-50">
@@ -20,11 +23,7 @@ export default function ServiceDetailClient({ service }: { service: any }) {
             title="Layanan tidak ditemukan"
             description="Layanan yang Anda cari mungkin sudah diubah atau dipindahkan."
             actionLabel="Lihat Semua Layanan"
-            onAction={() => {
-              if (typeof window !== "undefined") {
-                window.location.href = "/services";
-              }
-            }}
+            onAction={() => router.push("/services")}
           />
         </article>
       </main>

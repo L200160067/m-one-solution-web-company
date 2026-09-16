@@ -91,7 +91,7 @@ export default function ServicesListClient({ services, categories }: ServicesLis
                 />
             ) : (
                 <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
-                    {filteredServices.map((service, index) => (
+                    {filteredServices.map((service) => (
                         <div
                             key={service.id}
                             className="bg-white rounded-3xl overflow-hidden border border-slate-100 hover:shadow-xl transition-all duration-300 group flex flex-col h-full hover:-translate-y-2"

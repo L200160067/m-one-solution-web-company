@@ -133,7 +133,7 @@ export default async function BlogPostPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(schema) }}
       />
-      <BlogPostClient post={post} />
+      <BlogPostClient post={post} pageUrl={pageUrl} />
     </>
   );
 }

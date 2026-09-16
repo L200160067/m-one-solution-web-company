@@ -15,7 +15,7 @@ export function Navbar() {
   const [isPaketDropdownOpen, setIsPaketDropdownOpen] = useState(false);
   const pathname = usePathname();
 
-  const rawLogo = (siteConfig.logo as any)?.src || siteConfig.logo;
+  const rawLogo = siteConfig.logo;
   const logoUrl = useCdnUrl(rawLogo);
 
   useEffect(() => {

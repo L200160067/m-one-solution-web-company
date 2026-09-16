@@ -8,3 +8,9 @@ coverage/
 !.env.example
 .next/
 out/
+
+# generated output / build cache
+*.tsbuildinfo
+npx_lint_output.txt
+wp-check.txt
+/metadata.json

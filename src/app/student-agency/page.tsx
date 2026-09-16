@@ -228,7 +228,7 @@ export default function StudentAgencyPage() {
             <p className="text-slate-500 max-w-xl mx-auto">Ini semua yang kamu dapatkan saat bergabung bersama kami.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {benefits.map((b, i) => (
+            {benefits.map((b) => (
               <div
                 key={b.title}
 
@@ -259,7 +259,7 @@ export default function StudentAgencyPage() {
             <p className="text-slate-500 max-w-xl mx-auto">Gampang banget. Udah banyak mahasiswa yang udah buktiin!</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            {steps.map((s, i) => (
+            {steps.map((s) => (
               <div
                 key={s.num}
 
@@ -395,7 +395,7 @@ export default function StudentAgencyPage() {
       ====================================================== */}
       <section className="py-16 px-6" style={{ background: branding.pinkAccent }}>
         <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
-          {studentAgency.stats.map((s, i) => (
+          {studentAgency.stats.map((s) => (
             <div key={s.label}>
               <div className="text-4xl sm:text-5xl font-black mb-1" style={{ color: branding.yellowAccent }}>{s.value}</div>
               <div className="text-sm font-semibold opacity-90">{s.label}</div>
@@ -415,7 +415,7 @@ export default function StudentAgencyPage() {
             </h2>
           </div>
           <div className="space-y-4">
-            {faqs.map((faq, i) => (
+            {faqs.map((faq) => (
               <details
                 key={faq.question}
 

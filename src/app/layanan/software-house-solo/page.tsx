@@ -35,7 +35,7 @@ export default function SoftwareHouseSoloPage() {
                         </span>
                     </h1>
                     <p className="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-10">
-                        Kami membantu UMKM, instansi, dan perusahaan di wilayah Surakarta (Solo), Sukoharjo, Karanganyar, dan sekitarnya untuk *"go digital"* melalui pembuatan website dan aplikasi kustom yang tepat guna.
+                        Kami membantu UMKM, instansi, dan perusahaan di wilayah Surakarta (Solo), Sukoharjo, Karanganyar, dan sekitarnya untuk *&ldquo;go digital&rdquo;* melalui pembuatan website dan aplikasi kustom yang tepat guna.
                     </p>
                 </div>
             </section>
@@ -47,7 +47,7 @@ export default function SoftwareHouseSoloPage() {
                         <div>
                             <h2 className="text-3xl font-bold text-slate-900 mb-6">Mengapa Memilih Jasa IT dari Kami?</h2>
                             <p className="text-slate-600 mb-6 leading-relaxed">
-                                Sebagai <strong>software house lokal di wilayah Solo Raya</strong>, M-One Solution memahami betul ekspektasi dan kebiasaan bisnis di daerah ini. Kami tidak sekadar "menulis kode", namun memberikan konsultasi yang transparan, harga yang masuk akal, dan *after-sales support* yang bisa diandalkan kapan saja.
+                                Sebagai <strong>software house lokal di wilayah Solo Raya</strong>, M-One Solution memahami betul ekspektasi dan kebiasaan bisnis di daerah ini. Kami tidak sekadar &ldquo;menulis kode&rdquo;, namun memberikan konsultasi yang transparan, harga yang masuk akal, dan *after-sales support* yang bisa diandalkan kapan saja.
                             </p>
                             <ul className="space-y-4">
                                 {[

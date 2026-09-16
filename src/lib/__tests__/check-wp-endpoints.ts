@@ -34,7 +34,7 @@ async function fetchEndpoint(url: string): Promise<{ ok: boolean; status: number
     const res = await fetch(url, { signal: AbortSignal.timeout(10000) });
     const data = res.ok ? await res.json() : null;
     return { ok: res.ok, status: res.status, data };
-  } catch (err) {
+  } catch {
     return { ok: false, status: 0, data: null };
   }
 }

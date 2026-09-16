@@ -140,7 +140,7 @@ export default function CompetitionPage() {
             <span className="t-badge-main">TEMA RESMI</span>
             <span className="t-badge-cat sekolah">Kategori Sekolah (SMP)</span>
           </div>
-          <h3>"School Website Innovation"</h3>
+          <h3>&ldquo;School Website Innovation&rdquo;</h3>
           <p><strong>Fokus:</strong> Bangun website profil inovatif untuk sekolah kamu sendiri!<br/>
           Peserta ditantang merancang dan mengembangkan website yang menampilkan identitas, prestasi, fasilitas, dan informasi sekolah dengan sentuhan kreatif. Karya harus orisinal, buatan sendiri, dan belum pernah dilombakan sebelumnya. Bahasa pemrograman dan framework bebas — kamu bebas eksplorasi! Informasi dan materi dasar dapat menggunakan data sekolah masing-masing, dengan panduan teknis yang akan dibagikan saat Technical Meeting.</p>
         </div>
@@ -187,7 +187,7 @@ export default function CompetitionPage() {
             <span className="t-badge-main">TEMA RESMI</span>
             <span className="t-badge-cat umum">Kategori Umum</span>
           </div>
-          <h3>"Innovating Education Through Technology"</h3>
+          <h3>&ldquo;Innovating Education Through Technology&rdquo;</h3>
           <p>Peserta bebas berinovasi menciptakan platform website berbasis edukasi (seperti media pembelajaran interaktif, learning management system, kuis edukatif, atau platform literasi digital). Karya harus orisinal, buatan sendiri, dan belum pernah diikutsertakan dalam lomba lain. Konsep fitur, bahasa pemrograman, dan framework sepenuhnya bebas!</p>
         </div>
         <ul className="theme-features">
@@ -356,7 +356,7 @@ export default function CompetitionPage() {
     </div>
     <div className="rules-grid reveal">
       <div className="rule"><span className="rule-num"><span>1</span></span><p>Peserta diperbolehkan menggunakan AI sebagai alat bantu dalam proses pengembangan aplikasi, dengan tetap mencantumkan nama tools AI yang digunakan pada saat pengumpulan karya.</p></div>
-      <div className="rule"><span className="rule-num"><span>2</span></span><p>Website yang dikembangkan harus sesuai dengan tema resmi kategori masing-masing: "School Website Innovation" (SMP) atau "Innovating Education Through Technology" (Umum).</p></div>
+      <div className="rule"><span className="rule-num"><span>2</span></span><p>Website yang dikembangkan harus sesuai dengan tema resmi kategori masing-masing: &ldquo;School Website Innovation&rdquo; (SMP) atau &ldquo;Innovating Education Through Technology&rdquo; (Umum).</p></div>
       <div className="rule"><span className="rule-num"><span>3</span></span><p>Bahasa pemrograman, framework, dan teknologi yang digunakan dibebaskan.</p></div>
       <div className="rule"><span className="rule-num"><span>4</span></span><p>Karya harus orisinal dan belum pernah dilombakan sebelumnya.</p></div>
       <div className="rule"><span className="rule-num"><span>5</span></span><p>Peserta wajib mengumpulkan karya sesuai format dan batas waktu yang telah ditentukan oleh panitia.</p></div>

@@ -2,7 +2,6 @@ import { apiFetch } from "@/lib/api";
 import type { ApiResponse, Service } from "@/types/api";
 import { notFound } from "next/navigation";
 import ServiceDetailClient from "./client";
-import type { Metadata } from "next";
 import { siteConfig } from "@/config/site";
 import { serializeJsonLd } from "@/lib/jsonLd";
 

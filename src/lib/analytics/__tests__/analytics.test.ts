@@ -15,7 +15,7 @@ describe('analytics track', () => {
 
   it('calls gtag when available', () => {
     const gtag = vi.fn();
-    (window as any).gtag = gtag;
+    window.gtag = gtag;
     track({ event: 'whatsapp_click' });
     expect(gtag).toHaveBeenCalledWith('event', 'whatsapp_click', expect.any(Object));
   });

@@ -14,13 +14,13 @@ interface FooterProps {
 
 export function Footer({ settings }: FooterProps) {
   const pathname = usePathname();
+  const currentYear = new Date().getFullYear();
+  const rawLogo = siteConfig.logo;
+  const logoUrl = useCdnUrl(rawLogo);
+
   if (pathname?.startsWith('/butik-')) {
     return null;
   }
-
-  const currentYear = new Date().getFullYear();
-  const rawLogo = (siteConfig.logo as any)?.src || siteConfig.logo;
-  const logoUrl = useCdnUrl(rawLogo);
 
   const getValidUrl = (apiUrl?: string, fallbackUrl?: string) => {
     if (apiUrl && apiUrl !== '#') return apiUrl;

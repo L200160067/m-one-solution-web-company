@@ -48,7 +48,7 @@ export function Testimonials({ testimonials }: TestimonialsProps) {
 
               <Quote className="w-8 h-8 text-blue-400 mb-4 opacity-50" />
               <p className="text-base text-slate-300 mb-6 leading-relaxed grow">
-                "{testimonial.content}"
+                &ldquo;{testimonial.content}&rdquo;
               </p>
               <div className="flex items-center gap-4 mt-auto">
                 <WpImage

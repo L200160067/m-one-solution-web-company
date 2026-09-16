@@ -30,7 +30,7 @@ export async function POST(request: NextRequest) {
     let body: unknown;
     try {
       body = await request.json();
-    } catch (e) {
+    } catch {
       return NextResponse.json(
         { message: "Invalid JSON payload" },
         { status: 400 },
@@ -84,8 +84,9 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ revalidated: true, now: Date.now() });
   } catch (err) {
+    console.error("[revalidate] Failed:", err instanceof Error ? err.message : err);
     return NextResponse.json(
-      { message: "Error revalidating", error: err },
+      { message: "Error revalidating" },
       { status: 500 },
     );
   }

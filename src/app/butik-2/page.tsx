@@ -4,7 +4,6 @@ import { useState, useMemo } from "react";
 import {
   Heart,
   ShoppingBag,
-  ShoppingCart,
   Search,
   Menu,
   X,
@@ -19,7 +18,6 @@ import {
   Calendar,
   Camera,
   Coffee,
-  Shirt,
 } from "lucide-react";
 
 interface Product {

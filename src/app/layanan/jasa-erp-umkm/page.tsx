@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import {
   PackageSearch,
   TrendingUp,
-  Cpu,
   Workflow,
   CheckCircle2,
   MessageCircle,
@@ -531,7 +530,7 @@ export default function JasaERPMPage() {
                   className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100"
                 >
                   <p className="text-slate-600 leading-relaxed mb-6 italic">
-                    "{testi.quote}"
+                    &ldquo;{testi.quote}&rdquo;
                   </p>
                   <div>
                     <h4 className="font-bold text-slate-900">{testi.name}</h4>
