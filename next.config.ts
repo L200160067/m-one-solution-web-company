@@ -1,4 +1,9 @@
 import type { NextConfig } from "next";
+import { EventEmitter } from "node:events";
+
+if (process.env.NODE_ENV !== "production") {
+  EventEmitter.defaultMaxListeners = 30;
+}
 
 const nextConfig: NextConfig = {
   modularizeImports: {
