@@ -10,7 +10,7 @@ interface WhatsAppButtonProps {
 
 export function WhatsAppButton({ whatsappNumber }: WhatsAppButtonProps) {
   const pathname = usePathname();
-  if (pathname?.startsWith('/butik-')) {
+  if (pathname?.startsWith('/butik-') || pathname === '/coding-competition') {
     return null;
   }
 
