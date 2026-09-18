@@ -414,31 +414,7 @@ export default function CompetitionPage() {
         <span className="step-no">4</span>
         <div className="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2"/><line x1="3.5" y1="9.5" x2="20.5" y2="9.5"/><line x1="7.5" y1="3" x2="7.5" y2="6.5"/><line x1="16.5" y1="3" x2="16.5" y2="6.5"/><circle cx="9" cy="14" r="1"/><circle cx="13" cy="14" r="1"/><circle cx="17" cy="14" r="1"/></svg></div>
         <h3>Pantau TM</h3>
-        <p>Pantau email dan WhatsApp panitia secara berkala untuk jadwal Technical Meeting dan pengumuman selanjutnya. Jika belum menerima informasi dalam 1x24 jam setelah pendaftaran, hubungi panitia lomba:</p>
-        <div style={{ marginTop: '10px' }}>
-          <a
-            href="https://wa.me/6285725881340?text=Halo%20Kak%20Geysar,%20saya%20mau%20tanya%20seputar%20Coding%20Competition%20M-One%20Telkomsel"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '6px',
-              background: '#DCFCE7',
-              color: '#15803D',
-              border: '2px solid #16A34A',
-              padding: '6px 12px',
-              borderRadius: '10px',
-              fontWeight: 800,
-              fontSize: '13px',
-              boxShadow: '2px 2px 0 var(--ink)',
-              textDecoration: 'none',
-              lineHeight: 1.3,
-            }}
-          >
-            💬 Geysar: +62 857-2588-1340
-          </a>
-        </div>
+        <p>Pantau email dan WhatsApp panitia secara berkala untuk jadwal Technical Meeting dan pengumuman selanjutnya. Jika belum menerima informasi dalam 1x24 jam setelah pendaftaran, hubungi panitia melalui kontak yang tersedia.</p>
       </div>
     </div>
 
