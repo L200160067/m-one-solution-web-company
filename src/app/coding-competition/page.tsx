@@ -372,22 +372,22 @@ export default function CompetitionPage() {
     <div className="section-head">
       <h2>Gampang, tinggal 4 langkah!</h2>
       <div className="pricing-pills" style={{ marginTop: "16px" }}>
-        <div className="price-pill active-batch">
+        <div className="price-pill inactive-batch">
           <span className="batch-name b1">Batch 1</span>
+          <span className="batch-status-badge is-closed">Sudah Ditutup</span>
+          <span className="batch-date">10 Sep – 17 Sep 2026</span>
+          <span className="batch-sep">•</span>
+          <span className="price-amount">Rp 50.000,-</span>
+        </div>
+        <div className="price-pill active-batch">
+          <span className="batch-name b2">Batch 2</span>
           <span className="batch-status-badge is-open">
             <span className="status-live-dot"></span>
             Sedang Dibuka
           </span>
-          <span className="batch-date">10 Sep – 17 Sep 2026</span>
-          <span className="batch-sep">•</span>
-          <span className="price-amount highlight">Rp 50.000,-</span>
-        </div>
-        <div className="price-pill upcoming-batch">
-          <span className="batch-name b2">Batch 2</span>
-          <span className="batch-status-badge is-upcoming">Segera Dibuka</span>
           <span className="batch-date">18 Sep – 25 Sep 2026</span>
           <span className="batch-sep">•</span>
-          <span className="price-amount">Rp 60.000,-</span>
+          <span className="price-amount highlight">Rp 60.000,-</span>
         </div>
       </div>
     </div>

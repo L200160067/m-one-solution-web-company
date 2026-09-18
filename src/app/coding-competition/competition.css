@@ -670,7 +670,7 @@
     transition:transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  /* Highlighted Active Batch 1 */
+  /* Highlighted Active Batch */
   .price-pill.active-batch {
     background: linear-gradient(135deg, #FFFDF0 0%, #FEF9C3 100%);
     border: 2.5px solid var(--ink);
@@ -682,13 +682,15 @@
     box-shadow: 6px 6px 0 var(--ink);
   }
 
-  /* Upcoming Batch 2 */
+  /* Inactive / Past / Upcoming Batch */
+  .price-pill.inactive-batch,
   .price-pill.upcoming-batch {
     background: #FFFFFF;
     border: 2px solid #CBD5E1;
     box-shadow: 3px 3px 0 rgba(22, 33, 62, 0.15);
     opacity: 0.88;
   }
+  .price-pill.inactive-batch:hover,
   .price-pill.upcoming-batch:hover {
     opacity: 1;
     transform: translateY(-2px);
@@ -732,6 +734,11 @@
     background: #F1F5F9;
     color: #64748B;
     border: 1.5px solid #CBD5E1;
+  }
+  .batch-status-badge.is-closed {
+    background: #FEE2E2;
+    color: #DC2626;
+    border: 1.5px solid #F87171;
   }
 
   .price-pill .batch-date { font-family:var(--font-nunito), 'Nunito', sans-serif; font-size:13px; font-weight:700; color:var(--slate); }
