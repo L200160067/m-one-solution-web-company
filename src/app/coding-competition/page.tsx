@@ -414,7 +414,7 @@ export default function CompetitionPage() {
         <span className="step-no">4</span>
         <div className="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2"/><line x1="3.5" y1="9.5" x2="20.5" y2="9.5"/><line x1="7.5" y1="3" x2="7.5" y2="6.5"/><line x1="16.5" y1="3" x2="16.5" y2="6.5"/><circle cx="9" cy="14" r="1"/><circle cx="13" cy="14" r="1"/><circle cx="17" cy="14" r="1"/></svg></div>
         <h3>Pantau TM</h3>
-        <p>Pantau email dan WhatsApp panitia secara berkala untuk jadwal Technical Meeting dan pengumuman selanjutnya. Jika belum menerima informasi dalam 1x24 jam setelah pendaftaran, hubungi panitia melalui kontak yang tersedia.</p>
+        <p>Pantau email dan WhatsApp panitia secara berkala untuk jadwal Technical Meeting dan pengumuman selanjutnya.</p>
       </div>
     </div>
 
