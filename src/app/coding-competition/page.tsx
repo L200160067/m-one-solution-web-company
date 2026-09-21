@@ -447,7 +447,7 @@ export default function CompetitionPage() {
       <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap', alignItems: 'center' }}>
         <a className="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSf25pa6dUh5NIUChyN79JGO3BX4EJoLM_z6xLmf-gBo2qBM0g/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">Daftar via Google Form 🚀</a>
         <a
-          href="https://wa.me/6283169480244?text=Halo%20Kak%20Fangky,%20saya%20mau%20tanya%20seputar%20Coding%20Competition%20M-One%20Telkomsel"
+          href="https://wa.me/6287872926689?text=Halo%20Kak%20Damar,%20saya%20mau%20tanya%20seputar%20Coding%20Competition%20M-One%20Telkomsel"
           target="_blank"
           rel="noopener noreferrer"
           style={{
@@ -467,7 +467,7 @@ export default function CompetitionPage() {
             transition: 'transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
           }}
         >
-          💬 Tanya Panitia (Fangky)
+          💬 Tanya Panitia (Damar)
         </a>
       </div>
     </div>
