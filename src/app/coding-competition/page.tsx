@@ -273,7 +273,7 @@ export default function CompetitionPage() {
         <div className="timeline stagger-group">
           <div className="t-item">
             <div className="stage-circle"><span>1</span></div>
-            <div className="t-meta"><span className="t-date">26 – 27 September 2026</span><span className="t-tag online">GRATIS / ONLINE</span></div>
+            <div className="t-meta"><span className="t-date">29 – 30 September 2026</span><span className="t-tag online">GRATIS / ONLINE</span></div>
             <h4>Seminar Gratis</h4>
             <p>Sesi workshop & seminar online gratis pengenalan website & AI untuk seluruh peserta.</p>
           </div>
@@ -307,7 +307,7 @@ export default function CompetitionPage() {
         <div className="timeline stagger-group">
           <div className="t-item">
             <div className="stage-circle"><span>1</span></div>
-            <div className="t-meta"><span className="t-date">26 – 27 September 2026</span><span className="t-tag online">GRATIS / ONLINE</span></div>
+            <div className="t-meta"><span className="t-date">29 – 30 September 2026</span><span className="t-tag online">GRATIS / ONLINE</span></div>
             <h4>Seminar Gratis</h4>
             <p>Sesi workshop & seminar online gratis pengenalan website & AI untuk seluruh peserta.</p>
           </div>
