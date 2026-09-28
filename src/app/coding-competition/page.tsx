@@ -285,7 +285,7 @@ export default function CompetitionPage() {
           </div>
           <div className="t-item">
             <div className="stage-circle"><span>3</span></div>
-            <div className="t-meta"><span className="t-date">1 – 10 Oktober 2026</span><span className="t-tag online">ONLINE</span></div>
+            <div className="t-meta"><span className="t-date">5 – 15 Oktober 2026</span><span className="t-tag online">ONLINE</span></div>
             <h4>Babak Utama / Penyisihan</h4>
             <p>Proses pengerjaan & pengumpulan karya website secara online di waktu yang ditentukan.</p>
           </div>
@@ -319,7 +319,7 @@ export default function CompetitionPage() {
           </div>
           <div className="t-item">
             <div className="stage-circle"><span>3</span></div>
-            <div className="t-meta"><span className="t-date">1 – 24 Oktober 2026</span><span className="t-tag online">ONLINE</span></div>
+            <div className="t-meta"><span className="t-date">5 – 24 Oktober 2026</span><span className="t-tag online">ONLINE</span></div>
             <h4>Babak Penyisihan</h4>
             <p>Tahap awal pengerjaan karya website secara online oleh para peserta.</p>
           </div>
