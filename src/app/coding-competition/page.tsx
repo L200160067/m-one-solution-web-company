@@ -279,7 +279,7 @@ export default function CompetitionPage() {
           </div>
           <div className="t-item">
             <div className="stage-circle"><span>2</span></div>
-            <div className="t-meta"><span className="t-date">29 September 2026</span><span className="t-tag online">ONLINE</span></div>
+            <div className="t-meta"><span className="t-date">3 Oktober 2026</span><span className="t-tag online">ONLINE</span></div>
             <h4>Technical Meeting</h4>
             <p>Briefing teknis perlombaan dan penyampaian petunjuk pengerjaan secara daring.</p>
           </div>
@@ -313,7 +313,7 @@ export default function CompetitionPage() {
           </div>
           <div className="t-item">
             <div className="stage-circle"><span>2</span></div>
-            <div className="t-meta"><span className="t-date">29 September 2026</span><span className="t-tag online">ONLINE</span></div>
+            <div className="t-meta"><span className="t-date">3 Oktober 2026</span><span className="t-tag online">ONLINE</span></div>
             <h4>Technical Meeting</h4>
             <p>Briefing teknis perlombaan dan arahan dari panitia secara daring.</p>
           </div>
