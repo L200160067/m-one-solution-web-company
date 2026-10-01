@@ -31,7 +31,7 @@ export default function CompetitionPage() {
       {/*  Top Meta Row: Event Badge & Sponsor Card  */}
       <div className="hero-meta-row hero-fade d-1">
         <div className="event-title-badge">
-          <span className="badge">🎉 Pendaftaran Dibuka!</span>
+          <span className="badge">🔒 Pendaftaran Ditutup</span>
         </div>
 
         <div className="sponsor-block-card">
@@ -45,13 +45,13 @@ export default function CompetitionPage() {
       <p className="hero-tagline bangers hero-fade d-1">Rancang Website Inovatif dengan Bantuan AI — Raih Total Hadiah Rp 3.200.000! 🏆</p>
       <p className="lead hero-fade d-2">Buat kamu pelajar SMP, SMA/SMK, mahasiswa, dan masyarakat umum se-Solo Raya & sekitarnya. Kami mencari ide kreatif dan semangat belajar, bukan sekadar keahlian teknis. Setiap peserta punya kesempatan yang sama untuk menjadi juara!</p>
       <div className="hero-ctas hero-fade d-3">
-        <a className="btn btn-primary" href="#daftar">Yuk, Daftar Sekarang! 🚀</a>
+        <a className="btn btn-primary" href="#jadwal">Lihat Jadwal Lomba 📅</a>
         <a className="btn btn-outline-light" href="#tentang">Cek Serunya Dulu</a>
       </div>
     </div>
 
     <div className="mascot-col hero-fade d-2">
-      <div className="burst"><span>Pendaftaran Dibuka!</span></div>
+      <div className="burst"><span>Pendaftaran Ditutup</span></div>
       <div className="speech-bubble">Santai aja, aku temenin dari sini! 👋</div>
       
       {/*  Floating Sponsor & Organizer Badges  */}
@@ -379,15 +379,12 @@ export default function CompetitionPage() {
           <span className="batch-sep">•</span>
           <span className="price-amount">Rp 50.000,-</span>
         </div>
-        <div className="price-pill active-batch">
+        <div className="price-pill inactive-batch">
           <span className="batch-name b2">Batch 2</span>
-          <span className="batch-status-badge is-open">
-            <span className="status-live-dot"></span>
-            Sedang Dibuka
-          </span>
+          <span className="batch-status-badge is-closed">Sudah Ditutup</span>
           <span className="batch-date">18 Sep – 30 Sep 2026</span>
           <span className="batch-sep">•</span>
-          <span className="price-amount highlight">Rp 60.000,-</span>
+          <span className="price-amount">Rp 60.000,-</span>
         </div>
       </div>
     </div>
@@ -396,7 +393,7 @@ export default function CompetitionPage() {
         <span className="step-no">1</span>
         <div className="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></div>
         <h3>Bayar Biaya Pendaftaran</h3>
-        <p>Lakukan pembayaran sesuai gelombang (Batch 1: 10–17 Sep / Batch 2: 18–30 Sep), lalu simpan resi / bukti transfernya.</p>
+        <p>Pendaftaran telah resmi ditutup (Batch 1 & Batch 2). Terima kasih atas antusiasme seluruh peserta!</p>
       </div>
       <div className="step reveal">
         <span className="step-no">2</span>
@@ -432,7 +429,7 @@ export default function CompetitionPage() {
         textShadow: '3px 3px 0 var(--ink)',
         lineHeight: 1.2,
       }}>
-        Udah siap unjuk karya?
+        Pendaftaran Telah Ditutup
       </h3>
       <p style={{
         color: 'rgba(255,255,255,0.92)',
@@ -442,10 +439,9 @@ export default function CompetitionPage() {
         margin: '0 auto 24px',
         textShadow: '1px 1px 0 rgba(0,0,0,0.2)',
       }}>
-        Lakukan pembayaran, lalu isi formulir pendaftarannya!
+        Terima kasih atas partisipasinya! Pantau jadwal Technical Meeting dan rangkaian acara berikutnya.
       </p>
       <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap', alignItems: 'center' }}>
-        <a className="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSf25pa6dUh5NIUChyN79JGO3BX4EJoLM_z6xLmf-gBo2qBM0g/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">Daftar via Google Form 🚀</a>
         <a
           href="https://wa.me/6287872926689?text=Halo%20Kak%20Damar,%20saya%20mau%20tanya%20seputar%20Coding%20Competition%20M-One%20Telkomsel"
           target="_blank"
