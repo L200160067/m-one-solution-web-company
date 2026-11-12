@@ -7,7 +7,7 @@ const htmlContent = `<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light">
 <meta name="robots" content="noindex, nofollow">
-<title>Leaderboard SMP – M-One Telkomsel Coding Competition 2026</title>
+<title>Leaderboard Finalis SMP – M-One Telkomsel Coding Competition 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,500;0,700;0,800;1,800&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -199,7 +199,7 @@ h2{font-size:clamp(22px,3.8vw,32px);margin:14px 0 6px;font-weight:800}
   align-items:end;
 }
 .pod{
-  padding:22px 18px 20px;
+  padding:24px 18px 20px;
   text-align:center;
   display:flex;
   flex-direction:column;
@@ -208,7 +208,7 @@ h2{font-size:clamp(22px,3.8vw,32px);margin:14px 0 6px;font-weight:800}
 }
 .pod.r1{
   background:var(--pale);
-  padding-top:28px;
+  padding-top:30px;
   padding-bottom:26px;
   transform:rotate(-1deg);
 }
@@ -239,22 +239,8 @@ h2{font-size:clamp(22px,3.8vw,32px);margin:14px 0 6px;font-weight:800}
   letter-spacing:.04em;
 }
 .r1 .lbl{background:var(--yellow);color:var(--navy);border:2px solid var(--navy)}
-.pod h3{margin:4px 0 0;font-size:17px;font-weight:800}
-.school{font-size:12.5px;color:var(--muted);word-break:break-word}
-.score{
-  font-weight:800;
-  font-size:13px;
-  color:var(--blue);
-  border:2.5px solid var(--navy);
-  border-radius:999px;
-  padding:4px 14px;
-  background:#fff;
-  white-space:nowrap;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:1.5px 1.5px 0 var(--navy);
-}
+.pod h3{margin:4px 0 0;font-size:17px;font-weight:800;line-height:1.25}
+.school{font-size:13px;color:var(--muted);word-break:break-word}
 .hadiah{
   font-size:12px;
   font-weight:800;
@@ -287,13 +273,13 @@ h2{font-size:clamp(22px,3.8vw,32px);margin:14px 0 6px;font-weight:800}
 .list{display:flex;flex-direction:column;gap:14px;padding:0;margin:0;list-style:none}
 .row{
   display:grid;
-  grid-template-columns:46px 1fr auto auto;
+  grid-template-columns:46px 1fr auto;
   gap:16px;
   align-items:center;
   padding:14px 20px;
 }
 .row .visit{margin:0}
-.row .info h3{margin:0 0 2px;font-size:16px;font-weight:800}
+.row .info h3{margin:0 0 2px;font-size:16px;font-weight:800;line-height:1.25}
 .row .info .school{font-size:13px}
 .no{
   width:42px;
@@ -417,17 +403,17 @@ h2{font-size:clamp(22px,3.8vw,32px);margin:14px 0 6px;font-weight:800}
   }
   .pod .visit{
     width:100%;
-    margin-top:6px;
+    margin-top:8px;
   }
 
-  /* List (Rank 4-10) mobile: ELEGANT & CLEAN GRID */
+  /* List (Rank 4-10) mobile */
   .list{gap:12px}
   .row{
     display:grid;
-    grid-template-columns:42px 1fr auto;
+    grid-template-columns:42px 1fr;
     grid-template-areas:
-      "no info score"
-      "btn btn btn";
+      "no info"
+      "btn btn";
     gap:10px 12px;
     align-items:center;
     padding:14px 16px;
@@ -448,24 +434,15 @@ h2{font-size:clamp(22px,3.8vw,32px);margin:14px 0 6px;font-weight:800}
     word-break:break-word;
   }
   .row .info .school{
-    font-size:12px;
+    font-size:12.5px;
     line-height:1.3;
     word-break:break-word;
-  }
-  .row .score{
-    grid-area:score;
-    justify-self:end;
-    align-self:center;
-    font-size:12px;
-    padding:4px 10px;
-    border-width:2px;
-    box-shadow:none;
   }
   .row .visit{
     grid-area:btn;
     width:100%;
     text-align:center;
-    margin-top:2px;
+    margin-top:4px;
     padding:9px 16px;
     font-size:13px;
   }
@@ -515,7 +492,7 @@ h2{font-size:clamp(22px,3.8vw,32px);margin:14px 0 6px;font-weight:800}
 
   <div id="top3" style="padding-top:36px">
     <span class="pill">Peringkat 1–3</span>
-    <h2>Tiga Skor Tertinggi</h2>
+    <h2>Tiga Finalis Teratas</h2>
     <p class="sub">Tema: “School Website Innovation”.</p>
     <div class="podium" id="podium"></div>
   </div>
@@ -524,56 +501,105 @@ h2{font-size:clamp(22px,3.8vw,32px);margin:14px 0 6px;font-weight:800}
 <section class="sec sky" id="top10"><div class="wrap">
   <span class="pill">Peringkat 4–10</span>
   <h2>Tujuh Finalis Lainnya</h2>
-  <p class="sub">Urut berdasarkan skor babak penyisihan.</p>
+  <p class="sub">Daftar finalis kategori SMP yang lolos ke Babak Final.</p>
   <ol class="list" id="list"></ol>
 </div></section>
 
 <script>
-// Data peserta asli kategori SMP
+// Data finalis kategori SMP (Nama, Asal Sekolah, Link Karya, dan Peringkat)
 const PESERTA=[
-  {nama:"Nama Peserta 1",sekolah:"SMP Negeri 1 Sukoharjo",skor:96,url:"https://example.com/peserta-1"},
-  {nama:"Nama Peserta 2",sekolah:"SMP Muhammadiyah 1 Sukoharjo",skor:93,url:"https://example.com/peserta-2"},
-  {nama:"Nama Peserta 3",sekolah:"SMP Negeri 2 Surakarta",skor:91,url:"https://example.com/peserta-3"},
-  {nama:"Nama Peserta 4",sekolah:"SMP Negeri 3 Karanganyar",skor:89,url:"https://example.com/peserta-4"},
-  {nama:"Nama Peserta 5",sekolah:"SMP Negeri 5 Sukoharjo",skor:87,url:"https://example.com/peserta-5"},
-  {nama:"Nama Peserta 6",sekolah:"SMP Islam Al Azhar Solo",skor:85,url:"https://example.com/peserta-6"},
-  {nama:"Nama Peserta 7",sekolah:"SMP Negeri 4 Boyolali",skor:83,url:"https://example.com/peserta-7"},
-  {nama:"Nama Peserta 8",sekolah:"SMP Negeri 1 Klaten",skor:81,url:"https://example.com/peserta-8"},
-  {nama:"Nama Peserta 9",sekolah:"SMP Negeri 2 Wonogiri",skor:79,url:"https://example.com/peserta-9"},
-  {nama:"Nama Peserta 10",sekolah:"SMP Negeri 6 Surakarta",skor:77,url:"https://example.com/peserta-10"}
+  {
+    peringkat: 1,
+    nama: "Muhammad Nararya Riffat",
+    sekolah: "SMPIT Al-Firdaus Samarinda",
+    url: "https://smpit-al-firdaus.vercel.app/"
+  },
+  {
+    peringkat: 2,
+    nama: "Riam Sambang Imalat",
+    sekolah: "SMP Muhammadiyah 1 Kudus",
+    url: "https://spemuku.vercel.app/"
+  },
+  {
+    peringkat: 3,
+    nama: "Rania Mumtaza Rifai",
+    sekolah: "SMPIT Nur Hidayah Surakarta",
+    url: "https://peserta85.m1sec.my.id/"
+  },
+  {
+    peringkat: 4,
+    nama: "Affan",
+    sekolah: "MTsN 2 Sukoharjo",
+    url: "https://mtsn2skh-tau.vercel.app/"
+  },
+  {
+    peringkat: 5,
+    nama: "Eugene Ivander",
+    sekolah: "SMPIT Ibnu Abbas Klaten",
+    url: "https://eugeneivander61.github.io/smpit-ibnu-abbas-klaten/"
+  },
+  {
+    peringkat: 6,
+    nama: "Annida Amanina Nur Shabrina",
+    sekolah: "SMPIT Nur Hidayah",
+    url: "https://peserta87.m1sec.my.id/"
+  },
+  {
+    peringkat: 7,
+    nama: "Hasan Abdullah Ramadan",
+    sekolah: "MTsN 2 Sukoharjo",
+    url: "https://peserta93.m1sec.my.id/"
+  },
+  {
+    peringkat: 8,
+    nama: "Khansa Seri Ardenta",
+    sekolah: "MTsN 2 Sukoharjo",
+    url: "https://mtsn2skhprofile.vercel.app/"
+  },
+  {
+    peringkat: 9,
+    nama: "Fajar Aditya",
+    sekolah: "MTsN 2 Sukoharjo",
+    url: "https://fajar-aditya-mtsn-2-sukoharjo.vercel.app/"
+  },
+  {
+    peringkat: 10,
+    nama: "Jirou Faiza Athoillah",
+    sekolah: "MTsN 2 Sukoharjo",
+    url: "https://mtsn2skh.vercel.app/"
+  }
 ];
+
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const link=u=>\`<a class="visit" href="\${esc(u)}" target="_blank" rel="noopener noreferrer">Kunjungi website ➜</a>\`;
-const data=[...PESERTA].sort((a,b)=>b.skor-a.skor).slice(0,10);
+const data=[...PESERTA].sort((a,b)=>a.peringkat-b.peringkat);
 
-// Render Podium (1, 2, 3)
+// Render Podium (Peringkat 1, 2, 3)
 document.getElementById("podium").innerHTML=[1,0,2].filter(i=>data[i]).map(i=>{
   const p=data[i];
-  return \`<article class="card pod r\${i+1}">
-    <div class="medal">\${i+1}</div>
-    <span class="lbl">\${i===0?'JUARA 1':'FINALIS'}</span>
+  return \`<article class="card pod r\${p.peringkat}">
+    <div class="medal">\${p.peringkat}</div>
+    <span class="lbl">\${p.peringkat===1?'PERINGKAT 1':'FINALIS'}</span>
     <h3>\${esc(p.nama)}</h3>
     <div class="school">\${esc(p.sekolah)}</div>
-    <span class="score">Skor \${p.skor}</span>
     <div class="hadiah">Lolos ke Babak Final</div>
     \${link(p.url)}
   </article>\`;
 }).join("");
 
-// Render List (4 to 10)
-document.getElementById("list").innerHTML=data.slice(3).map((p,k)=>\`
+// Render List (Peringkat 4-10)
+document.getElementById("list").innerHTML=data.slice(3).map(p=>\`
   <li class="card row">
-    <div class="no">\${k+4}</div>
+    <div class="no">\${p.peringkat}</div>
     <div class="info">
       <h3>\${esc(p.nama)}</h3>
       <div class="school">\${esc(p.sekolah)}</div>
     </div>
-    <span class="score">Skor \${p.skor}</span>
     \${link(p.url)}
   </li>
 \`).join("");
 
-// Scroll animations
+// Scroll reveal animations
 (function(){
   const els=[...document.querySelectorAll(".prize,.card,.pill,h2,.sub")].filter(e=>!e.closest(".hero"));
   els.forEach(e=>e.classList.add("rv"));
